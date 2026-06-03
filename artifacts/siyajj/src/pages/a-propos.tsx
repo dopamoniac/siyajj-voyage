@@ -1,5 +1,7 @@
 import { Link } from "wouter";
 import { MediaFrame } from "@/components/ui/media-frame";
+import { processSteps } from "@/data/content";
+import { motion } from "framer-motion";
 
 export default function APropos() {
   return (
@@ -68,14 +70,34 @@ export default function APropos() {
         </div>
       </div>
 
+      <div className="mb-32 relative z-10 max-w-5xl mx-auto">
+        <h2 className="text-4xl font-serif text-center text-siyajj-ivory mb-16 drop-shadow-md">Le Processus SIYAJJ</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {processSteps.map((step, idx) => (
+            <motion.div 
+              key={step.step}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="glass-card rounded-2xl p-8 border-siyajj-luxury-gold/20 flex flex-col items-start hover:border-siyajj-luxury-gold/50 transition-colors"
+            >
+              <div className="text-3xl font-serif text-siyajj-luxury-gold mb-4 opacity-50">{step.step}</div>
+              <h3 className="text-xl font-serif text-siyajj-ivory mb-3">{step.title}</h3>
+              <p className="text-siyajj-ivory/70 text-sm font-light leading-relaxed">{step.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
       <div className="relative z-10 rounded-3xl overflow-hidden border border-siyajj-luxury-gold/30 shadow-2xl">
         <MediaFrame slot="atmosphere" className="absolute inset-0 opacity-40" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/90" />
         <div className="relative z-20 text-center p-16 md:p-24">
-          <div className="text-xs uppercase tracking-widest text-siyajj-luxury-gold font-bold mb-4">L'Approche SIYAJJ</div>
-          <h2 className="text-4xl md:text-5xl font-serif text-siyajj-ivory mb-8">Notre Processus</h2>
+          <div className="text-xs uppercase tracking-widest text-siyajj-luxury-gold font-bold mb-4">La Différence Premium</div>
+          <h2 className="text-4xl md:text-5xl font-serif text-siyajj-ivory mb-8">Votre Voyage Commence Ici</h2>
           <p className="text-siyajj-ivory/80 mb-12 max-w-2xl mx-auto text-xl font-light leading-relaxed">
-            <span className="text-siyajj-champagne">Écouter</span> vos attentes. <span className="text-siyajj-champagne">Concevoir</span> votre parcours. <span className="text-siyajj-champagne">Préparer</span> votre départ. <span className="text-siyajj-champagne">Accompagner</span> vos pas. <span className="text-siyajj-champagne">Soutenir</span> votre retour.
+            Parlez à nos experts et laissez-nous dessiner un itinéraire spirituel sur-mesure, à la hauteur de vos aspirations.
           </p>
           <div className="flex justify-center">
             <Link href="/contact" className="px-10 py-4 border border-siyajj-luxury-gold text-siyajj-luxury-gold hover:bg-siyajj-luxury-gold hover:text-siyajj-deep-black transition-colors uppercase tracking-widest text-xs font-bold rounded-lg sweep-hover relative overflow-hidden">

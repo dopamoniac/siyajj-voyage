@@ -1,72 +1,142 @@
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
+import { guides, guideCategories } from "@/data/content";
 import { MediaFrame } from "@/components/ui/media-frame";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, BookOpen } from "lucide-react";
 
 export default function Guides() {
-  const articles = [
-    { title: "Guide Omra 2026", desc: "Tout ce qu'il faut savoir pour préparer votre voyage spirituel cette année.", image: "makkahImage" },
-    { title: "Documents nécessaires", desc: "La liste complète des documents requis, passeport, visa, vaccins.", image: "collectionEssentielle" },
-    { title: "Préparer sa valise", desc: "Les indispensables à emporter pour un séjour serein aux Lieux Saints.", image: "atmosphere" },
-    { title: "Omra avec enfants", desc: "Conseils et astuces pour vivre une Omra inoubliable en famille.", image: "offerFamille" },
-    { title: "Omra seniors", desc: "Adapter le rythme et garantir le confort de nos aînés.", image: "offerSeniors" },
-    { title: "Hajj ou Omra ?", desc: "Comprendre les distinctions fondamentales entre le petit et le grand pèlerinage.", image: "collectionRenaissance" },
-    { title: "Comprendre les rites", desc: "Une explication détaillée de chaque étape de la Omra.", image: "activityMasterclass" },
-    { title: "Quand partir", desc: "Analyser les meilleures périodes selon la météo et l'affluence.", image: "madinahImage" }
-  ];
+  const [activeCategory, setActiveCategory] = useState<string>("Tous");
+
+  const filteredGuides = activeCategory === "Tous" 
+    ? guides 
+    : guides.filter(g => g.category === activeCategory);
 
   return (
-    <div className="container mx-auto px-4 md:px-8 py-24">
-      <div className="max-w-4xl mx-auto text-center mb-16">
-        <div className="text-siyajj-luxury-gold text-xs uppercase tracking-widest mb-4 font-bold flex items-center justify-center gap-2">
-          <span className="w-8 h-[1px] bg-siyajj-luxury-gold/50"></span>
-          Conseils & Préparation
-          <span className="w-8 h-[1px] bg-siyajj-luxury-gold/50"></span>
+    <div className="w-full">
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <MediaFrame slot="guidesCover" className="w-full h-full opacity-30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-siyajj-deep-black via-siyajj-deep-black/80 to-siyajj-deep-black" />
         </div>
-        <h1 className="text-5xl md:text-6xl font-serif text-siyajj-ivory mb-6 drop-shadow-md">Le Journal SIYAJJ</h1>
-        <p className="text-siyajj-ivory/70 leading-relaxed text-lg font-light">
-          Des ressources éditoriales conçues pour vous accompagner avant, pendant et après votre pèlerinage. L'expertise spirituelle et logistique au service de votre sérénité.
-        </p>
-      </div>
+        <div className="container relative z-10 px-4 md:px-8 mx-auto text-center max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-siyajj-luxury-gold/30 bg-siyajj-luxury-gold/5 text-siyajj-luxury-gold text-xs tracking-[0.2em] uppercase mb-6"
+          >
+            <BookOpen className="w-3.5 h-3.5" />
+            <span className="font-bold">Centre de Ressources</span>
+          </motion.div>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-6xl font-serif text-siyajj-ivory mb-6"
+          >
+            Guides & Conseils
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-siyajj-ivory/70 leading-relaxed max-w-2xl mx-auto"
+          >
+            Des ressources éditoriales conçues pour vous accompagner avant, pendant et après votre voyage sacré.
+          </motion.p>
+        </div>
+      </section>
 
-      {/* Featured Article */}
-      <Link href="/contact" className="block group mb-16 relative rounded-3xl overflow-hidden aspect-[2/1] md:aspect-[3/1] border border-siyajj-luxury-gold/20 hover:border-siyajj-luxury-gold/60 transition-all duration-700 shadow-2xl">
-        <MediaFrame slot="guidesCover" className="absolute inset-0 transition-transform duration-1000 group-hover:scale-105" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
-        
-        <div className="absolute bottom-0 left-0 p-8 md:p-16 max-w-2xl">
-          <div className="px-4 py-1.5 bg-black/60 backdrop-blur-md border border-siyajj-luxury-gold/40 text-siyajj-champagne text-[10px] uppercase tracking-widest rounded-full font-bold inline-block mb-6">
-            Édition Spéciale
+      {/* Filters & Grid */}
+      <section className="py-12 md:py-20 relative z-20">
+        <div className="container px-4 md:px-8 mx-auto">
+          {/* Categories Filter */}
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-16">
+            <button
+              onClick={() => setActiveCategory("Tous")}
+              className={`px-5 py-2.5 rounded-full text-xs uppercase tracking-widest font-bold transition-all duration-300 ${
+                activeCategory === "Tous" 
+                  ? "bg-siyajj-luxury-gold text-siyajj-deep-black shadow-[0_0_20px_rgba(200,154,70,0.3)]" 
+                  : "border border-siyajj-luxury-gold/20 text-siyajj-ivory hover:border-siyajj-luxury-gold/50"
+              }`}
+            >
+              Tous
+            </button>
+            {guideCategories.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-5 py-2.5 rounded-full text-xs uppercase tracking-widest font-bold transition-all duration-300 ${
+                  activeCategory === cat 
+                    ? "bg-siyajj-luxury-gold text-siyajj-deep-black shadow-[0_0_20px_rgba(200,154,70,0.3)]" 
+                    : "border border-siyajj-luxury-gold/20 text-siyajj-ivory/80 hover:border-siyajj-luxury-gold/50 hover:text-siyajj-ivory"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
           </div>
-          <h2 className="text-4xl md:text-5xl font-serif text-siyajj-ivory mb-4 drop-shadow-md">Guide Complet Omra 2026</h2>
-          <p className="text-siyajj-ivory/80 text-lg font-light mb-8 hidden md:block">
-            Découvrez toutes les nouveautés, réglementations et conseils d'experts pour préparer votre voyage vers les Lieux Saints dans les meilleures conditions.
+
+          {/* Grid */}
+          <motion.div 
+            layout
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+          >
+            <AnimatePresence mode="popLayout">
+              {filteredGuides.map((guide) => (
+                <motion.div
+                  key={guide.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                  className="glass-card rounded-2xl p-8 flex flex-col group hover:border-siyajj-luxury-gold/50 transition-all duration-500 relative overflow-hidden h-full cursor-pointer"
+                >
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-siyajj-luxury-gold/0 to-transparent group-hover:via-siyajj-luxury-gold/50 transition-all duration-500" />
+                  
+                  <div className="mb-6">
+                    <span className="text-[10px] text-siyajj-champagne uppercase tracking-widest font-bold border border-siyajj-luxury-gold/30 px-3 py-1 rounded-full">
+                      {guide.category}
+                    </span>
+                  </div>
+                  
+                  <h3 className="text-2xl font-serif text-siyajj-ivory mb-4 group-hover:text-siyajj-luxury-gold transition-colors">
+                    {guide.title}
+                  </h3>
+                  
+                  <p className="text-siyajj-ivory/70 text-sm leading-relaxed mb-8 flex-grow">
+                    {guide.excerpt}
+                  </p>
+                  
+                  <div className="pt-6 border-t border-white/5 flex items-center justify-between mt-auto">
+                    <span className="text-xs uppercase tracking-widest text-siyajj-luxury-gold font-bold">Lire le guide</span>
+                    <div className="w-8 h-8 rounded-full border border-siyajj-luxury-gold/30 flex items-center justify-center group-hover:bg-siyajj-luxury-gold group-hover:text-siyajj-deep-black transition-all">
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-siyajj-charcoal opacity-50" />
+        <div className="container relative z-10 px-4 md:px-8 mx-auto text-center max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-serif text-siyajj-ivory mb-6">Une question spécifique ?</h2>
+          <p className="text-siyajj-ivory/80 mb-10 text-lg font-light">
+            Nos conseillers sont disponibles pour vous accompagner dans la préparation de votre voyage sacré.
           </p>
-          <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-siyajj-luxury-gold font-bold">
-            Lire l'article spécial <span className="w-8 h-[1px] bg-siyajj-luxury-gold transform group-hover:w-12 transition-all duration-300"></span>
-          </div>
+          <Button asChild className="h-14 px-8 bg-gradient-to-r from-siyajj-champagne via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black rounded-xl uppercase tracking-widest text-xs font-bold sweep-hover shadow-[0_10px_30px_-8px_rgba(200,154,70,0.6)]">
+            <Link href="/contact"><span className="relative z-10">Parler à un conseiller</span></Link>
+          </Button>
         </div>
-      </Link>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {articles.map((article, i) => (
-          <Link href="/contact" key={i} className="block group h-full">
-            <Card className="h-full bg-black/40 backdrop-blur-md border border-white/10 group-hover:border-siyajj-luxury-gold/40 transition-all duration-500 overflow-hidden flex flex-col rounded-2xl group-hover:shadow-[0_0_30px_rgba(200,154,70,0.1)]">
-              <div className="relative aspect-[4/3] overflow-hidden">
-                 <MediaFrame slot={article.image as any} className="absolute inset-0 opacity-80 group-hover:opacity-100 transition-all duration-700 group-hover:scale-110" />
-                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80" />
-              </div>
-              <CardContent className="p-6 flex-grow flex flex-col relative z-10 -mt-16">
-                <CardTitle className="text-2xl font-serif text-siyajj-ivory mb-3 drop-shadow-md group-hover:text-siyajj-champagne transition-colors">{article.title}</CardTitle>
-                <CardDescription className="text-siyajj-ivory/60 font-light leading-relaxed mb-6 flex-grow">{article.desc}</CardDescription>
-                <div className="mt-auto text-[10px] uppercase tracking-widest text-siyajj-luxury-gold flex items-center gap-2 font-bold">
-                  Lire l'article <span className="transform group-hover:translate-x-2 transition-transform">→</span>
-                </div>
-              </CardContent>
-            </Card>
-          </Link>
-        ))}
-      </div>
+      </section>
     </div>
   );
 }

@@ -1,336 +1,237 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Link } from "wouter";
-import { Calendar, MapPin, Hotel } from "lucide-react";
-import { MediaFrame } from "@/components/ui/media-frame";
+import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "wouter";
+import { Filter, Calendar, MapPin, Star, ArrowRight, Check } from "lucide-react";
+import { offers, CONTACT, collections } from "@/data/content";
+import { MediaFrame } from "@/components/ui/media-frame";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 export default function NosOmras() {
-  const [view, setView] = useState<"grid" | "list">("grid");
-  const [ville, setVille] = useState<string>("all");
-  const [mois, setMois] = useState<string>("all");
-  const [collection, setCollection] = useState<string>("all");
-  const [budget, setBudget] = useState<string>("all");
+  const [filterMonth, setFilterMonth] = useState<string>("all");
+  const [filterDeparture, setFilterDeparture] = useState<string>("all");
+  
+  const months = useMemo(() => Array.from(new Set(offers.map(o => o.month))), []);
+  const departures = useMemo(() => Array.from(new Set(offers.map(o => o.departure))), []);
 
-  const offers = [
-    {
-      id: 1,
-      title: "Omra Novembre depuis Paris",
-      image: "offerNovembre",
-      duration: "12 Jours",
-      city: "Paris CDG",
-      cityValue: "paris",
-      monthValue: "nov",
-      month: "Novembre 2026",
-      hotel: "5 Étoiles Premium",
-      included: ["Visa", "Vols", "Transferts VIP", "Guide", "Hôtels face au Haram"],
-      priceNum: 2490,
-      price: "2 490€",
-      collectionValue: "signature",
-      collection: "Signature Privée"
-    },
-    {
-      id: 2,
-      title: "Omra Ramadan Fin de Mois",
-      image: "offerRamadan",
-      duration: "15 Jours",
-      city: "Lyon / Paris",
-      cityValue: "lyon",
-      monthValue: "ramadan",
-      month: "Ramadan 2026",
-      hotel: "5 Étoiles",
-      included: ["Visa", "Vols directs", "Transferts", "Guide", "Accompagnateur"],
-      priceNum: 3890,
-      price: "3 890€",
-      collectionValue: "prestige",
-      collection: "Prestige"
-    },
-    {
-      id: 3,
-      title: "Omra Famille",
-      image: "offerFamille",
-      duration: "10 Jours",
-      city: "Paris CDG",
-      cityValue: "paris",
-      monthValue: "vacances",
-      month: "Vacances Scolaires",
-      hotel: "4 Étoiles Supérieur",
-      included: ["Visa", "Vols", "Transferts", "Guide", "Activité Enfants"],
-      priceNum: 1890,
-      price: "1 890€",
-      collectionValue: "confort",
-      collection: "Confort"
-    },
-    {
-      id: 4,
-      title: "Omra Seniors Sérénité",
-      image: "offerSeniors",
-      duration: "14 Jours",
-      city: "Paris CDG",
-      cityValue: "paris",
-      monthValue: "fev",
-      month: "Février 2026",
-      hotel: "5 Étoiles (Accès PMR)",
-      included: ["Visa", "Vols", "Transferts Médicalisés", "Guide dédié", "Fauteuil"],
-      priceNum: 2790,
-      price: "2 790€",
-      collectionValue: "prestige",
-      collection: "Prestige"
-    },
-    {
-      id: 5,
-      title: "Omra Prestige Hiver",
-      image: "offerPrestige",
-      duration: "12 Jours",
-      city: "Genève",
-      cityValue: "geneve",
-      monthValue: "dec",
-      month: "Décembre 2026",
-      hotel: "5 Étoiles Luxe",
-      included: ["Visa", "Vols", "Transferts VIP", "Guide", "Palaces"],
-      priceNum: 3290,
-      price: "3 290€",
-      collectionValue: "prestige",
-      collection: "Prestige"
-    },
-    {
-      id: 6,
-      title: "Omra Départ Marseille",
-      image: "makkahImage",
-      duration: "10 Jours",
-      city: "Marseille",
-      cityValue: "marseille",
-      monthValue: "nov",
-      month: "Novembre 2026",
-      hotel: "4 Étoiles",
-      included: ["Visa", "Vols", "Transferts", "Guide"],
-      priceNum: 1790,
-      price: "1 790€",
-      collectionValue: "essentielle",
-      collection: "Essentielle"
-    }
-  ];
-
-  const filteredOffers = offers.filter(offer => {
-    if (ville !== "all" && offer.cityValue !== ville) return false;
-    if (mois !== "all" && offer.monthValue !== mois) return false;
-    if (collection !== "all" && offer.collectionValue !== collection) return false;
-    if (budget === "low" && offer.priceNum >= 2000) return false;
-    if (budget === "mid" && (offer.priceNum < 2000 || offer.priceNum > 3000)) return false;
-    if (budget === "high" && offer.priceNum <= 3000) return false;
-    return true;
-  });
+  const filteredOffers = useMemo(() => {
+    return offers.filter(o => {
+      const matchMonth = filterMonth === "all" || o.month === filterMonth;
+      const matchDep = filterDeparture === "all" || o.departure === filterDeparture;
+      return matchMonth && matchDep;
+    });
+  }, [filterMonth, filterDeparture]);
 
   return (
-    <div className="container mx-auto px-4 md:px-8 py-24 relative">
-      <div className="max-w-3xl mx-auto text-center mb-16">
-        <div className="text-siyajj-luxury-gold text-xs uppercase tracking-widest mb-4 font-bold flex items-center justify-center gap-2">
-          <span className="w-8 h-[1px] bg-siyajj-luxury-gold/50"></span>
-          Le Catalogue
-          <span className="w-8 h-[1px] bg-siyajj-luxury-gold/50"></span>
-        </div>
-        <h1 className="text-5xl md:text-6xl font-serif text-siyajj-ivory mb-6 drop-shadow-md">Nos Omras</h1>
-        <p className="text-siyajj-ivory/70 leading-relaxed text-lg font-light">
-          Découvrez nos départs organisés, pensés pour vous offrir une expérience spirituelle profonde dans un cadre serein et structuré.
-        </p>
-      </div>
-
-      {/* Filters */}
-      <div className="glass-card p-6 rounded-2xl border-siyajj-luxury-gold/30 mb-12 relative z-20 shadow-2xl bg-black/60 backdrop-blur-xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="space-y-1">
-            <label className="text-[10px] text-siyajj-luxury-gold uppercase tracking-widest ml-1">Ville de départ</label>
-            <Select value={ville} onValueChange={setVille}>
-              <SelectTrigger className="bg-siyajj-charcoal border-white/10 text-siyajj-ivory h-12 rounded-lg font-serif text-base hover:border-siyajj-luxury-gold/50 transition-colors">
-                <SelectValue placeholder="Ville de départ" />
-              </SelectTrigger>
-              <SelectContent className="bg-siyajj-warm-black border-siyajj-luxury-gold/30 text-siyajj-ivory backdrop-blur-xl">
-                <SelectItem value="all">Toutes les villes</SelectItem>
-                <SelectItem value="paris">Paris CDG</SelectItem>
-                <SelectItem value="lyon">Lyon</SelectItem>
-                <SelectItem value="marseille">Marseille</SelectItem>
-                <SelectItem value="geneve">Genève</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-
-          <div className="space-y-1">
-            <label className="text-[10px] text-siyajj-luxury-gold uppercase tracking-widest ml-1">Période</label>
-            <Select value={mois} onValueChange={setMois}>
-              <SelectTrigger className="bg-siyajj-charcoal border-white/10 text-siyajj-ivory h-12 rounded-lg font-serif text-base hover:border-siyajj-luxury-gold/50 transition-colors">
-                <SelectValue placeholder="Mois" />
-              </SelectTrigger>
-              <SelectContent className="bg-siyajj-warm-black border-siyajj-luxury-gold/30 text-siyajj-ivory backdrop-blur-xl">
-                <SelectItem value="all">Tous les mois</SelectItem>
-                <SelectItem value="nov">Novembre</SelectItem>
-                <SelectItem value="dec">Décembre</SelectItem>
-                <SelectItem value="fev">Février</SelectItem>
-                <SelectItem value="ramadan">Ramadan</SelectItem>
-                <SelectItem value="vacances">Vacances Scolaires</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-
-          <div className="space-y-1">
-            <label className="text-[10px] text-siyajj-luxury-gold uppercase tracking-widest ml-1">Collection</label>
-            <Select value={collection} onValueChange={setCollection}>
-              <SelectTrigger className="bg-siyajj-charcoal border-white/10 text-siyajj-ivory h-12 rounded-lg font-serif text-base hover:border-siyajj-luxury-gold/50 transition-colors">
-                <SelectValue placeholder="Collection" />
-              </SelectTrigger>
-              <SelectContent className="bg-siyajj-warm-black border-siyajj-luxury-gold/30 text-siyajj-ivory backdrop-blur-xl">
-                <SelectItem value="all">Toutes les collections</SelectItem>
-                <SelectItem value="essentielle">Essentielle</SelectItem>
-                <SelectItem value="confort">Confort</SelectItem>
-                <SelectItem value="prestige">Prestige</SelectItem>
-                <SelectItem value="signature">Signature Privée</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-          
-          <div className="space-y-1">
-            <label className="text-[10px] text-siyajj-luxury-gold uppercase tracking-widest ml-1">Budget</label>
-            <Select value={budget} onValueChange={setBudget}>
-              <SelectTrigger className="bg-siyajj-charcoal border-white/10 text-siyajj-ivory h-12 rounded-lg font-serif text-base hover:border-siyajj-luxury-gold/50 transition-colors">
-                <SelectValue placeholder="Budget" />
-              </SelectTrigger>
-              <SelectContent className="bg-siyajj-warm-black border-siyajj-luxury-gold/30 text-siyajj-ivory backdrop-blur-xl">
-                <SelectItem value="all">Tous les budgets</SelectItem>
-                <SelectItem value="low">&lt; 2000€</SelectItem>
-                <SelectItem value="mid">2000€ - 3000€</SelectItem>
-                <SelectItem value="high">&gt; 3000€</SelectItem>
-              </SelectContent>
-            </Select>
+    <div className="w-full min-h-screen bg-siyajj-deep-black pb-32">
+      {/* Header Section */}
+      <section className="pt-24 pb-16 relative border-b border-white/5 bg-siyajj-warm-black overflow-hidden">
+        <div className="absolute inset-0 velvet-texture opacity-30 mix-blend-overlay pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle,_rgba(15,76,76,0.15),_transparent_70%)] rounded-full blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4 md:px-8 relative z-10">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-siyajj-luxury-gold/30 bg-siyajj-luxury-gold/5 text-siyajj-luxury-gold text-[10px] tracking-[0.2em] uppercase mb-6">
+              <span className="text-[10px]">✦</span> Catalogue des départs
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-siyajj-ivory mb-6 drop-shadow-md">Nos Omras & Départs</h1>
+            <p className="text-lg text-siyajj-ivory/70 font-light leading-relaxed">
+              Explorez nos prochaines dates de départ. Des séjours conçus avec exigence, pour vous offrir sérénité et élévation spirituelle aux côtés de l'équipe SIYAJJ.
+            </p>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* View Toggle */}
-      <div className="flex justify-between items-center mb-8">
-        <div className="text-sm font-serif text-siyajj-ivory/60">
-          <span className="text-siyajj-luxury-gold">{filteredOffers.length}</span> {filteredOffers.length > 1 ? 'voyages trouvés' : 'voyage trouvé'}
-        </div>
-        <div className="flex items-center gap-2 border border-siyajj-luxury-gold/20 rounded-full p-1 bg-black/40 backdrop-blur-md">
-          <button 
-            onClick={() => setView("grid")}
-            className={`px-5 py-2 rounded-full text-xs uppercase tracking-widest transition-all duration-300 ${view === "grid" ? "bg-siyajj-luxury-gold text-siyajj-deep-black font-bold shadow-lg" : "text-siyajj-ivory/60 hover:text-siyajj-ivory hover:bg-white/5"}`}
-          >
-            Grille
-          </button>
-          <button 
-            onClick={() => setView("list")}
-            className={`px-5 py-2 rounded-full text-xs uppercase tracking-widest transition-all duration-300 ${view === "list" ? "bg-siyajj-luxury-gold text-siyajj-deep-black font-bold shadow-lg" : "text-siyajj-ivory/60 hover:text-siyajj-ivory hover:bg-white/5"}`}
-          >
-            Liste
-          </button>
-        </div>
-      </div>
-
-      {/* Offer Grid */}
-      <AnimatePresence mode="wait">
-        {filteredOffers.length === 0 ? (
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
-            className="glass-card rounded-2xl border border-siyajj-luxury-gold/20 p-20 text-center max-w-2xl mx-auto"
-          >
-            <span className="text-5xl text-siyajj-luxury-gold opacity-30 mb-6 block">✦</span>
-            <h3 className="text-3xl font-serif text-siyajj-ivory mb-4">Aucun voyage disponible</h3>
-            <p className="text-siyajj-ivory/60 mb-8 font-light text-lg">Nous n'avons pas trouvé de départ correspondant exactement à vos critères. Élargissez votre recherche.</p>
-            <Button 
-              onClick={() => { setVille("all"); setMois("all"); setCollection("all"); setBudget("all"); }}
-              className="bg-transparent border border-siyajj-luxury-gold text-siyajj-luxury-gold hover:bg-siyajj-luxury-gold hover:text-siyajj-deep-black h-12 px-8 uppercase tracking-widest text-xs font-bold sweep-hover relative overflow-hidden"
-            >
-              <span className="relative z-10">Réinitialiser les filtres</span>
-            </Button>
-          </motion.div>
-        ) : (
-          <motion.div 
-            key={view}
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }}
-            className={`grid gap-8 ${view === "grid" ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1"}`}
-          >
-            {filteredOffers.map((offer, i) => (
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.05 }}
-                key={offer.id} 
-                className={`glass-card rounded-2xl border border-white/10 overflow-hidden group hover:border-siyajj-luxury-gold/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(200,154,70,0.15)] bg-black/40 ${view === "list" ? "flex flex-col md:flex-row h-auto md:h-64" : "flex flex-col"}`}
+      {/* Filters Section */}
+      <section className="sticky top-28 z-40 bg-siyajj-deep-black/80 backdrop-blur-xl border-b border-white/5 py-4 shadow-xl">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-2 text-siyajj-luxury-gold text-sm font-medium tracking-wider uppercase">
+              <Filter className="w-4 h-4" /> Filtres
+            </div>
+            <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
+              <select
+                value={filterMonth}
+                onChange={(e) => setFilterMonth(e.target.value)}
+                className="bg-black/50 border border-siyajj-luxury-gold/20 text-siyajj-ivory text-sm rounded-lg px-4 py-2.5 focus:outline-none focus:border-siyajj-luxury-gold/50 appearance-none min-w-[160px] font-sans"
               >
-                
-                <div className={`relative ${view === "list" ? "md:w-1/3 h-64 md:h-full" : "w-full aspect-[4/3]"} overflow-hidden`}>
-                  <MediaFrame slot={offer.image as any} className="absolute inset-0 transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10" />
-                  <div className="absolute top-4 left-4 z-20">
-                    <span className="px-4 py-1.5 bg-black/60 backdrop-blur-md border border-siyajj-luxury-gold/40 text-siyajj-champagne text-[10px] uppercase tracking-widest rounded-full font-bold shadow-lg">
-                      {offer.collection}
-                    </span>
-                  </div>
-                  {view === "grid" && (
-                    <div className="absolute bottom-4 left-4 right-4 z-20">
-                      <h3 className="text-2xl font-serif text-siyajj-ivory drop-shadow-md">{offer.title}</h3>
-                    </div>
-                  )}
-                </div>
+                <option value="all">Tous les mois</option>
+                {months.map(m => <option key={m} value={m}>{m}</option>)}
+              </select>
+              
+              <select
+                value={filterDeparture}
+                onChange={(e) => setFilterDeparture(e.target.value)}
+                className="bg-black/50 border border-siyajj-luxury-gold/20 text-siyajj-ivory text-sm rounded-lg px-4 py-2.5 focus:outline-none focus:border-siyajj-luxury-gold/50 appearance-none min-w-[160px] font-sans"
+              >
+                <option value="all">Toutes les villes</option>
+                {departures.map(d => <option key={d} value={d}>{d}</option>)}
+              </select>
 
-                <div className={`p-6 flex flex-col justify-between ${view === "list" ? "md:w-2/3" : "flex-grow"}`}>
-                  <div>
-                    {view === "list" && (
-                      <h3 className="text-3xl font-serif text-siyajj-ivory mb-4 group-hover:text-siyajj-champagne transition-colors">{offer.title}</h3>
-                    )}
+              {(filterMonth !== "all" || filterDeparture !== "all") && (
+                <button
+                  onClick={() => { setFilterMonth("all"); setFilterDeparture("all"); }}
+                  className="text-xs text-siyajj-ivory/50 hover:text-siyajj-ivory transition-colors underline underline-offset-4 ml-2"
+                >
+                  Réinitialiser
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Offers Grid */}
+      <section className="pt-16">
+        <div className="container mx-auto px-4 md:px-8">
+          {filteredOffers.length === 0 ? (
+            <div className="text-center py-20 glass-card rounded-2xl max-w-2xl mx-auto border-siyajj-luxury-gold/20">
+              <div className="w-16 h-16 rounded-full border border-siyajj-luxury-gold/20 flex items-center justify-center mx-auto mb-4 text-siyajj-luxury-gold">
+                <Filter className="w-6 h-6 opacity-50" />
+              </div>
+              <h3 className="text-xl font-serif text-siyajj-ivory mb-2">Aucun départ ne correspond</h3>
+              <p className="text-siyajj-ivory/60">Essayez de modifier vos filtres ou demandez une offre sur-mesure.</p>
+              <Button asChild variant="outline" className="mt-6 border-siyajj-luxury-gold/30 text-siyajj-luxury-gold hover:bg-siyajj-luxury-gold/10">
+                <Link href="/sur-mesure">Demander un sur-mesure</Link>
+              </Button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <AnimatePresence>
+                {filteredOffers.map((offer, idx) => (
+                  <motion.div
+                    key={offer.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.4, delay: idx * 0.05 }}
+                    className="emerald-glass rounded-2xl overflow-hidden flex flex-col group hover:-translate-y-1 transition-all duration-300 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.8)]"
+                  >
+                    <div className="relative aspect-[4/3] w-full overflow-hidden">
+                      <MediaFrame slot={offer.slot} className="absolute inset-0 w-full h-full transition-transform duration-700 group-hover:scale-105" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                      {offer.tag && (
+                        <div className="absolute top-4 left-4 bg-gradient-to-r from-siyajj-antique-bronze to-siyajj-champagne text-siyajj-deep-black text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded shadow-[0_0_10px_rgba(200,154,70,0.4)]">
+                          {offer.tag}
+                        </div>
+                      )}
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="flex items-center gap-2 text-siyajj-ivory/80 text-xs mb-2">
+                          <Calendar className="w-3.5 h-3.5 text-siyajj-luxury-gold" />
+                          <span className="font-medium tracking-wide uppercase">{offer.month}</span>
+                          <span className="opacity-50">•</span>
+                          <span>{offer.duration}</span>
+                        </div>
+                        <h3 className="text-2xl font-serif text-siyajj-ivory leading-tight drop-shadow-md">{offer.title}</h3>
+                      </div>
+                    </div>
                     
-                    <div className="grid grid-cols-2 gap-y-4 mb-6">
-                      <div className="flex items-center gap-3 text-sm text-siyajj-ivory/80">
-                        <div className="w-8 h-8 rounded-full bg-siyajj-luxury-gold/10 flex items-center justify-center border border-siyajj-luxury-gold/20">
-                          <Calendar className="w-4 h-4 text-siyajj-luxury-gold" />
+                    <div className="p-6 flex-grow flex flex-col bg-gradient-to-b from-siyajj-deep-black to-siyajj-black-ink">
+                      <div className="space-y-4 mb-8 flex-grow">
+                        <div className="flex items-start gap-3">
+                          <MapPin className="w-4 h-4 text-siyajj-luxury-gold shrink-0 mt-0.5" />
+                          <div>
+                            <div className="text-[10px] text-siyajj-luxury-gold/70 uppercase tracking-widest">Départ</div>
+                            <div className="text-sm text-siyajj-ivory font-medium">{offer.departure}</div>
+                          </div>
                         </div>
-                        <div className="flex flex-col">
-                          <span className="text-[10px] text-siyajj-luxury-gold uppercase tracking-widest">{offer.duration}</span>
-                          <span className="font-serif">{offer.month}</span>
+                        <div className="flex items-start gap-3">
+                          <Star className="w-4 h-4 text-siyajj-luxury-gold shrink-0 mt-0.5" />
+                          <div>
+                            <div className="text-[10px] text-siyajj-luxury-gold/70 uppercase tracking-widest">Hébergement</div>
+                            <div className="text-sm text-siyajj-ivory font-medium">{offer.hotelLevel}</div>
+                          </div>
+                        </div>
+                        
+                        <div className="pt-4 border-t border-white/5 grid grid-cols-2 gap-y-2">
+                          {[
+                            { label: "Visa", active: offer.visa },
+                            { label: "Vols", active: offer.flights },
+                            { label: "Transferts", active: offer.transfers },
+                            { label: "Guide", active: offer.guide },
+                          ].map((inc, i) => (
+                            <div key={i} className={`flex items-center gap-2 text-xs ${inc.active ? 'text-siyajj-ivory/80' : 'text-siyajj-ivory/30'}`}>
+                              <Check className={`w-3.5 h-3.5 ${inc.active ? 'text-siyajj-luxury-gold' : 'opacity-0'}`} />
+                              {inc.label}
+                            </div>
+                          ))}
                         </div>
                       </div>
-                      <div className="flex items-center gap-3 text-sm text-siyajj-ivory/80">
-                        <div className="w-8 h-8 rounded-full bg-siyajj-luxury-gold/10 flex items-center justify-center border border-siyajj-luxury-gold/20">
-                          <MapPin className="w-4 h-4 text-siyajj-luxury-gold" />
-                        </div>
-                        <div className="flex flex-col">
-                          <span className="text-[10px] text-siyajj-luxury-gold uppercase tracking-widest">Départ</span>
-                          <span className="font-serif">{offer.city}</span>
-                        </div>
-                      </div>
-                    </div>
 
-                    <div className="mb-6">
-                      <div className="text-[10px] uppercase tracking-widest text-siyajj-luxury-gold mb-3 flex items-center gap-2">
-                        <span className="w-4 h-[1px] bg-siyajj-luxury-gold"></span>
-                        Inclus
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        {offer.included.map((inc, i) => (
-                          <span key={i} className="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-[11px] text-siyajj-ivory/70 tracking-wide">
-                            {inc}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+                      <div className="pt-6 border-t border-white/10 flex items-end justify-between mt-auto">
+                        <div>
+                          <div className="text-[10px] text-siyajj-ivory/50 uppercase tracking-widest mb-1">À partir de</div>
+                          <div className="text-xl font-serif text-siyajj-champagne">{offer.priceFrom}</div>
+                        </div>
+                        
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <Button className="h-10 px-5 bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black hover:brightness-110 rounded-lg text-[11px] font-bold uppercase tracking-wider sweep-hover relative overflow-hidden shadow-[0_0_15px_rgba(200,154,70,0.2)]">
+                              <span className="relative z-10 flex items-center gap-2">
+                                Détails <ArrowRight className="w-3 h-3" />
+                              </span>
+                            </Button>
+                          </DialogTrigger>
+                          <DialogContent className="bg-siyajj-warm-black border border-siyajj-luxury-gold/30 text-siyajj-ivory backdrop-blur-2xl max-w-lg p-0 overflow-hidden shadow-2xl">
+                            <DialogTitle className="sr-only">Détails de {offer.title}</DialogTitle>
+                            <DialogDescription className="sr-only">Détails complets de l'offre y compris la période, le prix et les services inclus</DialogDescription>
+                            <div className="h-48 relative w-full">
+                               <MediaFrame slot={offer.slot} className="absolute inset-0 w-full h-full" />
+                               <div className="absolute inset-0 bg-gradient-to-t from-siyajj-warm-black via-siyajj-warm-black/50 to-transparent" />
+                               <div className="absolute bottom-4 left-6">
+                                  <h3 className="text-3xl font-serif text-siyajj-ivory mb-1">{offer.title}</h3>
+                                  <div className="text-siyajj-champagne font-serif text-xl">{offer.priceFrom}</div>
+                               </div>
+                            </div>
+                            <div className="p-6">
+                               <div className="grid grid-cols-2 gap-6 mb-8">
+                                  <div>
+                                    <div className="text-[10px] text-siyajj-luxury-gold uppercase tracking-widest mb-1">Période</div>
+                                    <div className="text-sm font-medium">{offer.month} ({offer.duration})</div>
+                                  </div>
+                                  <div>
+                                    <div className="text-[10px] text-siyajj-luxury-gold uppercase tracking-widest mb-1">Départ</div>
+                                    <div className="text-sm font-medium">{offer.departure}</div>
+                                  </div>
+                                  <div className="col-span-2">
+                                    <div className="text-[10px] text-siyajj-luxury-gold uppercase tracking-widest mb-1">Hébergement</div>
+                                    <div className="text-sm font-medium">{offer.hotelLevel}</div>
+                                  </div>
+                               </div>
+                               
+                               <div className="bg-black/40 rounded-xl p-4 mb-8 border border-white/5">
+                                 <div className="text-[10px] text-siyajj-luxury-gold uppercase tracking-widest mb-3">Inclus dans l'offre</div>
+                                 <div className="grid grid-cols-2 gap-3">
+                                  {[
+                                    { label: "Visa Omra", active: offer.visa },
+                                    { label: "Vols A/R", active: offer.flights },
+                                    { label: "Transferts sur place", active: offer.transfers },
+                                    { label: "Accompagnateur", active: offer.guide },
+                                  ].map((inc, i) => (
+                                    <div key={i} className={`flex items-center gap-2 text-sm ${inc.active ? 'text-siyajj-ivory' : 'text-siyajj-ivory/30'}`}>
+                                      <Check className={`w-4 h-4 ${inc.active ? 'text-siyajj-luxury-gold' : 'opacity-0'}`} />
+                                      {inc.label}
+                                    </div>
+                                  ))}
+                                 </div>
+                               </div>
 
-                  <div className="flex items-end justify-between mt-auto pt-6 border-t border-white/10">
-                    <div>
-                      <div className="text-[10px] uppercase tracking-widest text-siyajj-luxury-gold/70 mb-1">À partir de</div>
-                      <div className="text-3xl font-serif text-siyajj-champagne drop-shadow-sm">{offer.price}</div>
+                               <div className="flex flex-col gap-3">
+                                 <Button asChild className="w-full h-12 bg-gradient-to-r from-siyajj-champagne via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black font-bold uppercase tracking-widest text-xs sweep-hover relative overflow-hidden">
+                                   <Link href={`/contact?subject=${offer.id}`}><span className="relative z-10">Demander ce séjour</span></Link>
+                                 </Button>
+                               </div>
+                            </div>
+                          </DialogContent>
+                        </Dialog>
+                      </div>
                     </div>
-                    <Button asChild className="bg-transparent border border-siyajj-luxury-gold text-siyajj-luxury-gold hover:bg-siyajj-luxury-gold hover:text-siyajj-deep-black uppercase tracking-widest text-xs px-6 h-12 rounded-lg sweep-hover relative overflow-hidden font-bold">
-                      <Link href={`/contact?offer=${offer.id}`}>
-                        <span className="relative z-10">Réserver</span>
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
-                
-              </motion.div>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </div>
+          )}
+        </div>
+      </section>
     </div>
   );
 }

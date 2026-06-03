@@ -1,0 +1,600 @@
+The current website direction must be upgraded.
+
+We are changing the visual identity and expanding the website content so SIYAJJ Renaissance becomes competitive with serious Omra & Hajj agencies, not just a beautiful landing page.
+
+IMPORTANT:
+Do not only recolor the website.
+Do not only polish the hero.
+Do not keep the website short.
+Do not make it look like a basic luxury page.
+
+We need:
+
+1. A new refined emerald / black / antique gold design direction.
+2. Many strong sections like real competitor websites.
+3. Rich activities, formations, guides, offers, and trust content.
+4. A premium UX/UI that stays more advanced than competitors.
+5. A complete agency website that feels serious, scalable, and client-ready.
+
+NEW VISUAL DIRECTION
+
+The old black/gold style is too generic.
+
+Use a new SIYAJJ identity inspired by:
+
+* deep emerald prayer rug texture
+* Islamic heritage book bindings
+* green, black, antique gold, ivory
+* scholarly Islamic elegance
+* luxury spiritual concierge
+* soft premium atmosphere
+
+New color palette:
+
+* Deep Emerald: #0F4C4C
+* Dark Mosque Green: #123C3A
+* Rich Teal Green: #0D5B61
+* Obsidian Black: #050403
+* Soft Black: #0B0907
+* Antique Gold: #C79A3B
+* Warm Gold: #D7AE58
+* Muted Gold: #B9892E
+* Ivory Sand: #E8DCC2
+* Muted Cream: #D8C8AA
+* Soft Beige Text: #BCA98B
+
+Design feeling:
+
+* noble
+* soft
+* premium
+* spiritual
+* serious
+* heritage-inspired
+* modern
+* cinematic
+* trustworthy
+
+The site must feel like:
+A premium Omra concierge brand mixed with a high-end Islamic heritage library and luxury hospitality experience.
+
+Visual rules:
+
+* Use deep emerald-black backgrounds, not flat black.
+* Use antique gold, not flashy yellow.
+* Add subtle velvet texture.
+* Add refined sacred geometry.
+* Add dark emerald glass cards.
+* Use thin gold borders.
+* Use ivory typography.
+* Use soft gold glow only where needed.
+* Keep everything calm and respectful.
+* No cheap effects.
+* No generic stock look.
+* No empty dark blocks.
+
+COMPETITOR CONTENT BENCHMARK
+
+Benchmark competitor websites only for content, offers, services, activities, formations, and trust structure.
+
+Competitors:
+
+* omrapourtous.com
+* omradusavoir.fr
+* omra-factory.com
+
+The goal is not to copy their UI.
+The goal is to make SIYAJJ stronger in:
+
+* activities
+* formations
+* spiritual preparation
+* offers
+* guides
+* trust
+* service clarity
+* conversion
+* mobile experience
+
+WEBSITE MUST INCLUDE MANY SECTIONS
+
+The homepage must become rich and complete.
+
+Build the homepage with these sections in order:
+
+1. Premium Header
+   Include:
+
+* SIYAJJ logo
+* Accueil
+* Nos Omras
+* Collections
+* Sur-Mesure
+* Signature VIP
+* Activités
+* Formations
+* Hajj
+* Guides
+* À propos
+* Contact
+* phone
+* WhatsApp
+* CTA: Demander un devis
+
+2. Hero Section
+   Redesign it with the new emerald-black-antique-gold theme.
+
+Hero must include:
+
+* deep emerald-black cinematic background
+* subtle velvet texture
+* sacred geometry
+* premium sacred destination visual
+* editorial text
+* CTA buttons
+* trip builder
+* trust stats
+
+Hero title:
+“Votre voyage vers
+les Lieux Saints,
+réinventé avec excellence.”
+
+Subtitle:
+“SIYAJJ conçoit votre Omra et votre Hajj avec un accompagnement haut de gamme, des hôtels soigneusement sélectionnés et une expérience pensée dans chaque détail.”
+
+CTA:
+
+* Construire mon voyage
+* Découvrir l’expérience
+
+3. Trip Builder
+   Make it a premium product feature.
+   Fields:
+
+* Ville de départ
+* Date souhaitée
+* Voyageurs
+* Collection
+* Budget
+  CTA:
+* Trouver mon voyage
+
+On submit:
+Show modal:
+“Votre projet SIYAJJ est prêt”
+with selected values and CTA:
+
+* Demander un devis
+* Continuer sur WhatsApp
+
+4. Trust Strip
+   Include:
+
+* +15 000 pèlerins accompagnés
+* +30 départs chaque mois
+* 4.9/5 avis vérifiés
+* Assistance 24/7
+* Partenaire opérationnel Omra Factory
+* Paiement sécurisé
+* Accompagnement francophone
+
+5. Les Collections SIYAJJ
+   Create 5 rich collection cards:
+
+* Collection Essentielle
+* Collection Confort
+* Collection Prestige
+* Collection Signature
+* Collection Renaissance
+
+Each card must include:
+
+* who it is for
+* included services
+* comfort level
+* recommended activities
+* CTA
+
+6. Nos Omras à venir
+   Create real offer cards:
+
+* Omra Novembre depuis Paris
+* Omra Décembre depuis Lyon
+* Omra Ramadan
+* Omra Famille
+* Omra Seniors Sérénité
+* Omra Prestige
+* Omra Départ Marseille
+* Omra Départ Bruxelles
+
+Each offer card must include:
+
+* date/month
+* duration
+* departure city
+* hotel level
+* visa included
+* flights included
+* transfers included
+* guide included
+* price “à partir de”
+* CTA “Demander ce séjour”
+
+7. Formations SIYAJJ
+   This is important for competitiveness.
+
+Create a major section called:
+“Formations & Préparation Spirituelle”
+
+Include training modules:
+
+* Formation Omra avant départ
+* Comprendre les rites étape par étape
+* Préparation Ihram, Tawaf, Sa’i
+* Invocations et bonnes pratiques
+* Séance live avec accompagnateur
+* Guide PDF / carnet de préparation
+* Formation spéciale première Omra
+* Formation familles et seniors
+
+Each module must include:
+
+* purpose
+* format: vidéo, live, PDF, atelier
+* who it is for
+* CTA
+
+This section must make SIYAJJ feel stronger than a normal agency.
+
+8. Expérience SIYAJJ 360°
+   Create timeline:
+
+* Avant le départ
+* Formation & documents
+* Aéroport
+* Médine
+* La Mecque
+* Rites
+* Ziyarat
+* Retour
+* Suivi après Omra
+
+Each step must explain the support.
+
+9. Activités & Expériences
+   Create 9 premium activities:
+
+* Manâsik Masterclass
+* Parcours Sîra à Médine
+* Ziyarat privées
+* Hira Immersion
+* Tawaf & Sa’i Guided Moment
+* Family Care Experience
+* Seniors Sérénité
+* Carnet Renaissance
+* After-Omra Circle
+
+Each activity must include:
+
+* what it is
+* spiritual value
+* what is included
+* who it is for
+* CTA
+
+10. Signature VIP
+    Create a cinematic premium section:
+    Title:
+    “SIYAJJ Signature, l’Omra privée pensée dans chaque détail.”
+
+Include:
+
+* hôtels 5 étoiles
+* transferts privés
+* conseiller dédié
+* dates flexibles
+* guide privé ou semi-privé
+* programme personnalisé
+* assistance prioritaire
+* support famille, couple, seniors
+
+CTA:
+“Créer mon séjour Signature”
+
+11. Pourquoi SIYAJJ
+    Include differentiators:
+
+* Accompagnement humain
+* Formations avant départ
+* Expériences spirituelles structurées
+* Service premium
+* Partenaire Omra Factory
+* Support WhatsApp
+* Sur-mesure
+* Vision digitale future app
+
+12. Processus Clair
+    Create process cards:
+
+13. Écouter votre projet
+
+14. Concevoir votre séjour
+
+15. Préparer vos documents
+
+16. Vous former avant le départ
+
+17. Vous accompagner sur place
+
+18. Vous suivre après retour
+
+19. Hajj Section
+    Add a strong Hajj preview section:
+
+* information
+* preparation
+* limited availability
+* advisor CTA
+* no fake guarantees
+
+14. Guides & Conseils
+    Add editorial resource cards:
+
+* Guide Omra 2026
+* Documents nécessaires
+* Préparer sa valise
+* Omra avec enfants
+* Omra seniors
+* Différence Hajj / Omra
+* Comprendre les rites
+* Quand partir en Omra
+* Prix Omra depuis la France
+
+15. Trust Center
+    Add:
+
+* partenariat Omra Factory
+* FAQ
+* documents
+* payment mention
+* reviews
+* transparency
+* customer support
+* WhatsApp assistance
+* conditions and cancellation clarity
+
+16. Video Experience
+    Create premium video block:
+    “Découvrez l’expérience SIYAJJ”
+    Button opens modal:
+    “Vidéo d’expérience SIYAJJ bientôt disponible”
+
+17. Testimonials
+    Create realistic testimonial cards:
+
+* Organisation fluide
+* Accompagnement rassurant
+* Formation claire avant départ
+* Voyage serein
+* Service très professionnel
+
+18. FAQ
+    Accordion:
+
+* Le visa est-il inclus ?
+* Les vols sont-ils inclus ?
+* Les hôtels sont-ils proches du Haram ?
+* Peut-on partir en famille ?
+* Comment fonctionne la formation avant départ ?
+* Est-ce adapté aux seniors ?
+* Comment fonctionne le sur-mesure ?
+* Peut-on payer en plusieurs fois ?
+* Comment demander un devis ?
+* Quel est le rôle d’Omra Factory ?
+
+19. Final CTA
+    Title:
+    “Votre voyage commence par une conversation.”
+    Buttons:
+
+* Demander un devis
+* Parler à un conseiller WhatsApp
+
+20. Premium Footer
+    Include:
+
+* logo
+* brand description
+* Omra Factory partnership
+* navigation
+* collections
+* activities
+* formations
+* guides
+* contact
+* legal links
+
+PAGES TO ADD / COMPLETE
+
+Add or complete these routes:
+
+/
+/nos-omras
+/collections
+/sur-mesure
+/signature-vip
+/activites
+/formations
+/hajj
+/guides
+/a-propos
+/contact
+
+NEW PAGE: /formations
+Create a complete formations page.
+
+Title:
+“Formations & Préparation Spirituelle”
+
+Sections:
+
+* Pourquoi se former avant la Omra
+* Modules de formation
+* Formation première Omra
+* Formation famille
+* Formation seniors
+* Formation Ramadan
+* Supports inclus: vidéos, live, PDF, carnet, WhatsApp
+* CTA to request information
+
+This page must make SIYAJJ more competitive than agencies that only sell packages.
+
+PAGE: /activites
+Must be rich and not just cards.
+Each activity gets:
+
+* description
+* spiritual purpose
+* included elements
+* who it is for
+* CTA
+
+PAGE: /nos-omras
+Must be a real catalogue:
+
+* filters
+* cards
+* list view
+* CTA
+* offer detail modal or page preview
+
+PAGE: /collections
+Must include:
+
+* five collections
+* comparison table
+* recommended profile
+* included services
+* training included or optional
+* activities included or optional
+
+PAGE: /sur-mesure
+Must include:
+
+* multi-step builder
+* services choices
+* summary
+* contact capture
+* WhatsApp CTA
+
+PAGE: /signature-vip
+Must feel ultra-premium:
+
+* private services
+* family/couple/senior VIP
+* hotel selection
+* private transfers
+* custom itinerary
+* request form
+
+PAGE: /hajj
+Must include:
+
+* Hajj interest form
+* preparation
+* FAQ
+* advisor CTA
+
+PAGE: /guides
+Must include editorial cards and categories:
+
+* Préparation
+* Rites
+* Famille
+* Seniors
+* Ramadan
+* Documents
+
+PAGE: /a-propos
+Must include:
+
+* SIYAJJ mission
+* Renaissance concept
+* values
+* Omra Factory partnership
+* process
+* why premium service matters
+
+PAGE: /contact
+Must include full lead form with confirmation modal.
+
+DESIGN UPDATE FOR ALL PAGES
+
+Apply emerald-black-antique-gold identity everywhere.
+
+Cards:
+
+* dark emerald glass
+* antique gold borders
+* velvet texture
+* soft glow
+* ivory text
+
+Buttons:
+
+* primary: emerald + antique gold
+* secondary: glass + gold outline
+
+Background:
+
+* deep black / emerald gradient
+* subtle geometry
+* soft gold particles
+* no flat empty sections
+
+Visuals:
+For each collection, activity, formation, guide, and offer, create premium visual compositions using:
+
+* emerald texture
+* gold linework
+* Islamic patterns
+* travel objects
+* books/journals
+* document motifs
+* architecture frames
+* soft light
+
+No ugly placeholders.
+
+MOBILE REQUIREMENTS
+
+Mobile must feel like a premium app:
+
+* sticky bottom CTA
+* WhatsApp floating button
+* app-like cards
+* horizontal carousels
+* easy filters
+* large buttons
+* readable text
+* no squeezing desktop
+* no overflow
+
+FINAL ACCEPTANCE
+
+The site is acceptable only if:
+
+1. It uses the new emerald-black-antique-gold theme.
+2. It has many sections like serious competitors.
+3. It includes formations.
+4. It includes rich activities.
+5. It includes real offers.
+6. It includes trust and FAQ.
+7. It includes a strong conversion journey.
+8. It feels premium and visually unique.
+9. It works on mobile like a luxury app.
+10. It is complete enough to show a client.
+11. It is stronger than competitor websites in UX/UI and at least competitive in content.
+
+Implement this now.

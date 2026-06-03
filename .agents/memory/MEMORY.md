@@ -1,2 +1,1 @@
-- [Screenshot timing vs entrance animations](screenshot-animation-timing.md) — app_preview captures before delayed framer-motion reveals; late-delay elements look "missing".
-- [Bottom-overlap elements need overflow-x-clip](overflow-clip-overlap.md) — overflow-hidden clips translate-y overlaps; use overflow-x-clip to keep horizontal clipping but allow vertical overlap.
+- [Framer Motion + wouter gotchas](framer-wouter-gotchas.md) — `ease` in a typed `Variants` object needs a tuple (`as const`), and wouter `<Link href="#id">` won't scroll (it preventDefaults).

@@ -13,6 +13,7 @@ const Collections = lazy(() => import("@/pages/collections"));
 const SurMesure = lazy(() => import("@/pages/sur-mesure"));
 const SignatureVip = lazy(() => import("@/pages/signature-vip"));
 const Activites = lazy(() => import("@/pages/activites"));
+const Formations = lazy(() => import("@/pages/formations"));
 const Hajj = lazy(() => import("@/pages/hajj"));
 const Guides = lazy(() => import("@/pages/guides"));
 const APropos = lazy(() => import("@/pages/a-propos"));
@@ -39,6 +40,7 @@ function Router() {
           <Route path="/sur-mesure" component={SurMesure} />
           <Route path="/signature-vip" component={SignatureVip} />
           <Route path="/activites" component={Activites} />
+          <Route path="/formations" component={Formations} />
           <Route path="/hajj" component={Hajj} />
           <Route path="/guides" component={Guides} />
           <Route path="/a-propos" component={APropos} />

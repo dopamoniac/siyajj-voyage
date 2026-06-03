@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X, MessageCircle, Phone } from "lucide-react";
 import { AnimatePresence, motion, useScroll, useSpring, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { MediaFrame } from "@/components/ui/media-frame";
@@ -11,10 +11,15 @@ const NAV_LINKS = [
   { href: "/sur-mesure", label: "Sur-Mesure" },
   { href: "/signature-vip", label: "Signature VIP" },
   { href: "/activites", label: "Activités" },
+  { href: "/formations", label: "Formations" },
   { href: "/hajj", label: "Le Hajj" },
   { href: "/guides", label: "Guides" },
   { href: "/a-propos", label: "À Propos" },
 ];
+
+const PHONE_DISPLAY = "+33 1 84 80 00 00";
+const PHONE_HREF = "tel:+33184800000";
+const WHATSAPP_HREF = "https://wa.me/33100000000";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -42,15 +47,19 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
-          {NAV_LINKS.slice(0, 4).map((l) => (
-            <Link key={l.href} href={l.href} className="text-siyajj-ivory/80 hover:text-siyajj-luxury-gold transition-colors">{l.label}</Link>
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-7 text-[13px] font-medium tracking-wide">
+          {NAV_LINKS.slice(0, 6).map((l) => (
+            <Link key={l.href} href={l.href} className={`transition-colors ${location === l.href ? "text-siyajj-luxury-gold" : "text-siyajj-ivory/80 hover:text-siyajj-luxury-gold"}`}>{l.label}</Link>
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-4">
-          <Button asChild variant="outline" className="border-siyajj-luxury-gold/30 text-siyajj-luxury-gold hover:bg-siyajj-luxury-gold/10 font-serif sweep-hover relative overflow-hidden">
-            <Link href="/contact">Contactez-nous</Link>
+        <div className="hidden md:flex items-center gap-3 lg:gap-4">
+          <a href={PHONE_HREF} className="hidden xl:flex items-center gap-2 text-sm text-siyajj-ivory/75 hover:text-siyajj-luxury-gold transition-colors">
+            <Phone className="h-4 w-4 text-siyajj-luxury-gold" />
+            {PHONE_DISPLAY}
+          </a>
+          <Button asChild className="bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black hover:brightness-110 font-medium uppercase tracking-widest text-[11px] sweep-hover relative overflow-hidden">
+            <Link href="/contact"><span className="relative z-10">Demander un devis</span></Link>
           </Button>
         </div>
 
@@ -71,7 +80,7 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="md:hidden fixed inset-x-0 top-20 bottom-0 bg-siyajj-deep-black/98 backdrop-blur-xl border-t border-siyajj-luxury-gold/10 overflow-y-auto"
+            className="lg:hidden fixed inset-x-0 top-28 bottom-0 bg-siyajj-deep-black/98 backdrop-blur-xl border-t border-siyajj-luxury-gold/10 overflow-y-auto"
           >
             <div className="container mx-auto px-6 py-10 flex flex-col gap-1">
               {NAV_LINKS.map((l, i) => (
@@ -93,11 +102,19 @@ export function Header() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.06 * NAV_LINKS.length + 0.1 }}
-                className="mt-8"
+                className="mt-8 space-y-3"
               >
-                <Button asChild className="w-full h-14 bg-siyajj-luxury-gold text-siyajj-deep-black hover:bg-siyajj-champagne uppercase tracking-widest text-xs font-medium sweep-hover relative overflow-hidden">
-                  <Link href="/contact">Contactez-nous</Link>
+                <Button asChild className="w-full h-14 bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black hover:brightness-110 uppercase tracking-widest text-xs font-semibold sweep-hover relative overflow-hidden">
+                  <Link href="/contact"><span className="relative z-10">Demander un devis</span></Link>
                 </Button>
+                <div className="grid grid-cols-2 gap-3">
+                  <a href={PHONE_HREF} className="flex items-center justify-center gap-2 h-12 rounded-lg border border-siyajj-luxury-gold/30 text-siyajj-ivory/85 text-sm hover:bg-siyajj-luxury-gold/10 transition-colors">
+                    <Phone className="h-4 w-4 text-siyajj-luxury-gold" /> Appeler
+                  </a>
+                  <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 h-12 rounded-lg border border-siyajj-luxury-gold/30 text-siyajj-ivory/85 text-sm hover:bg-siyajj-luxury-gold/10 transition-colors">
+                    <MessageCircle className="h-4 w-4 text-siyajj-luxury-gold" /> WhatsApp
+                  </a>
+                </div>
               </motion.div>
             </div>
           </motion.nav>
@@ -140,6 +157,7 @@ export function Footer() {
             <h4 className="font-serif text-lg mb-6 text-siyajj-ivory">Découvrir</h4>
             <ul className="space-y-3 text-sm text-siyajj-muted-text">
               <li><Link href="/activites" className="hover:text-siyajj-luxury-gold transition-colors">Activités & Expériences</Link></li>
+              <li><Link href="/formations" className="hover:text-siyajj-luxury-gold transition-colors">Formations</Link></li>
               <li><Link href="/hajj" className="hover:text-siyajj-luxury-gold transition-colors">Le Hajj</Link></li>
               <li><Link href="/guides" className="hover:text-siyajj-luxury-gold transition-colors">Guides & Conseils</Link></li>
               <li><Link href="/a-propos" className="hover:text-siyajj-luxury-gold transition-colors">À Propos</Link></li>
@@ -214,8 +232,10 @@ export function PageShell({ children }: { children: ReactNode }) {
     <div className="min-h-[100dvh] flex flex-col bg-siyajj-deep-black text-siyajj-ivory font-sans selection:bg-siyajj-luxury-gold/30 relative">
       {/* Global Atmosphere Layer */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <MediaFrame slot="atmosphere" className="absolute inset-0 w-full h-full opacity-10 mix-blend-screen" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-siyajj-luxury-gold/5 via-transparent to-transparent opacity-80" />
+        <MediaFrame slot="atmosphere" className="absolute inset-0 w-full h-full opacity-[0.07] mix-blend-screen" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-siyajj-emerald/20 via-transparent to-transparent opacity-80" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-siyajj-teal/15 via-transparent to-transparent opacity-70" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-siyajj-luxury-gold/5 via-transparent to-transparent opacity-60" />
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxIiBmaWxsPSJyZ2JhKDIwMCwgMTU0LCA3MCwgMC4wNSkiLz48L3N2Zz4=')] bg-[length:48px_48px] opacity-30" />
       </div>
 
@@ -229,7 +249,7 @@ export function PageShell({ children }: { children: ReactNode }) {
       
       <Header />
       
-      <main className="flex-grow pt-20 relative z-10">
+      <main className="flex-grow pt-28 relative z-10">
         <AnimatePresence mode="wait">
           <motion.div
             key={location}
