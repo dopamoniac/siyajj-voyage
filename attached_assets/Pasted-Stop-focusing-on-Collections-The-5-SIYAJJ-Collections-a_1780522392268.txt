@@ -1,0 +1,361 @@
+Stop focusing on Collections. The 5 SIYAJJ Collections already exist.
+
+Now the priority is competitor-level content architecture:
+- dropdown navigation
+- subpages
+- detailed activities
+- detailed formations
+- offer detail pages
+- practical info pages
+- guide/resource pages
+- real agency depth
+
+Benchmark the competitors for CONTENT ONLY:
+- omrapourtous.com
+- omradusavoir.fr
+- omra-factory.com
+
+Do not copy their UI.
+Do not copy their layout.
+Do not copy text word-for-word.
+Use them only to understand what pages and details an Omra/Hajj agency needs.
+
+MAIN GOAL:
+Make SIYAJJ competitive with competitors in content depth, while keeping SIYAJJ UX/UI much more premium.
+
+NAVBAR / MENU DROPDOWN REQUIREMENT
+
+Add dropdown menus in the desktop navigation.
+
+When hovering or clicking a nav item with a small arrow, open an elegant dropdown automatically.
+
+Dropdown style:
+- dark emerald glass
+- antique gold border
+- ivory text
+- subtle blur
+- soft shadow
+- premium spacing
+- small descriptions under each link
+- smooth animation
+- closes on mouse leave or outside click
+- mobile version becomes accordion menu items
+
+Desktop menu structure:
+
+Nos Omras ▼
+- Toutes les Omras -> /nos-omras
+- Omra Ramadan -> /nos-omras/ramadan
+- Omra Famille -> /nos-omras/famille
+- Omra Seniors -> /nos-omras/seniors
+- Omra Prestige -> /nos-omras/prestige
+- Départ Paris -> /nos-omras/depart-paris
+- Départ Lyon -> /nos-omras/depart-lyon
+- Départ Marseille -> /nos-omras/depart-marseille
+- Départ Bruxelles -> /nos-omras/depart-bruxelles
+
+Collections ▼
+Keep existing:
+- Essentielle -> /collections/essentielle
+- Confort -> /collections/confort
+- Prestige -> /collections/prestige
+- Signature -> /collections/signature
+- Renaissance -> /collections/renaissance
+
+Activités ▼
+- Toutes les activités -> /activites
+- Manâsik Masterclass -> /activites/manasik-masterclass
+- Parcours Sîra à Médine -> /activites/parcours-sira-medine
+- Ziyarat privées -> /activites/ziyarat-privees
+- Hira Immersion -> /activites/hira-immersion
+- Tawaf & Sa’i Guided Moment -> /activites/tawaf-sai-guide
+- Family Care Experience -> /activites/family-care
+- Seniors Sérénité -> /activites/seniors-serenite
+- Carnet Renaissance -> /activites/carnet-renaissance
+- After-Omra Circle -> /activites/after-omra-circle
+
+Formations ▼
+- Toutes les formations -> /formations
+- Formation Omra avant départ -> /formations/omra-avant-depart
+- Comprendre les rites -> /formations/rites-omra
+- Formation première Omra -> /formations/premiere-omra
+- Formation familles -> /formations/familles
+- Formation seniors -> /formations/seniors
+- Formation Ramadan -> /formations/ramadan
+- Guide PDF & Carnet -> /formations/guide-pdf-carnet
+
+Guides ▼
+- Tous les guides -> /guides
+- Documents nécessaires -> /guides/documents-omra
+- Préparer sa valise -> /guides/preparer-valise
+- Guide Omra 2026 -> /guides/omra-2026
+- Omra avec enfants -> /guides/omra-enfants
+- Omra seniors -> /guides/omra-seniors
+- Différence Hajj / Omra -> /guides/difference-hajj-omra
+- Comprendre les rites -> /guides/rites-omra
+- Prix Omra depuis la France -> /guides/prix-omra-france
+
+Hajj ▼
+- Hajj avec SIYAJJ -> /hajj
+- Préparation Hajj -> /hajj/preparation
+- Demander des informations -> /hajj/demande-informations
+
+À propos ▼
+- Qui sommes-nous -> /a-propos
+- Notre méthode -> /a-propos/methode
+- Partenariat Omra Factory -> /a-propos/omra-factory
+- Avis & témoignages -> /avis
+- FAQ -> /faq
+
+MOBILE MENU:
+On mobile, dropdowns become accordions.
+Each main item opens/collapses.
+Clicking a link closes the menu and navigates to the page top.
+No broken links.
+No href="#".
+
+SUBPAGE REQUIREMENT
+
+Create real subpages for activities and formations.
+
+Do not make them empty placeholder pages.
+Each subpage must feel like a detailed premium page.
+
+ACTIVITY DETAIL PAGE TEMPLATE
+
+For each activity page, create:
+
+1. Hero
+- activity title
+- short emotional intro
+- visual card
+- CTA “Ajouter à mon projet”
+- CTA “Parler à un conseiller”
+
+2. Overview
+Explain what the activity is.
+
+3. Spiritual / educational value
+Explain why it matters in the journey.
+
+4. What is included
+Use bullet cards:
+- preparation
+- guidance
+- support
+- practical details
+
+5. Who it is for
+Examples:
+- première Omra
+- familles
+- seniors
+- voyageurs VIP
+- groupes privés
+
+6. How it integrates into the trip
+Explain before / during / after.
+
+7. Related activities
+Link to 3 related activities.
+
+8. FAQ
+3 to 5 questions.
+
+9. Final CTA
+“Construisons votre expérience SIYAJJ.”
+
+ACTIVITIES CONTENT TO BUILD
+
+Create detail pages for these 9 activities:
+
+1. Manâsik Masterclass
+Purpose:
+Preparation before departure to understand Ihram, Tawaf, Sa’i, intention, common mistakes, and practical rhythm.
+
+2. Parcours Sîra à Médine
+Purpose:
+Historical and educational route around Médine with respectful explanations.
+Mention inspired types of places:
+Quba, Uhud, Baqi, Qiblatain, sites linked to the Sîra when available.
+
+3. Ziyarat privées
+Purpose:
+Private visits with flexible rhythm, guide, transport, and family/senior comfort.
+
+4. Hira Immersion
+Purpose:
+Educational experience around the story of revelation and spiritual reflection, respecting access/availability.
+
+5. Tawaf & Sa’i Guided Moment
+Purpose:
+Rite support, reminders, group coordination, help for first-time pilgrims, families, and seniors.
+
+6. Family Care Experience
+Purpose:
+Family-friendly Omra rhythm, children support, easier planning, rest time, clear communication.
+
+7. Seniors Sérénité
+Purpose:
+Soft rhythm, hotel proximity, wheelchair/support options if available, contact with family, patient guidance.
+
+8. Carnet Renaissance
+Purpose:
+A spiritual travel journal with intentions, checklist, notes, invocations, reflections after return.
+
+9. After-Omra Circle
+Purpose:
+Post-return follow-up, advice, habit-building, community, next steps.
+
+FORMATIONS DETAIL PAGE TEMPLATE
+
+For each formation page, create:
+
+1. Hero
+2. What you will learn
+3. Format
+- video
+- live session
+- PDF
+- WhatsApp reminders
+- checklist
+4. Who it is for
+5. Modules
+6. Included resources
+7. FAQ
+8. CTA
+
+FORMATIONS TO BUILD
+
+Create detail pages for:
+- Formation Omra avant départ
+- Comprendre les rites étape par étape
+- Formation première Omra
+- Formation familles
+- Formation seniors
+- Formation Ramadan
+- Guide PDF & Carnet de préparation
+
+GUIDES / INFO PRACTIQUES
+
+Add pages inspired by competitor info depth:
+- documents required
+- passport / visa
+- vaccination / health info with careful wording
+- packing list
+- airport preparation
+- hotel distance explanation
+- how to choose Omra package
+- FAQ
+
+Important:
+Do not give medical/legal certainty.
+Use cautious wording:
+“Les exigences peuvent évoluer. Un conseiller SIYAJJ vous confirme les documents nécessaires avant votre départ.”
+
+NOS OMRAS SUBPAGES
+
+Create pages:
+- /nos-omras/ramadan
+- /nos-omras/famille
+- /nos-omras/seniors
+- /nos-omras/prestige
+- /nos-omras/depart-paris
+- /nos-omras/depart-lyon
+- /nos-omras/depart-marseille
+- /nos-omras/depart-bruxelles
+
+Each page must include:
+- intro
+- who it is for
+- offer cards
+- what is included
+- recommended activities
+- FAQ
+- CTA
+
+OFFER DETAIL MODAL OR PAGE
+
+For each offer card, add a “Voir le programme” action.
+Open a modal or route that shows:
+- duration
+- departure city
+- hotel level
+- nights in Médine / Makkah
+- included services
+- possible visits
+- guide/accompaniment
+- payment info placeholder
+- CTA
+
+Inspired by competitor depth:
+- dates
+- duration
+- city
+- hotel distance
+- visits
+- stages/formations
+- activities religious/cultural
+- payment options
+- guide info
+
+Do not copy text.
+
+CONTENT QUALITY
+
+Write premium French copy.
+Keep tone:
+- clear
+- spiritual
+- respectful
+- educational
+- premium
+- reassuring
+
+Do not overpromise.
+Do not invent guarantees.
+Use phrases like:
+- “selon disponibilité”
+- “selon la formule choisie”
+- “un conseiller confirme les détails avant validation”
+- “dans le respect du voyage et du rythme du groupe”
+
+DESIGN FOR DROPDOWNS AND SUBPAGES
+
+Keep new theme:
+- emerald black
+- antique gold
+- ivory
+- velvet texture
+- Islamic heritage inspiration
+- dark green glass cards
+- thin gold borders
+
+Dropdown menu:
+Must feel luxury, not browser default.
+
+Subpages:
+Each subpage must have:
+- premium hero
+- section rhythm
+- visual cards
+- CTAs
+- FAQ
+- related links
+
+FINAL ACCEPTANCE
+
+The update is accepted only if:
+1. Navbar has working dropdowns with arrows on desktop.
+2. Mobile menu has accordions.
+3. Activities have detailed subpages.
+4. Formations have detailed subpages.
+5. Guides/info practical pages are richer.
+6. Nos Omras has specialized subpages.
+7. Offer cards have detail modal or detail route.
+8. All links work and scroll to top.
+9. No placeholder pages.
+10. Content depth is competitive with Omra Pour Tous, Omra du Savoir, and Omra Factory.
+11. UX/UI stays premium SIYAJJ, not copied from competitors.
+
+Implement this now.
