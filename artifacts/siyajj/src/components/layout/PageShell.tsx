@@ -49,11 +49,9 @@ export function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-          <Link href="/contact">
-            <Button variant="outline" className="border-siyajj-luxury-gold/30 text-siyajj-luxury-gold hover:bg-siyajj-luxury-gold/10 font-serif sweep-hover relative overflow-hidden">
-              Contactez-nous
-            </Button>
-          </Link>
+          <Button asChild variant="outline" className="border-siyajj-luxury-gold/30 text-siyajj-luxury-gold hover:bg-siyajj-luxury-gold/10 font-serif sweep-hover relative overflow-hidden">
+            <Link href="/contact">Contactez-nous</Link>
+          </Button>
         </div>
 
         <button
@@ -97,11 +95,9 @@ export function Header() {
                 transition={{ delay: 0.06 * NAV_LINKS.length + 0.1 }}
                 className="mt-8"
               >
-                <Link href="/contact">
-                  <Button className="w-full h-14 bg-siyajj-luxury-gold text-siyajj-deep-black hover:bg-siyajj-champagne uppercase tracking-widest text-xs font-medium sweep-hover relative overflow-hidden">
-                    Contactez-nous
-                  </Button>
-                </Link>
+                <Button asChild className="w-full h-14 bg-siyajj-luxury-gold text-siyajj-deep-black hover:bg-siyajj-champagne uppercase tracking-widest text-xs font-medium sweep-hover relative overflow-hidden">
+                  <Link href="/contact">Contactez-nous</Link>
+                </Button>
               </motion.div>
             </div>
           </motion.nav>
@@ -174,9 +170,31 @@ export function Footer() {
 
 function FloatingWhatsApp() {
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="hidden md:block fixed bottom-6 right-6 z-50">
       <a href="https://wa.me/33100000000" target="_blank" rel="noopener noreferrer" aria-label="Contacter un conseiller sur WhatsApp" className="w-14 h-14 bg-siyajj-luxury-gold rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(200,154,70,0.3)] hover:scale-110 transition-transform group">
         <MessageCircle className="w-6 h-6 text-siyajj-deep-black group-hover:animate-pulse" />
+      </a>
+    </div>
+  );
+}
+
+function MobileActionBar() {
+  return (
+    <div
+      className="md:hidden fixed bottom-0 inset-x-0 z-50 flex items-center gap-3 px-4 pt-3 bg-siyajj-deep-black/95 backdrop-blur-md border-t border-siyajj-luxury-gold/20"
+      style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
+    >
+      <Button asChild className="flex-1 h-12 bg-siyajj-luxury-gold text-siyajj-deep-black hover:bg-siyajj-champagne uppercase tracking-widest text-xs font-bold rounded-lg sweep-hover relative overflow-hidden">
+        <Link href="/contact"><span className="relative z-10">Demander un devis</span></Link>
+      </Button>
+      <a
+        href="https://wa.me/33100000000"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contacter un conseiller sur WhatsApp"
+        className="h-12 w-12 shrink-0 flex items-center justify-center rounded-lg border border-siyajj-luxury-gold/40 text-siyajj-luxury-gold hover:bg-siyajj-luxury-gold/10 transition-colors"
+      >
+        <MessageCircle className="w-5 h-5" />
       </a>
     </div>
   );
@@ -225,8 +243,11 @@ export function PageShell({ children }: { children: ReactNode }) {
         </AnimatePresence>
       </main>
       
-      <Footer />
+      <div className="pb-20 md:pb-0">
+        <Footer />
+      </div>
       <FloatingWhatsApp />
+      <MobileActionBar />
     </div>
   );
 }

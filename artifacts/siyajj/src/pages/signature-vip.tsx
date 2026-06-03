@@ -47,11 +47,11 @@ export default function SignatureVip() {
             </ul>
           </div>
 
-          <Link href="/contact?subject=vip">
-            <Button className="h-14 px-10 bg-siyajj-luxury-gold text-siyajj-deep-black hover:bg-siyajj-champagne uppercase tracking-widest text-xs font-bold rounded-lg sweep-hover relative overflow-hidden">
+          <Button asChild className="h-14 px-10 bg-siyajj-luxury-gold text-siyajj-deep-black hover:bg-siyajj-champagne uppercase tracking-widest text-xs font-bold rounded-lg sweep-hover relative overflow-hidden">
+            <Link href="/contact?subject=vip">
               <span className="relative z-10">Contacter le service VIP</span>
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
       </div>
     </div>

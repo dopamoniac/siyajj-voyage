@@ -133,8 +133,8 @@ export function Hero() {
                   <div className="relative z-10 w-20 h-20 rounded-full bg-siyajj-deep-black/60 backdrop-blur-md flex items-center justify-center mb-6 border border-siyajj-luxury-gold/50 shadow-[0_0_30px_rgba(200,154,70,0.3)]">
                     <Play className="w-8 h-8 text-siyajj-luxury-gold fill-current ml-1" />
                   </div>
-                  <h3 className="font-serif text-3xl mb-3 text-siyajj-ivory relative z-10">L'Excellence SIYAJJ</h3>
-                  <p className="text-siyajj-ivory/80 relative z-10 text-lg font-light tracking-wide">Plongez au cœur de l'expérience spirituelle premium.</p>
+                  <h3 className="font-serif text-3xl mb-3 text-siyajj-ivory relative z-10">L'expérience SIYAJJ en images</h3>
+                  <p className="text-siyajj-ivory/80 relative z-10 text-lg font-light tracking-wide">Vidéo d'expérience SIYAJJ bientôt disponible.</p>
                 </div>
               </DialogContent>
             </Dialog>
