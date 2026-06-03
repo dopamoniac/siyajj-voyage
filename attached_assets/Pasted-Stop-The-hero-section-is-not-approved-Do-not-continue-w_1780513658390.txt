@@ -1,0 +1,217 @@
+Stop.
+
+The hero section is not approved.
+
+Do not continue with the rest of the website until the hero is redesigned and reaches a world-class level.
+
+The current hero is too generic and not emotionally strong enough.
+It does not feel premium enough, not cinematic enough, and not visually immersive enough.
+
+MAIN PROBLEMS TO FIX:
+- The right-side portal visual feels decorative instead of spectacular.
+- The hero lacks a true sacred-destination visual impact.
+- The composition does not create enough awe.
+- The experience card is too heavy and competes with the main visual.
+- The trip builder feels added on, not fully integrated.
+- The whole hero does not yet feel like a million-dollar luxury digital experience.
+
+REDESIGN THE HERO COMPLETELY.
+
+GOAL:
+Create a hero that feels like:
+- a luxury product launch
+- a premium spiritual travel concierge platform
+- a cinematic sacred journey
+- black and gold elegance
+- high-end hospitality
+- modern digital sophistication
+- emotionally powerful but fully respectful
+
+HERO ART DIRECTION:
+The hero must instantly create awe.
+
+Use a full-screen cinematic layout.
+
+Desktop composition:
+- luxury header at top
+- left side: editorial text block
+- right side: dominant immersive sacred visual
+- bottom overlap: premium trip builder
+- below that: stats strip
+- then collection preview cards
+
+THE MOST IMPORTANT CHANGE:
+Replace the current abstract glowing portal with a much stronger immersive visual.
+
+The right side must become a “Sacred Destination Visual”.
+
+It must include:
+- a majestic Islamic arch / portal frame in gold
+- inside the frame, a premium cinematic Makkah / Kaaba / Masjid al-Haram atmosphere OR a very high-end sacred-architecture visual placeholder if final media is not available
+- deep black-to-gold atmospheric lighting
+- real sense of depth
+- elegant layering
+- subtle sacred geometry around the frame
+- visual richness
+- 3D feel
+- soft fog / glow / particles
+- no cheap effects
+- no fake exaggerated religious fantasy
+- fully respectful tone
+
+If an actual hero image or video is available, use it.
+If not, build a much stronger premium visual placeholder that feels intentional and luxurious.
+
+The current portal is too empty.
+I want the right-side visual to feel like the centerpiece of the brand.
+
+LEFT SIDE CONTENT:
+Keep the copy elegant, but improve hierarchy and spacing.
+
+Badge:
+“✦ OMRA & HAJJ PREMIUM DEPUIS LA FRANCE”
+
+Main title:
+“Votre voyage vers
+les Lieux Saints,
+réinventé avec excellence.”
+
+Rules:
+- keep these line breaks on desktop
+- make “réinventé avec excellence.” a refined gold gradient
+- the text must feel editorial, luxurious, and balanced
+- increase visual breathing room
+- improve line-height and max-width
+- the heading should feel monumental but elegant
+
+Subtitle:
+“SIYAJJ conçoit votre Omra et votre Hajj avec un accompagnement haut de gamme, des hôtels soigneusement sélectionnés et une expérience pensée dans chaque détail.”
+
+CTA AREA:
+Keep two buttons:
+1. “Construire mon voyage”
+2. “Découvrir l’expérience”
+
+Improve both:
+- more premium button styles
+- better spacing
+- subtle hover motion
+- better visual balance
+- primary button must feel expensive
+- secondary button must feel elegant, not flat
+
+EXPERIENCE CARD:
+Redesign the floating card on the right.
+
+Problems now:
+- too big
+- too visually heavy
+- too static
+
+New direction:
+- make it smaller and more elegant
+- keep it floating over the visual
+- reduce visual weight
+- keep a glassmorphism premium style
+- use thinner gold border
+- cleaner spacing
+- more refined typography
+- it should support the visual, not compete with it
+
+Card title:
+“L’expérience SIYAJJ”
+
+Items:
+- Accompagnement francophone 24/7
+- Hôtels sélectionnés avec exigence
+- Services premium et attentionnés
+- Partenaire opérationnel Omra Factory
+
+Optional bottom detail:
+“4.9/5 avis vérifiés”
+
+TRIP BUILDER:
+The trip builder must feel like a premium product feature, not just a bar.
+
+Rebuild it:
+- strong glass panel
+- better proportions
+- more luxurious spacing
+- cleaner labels
+- clearer dropdown interaction
+- stronger CTA button
+- more integrated with the hero
+- visually aligned with the new hero composition
+
+Fields:
+- Ville de départ
+- Date souhaitée
+- Voyageurs
+- Collection
+- CTA: Trouver mon voyage
+
+The CTA must feel like the conversion engine of the website.
+
+STATS STRIP:
+Keep it, but refine it.
+Make it more elegant and less blocky.
+Use more spacing, thinner dividers, better vertical rhythm.
+
+Items:
+- +15 000 pèlerins accompagnés
+- +30 départs chaque mois
+- 4.9/5 avis vérifiés
+- 24/7 conciergerie
+- Omra Factory partenaire officiel
+
+BACKGROUND QUALITY:
+The hero background must have more richness:
+- black marble depth
+- subtle sacred geometry
+- cinematic noise texture
+- soft gold particles
+- dark premium gradients
+- not flat black
+
+MOBILE HERO:
+Completely redesign mobile as a premium app-like screen.
+
+Mobile structure:
+- logo + phone + menu
+- badge
+- title
+- subtitle
+- stacked CTAs
+- sacred visual card
+- mini experience card or integrated content
+- trip builder card
+- stats carousel or mini strip
+- no desktop squeezing
+- no overflow
+- no crowding
+
+On mobile, the visual must still feel premium and sacred.
+
+MOTION:
+Add subtle motion:
+- hero staged entrance
+- particles
+- slow portal glow
+- light sweep on CTA
+- slight parallax on the visual
+- refined hover states
+- no chaotic motion
+
+QUALITY BAR:
+The hero is approved only if:
+1. It feels cinematic.
+2. It feels luxurious.
+3. It feels sacred and respectful.
+4. It looks custom, not template-based.
+5. The right-side visual becomes truly memorable.
+6. The left text and right visual feel perfectly balanced.
+7. The trip builder feels like a premium feature.
+8. Desktop and mobile both feel world-class.
+
+Work on the hero first.
+Do not move on to other sections until the hero is genuinely elite.

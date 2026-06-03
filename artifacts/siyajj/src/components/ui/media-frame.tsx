@@ -12,7 +12,7 @@ interface MediaFrameProps {
   priority?: boolean;
 }
 
-export function MediaFrame({ slot, alt, className = "", style, children, priority = false }: MediaFrameProps) {
+export function MediaFrame({ slot, alt = "", className = "", style, children, priority = false }: MediaFrameProps) {
   const src = mediaConfig[slot];
   
   if (src) {
@@ -20,7 +20,7 @@ export function MediaFrame({ slot, alt, className = "", style, children, priorit
       <div className={`relative overflow-hidden ${className}`} style={style}>
         <img
           src={src}
-          alt={alt || slot}
+          alt={alt}
           className="w-full h-full object-cover"
           loading={priority ? "eager" : "lazy"}
           decoding="async"

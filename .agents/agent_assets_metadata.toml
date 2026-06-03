@@ -84,3 +84,21 @@ id = "jPvTiBT9GD6tF5YGCXJj-"
 uri = "file://artifacts/siyajj/public/assets/siyajj-visuals/sur-mesure.png"
 type = "image"
 title = "sur mesure builder"
+
+[[generated]]
+id = "zHz7lHZp786BaIIX3zvsQ"
+uri = "file://artifacts/siyajj/public/assets/siyajj-visuals/hero-sacred-destination.png"
+type = "image"
+title = "sacred destination arch makkah"
+
+[[generated]]
+id = "7BsxDVSiKogtNglKutio6"
+uri = "file://artifacts/siyajj/public/assets/siyajj-visuals/hero-sacred-madinah.png"
+type = "image"
+title = "sacred destination arch madinah"
+
+[[generated]]
+id = "pdObjyj9KWv1U8hJLmUtk"
+uri = "file://artifacts/siyajj/public/assets/siyajj-visuals/hero-haram-atmosphere.png"
+type = "image"
+title = "haram atmosphere golden hour"
