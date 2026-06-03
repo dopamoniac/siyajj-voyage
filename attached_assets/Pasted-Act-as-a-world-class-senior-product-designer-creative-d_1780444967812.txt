@@ -1,0 +1,787 @@
+Act as a world-class senior product designer, creative director, luxury brand strategist, frontend architect, motion designer, and conversion expert.
+
+You are building the first production-ready website for “SIYAJJ Renaissance”, a premium French Omra & Hajj concierge agency.
+
+The client will upload ONLY the SIYAJJ logo.
+Your mission is to build a complete elite website around that logo, using it as the full brand DNA.
+
+This must NOT look like a normal travel agency website.
+This must NOT look like a template.
+This must NOT look like a basic Tailwind landing page.
+This must feel like a luxury spiritual travel platform worth millions, with cinematic direction, premium interaction design, 3D depth, high-quality motion, rich content architecture, and a scalable foundation for a future client app.
+
+The website must feel like:
+
+* luxury hospitality brand
+* spiritual concierge platform
+* premium travel product
+* cinematic digital experience
+* scalable SaaS foundation
+* religiously respectful Omra & Hajj agency
+
+The user experience must be another level: immersive, elegant, emotional, clear, trust-building, conversion-focused, and mobile-perfect.
+
+Important religious respect:
+This is an Omra & Hajj brand. Respect the sacred nature of the subject. No cheap visual tricks. No disrespectful manipulation of sacred places. No excessive fantasy. No inappropriate music/video assumptions. Keep the feeling noble, calm, premium, spiritual, and trustworthy.
+
+BRAND
+
+Brand name:
+SIYAJJ Renaissance
+
+Positioning:
+A premium Omra & Hajj concierge agency from France, offering curated journeys, personalized Omra packages, VIP experiences, spiritual preparation, family support, senior-friendly journeys, and a future digital client experience.
+
+Main promise:
+“Votre voyage vers les Lieux Saints, réinventé avec excellence.”
+
+Brand feeling:
+Black marble, gold light, Renaissance elegance, sacred geometry, premium hospitality, calm confidence, precise service, spiritual depth.
+
+The logo is the visual seed. Extract from it:
+
+* black and gold luxury
+* serif elegance
+* ceremonial composition
+* premium spacing
+* refined glow
+* strong presence
+* Renaissance identity
+
+Do not redesign the logo. Use it as the north star.
+
+COMPETITOR BENCHMARK
+
+Benchmark these websites only for content strategy, business logic, offer structure, trust elements, activities, and service depth:
+
+* https://www.omrapourtous.com/
+* https://www.omradusavoir.fr/
+* https://www.omra-factory.com/
+
+Do NOT copy their design.
+Do NOT copy their layout.
+Do NOT imitate their UI.
+Use them only to understand what Omra/Hajj clients need to see:
+
+* dates
+* departure cities
+* prices
+* duration
+* hotels
+* distance to Haram
+* visa
+* flights
+* transfers
+* guides
+* religious accompaniment
+* visits
+* preparation
+* FAQ
+* reviews
+* contact
+* documents
+* trust
+* payment
+* sur-mesure
+* Hajj information
+
+SIYAJJ must go far beyond them in UX/UI, emotion, storytelling, luxury, mobile experience, 3D depth, and digital polish.
+
+TECH STACK
+
+Build with:
+
+* React
+* Vite
+* TypeScript
+* Tailwind CSS
+* Framer Motion
+* React Router
+* Lucide React icons
+* Optional: React Three Fiber or pure Three.js only for lightweight premium effects
+* Optional: GSAP only if needed for refined animation, not heavy chaos
+
+Project must run with:
+npm install
+npm run dev
+
+Create clean, scalable architecture:
+src/
+assets/
+components/
+components/ui/
+components/layout/
+components/sections/
+components/3d/
+data/
+pages/
+hooks/
+styles/
+utils/
+
+Use reusable components:
+
+* Header
+* MobileMenu
+* Hero
+* HeroVisual
+* LuxuryButton
+* MagneticButton
+* SectionHeader
+* TripBuilder
+* StatsStrip
+* CollectionCard
+* ExperienceCard
+* OfferCard
+* TestimonialCard
+* FAQAccordion
+* VideoExperienceModal
+* Footer
+* FloatingWhatsApp
+* PageShell
+* AnimatedBackground
+* GoldParticleField
+* LuxuryCursor optional
+* ScrollProgress
+* LeadForm
+
+DESIGN SYSTEM
+
+Colors:
+Deep black: #040302
+Black ink: #080604
+Warm black: #0E0A07
+Charcoal: #17110C
+Luxury gold: #C89A46
+Champagne: #E8BE73
+Soft gold: #F3D99A
+Antique bronze: #8D6730
+Ivory: #F7EFE2
+Muted ivory: #CABCA4
+Muted text: #9D907C
+Glass: rgba(10, 7, 4, 0.62)
+Gold border: rgba(200, 154, 70, 0.32)
+Gold glow: rgba(232, 190, 115, 0.22)
+
+Typography:
+Use Google Fonts:
+
+* Cormorant Garamond for large titles
+* Inter for UI/body
+* Optional: Cinzel for tiny premium labels only
+
+Rules:
+
+* Hero titles must be editorial, not corporate.
+* Gold words must feel intentional.
+* Body copy must be refined and readable.
+* Do not overuse uppercase.
+* Use generous spacing.
+* Use strong hierarchy.
+
+UI style:
+
+* black/gold cinematic base
+* 3D layered cards
+* glass panels
+* thin gold strokes
+* soft glows
+* dark radial gradients
+* subtle sacred geometry patterns
+* large negative space
+* premium shadows
+* elegant border-radius
+* no cheap neon
+* no over-saturated gold
+* no basic flat cards
+* no ugly placeholders
+
+MOTION SYSTEM
+
+Motion must feel expensive.
+
+Use:
+
+* slow reveal
+* parallax depth
+* gold light sweep
+* magnetic CTA
+* subtle 3D card tilt
+* floating particles
+* soft glow pulse
+* scroll-based section reveals
+* mobile menu cinematic reveal
+* smooth FAQ accordion
+* hero staged entrance
+* animated search builder focus states
+
+Rules:
+
+* No bouncy cartoon animation.
+* No aggressive spinning.
+* No flashy disrespectful effects.
+* Support prefers-reduced-motion.
+* Keep performance strong.
+
+MEDIA STRATEGY
+
+The only guaranteed uploaded asset is:
+public/assets/logo-siyajj.png
+
+Do not break if other assets are missing.
+
+Create a media config file:
+src/data/media.ts
+
+Use placeholders that are premium, not empty:
+
+* cinematic gradient panels
+* CSS/SVG golden arch frames
+* 3D abstract luxury environments
+* dark patterned background
+* blurred light shapes
+* video-ready cards
+* image slots clearly ready for replacement
+
+Create named media slots:
+
+* heroVideo
+* heroImage
+* makkahImage
+* madinahImage
+* hotelImage
+* vipImage
+* activitiesImage
+* guideVideo
+* testimonialVideo
+
+If assets are unavailable, show premium fallback compositions.
+
+The site must already look elite with only the logo uploaded.
+
+CORE UX PRINCIPLE
+
+This is not a website that “shows offers”.
+This is a guided luxury journey.
+
+The user journey must be:
+
+1. Feel prestige and trust instantly.
+2. Understand SIYAJJ is premium and serious.
+3. Choose a travel intent quickly.
+4. Explore collections, activities, and offers.
+5. Build a personalized Omra project.
+6. Contact via WhatsApp or form.
+7. Feel safe because process, documents, partner, FAQ, reviews, and support are clear.
+
+HOME PAGE
+
+The home page must be a cinematic command center.
+
+Hero must be world-class.
+
+Hero structure desktop:
+
+* Full-screen height.
+* Fixed luxury header.
+* Left editorial content.
+* Right immersive 3D visual composition.
+* Bottom trip builder.
+* Stats and collection cards integrated below.
+
+Hero visual:
+Create a custom “SIYAJJ Sacred Portal” visual.
+It should be a 3D layered gold Islamic arch frame on the right side, built with CSS/SVG/HTML layers.
+Inside the arch, create a cinematic placeholder scene for Makkah/Kaaba imagery or video.
+If no image is available, use:
+
+* dark golden sky gradient
+* soft architectural silhouettes
+* abstract illuminated mosque arches
+* subtle particle field
+* gold geometry pattern
+* depth fog
+* premium black fade
+
+This must look like an intentional luxury hero, not a missing image placeholder.
+
+Hero left:
+Badge:
+“✦ OMRA & HAJJ PREMIUM DEPUIS LA FRANCE”
+
+Title:
+“Votre voyage vers
+les Lieux Saints,
+réinventé avec excellence.”
+
+Line breaks on desktop exactly:
+Votre voyage vers
+les Lieux Saints,
+réinventé avec excellence.
+
+Make “réinventé avec excellence.” gold gradient.
+
+Subtitle:
+“SIYAJJ conçoit votre Omra et votre Hajj avec un accompagnement haut de gamme, des hôtels soigneusement sélectionnés et une expérience pensée dans chaque détail.”
+
+CTA buttons:
+Primary:
+“Construire mon voyage”
+Secondary:
+“Découvrir l’expérience”
+
+Add video modal for secondary CTA:
+
+* open cinematic modal
+* show premium video placeholder
+* text: “Vidéo d’expérience SIYAJJ bientôt disponible”
+* keep it elegant
+
+Hero right floating glass card:
+Title:
+“L’expérience SIYAJJ”
+
+Items:
+
+* Accompagnement francophone 24/7
+* Hôtels sélectionnés avec exigence
+* Services premium et attentionnés
+* Partenaire opérationnel Omra Factory
+
+Add small lower rating:
+4.9/5 avis vérifiés
+
+Trip Builder:
+This is the conversion engine.
+
+Desktop: wide luxury glass bar.
+Fields:
+
+* Ville de départ: Paris (CDG)
+* Date souhaitée: Sélectionner
+* Voyageurs: 2 voyageurs
+* Collection: Signature VIP
+  Button: “Trouver mon voyage”
+
+Make each field clickable with dropdown:
+Ville:
+Paris CDG, Lyon, Marseille, Bruxelles, Autre
+Date:
+Prochain départ, Ramadan, Été, Sur-mesure
+Voyageurs:
+1, 2, Famille, Groupe
+Collection:
+Essentielle, Confort, Prestige, Signature, Renaissance
+
+When CTA clicked:
+Show modal:
+“Votre projet SIYAJJ est prêt”
+with selected values and buttons:
+“Demander un devis”
+“Continuer sur WhatsApp”
+
+Stats strip:
+
+* +15 000 pèlerins accompagnés
+* +30 départs chaque mois
+* 4.9/5 avis vérifiés
+* Assistance 24/7
+* Partenaire Omra Factory
+
+Collections preview:
+Cards:
+
+* Nos Omras
+* Collection Signature
+* Sur-Mesure
+* Activités & Expériences
+* Guides & Conseils
+
+Cards should use 3D tilt, hover glow, strong typography, and premium microcopy.
+
+MOBILE HOME HERO
+
+Mobile must be designed as a premium app.
+Do not simply squeeze desktop.
+
+Structure:
+
+* Header: logo left, phone circle, menu circle
+* Badge
+* Title
+* Subtitle
+* Primary CTA full width
+* Secondary CTA full width
+* Sacred portal visual card
+* Trip builder card
+* Stats mini strip
+* Horizontal collection carousel
+* Floating WhatsApp button
+
+Mobile rules:
+
+* no overflow
+* no text overlap
+* buttons at least 48px height
+* fields easy to tap
+* sticky bottom WhatsApp
+* menu overlay full screen with premium animation
+* hero title 46 to 54px
+* spacing breathable
+* UI must feel like a luxury mobile app
+
+PAGES
+
+Build complete pages, not empty placeholders.
+
+1. HOME
+   As described.
+
+2. NOS OMRAS
+   Purpose: premium catalogue inspired by competitor offer structure, but redesigned completely.
+
+Features:
+
+* Hero page title
+* Filters: departure city, month, collection, budget, comfort level
+* Offer grid
+* Offer cards include:
+  title
+  duration
+  departure city
+  month
+  hotel level
+  visa included
+  flights included
+  transfers included
+  guide included
+  price “à partir de”
+  CTA
+* Add comparison switch: “Liste” / “Cartes premium”
+* Add sticky contact CTA
+
+Offer examples:
+
+* Omra Novembre depuis Paris
+* Omra Ramadan
+* Omra Famille
+* Omra Seniors Sérénité
+* Omra Prestige
+* Omra Signature Privée
+
+3. COLLECTIONS
+   Purpose: product line page.
+
+Collections:
+
+* Essentielle
+* Confort
+* Prestige
+* Signature
+* Renaissance
+
+Each collection must feel like a luxury product:
+
+* emotional headline
+* who it is for
+* included services
+* level of comfort
+* recommended activities
+* CTA
+
+Add comparison table.
+
+4. SUR-MESURE
+   Purpose: interactive custom trip builder.
+
+Build a multi-step form:
+Step 1: Who travels?
+Solo, couple, family, seniors, private group
+Step 2: Desired period
+Step 3: Comfort level
+Essentielle, Confort, Prestige, Signature
+Step 4: Services
+hotel close Haram, private transfers, guide, business class, family support, senior assistance
+Step 5: Contact details
+
+At end:
+“Votre projet SIYAJJ est prêt”
+Show summary card.
+
+5. SIGNATURE VIP
+   Purpose: ultra-premium page.
+
+Style:
+dark gold, concierge, cinematic, high-end.
+
+Content:
+
+* private transfers
+* hotels 5 stars
+* dates flexible
+* dedicated advisor
+* custom itinerary
+* private/semi-private guide
+* couples/families/seniors
+* discreet premium support
+* VIP request form
+
+Add 3D luxury cards and an immersive horizontal section.
+
+6. ACTIVITÉS & EXPÉRIENCES
+   This must be a strong page. SIYAJJ should feel deeper than competitors.
+
+Activities:
+
+* Manâsik Masterclass
+  Purpose: prepare rites before departure.
+* Parcours Sîra à Médine
+  Purpose: meaningful guided visits.
+* Ziyarat privées
+  Purpose: private cultural and spiritual visits.
+* Hira Immersion
+  Purpose: historical and educational experience.
+* Tawaf & Sa’i Guided Moment
+  Purpose: respectful group support during rites.
+* Family Care Experience
+  Purpose: support for parents and children.
+* Seniors Sérénité
+  Purpose: slower rhythm, comfort, help, clear contact.
+* Carnet Renaissance
+  Purpose: spiritual travel journal.
+* After-Omra Circle
+  Purpose: follow-up after return.
+
+Each activity card:
+
+* title
+* short emotional intro
+* what is included
+* who it is for
+* CTA
+* visual placeholder
+* subtle motion
+
+7. HAJJ
+   Purpose: trust and lead capture.
+
+Content:
+
+* Hajj information
+* limited organization
+* preparation
+* request interest
+* advisor contact
+* FAQ
+  No fake guarantees.
+
+8. GUIDES
+   Purpose: SEO and authority.
+
+Article cards:
+
+* Guide Omra 2026
+* Documents nécessaires pour la Omra
+* Préparer sa valise
+* Omra avec enfants
+* Omra seniors
+* Différence Hajj et Omra
+* Comprendre les rites
+* Quand partir en Omra
+
+Make it editorial and premium.
+
+9. À PROPOS
+   Purpose: trust.
+
+Content:
+
+* SIYAJJ mission
+* Renaissance concept
+* values:
+  excellence
+  sérénité
+  respect
+  accompagnement
+  transparence
+  discretion
+* partnership with Omra Factory
+* process:
+  listen
+  design
+  prepare
+  accompany
+  support after return
+
+10. CONTACT / DEVIS
+    Purpose: conversion.
+
+Lead form:
+
+* name
+* phone
+* email
+* city
+* travel type
+* number of travelers
+* desired period
+* budget
+* message
+* preferred contact: phone or WhatsApp
+
+On submit:
+modal confirmation.
+
+Add direct CTA:
+
+* phone
+* WhatsApp
+* email placeholder
+* response promise: “Un conseiller vous recontacte rapidement”
+
+CONTENT QUALITY
+
+Write all copy in premium French.
+No generic marketing fluff.
+No robotic text.
+No exaggerated claims.
+No fake religious promises.
+No disrespect.
+Use emotional, elegant wording.
+
+Examples of tone:
+“Un voyage préparé avec précision, vécu avec sérénité.”
+“Chaque détail compte avant, pendant et après votre départ.”
+“Une Omra pensée autour de votre rythme, de vos besoins et de votre intention.”
+“Des expériences spirituelles structurées, sans surcharge, dans le respect du voyage.”
+
+UX QUALITY
+
+The site must be conversion-first:
+
+* every main section has a CTA
+* WhatsApp access always visible
+* forms feel easy
+* trip builder removes friction
+* trust center answers doubts
+* activities create differentiation
+* collections make offers understandable
+* mobile is fast and premium
+
+Advanced UX details:
+
+* Scroll progress indicator
+* Sticky mobile action bar
+* Contextual CTA after sections
+* Smooth page transitions
+* Empty states that look premium
+* Form confirmation modal
+* Video modal
+* Dropdowns
+* Filtered offer cards
+* FAQ accordion
+* Multi-step sur-mesure builder
+* Active nav state
+* Back-to-top button optional
+
+3D AND VISUAL ADVANCED FEATURES
+
+Use lightweight 3D and premium depth:
+
+* Gold particle field in hero
+* Subtle 3D arch layers
+* Interactive card tilt
+* Mouse parallax on desktop
+* Gyro-safe static fallback on mobile
+* Gold rosette rotating slowly, optional
+* Layered gradient fog
+* Premium shadows
+* Light sweep on CTA hover
+
+Do not let effects hurt performance.
+Do not make it gimmicky.
+
+PERFORMANCE
+
+Must be performant:
+
+* lazy-load lower sections
+* no giant dependencies
+* optimize animations
+* use CSS transforms
+* support reduced motion
+* no console errors
+* responsive images where possible
+* component code clean
+
+ACCESSIBILITY
+
+* buttons have labels
+* contrast must be readable
+* focus states visible
+* forms have labels
+* keyboard navigation works
+* semantic HTML
+* alt text for logo/images
+* no text hidden in images
+
+SEO
+
+Set document title:
+SIYAJJ Renaissance | Omra & Hajj Premium depuis la France
+
+Meta description:
+Agence premium d’organisation Omra et Hajj depuis la France, avec accompagnement francophone, séjours sur-mesure, expériences VIP et préparation spirituelle.
+
+Use clean URL routes:
+/
+/nos-omras
+/collections
+/sur-mesure
+/signature-vip
+/activites
+/hajj
+/guides
+/a-propos
+/contact
+
+FOOTER
+
+Premium footer:
+
+* logo
+* brand description
+* quick links
+* contact
+* WhatsApp CTA
+* legal links
+* “En partenariat opérationnel avec Omra Factory”
+* subtle gold pattern background
+
+ACCEPTANCE CRITERIA
+
+The final website must pass this test:
+
+1. When opened, it feels like a luxury product launch, not a travel template.
+2. The logo feels integrated into every detail.
+3. The hero is cinematic, premium, and emotionally strong.
+4. Mobile feels like a custom premium app.
+5. UX is clear enough for older users and luxurious enough for VIP clients.
+6. Offers are easy to understand.
+7. Activities feel unique and valuable.
+8. The site builds trust fast.
+9. The design is original and not copied from competitors.
+10. The code is clean, scalable, and ready for future app/dashboard.
+11. The website works even with only the logo uploaded.
+12. There are no ugly placeholders.
+13. Animations feel expensive, subtle, and respectful.
+14. Every page is complete enough to present to a real client.
+
+FINAL INSTRUCTION
+
+Do not give me a minimal version.
+Do not create a generic landing page.
+Do not simplify the ambition.
+Build the full premium website now with complete code, complete pages, responsive design, luxury motion, interactive trip builder, premium fallbacks, and scalable architecture.
+
+Think like the design team of a luxury travel unicorn launching its flagship digital experience.

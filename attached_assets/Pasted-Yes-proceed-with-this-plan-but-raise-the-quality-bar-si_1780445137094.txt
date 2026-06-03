@@ -1,0 +1,92 @@
+Yes, proceed with this plan, but raise the quality bar significantly.
+
+This is not just a React implementation task. Treat this as a flagship luxury product launch for SIYAJJ Renaissance.
+
+Execution rules:
+
+1. Do not build a generic version first.
+2. Do not create placeholder-looking sections.
+3. Do not make a basic Tailwind layout.
+4. Every section must look intentionally designed.
+5. The website must feel premium even before final photography/video assets are added.
+6. The logo is the only uploaded asset, so build the full visual world around it.
+7. Use premium CSS/SVG/3D fallbacks, not empty boxes.
+8. Mobile must be custom-designed like a luxury app, not a squeezed desktop version.
+9. The hero is the most important part. Spend the most design effort there.
+10. The final result must be strong enough to present to a real premium client.
+
+Before building pages, first create the full design system:
+
+* color tokens
+* typography scale
+* luxury buttons
+* glass cards
+* gold borders
+* glow utilities
+* motion presets
+* sacred geometry background system
+* premium media fallback system
+* page shell
+* reusable card systems
+* modal system
+* form system
+
+Then build in this order:
+
+Phase 1:
+Design system, layout shell, header, mobile menu, footer, WhatsApp button, scroll progress.
+
+Phase 2:
+Home hero only. Make it exceptional:
+
+* cinematic left editorial text
+* right Sacred Portal visual
+* premium arch system
+* glass experience card
+* trip builder
+* stats
+* collection preview
+* desktop and mobile versions
+
+Do not move to other pages until the hero looks like a luxury digital product.
+
+Phase 3:
+Build all main pages:
+
+* Nos Omras
+* Collections
+* Sur-Mesure
+* Signature VIP
+* Activités
+* Hajj
+* Guides
+* À propos
+* Contact
+
+Phase 4:
+Polish:
+
+* typography
+* spacing
+* gold material
+* glass depth
+* hover states
+* mobile UX
+* page transitions
+* accessibility
+* reduced motion
+* performance
+* no console errors
+
+Quality target:
+The website must feel like SIYAJJ Renaissance is a premium spiritual travel concierge platform, not a normal Omra agency.
+
+Design benchmark:
+Use competitor websites only for offer structure, trust content, service pages, activities, FAQ, and client information. Do not copy their UX/UI.
+
+Final acceptance:
+If any section looks like a template, rebuild it.
+If any mobile screen feels squeezed, redesign it.
+If any placeholder looks cheap, replace it with a premium fallback.
+If any animation feels childish, remove it.
+If the hero does not feel elite, keep refining it.
