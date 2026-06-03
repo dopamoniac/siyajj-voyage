@@ -45,11 +45,10 @@
 }
 
 :root {
-  /* HSL Values for dark theme defaults since it's a luxury dark site */
-  --background: 26 33% 2%; /* #040302 roughly */
-  --foreground: 41 46% 93%; /* #F7EFE2 roughly */
+  --background: 26 33% 2%; 
+  --foreground: 41 46% 93%; 
   
-  --card: 26 26% 4%; /* #080604 */
+  --card: 26 26% 4%; 
   --card-foreground: 41 46% 93%;
   --card-border: 41 53% 53% / 0.15;
 
@@ -57,14 +56,14 @@
   --popover-foreground: 41 46% 93%;
   --popover-border: 41 53% 53% / 0.15;
 
-  --primary: 41 53% 53%; /* #C89A46 */
+  --primary: 41 53% 53%; 
   --primary-foreground: 26 33% 2%;
   
-  --secondary: 27 18% 7%; /* #17110C */
+  --secondary: 27 18% 7%; 
   --secondary-foreground: 41 46% 93%;
   
   --muted: 27 18% 7%;
-  --muted-foreground: 36 14% 55%; /* #9D907C */
+  --muted-foreground: 36 14% 55%; 
   
   --accent: 41 53% 53% / 0.1;
   --accent-foreground: 41 53% 53%;
@@ -83,7 +82,6 @@
 }
 
 .dark {
-  /* Same as root since default is dark */
 }
 
 @layer base {
@@ -118,4 +116,76 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+@keyframes slow-pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+@keyframes gold-dust {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  25% { opacity: 0.8; }
+  50% { transform: translateY(-50px) rotate(180deg); opacity: 1; }
+  75% { opacity: 0.5; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+.animate-slow-pulse {
+  animation: slow-pulse 8s ease-in-out infinite;
+}
+
+.particles-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--color-siyajj-luxury-gold);
+  border-radius: 50%;
+  animation: gold-dust 8s infinite linear;
+}
+
+.gradient-mask-right {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-slow-pulse,
+  .particle {
+    animation: none !important;
+  }
+  .particles-container {
+    display: none !important;
+  }
+}
+
+.gradient-mask-all {
+  mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent), linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent), linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+}
+
+.sweep-hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+  transform: skewX(-20deg);
+  transition: all 0.5s ease;
+}
+
+.sweep-hover:hover::after {
+  left: 200%;
 }

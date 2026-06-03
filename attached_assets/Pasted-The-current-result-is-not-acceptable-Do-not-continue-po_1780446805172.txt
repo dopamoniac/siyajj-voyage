@@ -1,0 +1,333 @@
+The current result is not acceptable.
+
+Do not continue polishing the existing weak visual direction. Rebuild the art direction and visual system completely while keeping the SIYAJJ Renaissance structure and pages.
+
+The website must now be treated as a cinematic luxury brand experience, not a normal web template.
+
+MAIN ISSUE TO FIX:
+The site looks too generic and not visually powerful enough. It needs custom high-end themed visuals, premium image compositions, luxury 3D depth, cinematic sections, and a complete SIYAJJ visual universe.
+
+You must create and integrate a complete visual system for the website based on the SIYAJJ logo and all the concepts below.
+
+BRAND DNA:
+SIYAJJ Renaissance is a premium Omra & Hajj concierge brand.
+Visual identity:
+
+* black luxury
+* gold light
+* Renaissance elegance
+* sacred geometry
+* Islamic architecture
+* premium hospitality
+* cinematic depth
+* calm spiritual atmosphere
+* no cheap religious visuals
+* no random stock travel style
+* no generic black/gold template
+
+Respect the sacred nature of Omra and Hajj 100%.
+The visuals must feel noble, calm, premium, and spiritual.
+
+IMPORTANT:
+Do not use ugly placeholders.
+Do not use flat empty blocks.
+Do not use basic gradients.
+Do not use random stock-looking photos.
+Do not make the site look AI-generic.
+Every image area must feel intentionally designed for SIYAJJ.
+
+CREATE A FULL IMAGE / VISUAL ASSET SYSTEM
+
+Create a folder:
+public/assets/siyajj-visuals/
+
+Create premium themed visuals for the website. If real AI image generation is not available inside Replit, create luxury CSS/SVG/HTML fallback compositions that look like real designed visual assets.
+
+Every visual must be reusable and controlled from:
+src/data/media.ts
+
+Create the following visual assets / compositions:
+
+1. HERO SACRED PORTAL VISUAL
+   Purpose: main hero right-side visual.
+   Theme:
+
+* golden Islamic arch
+* dark cinematic Makkah atmosphere
+* sacred geometry
+* black/gold depth
+* subtle golden horizon
+* luxury spiritual travel feeling
+* 3D layered portal frame
+* no fake exaggerated Kaaba manipulation
+* respectful and noble
+
+Must be placed in the hero exactly as the main visual.
+Desktop:
+right side, large, immersive, 3D depth, blending into black background.
+Mobile:
+inside a premium app-like card below the hero text.
+
+2. HOME BACKGROUND ATMOSPHERE
+   Purpose: full-site cinematic background.
+   Theme:
+
+* black marble depth
+* subtle gold dust
+* sacred geometry lines
+* soft radial gold glows
+* very low opacity
+  Must be applied globally behind sections.
+
+3. COLLECTIONS VISUALS
+   Create 5 custom visuals for:
+
+* Collection Essentielle
+* Collection Confort
+* Collection Prestige
+* Collection Signature
+* Collection Renaissance
+
+Each one must have its own premium mood:
+Essentielle:
+clean black/gold minimal, calm start.
+Confort:
+warm hotel/travel comfort, soft gold.
+Prestige:
+luxury hotel and premium travel feeling.
+Signature:
+private concierge, golden arch, VIP depth.
+Renaissance:
+spiritual transformation, journal, light, sacred geometry.
+
+Use these visuals inside collection cards and the Collections page.
+
+4. ACTIVITIES VISUALS
+   Create visuals for 9 activities:
+
+* Manâsik Masterclass
+* Parcours Sîra à Médine
+* Ziyarat privées
+* Hira Immersion
+* Tawaf & Sa’i Guided Moment
+* Family Care Experience
+* Seniors Sérénité
+* Carnet Renaissance
+* After-Omra Circle
+
+Each activity card must have a visual identity, not a generic icon card.
+Use cinematic black/gold panels, gold line illustrations, abstract architecture, premium travel objects, spiritual education motifs, and elegant geometry.
+
+5. OFFER CARD VISUALS
+   Create premium offer visuals for:
+
+* Omra Novembre depuis Paris
+* Omra Ramadan
+* Omra Famille
+* Omra Seniors Sérénité
+* Omra Prestige
+* Omra Départ Paris
+
+These visuals should feel like luxury travel product cards.
+No cheap images.
+No generic travel thumbnail.
+Use elegant city/date/hotel/flight motifs, gold linework, dark premium image cards.
+
+6. SIGNATURE VIP VISUALS
+   Create a high-end cinematic VIP visual:
+
+* private transfer
+* luxury hotel mood
+* concierge service
+* gold arch
+* discreet premium atmosphere
+  Use it in the Signature VIP page and home Signature section.
+
+7. SUR-MESURE BUILDER VISUALS
+   Create visual panels for each step:
+
+* Who travels
+* Date
+* Comfort level
+* Services
+* Contact
+  Must feel like a premium app flow.
+
+8. GUIDE PAGE VISUALS
+   Create editorial article cover visuals for:
+
+* Guide Omra 2026
+* Documents nécessaires
+* Préparer sa valise
+* Omra avec enfants
+* Omra seniors
+* Différence Hajj et Omra
+* Comprendre les rites
+* Quand partir en Omra
+
+Make them look like a premium magazine/resource hub.
+
+VISUAL QUALITY RULES:
+
+* Every visual must match the SIYAJJ logo mood.
+* Black background must have depth, not flatness.
+* Gold must look expensive, not yellow.
+* Use thin gold strokes.
+* Use subtle glow.
+* Use sacred geometry carefully.
+* Use cinematic lighting.
+* Use 3D depth and layered composition.
+* Use glass overlays.
+* Use elegant masks and arches.
+* Keep visuals calm and respectful.
+* Avoid clutter.
+* Avoid cheap effects.
+* Avoid overusing icons.
+
+HERO REDESIGN
+
+The hero is currently not strong enough. Rebuild it.
+
+Hero must include:
+
+* fixed luxury header
+* SIYAJJ logo
+* left editorial copy
+* right Sacred Portal visual
+* floating “L’expérience SIYAJJ” glass card
+* trip builder
+* stats strip
+* collection preview
+
+Hero title:
+“Votre voyage vers
+les Lieux Saints,
+réinventé avec excellence.”
+
+Make “réinventé avec excellence.” gold gradient.
+
+Hero must feel like:
+
+* luxury product launch
+* spiritual travel concierge
+* cinematic black/gold experience
+* future app foundation
+
+Desktop:
+
+* full viewport
+* right visual dominant
+* left text strong and readable
+* elegant gradient blend between text and visual
+* no clutter
+* no template layout
+
+Mobile:
+
+* app-like
+* custom layout
+* title first
+* CTA
+* sacred portal card
+* trip builder card
+* horizontal collection carousel
+* sticky WhatsApp
+* no squeezed desktop
+
+UX/UI LEVEL REQUIRED
+
+The new UI must feel:
+
+* 10x more premium
+* more cinematic
+* more spatial
+* more custom
+* less generic
+* more app-like on mobile
+* more luxury hospitality
+* more spiritual concierge
+* more visually memorable
+
+Improve:
+
+* spacing
+* typography
+* image placement
+* section rhythm
+* gold accents
+* glass cards
+* hover states
+* animations
+* page transitions
+* mobile menu
+* trip builder
+* form design
+* cards
+* footer
+
+ANIMATIONS:
+Add refined motion:
+
+* slow hero reveal
+* gold particle field
+* light sweep on CTAs
+* subtle 3D card tilt
+* parallax on hero visual
+* animated arch glow
+* smooth section reveal
+* premium modal transitions
+* smooth dropdowns
+* no bounce
+* no cheap effects
+* respect prefers-reduced-motion
+
+CONTENT STRUCTURE TO KEEP:
+Keep all pages:
+/
+/nos-omras
+/collections
+/sur-mesure
+/signature-vip
+/activites
+/hajj
+/guides
+/a-propos
+/contact
+
+Keep:
+
+* trip builder
+* forms
+* modals
+* WhatsApp button
+* header
+* mobile menu
+* footer
+* SEO
+* accessibility
+* reduced motion
+* media config
+* full French premium copy
+
+BUT:
+Rework the visual execution completely.
+
+FINAL ACCEPTANCE:
+The site is acceptable only if:
+
+1. The hero looks like a custom luxury cinematic experience.
+2. The visuals feel made for SIYAJJ, not random placeholders.
+3. Every page has themed visuals.
+4. Mobile feels like a premium app.
+5. Activities feel like a unique SIYAJJ program.
+6. Collections feel like a luxury product line.
+7. Offers feel like premium travel products.
+8. The website looks elite with only the logo uploaded.
+9. Nothing looks generic.
+10. Nothing looks cheap.
+11. Nothing feels like a template.
+12. The sacred theme is respected.
+13. The website is ready to show a serious client.
+
+Do not answer with explanations.
+Modify the project now.

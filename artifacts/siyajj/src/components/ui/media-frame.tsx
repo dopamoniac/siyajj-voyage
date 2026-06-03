@@ -9,15 +9,23 @@ interface MediaFrameProps {
   className?: string;
   style?: CSSProperties;
   children?: ReactNode;
+  priority?: boolean;
 }
 
-export function MediaFrame({ slot, alt, className = "", style, children }: MediaFrameProps) {
+export function MediaFrame({ slot, alt, className = "", style, children, priority = false }: MediaFrameProps) {
   const src = mediaConfig[slot];
   
   if (src) {
     return (
       <div className={`relative overflow-hidden ${className}`} style={style}>
-        <img src={src} alt={alt || slot} className="w-full h-full object-cover" />
+        <img
+          src={src}
+          alt={alt || slot}
+          className="w-full h-full object-cover"
+          loading={priority ? "eager" : "lazy"}
+          decoding="async"
+          {...(priority ? { fetchPriority: "high" as const } : {})}
+        />
         {children}
       </div>
     );

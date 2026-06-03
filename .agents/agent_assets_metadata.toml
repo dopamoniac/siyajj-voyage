@@ -1,0 +1,86 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "P4It8cg2-WGISQI7yUo8g"
+uri = "file://artifacts/siyajj/public/assets/siyajj-visuals/hero-portal.png"
+type = "image"
+title = "hero sacred portal"
+
+[[generated]]
+id = "fuEhqgxZIgJLG5uP1iaO-"
+uri = "file://artifacts/siyajj/public/assets/siyajj-visuals/atmosphere.png"
+type = "image"
+title = "atmosphere background"
+
+[[generated]]
+id = "CbSMdrCeC4uqIOulDsHZI"
+uri = "file://artifacts/siyajj/public/assets/siyajj-visuals/collection-essentielle.png"
+type = "image"
+title = "collection essentielle"
+
+[[generated]]
+id = "w-VpwilufiOTGdb9Wpzk2"
+uri = "file://artifacts/siyajj/public/assets/siyajj-visuals/collection-confort.png"
+type = "image"
+title = "collection confort"
+
+[[generated]]
+id = "Y_JrQD_hAnUBfDVGfsr91"
+uri = "file://artifacts/siyajj/public/assets/siyajj-visuals/offer-novembre.png"
+type = "image"
+title = "offer novembre"
+
+[[generated]]
+id = "UJfAmkH7D42UomlhynuuS"
+uri = "file://artifacts/siyajj/public/assets/siyajj-visuals/collection-prestige.png"
+type = "image"
+title = "collection prestige"
+
+[[generated]]
+id = "EVRC3UnaJbDVD7cVjixiZ"
+uri = "file://artifacts/siyajj/public/assets/siyajj-visuals/collection-signature.png"
+type = "image"
+title = "collection signature"
+
+[[generated]]
+id = "K1rcaJIKRejLr_nOybu-7"
+uri = "file://artifacts/siyajj/public/assets/siyajj-visuals/offer-seniors.png"
+type = "image"
+title = "offer seniors"
+
+[[generated]]
+id = "ATkFX0Cceb26N5vzweJFC"
+uri = "file://artifacts/siyajj/public/assets/siyajj-visuals/offer-prestige.png"
+type = "image"
+title = "offer prestige"
+
+[[generated]]
+id = "di1mbawggs8iCOlSqNa8K"
+uri = "file://artifacts/siyajj/public/assets/siyajj-visuals/madinah.png"
+type = "image"
+title = "madinah architecture"
+
+[[generated]]
+id = "mu-NAeQHBMGVkCRovfZUz"
+uri = "file://artifacts/siyajj/public/assets/siyajj-visuals/activity-masterclass.png"
+type = "image"
+title = "activity masterclass"
+
+[[generated]]
+id = "WN6ceP74AkKfJ8F6SVi3k"
+uri = "file://artifacts/siyajj/public/assets/siyajj-visuals/activity-hira.png"
+type = "image"
+title = "activity hira"
+
+[[generated]]
+id = "1t7vQ_6XDGafDPIxzMn0q"
+uri = "file://artifacts/siyajj/public/assets/siyajj-visuals/activity-ziyarat.png"
+type = "image"
+title = "activity ziyarat"
+
+[[generated]]
+id = "jPvTiBT9GD6tF5YGCXJj-"
+uri = "file://artifacts/siyajj/public/assets/siyajj-visuals/sur-mesure.png"
+type = "image"
+title = "sur mesure builder"

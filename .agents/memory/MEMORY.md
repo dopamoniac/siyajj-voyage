@@ -1,1 +1,2 @@
 - [Tailwind v4 remote @import](tailwind-v4-remote-import.md) — remote CSS @import (e.g. Google Fonts) breaks after `@import "tailwindcss"`; load fonts via `<link>` in index.html instead.
+- [SIYAJJ art-direction](siyajj-art-direction.md) — luxury site conventions: BASE_URL-prefixed media slots (no double-prefix), global MotionConfig reducedMotion, no a>button nesting.

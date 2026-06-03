@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { AnimatePresence, motion, useScroll, useSpring, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { MediaFrame } from "@/components/ui/media-frame";
 
 const NAV_LINKS = [
   { href: "/nos-omras", label: "Nos Omras" },
@@ -49,7 +50,7 @@ export function Header() {
 
         <div className="hidden md:flex items-center gap-4">
           <Link href="/contact">
-            <Button variant="outline" className="border-siyajj-luxury-gold/30 text-siyajj-luxury-gold hover:bg-siyajj-luxury-gold/10 font-serif">
+            <Button variant="outline" className="border-siyajj-luxury-gold/30 text-siyajj-luxury-gold hover:bg-siyajj-luxury-gold/10 font-serif sweep-hover relative overflow-hidden">
               Contactez-nous
             </Button>
           </Link>
@@ -97,7 +98,7 @@ export function Header() {
                 className="mt-8"
               >
                 <Link href="/contact">
-                  <Button className="w-full h-14 bg-siyajj-luxury-gold text-siyajj-deep-black hover:bg-siyajj-champagne uppercase tracking-widest text-xs font-medium">
+                  <Button className="w-full h-14 bg-siyajj-luxury-gold text-siyajj-deep-black hover:bg-siyajj-champagne uppercase tracking-widest text-xs font-medium sweep-hover relative overflow-hidden">
                     Contactez-nous
                   </Button>
                 </Link>
@@ -112,7 +113,7 @@ export function Header() {
 
 export function Footer() {
   return (
-    <footer className="bg-siyajj-black-ink border-t border-white/5 pt-20 pb-10">
+    <footer className="bg-siyajj-black-ink border-t border-white/5 pt-20 pb-10 relative z-10">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
@@ -192,25 +193,32 @@ export function PageShell({ children }: { children: ReactNode }) {
   });
 
   return (
-    <div className="min-h-[100dvh] flex flex-col bg-siyajj-deep-black text-siyajj-ivory font-sans selection:bg-siyajj-luxury-gold/30">
+    <div className="min-h-[100dvh] flex flex-col bg-siyajj-deep-black text-siyajj-ivory font-sans selection:bg-siyajj-luxury-gold/30 relative">
+      {/* Global Atmosphere Layer */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <MediaFrame slot="atmosphere" className="absolute inset-0 w-full h-full opacity-10 mix-blend-screen" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-siyajj-luxury-gold/5 via-transparent to-transparent opacity-80" />
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxIiBmaWxsPSJyZ2JhKDIwMCwgMTU0LCA3MCwgMC4wNSkiLz48L3N2Zz4=')] bg-[length:48px_48px] opacity-30" />
+      </div>
+
       {/* Scroll Progress Indicator */}
       {!prefersReducedMotion && (
         <motion.div
-          className="fixed top-0 left-0 right-0 h-1 bg-siyajj-luxury-gold z-[60] origin-left"
+          className="fixed top-0 left-0 right-0 h-1 bg-siyajj-luxury-gold z-[60] origin-left shadow-[0_0_10px_rgba(200,154,70,0.8)]"
           style={{ scaleX }}
         />
       )}
       
       <Header />
       
-      <main className="flex-grow pt-20">
+      <main className="flex-grow pt-20 relative z-10">
         <AnimatePresence mode="wait">
           <motion.div
             key={location}
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
+            initial={prefersReducedMotion ? false : { opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: -10 }}
-            transition={{ duration: prefersReducedMotion ? 0 : 0.3 }}
+            exit={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: -15 }}
+            transition={{ duration: prefersReducedMotion ? 0 : 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
             {children}
           </motion.div>

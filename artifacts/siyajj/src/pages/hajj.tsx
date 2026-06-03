@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { MediaFrame } from "@/components/ui/media-frame";
 
 export default function Hajj() {
   const [open, setOpen] = useState(false);
@@ -15,61 +16,81 @@ export default function Hajj() {
   };
 
   return (
-    <div className="container mx-auto px-4 md:px-8 py-24">
-      <div className="max-w-3xl mx-auto text-center mb-16">
-        <div className="text-siyajj-luxury-gold text-xs uppercase tracking-widest mb-4">Le Grand Pèlerinage</div>
-        <h1 className="text-4xl md:text-5xl font-serif text-siyajj-ivory mb-6">Le Hajj avec SIYAJJ</h1>
-        <p className="text-siyajj-muted-text leading-relaxed">
-          Le voyage d'une vie mérite une transparence totale et une préparation rigoureuse.
+    <div className="container mx-auto px-4 md:px-8 py-24 relative min-h-screen">
+      <div className="max-w-4xl mx-auto text-center mb-20 relative z-20">
+        <div className="text-siyajj-luxury-gold text-xs uppercase tracking-widest mb-4 font-bold flex items-center justify-center gap-2">
+          <span className="w-8 h-[1px] bg-siyajj-luxury-gold/50"></span>
+          Le Grand Pèlerinage
+          <span className="w-8 h-[1px] bg-siyajj-luxury-gold/50"></span>
+        </div>
+        <h1 className="text-5xl md:text-6xl font-serif text-siyajj-ivory mb-6 drop-shadow-md">Le Hajj avec SIYAJJ</h1>
+        <p className="text-siyajj-ivory/70 leading-relaxed text-lg font-light max-w-2xl mx-auto">
+          Le voyage d'une vie mérite une transparence totale, une préparation rigoureuse et un accompagnement sans faille.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24 max-w-6xl mx-auto">
-        <div className="glass-card p-8 md:p-12 rounded-xl border border-white/5">
-          <h2 className="text-2xl font-serif text-siyajj-ivory mb-2">Préinscription Hajj 2026</h2>
-          <p className="text-siyajj-muted-text mb-8 text-sm">Les modalités d'organisation du Hajj sont soumises aux directives du Ministère du Hajj. Laissez-nous vos coordonnées pour être informé en priorité.</p>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-24 max-w-6xl mx-auto relative z-20">
+        <div className="glass-card p-8 md:p-12 rounded-3xl border border-siyajj-luxury-gold/30 shadow-2xl relative overflow-hidden bg-black/60 backdrop-blur-2xl">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-siyajj-luxury-gold/5 blur-3xl rounded-full pointer-events-none"></div>
           
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="space-y-4">
-              <Input required aria-label="Nom & Prénom" placeholder="Nom & Prénom" className="bg-siyajj-black-ink border-white/10 text-siyajj-ivory h-12" />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Input required type="tel" aria-label="Téléphone" placeholder="Téléphone" className="bg-siyajj-black-ink border-white/10 text-siyajj-ivory h-12" />
-                <Input required type="email" aria-label="Email" placeholder="Email" className="bg-siyajj-black-ink border-white/10 text-siyajj-ivory h-12" />
+          <h2 className="text-3xl font-serif text-siyajj-champagne mb-3 relative z-10">Préinscription Hajj 2026</h2>
+          <p className="text-siyajj-ivory/60 mb-8 text-sm font-light leading-relaxed relative z-10">
+            Les modalités d'organisation du Hajj sont soumises aux directives du Ministère du Hajj saoudien. Laissez-nous vos coordonnées pour être informé en priorité de l'ouverture officielle.
+          </p>
+          
+          <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
+            <div className="space-y-5">
+              <div className="space-y-2">
+                 <label className="text-[10px] uppercase tracking-widest text-siyajj-luxury-gold ml-1">Nom Complet</label>
+                 <Input required aria-label="Nom & Prénom" placeholder="Votre nom & prénom" className="bg-black/50 border-white/10 text-siyajj-ivory h-14 rounded-lg focus-visible:ring-siyajj-luxury-gold/50 focus-visible:border-siyajj-luxury-gold/50 font-light text-lg" />
               </div>
-              <Textarea aria-label="Message ou questions particulières" placeholder="Message ou questions particulières..." className="bg-siyajj-black-ink border-white/10 text-siyajj-ivory min-h-[100px] resize-none" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="space-y-2">
+                   <label className="text-[10px] uppercase tracking-widest text-siyajj-luxury-gold ml-1">Téléphone</label>
+                   <Input required type="tel" aria-label="Téléphone" placeholder="Votre téléphone" className="bg-black/50 border-white/10 text-siyajj-ivory h-14 rounded-lg focus-visible:ring-siyajj-luxury-gold/50 focus-visible:border-siyajj-luxury-gold/50 font-light text-lg" />
+                </div>
+                <div className="space-y-2">
+                   <label className="text-[10px] uppercase tracking-widest text-siyajj-luxury-gold ml-1">Email</label>
+                   <Input required type="email" aria-label="Email" placeholder="Votre adresse email" className="bg-black/50 border-white/10 text-siyajj-ivory h-14 rounded-lg focus-visible:ring-siyajj-luxury-gold/50 focus-visible:border-siyajj-luxury-gold/50 font-light text-lg" />
+                </div>
+              </div>
+              <div className="space-y-2">
+                 <label className="text-[10px] uppercase tracking-widest text-siyajj-luxury-gold ml-1">Message</label>
+                 <Textarea aria-label="Message ou questions particulières" placeholder="Message ou questions particulières..." className="bg-black/50 border-white/10 text-siyajj-ivory min-h-[120px] resize-none rounded-lg focus-visible:ring-siyajj-luxury-gold/50 focus-visible:border-siyajj-luxury-gold/50 font-light text-base p-4" />
+              </div>
             </div>
             
-            <Button type="submit" className="w-full h-14 bg-siyajj-luxury-gold text-siyajj-deep-black hover:bg-siyajj-champagne uppercase tracking-widest text-xs font-medium">
-              Demander à être contacté
+            <Button type="submit" className="w-full h-14 bg-siyajj-luxury-gold text-siyajj-deep-black hover:bg-siyajj-champagne uppercase tracking-widest text-xs font-bold rounded-lg sweep-hover relative overflow-hidden shadow-[0_0_20px_rgba(200,154,70,0.2)] mt-4">
+              <span className="relative z-10">Demander à être contacté</span>
             </Button>
           </form>
         </div>
 
-        <div>
-          <h2 className="text-2xl font-serif text-siyajj-ivory mb-8">Questions Fréquentes</h2>
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1" className="border-white/10">
-              <AccordionTrigger className="text-siyajj-ivory hover:text-siyajj-luxury-gold font-serif text-lg text-left">Pouvez-vous garantir un visa Hajj ?</AccordionTrigger>
-              <AccordionContent className="text-siyajj-muted-text leading-relaxed">
-                Non. L'attribution des visas Hajj est strictement contrôlée par les autorités saoudiennes via la plateforme Nusuk. Aucune agence ne peut légalement garantir un visa Hajj en dehors de ce système officiel. SIYAJJ vous accompagne dans la préparation et les démarches autorisées.
+        <div className="flex flex-col justify-center">
+          <h2 className="text-3xl font-serif text-siyajj-ivory mb-8">Questions Fréquentes</h2>
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            <AccordionItem value="item-1" className="border border-white/10 bg-black/40 backdrop-blur-md rounded-xl px-6 data-[state=open]:border-siyajj-luxury-gold/30 transition-colors">
+              <AccordionTrigger className="text-siyajj-ivory hover:text-siyajj-champagne font-serif text-lg text-left py-6 hover:no-underline">Pouvez-vous garantir un visa Hajj ?</AccordionTrigger>
+              <AccordionContent className="text-siyajj-ivory/70 leading-relaxed font-light pb-6">
+                Non. L'attribution des visas Hajj est strictement contrôlée par les autorités saoudiennes via la plateforme officielle Nusuk. Aucune agence française ne peut légalement garantir un visa Hajj en dehors de ce système. SIYAJJ vous accompagne dans la préparation, la veille d'information et les démarches autorisées.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-2" className="border-white/10">
-              <AccordionTrigger className="text-siyajj-ivory hover:text-siyajj-luxury-gold font-serif text-lg text-left">Comment se déroule la préparation ?</AccordionTrigger>
-              <AccordionContent className="text-siyajj-muted-text leading-relaxed">
-                Nous proposons des séminaires Masterclass exclusifs pour nos pèlerins avant le départ. Ces sessions couvrent la préparation spirituelle, les rites du Hajj (Manâsik), ainsi que la logistique et l'endurance physique requise pour ce voyage sacré.
+            <AccordionItem value="item-2" className="border border-white/10 bg-black/40 backdrop-blur-md rounded-xl px-6 data-[state=open]:border-siyajj-luxury-gold/30 transition-colors">
+              <AccordionTrigger className="text-siyajj-ivory hover:text-siyajj-champagne font-serif text-lg text-left py-6 hover:no-underline">Comment se déroule la préparation ?</AccordionTrigger>
+              <AccordionContent className="text-siyajj-ivory/70 leading-relaxed font-light pb-6">
+                Nous proposons des séminaires exclusifs "Manâsik Masterclass" pour nos pèlerins avant le départ. Ces sessions intensives couvrent la préparation spirituelle, l'apprentissage détaillé des rites du Hajj, ainsi que la logistique et l'endurance physique requise pour ce voyage exceptionnel.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-3" className="border-white/10">
-              <AccordionTrigger className="text-siyajj-ivory hover:text-siyajj-luxury-gold font-serif text-lg text-left">Quel est le rôle de SIYAJJ pendant le Hajj ?</AccordionTrigger>
-              <AccordionContent className="text-siyajj-muted-text leading-relaxed">
-                Notre équipe vous offre un accompagnement spirituel francophone, assure la liaison avec les prestataires saoudiens agréés pour optimiser votre confort (hôtels, tentes à Mina et Arafat), et vous guide pas à pas dans l'accomplissement des rites avec bienveillance.
+            <AccordionItem value="item-3" className="border border-white/10 bg-black/40 backdrop-blur-md rounded-xl px-6 data-[state=open]:border-siyajj-luxury-gold/30 transition-colors">
+              <AccordionTrigger className="text-siyajj-ivory hover:text-siyajj-champagne font-serif text-lg text-left py-6 hover:no-underline">Quel est le rôle de SIYAJJ pendant le Hajj ?</AccordionTrigger>
+              <AccordionContent className="text-siyajj-ivory/70 leading-relaxed font-light pb-6">
+                En cas d'attribution via Nusuk, notre équipe sur place vous offre un accompagnement spirituel francophone de haut niveau, assure la liaison avec les prestataires saoudiens agréés pour optimiser votre confort (hôtels à Makkah, tentes premium à Mina et Arafat), et vous guide pas à pas dans l'accomplissement des rites avec bienveillance.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-4" className="border-white/10">
-              <AccordionTrigger className="text-siyajj-ivory hover:text-siyajj-luxury-gold font-serif text-lg text-left">Quels sont les délais d'inscription ?</AccordionTrigger>
-              <AccordionContent className="text-siyajj-muted-text leading-relaxed">
-                Les inscriptions pour le Hajj sont souvent annoncées quelques mois seulement avant le pèlerinage. En remplissant notre formulaire de pré-inscription, vous serez alerté immédiatement dès l'ouverture officielle des démarches sur Nusuk.
+            <AccordionItem value="item-4" className="border border-white/10 bg-black/40 backdrop-blur-md rounded-xl px-6 data-[state=open]:border-siyajj-luxury-gold/30 transition-colors">
+              <AccordionTrigger className="text-siyajj-ivory hover:text-siyajj-champagne font-serif text-lg text-left py-6 hover:no-underline">Quels sont les délais d'inscription ?</AccordionTrigger>
+              <AccordionContent className="text-siyajj-ivory/70 leading-relaxed font-light pb-6">
+                Les fenêtres d'inscription pour le Hajj sont souvent courtes et annoncées tardivement par les autorités. En remplissant notre formulaire de pré-inscription, vous intégrez notre liste prioritaire et serez alerté immédiatement dès l'ouverture officielle des démarches.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -77,15 +98,17 @@ export default function Hajj() {
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="bg-siyajj-deep-black border border-siyajj-luxury-gold/20 text-siyajj-ivory">
-          <div className="p-6 text-center">
-            <div className="w-16 h-16 mx-auto bg-siyajj-luxury-gold/10 rounded-full flex items-center justify-center mb-6">
-              <span className="text-2xl text-siyajj-luxury-gold">✦</span>
+        <DialogContent className="bg-siyajj-warm-black border border-siyajj-luxury-gold/30 text-siyajj-ivory p-1 rounded-2xl backdrop-blur-2xl">
+          <div className="bg-black/60 rounded-xl p-8 text-center border border-white/5">
+            <div className="w-20 h-20 mx-auto bg-siyajj-luxury-gold/10 rounded-full flex items-center justify-center mb-6 border border-siyajj-luxury-gold/30 shadow-[0_0_30px_rgba(200,154,70,0.3)]">
+              <span className="text-3xl text-siyajj-luxury-gold">✦</span>
             </div>
-            <h3 className="text-2xl font-serif text-siyajj-ivory mb-2">Demande enregistrée</h3>
-            <p className="text-siyajj-muted-text mb-8">Votre intérêt pour le Hajj 2026 a bien été pris en compte. Un conseiller SIYAJJ vous contactera très prochainement pour vous informer des prochaines étapes.</p>
-            <Button onClick={() => setOpen(false)} className="w-full h-12 bg-siyajj-luxury-gold text-siyajj-deep-black hover:bg-siyajj-champagne">
-              Fermer
+            <h3 className="text-3xl font-serif text-siyajj-champagne mb-4">Demande enregistrée</h3>
+            <p className="text-siyajj-ivory/70 mb-10 font-light leading-relaxed">
+              Votre intérêt pour le Hajj 2026 a bien été pris en compte. Un conseiller SIYAJJ vous contactera très prochainement pour vous informer des prochaines étapes et vous intégrer à notre liste prioritaire.
+            </p>
+            <Button onClick={() => setOpen(false)} className="w-full h-14 rounded-lg bg-siyajj-luxury-gold text-siyajj-deep-black hover:bg-siyajj-champagne font-bold uppercase tracking-widest text-xs sweep-hover relative overflow-hidden">
+              <span className="relative z-10">Fermer</span>
             </Button>
           </div>
         </DialogContent>
