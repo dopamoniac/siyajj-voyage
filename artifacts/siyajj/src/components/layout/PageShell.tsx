@@ -43,7 +43,7 @@ export function Header() {
           <img 
             src={`${import.meta.env.BASE_URL}assets/logo-siyajj-transparent.png`} 
             alt="SIYAJJ Renaissance" 
-            className="h-20 w-auto"
+            className="h-24 w-auto drop-shadow-[0_2px_12px_rgba(212,175,55,0.35)]"
           />
         </Link>
 
@@ -133,7 +133,7 @@ export function Footer() {
             <img 
               src={`${import.meta.env.BASE_URL}assets/logo-siyajj-transparent.png`} 
               alt="SIYAJJ Renaissance" 
-              className="h-12 w-auto mb-6"
+              className="h-14 w-auto mb-6 drop-shadow-[0_2px_8px_rgba(212,175,55,0.25)]"
             />
             <p className="text-siyajj-muted-text text-sm leading-relaxed mb-6">
               Agence premium d'organisation Omra et Hajj depuis la France. L'excellence au service de votre spiritualité.
