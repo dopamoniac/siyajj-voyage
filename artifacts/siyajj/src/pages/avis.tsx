@@ -32,7 +32,7 @@ export default function Avis() {
   return (
     <div className="w-full overflow-x-hidden">
       {/* Hero */}
-      <section className="relative py-10 md:py-20 lg:py-32 bg-siyajj-deep-black">
+      <section className="relative py-20 lg:py-32 bg-siyajj-deep-black">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(200,154,70,0.08),transparent_60%)]" />
         <div className="container mx-auto px-4 md:px-8 text-center relative z-10 max-w-3xl">
           <motion.div {...stagger(0.1)}>
@@ -64,7 +64,7 @@ export default function Avis() {
       </section>
 
       {/* Grille d'avis */}
-      <section className="py-10 md:py-20 bg-siyajj-deep-black">
+      <section className="py-20 bg-siyajj-deep-black">
         <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
             {EXTENDED_TESTIMONIALS.map((t, i) => (
@@ -99,7 +99,7 @@ export default function Avis() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 md:py-24 bg-siyajj-deep-black relative overflow-hidden">
+      <section className="py-24 bg-siyajj-deep-black relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(15,76,76,0.25),transparent_60%)]" />
         <div className="container mx-auto px-4 text-center relative z-10 max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-serif text-siyajj-ivory mb-6">Rejoignez les pèlerins SIYAJJ</h2>

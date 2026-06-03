@@ -35,7 +35,7 @@ export default function ActiviteDetail() {
   return (
     <div className="w-full overflow-x-hidden">
       {/* Hero */}
-      <section className="relative py-10 md:py-20 lg:py-32 overflow-hidden">
+      <section className="relative py-20 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <MediaFrame slot={activity.slot as MediaSlot} priority className="absolute inset-0 w-full h-full" />
           <div className="absolute inset-0 bg-gradient-to-r from-siyajj-deep-black via-siyajj-deep-black/85 to-siyajj-deep-black/40" />
@@ -73,7 +73,7 @@ export default function ActiviteDetail() {
       </section>
 
       {/* Description + Valeur spirituelle */}
-      <section className="py-10 md:py-20 bg-siyajj-deep-black">
+      <section className="py-20 bg-siyajj-deep-black">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl">
           <div className="grid md:grid-cols-2 gap-12">
             <motion.div {...stagger(0.1)}>
@@ -91,7 +91,7 @@ export default function ActiviteDetail() {
       </section>
 
       {/* Ce qui est inclus */}
-      <section className="py-10 md:py-20 bg-siyajj-black-ink border-y border-white/5">
+      <section className="py-20 bg-siyajj-black-ink border-y border-white/5">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl">
           <motion.h2 {...stagger(0.1)} className="text-3xl font-serif text-siyajj-ivory mb-12 text-center">Ce qui est inclus</motion.h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -107,7 +107,7 @@ export default function ActiviteDetail() {
       </section>
 
       {/* Pour qui */}
-      <section className="py-10 md:py-20 bg-siyajj-deep-black">
+      <section className="py-20 bg-siyajj-deep-black">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl">
           <motion.div {...stagger(0.1)} className="text-center mb-12">
             <div className="flex items-center justify-center gap-2 text-siyajj-luxury-gold text-xs uppercase tracking-widest mb-4">
@@ -130,7 +130,7 @@ export default function ActiviteDetail() {
       </section>
 
       {/* Intégration dans le voyage */}
-      <section className="py-10 md:py-20 bg-siyajj-black-ink border-y border-white/5">
+      <section className="py-20 bg-siyajj-black-ink border-y border-white/5">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl">
           <motion.h2 {...stagger(0.1)} className="text-3xl font-serif text-siyajj-ivory mb-12 text-center">Comment s'intègre-t-elle dans votre voyage ?</motion.h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -146,7 +146,7 @@ export default function ActiviteDetail() {
 
       {/* Activités liées */}
       {related.length > 0 && (
-        <section className="py-10 md:py-20 bg-siyajj-deep-black">
+        <section className="py-20 bg-siyajj-deep-black">
           <div className="container mx-auto px-4 md:px-8 max-w-5xl">
             <motion.h2 {...stagger(0.1)} className="text-3xl font-serif text-siyajj-ivory mb-10">Activités complémentaires</motion.h2>
             <div className="grid sm:grid-cols-3 gap-6">
@@ -165,7 +165,7 @@ export default function ActiviteDetail() {
       )}
 
       {/* FAQ */}
-      <section className="py-10 md:py-20 bg-siyajj-black-ink border-t border-white/5">
+      <section className="py-20 bg-siyajj-black-ink border-t border-white/5">
         <div className="container mx-auto px-4 md:px-8 max-w-3xl">
           <motion.div {...stagger(0.1)} className="flex items-center gap-3 mb-10">
             <HelpCircle className="w-6 h-6 text-siyajj-luxury-gold" />
@@ -187,7 +187,7 @@ export default function ActiviteDetail() {
       </section>
 
       {/* CTA final */}
-      <section className="py-12 md:py-24 bg-siyajj-deep-black relative overflow-hidden">
+      <section className="py-24 bg-siyajj-deep-black relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(15,76,76,0.3),transparent_60%)]" />
         <div className="container mx-auto px-4 text-center relative z-10 max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-serif text-siyajj-ivory mb-6">Construisons votre expérience SIYAJJ.</h2>

@@ -33,7 +33,7 @@ export default function HajjPreparation() {
   return (
     <div className="w-full overflow-x-hidden">
       {/* Hero */}
-      <section className="relative py-10 md:py-20 lg:py-32 bg-siyajj-deep-black overflow-hidden">
+      <section className="relative py-20 lg:py-32 bg-siyajj-deep-black overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(15,76,76,0.4),transparent_60%)]" />
         <div className="container mx-auto px-4 md:px-8 relative z-10 max-w-4xl">
           <motion.div {...stagger(0.1)}>
@@ -66,7 +66,7 @@ export default function HajjPreparation() {
       </section>
 
       {/* Ce qu'est le Hajj */}
-      <section className="py-10 md:py-20 bg-siyajj-black-ink border-y border-white/5">
+      <section className="py-20 bg-siyajj-black-ink border-y border-white/5">
         <div className="container mx-auto px-4 md:px-8 max-w-4xl">
           <div className="grid md:grid-cols-2 gap-12">
             <motion.div {...stagger(0.1)}>
@@ -90,7 +90,7 @@ export default function HajjPreparation() {
       </section>
 
       {/* Étapes de préparation */}
-      <section className="py-10 md:py-20 bg-siyajj-deep-black">
+      <section className="py-20 bg-siyajj-deep-black">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl">
           <motion.h2 {...stagger(0.1)} className="text-3xl font-serif text-siyajj-ivory mb-12">Les étapes de préparation</motion.h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -106,7 +106,7 @@ export default function HajjPreparation() {
       </section>
 
       {/* Hajj avec SIYAJJ */}
-      <section className="py-10 md:py-20 bg-siyajj-black-ink border-t border-white/5">
+      <section className="py-20 bg-siyajj-black-ink border-t border-white/5">
         <div className="container mx-auto px-4 md:px-8 max-w-4xl text-center">
           <motion.h2 {...stagger(0.1)} className="text-3xl font-serif text-siyajj-ivory mb-6">Le Hajj avec SIYAJJ</motion.h2>
           <motion.p {...stagger(0.2)} className="text-siyajj-ivory/70 leading-relaxed max-w-2xl mx-auto mb-10">
@@ -121,7 +121,7 @@ export default function HajjPreparation() {
       </section>
 
       {/* FAQ */}
-      <section className="py-10 md:py-20 bg-siyajj-deep-black border-t border-white/5">
+      <section className="py-20 bg-siyajj-deep-black border-t border-white/5">
         <div className="container mx-auto px-4 md:px-8 max-w-3xl">
           <motion.div {...stagger(0.1)} className="flex items-center gap-3 mb-10">
             <HelpCircle className="w-6 h-6 text-siyajj-luxury-gold" />

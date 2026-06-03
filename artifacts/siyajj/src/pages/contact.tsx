@@ -17,22 +17,22 @@ export default function Contact() {
   };
 
   return (
-    <div className="container mx-auto px-4 md:px-8 py-12 md:py-24 relative z-10">
-      <div className="max-w-4xl mx-auto text-center mb-10 md:mb-20">
+    <div className="container mx-auto px-4 md:px-8 py-24 relative z-10">
+      <div className="max-w-4xl mx-auto text-center mb-20">
         <div className="text-siyajj-luxury-gold text-xs uppercase tracking-widest mb-4 font-bold flex items-center justify-center gap-2">
           <span className="w-8 h-[1px] bg-siyajj-luxury-gold/50"></span>
           Nous Contacter
           <span className="w-8 h-[1px] bg-siyajj-luxury-gold/50"></span>
         </div>
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-siyajj-ivory mb-6 drop-shadow-md">Planifier Votre Voyage</h1>
+        <h1 className="text-5xl md:text-6xl font-serif text-siyajj-ivory mb-6 drop-shadow-md">Planifier Votre Voyage</h1>
         <p className="text-siyajj-ivory/70 leading-relaxed text-lg font-light max-w-2xl mx-auto">
           Nos conseillers spécialisés sont à votre écoute pour concevoir le pèlerinage qui répondra à vos attentes d'excellence et de spiritualité.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 max-w-6xl mx-auto">
-        <div className="lg:col-span-1 space-y-6 md:space-y-8">
-          <div className="glass-card p-6 md:p-10 rounded-3xl border border-siyajj-luxury-gold/20 shadow-2xl bg-black/40 backdrop-blur-xl">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+        <div className="lg:col-span-1 space-y-8">
+          <div className="glass-card p-10 rounded-3xl border border-siyajj-luxury-gold/20 shadow-2xl bg-black/40 backdrop-blur-xl">
             <h3 className="text-3xl font-serif text-siyajj-champagne mb-8 border-b border-siyajj-luxury-gold/20 pb-4">Contact Direct</h3>
             
             <div className="space-y-8">

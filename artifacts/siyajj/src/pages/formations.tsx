@@ -36,7 +36,7 @@ export default function Formations() {
       </section>
 
       {/* Pourquoi se former */}
-      <section className="py-10 md:py-20 relative bg-black/40 border-y border-siyajj-luxury-gold/10">
+      <section className="py-20 relative bg-black/40 border-y border-siyajj-luxury-gold/10">
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={container} className="space-y-6">
@@ -70,7 +70,7 @@ export default function Formations() {
       </section>
 
       {/* Modules de formation */}
-      <section className="py-12 md:py-24 relative">
+      <section className="py-24 relative">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl md:text-5xl font-serif text-siyajj-ivory mb-6">Nos Modules de Formation</h2>
@@ -106,7 +106,7 @@ export default function Formations() {
       </section>
 
       {/* Profils Spécifiques */}
-      <section className="py-12 md:py-24 bg-siyajj-black-ink border-y border-siyajj-luxury-gold/10 relative overflow-hidden">
+      <section className="py-24 bg-siyajj-black-ink border-y border-siyajj-luxury-gold/10 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(200,154,70,0.05),transparent_70%)] pointer-events-none" />
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -141,7 +141,7 @@ export default function Formations() {
       </section>
 
       {/* Supports Inclus */}
-      <section className="py-12 md:py-24 relative">
+      <section className="py-24 relative">
         <div className="container mx-auto px-4 md:px-8">
           <div className="glass-card rounded-3xl p-8 md:p-16 border border-siyajj-luxury-gold/30 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)] relative overflow-hidden">
              <div className="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxIiBmaWxsPSJyZ2JhKDIwMCwgMTU0LCA3MCwgMSkiLz48L3N2Zz4=')] bg-[length:24px_24px]" />

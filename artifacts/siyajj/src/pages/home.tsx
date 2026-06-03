@@ -96,7 +96,7 @@ export default function Home() {
           <motion.div {...stagger(0.5)} id="trip-builder" className="mt-8 lg:mt-6 scroll-mt-[4.5rem] lg:scroll-mt-32">
             <div className="glass-card rounded-[26px] border border-siyajj-luxury-gold/30 shadow-2xl backdrop-blur-2xl bg-siyajj-warm-black/85 p-3 md:p-4 gold-glow">
               <div className="flex flex-col lg:flex-row items-stretch gap-3">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 flex-1">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 flex-1">
                   {[
                     { key: "ville", label: "Ville de départ", value: ville, set: setVille, options: [["paris-cdg", "Paris CDG"], ["lyon", "Lyon"], ["marseille", "Marseille"], ["bruxelles", "Bruxelles"]] },
                     { key: "date", label: "Date souhaitée", value: date, set: setDate, options: [["nov-26", "Novembre 2026"], ["dec-26", "Décembre 2026"], ["ramadan-27", "Ramadan 2027"], ["sur-mesure", "Sur-mesure"]] },
@@ -164,7 +164,7 @@ export default function Home() {
       </section>
 
       {/* 4. Les Collections SIYAJJ */}
-      <section className="py-12 md:py-24 bg-siyajj-deep-black relative">
+      <section className="py-24 bg-siyajj-deep-black relative">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl md:text-5xl font-serif text-siyajj-ivory mb-4">Les Collections SIYAJJ</h2>
@@ -218,7 +218,7 @@ export default function Home() {
       </section>
 
       {/* 5. Nos Omras à venir */}
-      <section className="py-12 md:py-24 bg-siyajj-black-ink relative velvet-texture border-y border-white/5">
+      <section className="py-24 bg-siyajj-black-ink relative velvet-texture border-y border-white/5">
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
@@ -258,7 +258,7 @@ export default function Home() {
       </section>
 
       {/* 6. Formations & Préparation Spirituelle */}
-      <section className="py-12 md:py-24 bg-siyajj-deep-black">
+      <section className="py-24 bg-siyajj-deep-black">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl md:text-5xl font-serif text-siyajj-ivory mb-4">Préparation Spirituelle</h2>
@@ -287,7 +287,7 @@ export default function Home() {
       </section>
 
       {/* 7. Expérience SIYAJJ 360° */}
-      <section className="py-12 md:py-24 bg-siyajj-black-ink relative border-y border-white/5">
+      <section className="py-24 bg-siyajj-black-ink relative border-y border-white/5">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl md:text-5xl font-serif text-siyajj-ivory mb-4">L'Expérience 360°</h2>
@@ -316,7 +316,7 @@ export default function Home() {
       </section>
 
       {/* 8. Activités & Expériences */}
-      <section className="py-12 md:py-24 bg-siyajj-deep-black">
+      <section className="py-24 bg-siyajj-deep-black">
         <div className="container mx-auto px-4 md:px-8">
            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
@@ -352,7 +352,7 @@ export default function Home() {
       </section>
 
       {/* 9. Signature VIP */}
-      <section className="relative py-16 md:py-32 bg-black overflow-hidden">
+      <section className="relative py-32 bg-black overflow-hidden">
         <MediaFrame slot="signatureVip" className="absolute inset-0 opacity-40 mix-blend-luminosity" />
         <div className="absolute inset-0 bg-gradient-to-r from-siyajj-deep-black via-siyajj-deep-black/90 to-transparent" />
         <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -376,7 +376,7 @@ export default function Home() {
       </section>
 
       {/* 10. Pourquoi SIYAJJ */}
-      <section className="py-12 md:py-24 bg-siyajj-deep-black">
+      <section className="py-24 bg-siyajj-deep-black">
         <div className="container mx-auto px-4 md:px-8">
           <h2 className="text-4xl font-serif text-center text-siyajj-ivory mb-16">Pourquoi choisir SIYAJJ ?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -392,7 +392,7 @@ export default function Home() {
       </section>
 
       {/* 11. Processus Clair */}
-      <section className="py-12 md:py-24 bg-siyajj-black-ink border-t border-white/5">
+      <section className="py-24 bg-siyajj-black-ink border-t border-white/5">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl font-serif text-siyajj-ivory mb-4">Un processus clair et transparent</h2>
@@ -413,7 +413,7 @@ export default function Home() {
       </section>
 
       {/* 12. Hajj preview */}
-      <section className="py-12 md:py-24 bg-siyajj-deep-black relative overflow-hidden">
+      <section className="py-24 bg-siyajj-deep-black relative overflow-hidden">
          <div className="absolute right-0 top-0 bottom-0 w-1/2 z-0 hidden lg:block opacity-40">
            <MediaFrame slot="makkahImage" className="w-full h-full" />
            <div className="absolute inset-0 bg-gradient-to-r from-siyajj-deep-black to-transparent" />
@@ -438,7 +438,7 @@ export default function Home() {
       </section>
 
       {/* 13. Guides & Conseils */}
-      <section className="py-12 md:py-24 bg-siyajj-black-ink">
+      <section className="py-24 bg-siyajj-black-ink">
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex justify-between items-end mb-12">
             <h2 className="text-4xl font-serif text-siyajj-ivory">Guides & Conseils</h2>
@@ -462,7 +462,7 @@ export default function Home() {
       </section>
 
       {/* 14. Trust Center */}
-      <section className="py-10 md:py-20 bg-siyajj-deep-black border-y border-white/5">
+      <section className="py-20 bg-siyajj-deep-black border-y border-white/5">
         <div className="container mx-auto px-4 md:px-8 text-center max-w-4xl">
           <h2 className="text-3xl font-serif text-siyajj-ivory mb-8">Votre confiance, notre engagement</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -486,7 +486,7 @@ export default function Home() {
       </section>
 
       {/* 15. Video Experience */}
-      <section className="py-16 md:py-32 bg-siyajj-black-ink relative overflow-hidden flex items-center justify-center text-center">
+      <section className="py-32 bg-siyajj-black-ink relative overflow-hidden flex items-center justify-center text-center">
         <MediaFrame slot="atmosphere" className="absolute inset-0 opacity-20" />
         <div className="absolute inset-0 bg-siyajj-deep-black/60" />
         <div className="relative z-10">
@@ -509,7 +509,7 @@ export default function Home() {
       </section>
 
       {/* 16. Testimonials */}
-      <section className="py-12 md:py-24 bg-siyajj-deep-black">
+      <section className="py-24 bg-siyajj-deep-black">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-serif text-siyajj-ivory mb-4">Paroles de Pèlerins</h2>
@@ -533,7 +533,7 @@ export default function Home() {
       </section>
 
       {/* 17. FAQ */}
-      <section className="py-12 md:py-24 bg-siyajj-black-ink border-t border-white/5">
+      <section className="py-24 bg-siyajj-black-ink border-t border-white/5">
         <div className="container mx-auto px-4 md:px-8 max-w-3xl">
           <h2 className="text-4xl font-serif text-center text-siyajj-ivory mb-12">Questions Fréquentes</h2>
           <Accordion type="single" collapsible className="w-full">
@@ -552,7 +552,7 @@ export default function Home() {
       </section>
 
       {/* 18. Final CTA */}
-      <section className="py-16 md:py-32 bg-siyajj-deep-black relative overflow-hidden">
+      <section className="py-32 bg-siyajj-deep-black relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(15,76,76,0.3),_transparent_60%)]" />
         <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">
           <h2 className="text-4xl md:text-5xl font-serif text-siyajj-ivory mb-6">Votre voyage commence par une conversation.</h2>

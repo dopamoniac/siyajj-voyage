@@ -74,7 +74,7 @@ export default function SurMesure() {
   };
 
   return (
-    <div className="container mx-auto px-4 md:px-8 py-12 md:py-24 relative min-h-[90vh] flex flex-col justify-center">
+    <div className="container mx-auto px-4 md:px-8 py-24 relative min-h-[90vh] flex flex-col justify-center">
       <div className="absolute inset-0 velvet-texture opacity-30 mix-blend-overlay pointer-events-none" />
       <div className="max-w-3xl mx-auto text-center mb-12 relative z-20">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-siyajj-luxury-gold/30 bg-siyajj-luxury-gold/5 text-siyajj-luxury-gold text-[10px] tracking-[0.2em] uppercase mb-6">

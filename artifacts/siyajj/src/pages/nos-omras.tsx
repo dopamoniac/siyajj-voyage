@@ -24,9 +24,9 @@ export default function NosOmras() {
   }, [filterMonth, filterDeparture]);
 
   return (
-    <div className="w-full min-h-screen bg-siyajj-deep-black pb-16 md:pb-32">
+    <div className="w-full min-h-screen bg-siyajj-deep-black pb-32">
       {/* Header Section */}
-      <section className="pt-10 md:pt-24 pb-8 md:pb-16 relative border-b border-white/5 bg-siyajj-warm-black overflow-hidden">
+      <section className="pt-24 pb-16 relative border-b border-white/5 bg-siyajj-warm-black overflow-hidden">
         <div className="absolute inset-0 velvet-texture opacity-30 mix-blend-overlay pointer-events-none" />
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle,_rgba(15,76,76,0.15),_transparent_70%)] rounded-full blur-3xl pointer-events-none" />
         <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -43,14 +43,14 @@ export default function NosOmras() {
       </section>
 
       {/* Filters Section */}
-      <section className="sticky top-[4.5rem] lg:top-32 z-40 bg-siyajj-deep-black/90 backdrop-blur-xl border-b border-white/5 py-3 shadow-xl">
+      <section className="sticky top-28 z-40 bg-siyajj-deep-black/80 backdrop-blur-xl border-b border-white/5 py-4 shadow-xl">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-            <div className="flex items-center gap-2 text-siyajj-luxury-gold text-sm font-medium tracking-wider uppercase shrink-0">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-2 text-siyajj-luxury-gold text-sm font-medium tracking-wider uppercase">
               <Filter className="w-4 h-4" /> Filtres
             </div>
-            <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-2 sm:gap-3 w-full">
-              <div className="flex items-center rounded-lg border border-siyajj-luxury-gold/20 bg-black/50 p-0.5 self-start">
+            <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
+              <div className="flex items-center rounded-lg border border-siyajj-luxury-gold/20 bg-black/50 p-0.5">
                 <button
                   type="button"
                   aria-label="Vue cartes"
@@ -71,7 +71,7 @@ export default function NosOmras() {
               <select
                 value={filterMonth}
                 onChange={(e) => setFilterMonth(e.target.value)}
-                className="flex-1 bg-black/50 border border-siyajj-luxury-gold/20 text-siyajj-ivory text-sm rounded-lg px-4 py-3 focus:outline-none focus:border-siyajj-luxury-gold/50 appearance-none font-sans min-w-0"
+                className="bg-black/50 border border-siyajj-luxury-gold/20 text-siyajj-ivory text-sm rounded-lg px-4 py-2.5 focus:outline-none focus:border-siyajj-luxury-gold/50 appearance-none min-w-[160px] font-sans"
               >
                 <option value="all">Tous les mois</option>
                 {months.map(m => <option key={m} value={m}>{m}</option>)}
@@ -80,7 +80,7 @@ export default function NosOmras() {
               <select
                 value={filterDeparture}
                 onChange={(e) => setFilterDeparture(e.target.value)}
-                className="flex-1 bg-black/50 border border-siyajj-luxury-gold/20 text-siyajj-ivory text-sm rounded-lg px-4 py-3 focus:outline-none focus:border-siyajj-luxury-gold/50 appearance-none font-sans min-w-0"
+                className="bg-black/50 border border-siyajj-luxury-gold/20 text-siyajj-ivory text-sm rounded-lg px-4 py-2.5 focus:outline-none focus:border-siyajj-luxury-gold/50 appearance-none min-w-[160px] font-sans"
               >
                 <option value="all">Toutes les villes</option>
                 {departures.map(d => <option key={d} value={d}>{d}</option>)}
@@ -89,7 +89,7 @@ export default function NosOmras() {
               {(filterMonth !== "all" || filterDeparture !== "all") && (
                 <button
                   onClick={() => { setFilterMonth("all"); setFilterDeparture("all"); }}
-                  className="text-xs text-siyajj-ivory/50 hover:text-siyajj-ivory transition-colors underline underline-offset-4 self-center"
+                  className="text-xs text-siyajj-ivory/50 hover:text-siyajj-ivory transition-colors underline underline-offset-4 ml-2"
                 >
                   Réinitialiser
                 </button>
@@ -103,7 +103,7 @@ export default function NosOmras() {
       <section className="pt-16">
         <div className="container mx-auto px-4 md:px-8">
           {filteredOffers.length === 0 ? (
-            <div className="text-center py-10 md:py-20 glass-card rounded-2xl max-w-2xl mx-auto border-siyajj-luxury-gold/20">
+            <div className="text-center py-20 glass-card rounded-2xl max-w-2xl mx-auto border-siyajj-luxury-gold/20">
               <div className="w-16 h-16 rounded-full border border-siyajj-luxury-gold/20 flex items-center justify-center mx-auto mb-4 text-siyajj-luxury-gold">
                 <Filter className="w-6 h-6 opacity-50" />
               </div>

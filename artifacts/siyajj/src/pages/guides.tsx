@@ -125,7 +125,7 @@ export default function Guides() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 md:py-24 relative overflow-hidden">
+      <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-siyajj-charcoal opacity-50" />
         <div className="container relative z-10 px-4 md:px-8 mx-auto text-center max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-serif text-siyajj-ivory mb-6">Une question spécifique ?</h2>

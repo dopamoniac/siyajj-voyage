@@ -5,20 +5,20 @@ import { motion } from "framer-motion";
 
 export default function APropos() {
   return (
-    <div className="container mx-auto px-4 md:px-8 py-12 md:py-24">
-      <div className="max-w-3xl mx-auto text-center mb-10 md:mb-24 relative z-10">
+    <div className="container mx-auto px-4 md:px-8 py-24">
+      <div className="max-w-3xl mx-auto text-center mb-24 relative z-10">
         <div className="text-siyajj-luxury-gold text-xs uppercase tracking-widest mb-4 font-bold flex items-center justify-center gap-2">
           <span className="w-8 h-[1px] bg-siyajj-luxury-gold/50"></span>
           Notre Maison
           <span className="w-8 h-[1px] bg-siyajj-luxury-gold/50"></span>
         </div>
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-siyajj-ivory mb-6 drop-shadow-md">L'Excellence SIYAJJ</h1>
+        <h1 className="text-5xl md:text-6xl font-serif text-siyajj-ivory mb-6 drop-shadow-md">L'Excellence SIYAJJ</h1>
         <p className="text-siyajj-ivory/70 leading-relaxed text-xl font-light">
           Redonner au voyage sacré ses lettres de noblesse, à travers une approche où le spirituel rencontre l'excellence de l'hospitalité.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center mb-12 md:mb-32">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
         <div className="order-2 lg:order-1 relative z-10">
           <h2 className="text-4xl font-serif text-siyajj-champagne mb-8">Le Concept Renaissance</h2>
           <div className="space-y-6 text-lg font-light text-siyajj-ivory/80 leading-relaxed">
@@ -48,9 +48,9 @@ export default function APropos() {
         </div>
       </div>
 
-      <div className="mb-12 md:mb-32 relative z-10">
-        <h2 className="text-3xl md:text-4xl font-serif text-center text-siyajj-ivory mb-10 md:mb-16 drop-shadow-md">Nos Valeurs Cardinales</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
+      <div className="mb-32 relative z-10">
+        <h2 className="text-4xl font-serif text-center text-siyajj-ivory mb-16 drop-shadow-md">Nos Valeurs Cardinales</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             { title: "Excellence", desc: "Dans la sélection rigoureuse de nos partenaires et la qualité irréprochable de nos services." },
             { title: "Sérénité", desc: "Une organisation sans faille en amont pour garantir un esprit totalement apaisé sur place." },
@@ -59,8 +59,8 @@ export default function APropos() {
             { title: "Transparence", desc: "Une clarté totale sur nos offres, nos prix et nos engagements, sans aucun compromis." },
             { title: "Discrétion VIP", desc: "Un service haut de gamme qui sait s'effacer élégamment pour laisser place à votre spiritualité." }
           ].map((val, i) => (
-            <div key={i} className="glass-card bg-black/40 border border-white/10 hover:border-siyajj-luxury-gold/40 p-6 md:p-10 rounded-2xl text-center transition-all duration-500 hover:shadow-[0_0_30px_rgba(200,154,70,0.1)] group">
-              <div className="w-14 h-14 md:w-16 md:h-16 mx-auto bg-siyajj-luxury-gold/5 rounded-full flex items-center justify-center mb-5 md:mb-8 border border-siyajj-luxury-gold/20 group-hover:scale-110 transition-transform duration-500">
+            <div key={i} className="glass-card bg-black/40 border border-white/10 hover:border-siyajj-luxury-gold/40 p-10 rounded-2xl text-center transition-all duration-500 hover:shadow-[0_0_30px_rgba(200,154,70,0.1)] group">
+              <div className="w-16 h-16 mx-auto bg-siyajj-luxury-gold/5 rounded-full flex items-center justify-center mb-8 border border-siyajj-luxury-gold/20 group-hover:scale-110 transition-transform duration-500">
                 <span className="text-2xl text-siyajj-luxury-gold drop-shadow-[0_0_10px_rgba(200,154,70,0.8)]">✦</span>
               </div>
               <h3 className="text-2xl font-serif text-siyajj-champagne mb-4">{val.title}</h3>
@@ -70,8 +70,8 @@ export default function APropos() {
         </div>
       </div>
 
-      <div className="mb-12 md:mb-32 relative z-10 max-w-5xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-serif text-center text-siyajj-ivory mb-8 md:mb-16 drop-shadow-md">Le Processus SIYAJJ</h2>
+      <div className="mb-32 relative z-10 max-w-5xl mx-auto">
+        <h2 className="text-4xl font-serif text-center text-siyajj-ivory mb-16 drop-shadow-md">Le Processus SIYAJJ</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {processSteps.map((step, idx) => (
             <motion.div 
@@ -93,7 +93,7 @@ export default function APropos() {
       <div className="relative z-10 rounded-3xl overflow-hidden border border-siyajj-luxury-gold/30 shadow-2xl">
         <MediaFrame slot="atmosphere" className="absolute inset-0 opacity-40" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/90" />
-        <div className="relative z-20 text-center p-8 md:p-16 lg:p-24">
+        <div className="relative z-20 text-center p-16 md:p-24">
           <div className="text-xs uppercase tracking-widest text-siyajj-luxury-gold font-bold mb-4">La Différence Premium</div>
           <h2 className="text-4xl md:text-5xl font-serif text-siyajj-ivory mb-8">Votre Voyage Commence Ici</h2>
           <p className="text-siyajj-ivory/80 mb-12 max-w-2xl mx-auto text-xl font-light leading-relaxed">
