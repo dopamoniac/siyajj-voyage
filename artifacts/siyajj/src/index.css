@@ -4,7 +4,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
+@theme {
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   --color-border: hsl(var(--border));
@@ -31,6 +31,7 @@
   --font-serif: var(--app-font-serif);
   --font-display: 'Cinzel', serif;
 
+  /* ── Dark-mode tokens (defaults) ── */
   --color-siyajj-deep-black: #050403;
   --color-siyajj-black-ink: #07100E;
   --color-siyajj-warm-black: #0B1614;
@@ -42,11 +43,38 @@
   --color-siyajj-ivory: #E8DCC2;
   --color-siyajj-muted-ivory: #D8C8AA;
   --color-siyajj-muted-text: #BCA98B;
-
   --color-siyajj-emerald: #0F4C4C;
   --color-siyajj-mosque-green: #123C3A;
   --color-siyajj-teal: #0D5B61;
   --color-siyajj-soft-black: #0B0907;
+}
+
+/* ────────────────────────────────────────
+   LIGHT MODE — Premium editorial overrides
+   ──────────────────────────────────────── */
+html.light {
+  /* Backgrounds */
+  --color-siyajj-deep-black: #FAF8F4;
+  --color-siyajj-black-ink: #F2EDE3;
+  --color-siyajj-warm-black: #EAE4D8;
+  --color-siyajj-charcoal: #DDD7C8;
+  --color-siyajj-soft-black: #F6F3EE;
+
+  /* Text — inverted: ivory becomes deep ink */
+  --color-siyajj-ivory: #16120E;
+  --color-siyajj-muted-ivory: #2C261E;
+  --color-siyajj-muted-text: #796B5E;
+
+  /* Gold — slightly deepened for contrast on white */
+  --color-siyajj-luxury-gold: #B8852A;
+  --color-siyajj-champagne: #C9952F;
+  --color-siyajj-soft-gold: #D4A640;
+  --color-siyajj-antique-bronze: #A87520;
+
+  /* Teal / emerald used for card tinting */
+  --color-siyajj-emerald: #E8F0EF;
+  --color-siyajj-mosque-green: #DDE8E5;
+  --color-siyajj-teal: #E2EEEF;
 }
 
 :root {
@@ -86,8 +114,7 @@
   --radius: 0.5rem;
 }
 
-.dark {
-}
+.dark {}
 
 @layer base {
   * {
@@ -103,18 +130,30 @@
       linear-gradient(180deg, #050403 0%, #07100E 40%, #081512 100%);
     background-attachment: fixed;
     color: var(--color-siyajj-ivory);
+    transition: background-color 0.35s ease, color 0.35s ease;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif font-medium;
   }
 }
 
+/* Light mode body overrides */
+html.light body {
+  background-color: #FAF8F4;
+  background-image:
+    radial-gradient(ellipse 90% 60% at 80% -10%, rgba(199, 154, 59, 0.07), transparent 60%),
+    radial-gradient(ellipse 80% 50% at 0% 110%, rgba(15, 76, 76, 0.04), transparent 60%),
+    linear-gradient(180deg, #FAF8F4 0%, #F2EDE3 50%, #EAE4D8 100%);
+}
+
+/* ── Glass cards ── */
 .glass-card {
   background: linear-gradient(155deg, rgba(18, 60, 58, 0.42), rgba(8, 16, 14, 0.78));
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(199, 154, 59, 0.18);
+  transition: background 0.35s ease, border-color 0.35s ease;
 }
 
 .emerald-glass {
@@ -122,10 +161,35 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(199, 154, 59, 0.16);
+  transition: background 0.35s ease, border-color 0.35s ease;
 }
 
+html.light .glass-card {
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.85), rgba(242, 237, 227, 0.94));
+  border: 1px solid rgba(184, 133, 42, 0.22);
+}
+
+html.light .emerald-glass {
+  background: linear-gradient(155deg, rgba(220, 236, 233, 0.55), rgba(242, 237, 227, 0.90));
+  border: 1px solid rgba(184, 133, 42, 0.18);
+}
+
+/* ── Atmosphere overlay ── */
+.atmosphere-overlay {
+  transition: opacity 0.4s ease;
+}
+
+html.light .atmosphere-overlay {
+  opacity: 0 !important;
+}
+
+/* ── Gold border / utility ── */
 .gold-border {
   border: 1px solid rgba(199, 154, 59, 0.30);
+}
+
+html.light .gold-border {
+  border: 1px solid rgba(184, 133, 42, 0.28);
 }
 
 .hairline-gold {
@@ -147,6 +211,10 @@
   box-shadow: 0 0 50px rgba(15, 76, 76, 0.35);
 }
 
+html.light .emerald-glow {
+  box-shadow: 0 0 50px rgba(15, 76, 76, 0.12);
+}
+
 .text-gold-gradient {
   background: linear-gradient(to right, #D8C8AA, #C79A3B, #D7AE58);
   -webkit-background-clip: text;
@@ -154,6 +222,14 @@
   background-clip: text;
 }
 
+html.light .text-gold-gradient {
+  background: linear-gradient(to right, #A07828, #B8852A, #C99535);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Animations ── */
 @keyframes slow-pulse {
   0%, 100% { opacity: 0.4; transform: scale(1); }
   50% { opacity: 0.7; transform: scale(1.05); }
@@ -186,6 +262,10 @@
   background: var(--color-siyajj-luxury-gold);
   border-radius: 50%;
   animation: gold-dust 8s infinite linear;
+}
+
+html.light .particle {
+  background: rgba(184, 133, 42, 0.5);
 }
 
 .gradient-mask-right {
@@ -224,4 +304,21 @@
 
 .sweep-hover:hover::after {
   left: 200%;
+}
+
+/* ── Smooth theme transitions ── */
+html {
+  transition: color-scheme 0.35s ease;
+}
+
+*, *::before, *::after {
+  transition-property: background-color, border-color, box-shadow, color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+/* Opt-out animated elements from color transitions to avoid jitter */
+.no-theme-transition,
+.no-theme-transition * {
+  transition: none !important;
 }

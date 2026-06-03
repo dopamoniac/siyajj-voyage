@@ -1,9 +1,10 @@
 import { ReactNode, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, MessageCircle, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, MessageCircle, Phone, ChevronDown, Sun, Moon } from "lucide-react";
 import { AnimatePresence, motion, useScroll, useSpring, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { MediaFrame } from "@/components/ui/media-frame";
+import { useTheme } from "@/contexts/theme";
 
 interface NavItem {
   href: string;
@@ -244,6 +245,23 @@ function MobileAccordion({ group, onNavigate }: { group: NavGroup; onNavigate: (
   );
 }
 
+function ThemeToggle({ className = "" }: { className?: string }) {
+  const { theme, toggle } = useTheme();
+  return (
+    <button
+      onClick={toggle}
+      aria-label={theme === "dark" ? "Passer en mode clair" : "Passer en mode sombre"}
+      className={`w-8 h-8 rounded-full flex items-center justify-center border border-siyajj-luxury-gold/30 text-siyajj-luxury-gold hover:bg-siyajj-luxury-gold/15 transition-colors shrink-0 ${className}`}
+    >
+      {theme === "dark" ? (
+        <Sun className="w-3.5 h-3.5" />
+      ) : (
+        <Moon className="w-3.5 h-3.5" />
+      )}
+    </button>
+  );
+}
+
 export function Header() {
   const [open, setOpen] = useState(false);
   const [location] = useLocation();
@@ -283,6 +301,7 @@ export function Header() {
             <Phone className="h-4 w-4 text-siyajj-luxury-gold" />
             {PHONE_DISPLAY}
           </a>
+          <ThemeToggle />
           <Button asChild className="bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black hover:brightness-110 font-medium uppercase tracking-widest text-[11px] sweep-hover relative overflow-hidden">
             <Link href="/contact"><span className="relative z-10">Demander un devis</span></Link>
           </Button>
@@ -293,6 +312,7 @@ export function Header() {
           <a href={PHONE_HREF} className="flex items-center gap-2 text-sm text-siyajj-ivory/75 hover:text-siyajj-luxury-gold transition-colors">
             <Phone className="h-4 w-4 text-siyajj-luxury-gold" />
           </a>
+          <ThemeToggle />
           <Button asChild size="sm" className="bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black hover:brightness-110 font-medium uppercase tracking-widest text-[10px] sweep-hover relative overflow-hidden">
             <Link href="/contact"><span className="relative z-10">Devis</span></Link>
           </Button>
@@ -301,10 +321,13 @@ export function Header() {
           </button>
         </div>
 
-        {/* Mobile burger */}
-        <button className="md:hidden text-siyajj-ivory p-2" onClick={() => setOpen((v) => !v)} aria-label={open ? "Fermer" : "Menu"} aria-expanded={open}>
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        {/* Mobile — toggle + burger */}
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <button className="text-siyajj-ivory p-2" onClick={() => setOpen((v) => !v)} aria-label={open ? "Fermer" : "Menu"} aria-expanded={open}>
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile / tablet full-screen menu with accordions */}
@@ -459,7 +482,7 @@ export function PageShell({ children }: { children: ReactNode }) {
     <div className="min-h-[100dvh] flex flex-col bg-siyajj-deep-black text-siyajj-ivory font-sans selection:bg-siyajj-luxury-gold/30 relative">
       {/* Global Atmosphere Layer */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <MediaFrame slot="atmosphere" className="absolute inset-0 w-full h-full opacity-[0.07] mix-blend-screen" />
+        <MediaFrame slot="atmosphere" className="atmosphere-overlay absolute inset-0 w-full h-full opacity-[0.07] mix-blend-screen" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-siyajj-emerald/20 via-transparent to-transparent opacity-80" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-siyajj-teal/15 via-transparent to-transparent opacity-70" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-siyajj-luxury-gold/5 via-transparent to-transparent opacity-60" />

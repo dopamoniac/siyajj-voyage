@@ -4,3 +4,4 @@
 - [Bottom-overlap needs overflow-x-clip](overflow-clip-overlap.md) — let an absolutely-positioned child overlap a section seam without being clipped.
 - [Screenshot timing vs entrance animations](screenshot-animation-timing.md) — delayed entrance animations can look "missing" in app_preview screenshots.
 - [Tailwind v4 remote @import](tailwind-v4-remote-import.md) — remote CSS @import (Google Fonts) fails with Tailwind v4; what to do instead.
+- [Tailwind v4 runtime theming](tailwind-v4-runtime-theming.md) — `@theme inline` compiles utilities to static values; use `@theme` (no inline) so utilities reference `var()` and CSS variable overrides work at runtime.
