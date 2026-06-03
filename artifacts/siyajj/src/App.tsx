@@ -1,5 +1,5 @@
-import { lazy, Suspense } from "react";
-import { Switch, Route, Router as WouterRouter } from "wouter";
+import { lazy, Suspense, useEffect } from "react";
+import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
 import { MotionConfig } from "framer-motion";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -21,6 +21,17 @@ const Contact = lazy(() => import("@/pages/contact"));
 
 const queryClient = new QueryClient();
 
+function ScrollToTop() {
+  const [location] = useLocation();
+  useEffect(() => {
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+    window.scrollTo(0, 0);
+  }, [location]);
+  return null;
+}
+
 function RouteFallback() {
   return (
     <div className="min-h-[60vh] flex items-center justify-center">
@@ -31,24 +42,27 @@ function RouteFallback() {
 
 function Router() {
   return (
-    <PageShell>
-      <Suspense fallback={<RouteFallback />}>
-        <Switch>
-          <Route path="/" component={Home} />
-          <Route path="/nos-omras" component={NosOmras} />
-          <Route path="/collections" component={Collections} />
-          <Route path="/sur-mesure" component={SurMesure} />
-          <Route path="/signature-vip" component={SignatureVip} />
-          <Route path="/activites" component={Activites} />
-          <Route path="/formations" component={Formations} />
-          <Route path="/hajj" component={Hajj} />
-          <Route path="/guides" component={Guides} />
-          <Route path="/a-propos" component={APropos} />
-          <Route path="/contact" component={Contact} />
-          <Route component={NotFound} />
-        </Switch>
-      </Suspense>
-    </PageShell>
+    <>
+      <ScrollToTop />
+      <PageShell>
+        <Suspense fallback={<RouteFallback />}>
+          <Switch>
+            <Route path="/" component={Home} />
+            <Route path="/nos-omras" component={NosOmras} />
+            <Route path="/collections" component={Collections} />
+            <Route path="/sur-mesure" component={SurMesure} />
+            <Route path="/signature-vip" component={SignatureVip} />
+            <Route path="/activites" component={Activites} />
+            <Route path="/formations" component={Formations} />
+            <Route path="/hajj" component={Hajj} />
+            <Route path="/guides" component={Guides} />
+            <Route path="/a-propos" component={APropos} />
+            <Route path="/contact" component={Contact} />
+            <Route component={NotFound} />
+          </Switch>
+        </Suspense>
+      </PageShell>
+    </>
   );
 }
 

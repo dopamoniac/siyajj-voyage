@@ -21,6 +21,10 @@ const PHONE_DISPLAY = "+33 1 84 80 00 00";
 const PHONE_HREF = "tel:+33184800000";
 const WHATSAPP_HREF = "https://wa.me/33100000000";
 
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 export function Header() {
   const [open, setOpen] = useState(false);
   const [location] = useLocation();
@@ -37,32 +41,77 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="fixed top-0 w-full z-50 transition-all duration-300 bg-siyajj-deep-black/80 backdrop-blur-md border-b border-white/5">
-      <div className="container mx-auto px-4 md:px-8 h-32 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <img 
-            src={`${import.meta.env.BASE_URL}assets/logo-siyajj-transparent.png`} 
-            alt="SIYAJJ Renaissance" 
-            className="h-28 w-auto drop-shadow-[0_2px_16px_rgba(212,175,55,0.4)]"
+    <header className="fixed top-0 w-full z-50 transition-all duration-300 bg-siyajj-deep-black/80 backdrop-blur-md border-b border-siyajj-luxury-gold/15">
+      {/* Desktop + tablet header */}
+      <div className="container mx-auto px-4 md:px-8 h-[4.5rem] lg:h-32 flex items-center justify-between">
+        <Link
+          href="/"
+          onClick={scrollToTop}
+          className="flex items-center gap-2 shrink-0"
+        >
+          <img
+            src={`${import.meta.env.BASE_URL}assets/logo-siyajj-transparent.png`}
+            alt="SIYAJJ Renaissance"
+            className="h-11 md:h-16 lg:h-28 w-auto drop-shadow-[0_2px_16px_rgba(212,175,55,0.4)]"
           />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-6 xl:gap-7 text-[13px] font-medium tracking-wide">
           {NAV_LINKS.slice(0, 6).map((l) => (
-            <Link key={l.href} href={l.href} className={`transition-colors ${location === l.href ? "text-siyajj-luxury-gold" : "text-siyajj-ivory/80 hover:text-siyajj-luxury-gold"}`}>{l.label}</Link>
+            <Link
+              key={l.href}
+              href={l.href}
+              className={`transition-colors ${location === l.href ? "text-siyajj-luxury-gold" : "text-siyajj-ivory/80 hover:text-siyajj-luxury-gold"}`}
+            >
+              {l.label}
+            </Link>
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3 lg:gap-4">
-          <a href={PHONE_HREF} className="hidden xl:flex items-center gap-2 text-sm text-siyajj-ivory/75 hover:text-siyajj-luxury-gold transition-colors">
+        <div className="hidden lg:flex items-center gap-3 xl:gap-4">
+          <a
+            href={PHONE_HREF}
+            className="hidden xl:flex items-center gap-2 text-sm text-siyajj-ivory/75 hover:text-siyajj-luxury-gold transition-colors"
+          >
             <Phone className="h-4 w-4 text-siyajj-luxury-gold" />
             {PHONE_DISPLAY}
           </a>
-          <Button asChild className="bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black hover:brightness-110 font-medium uppercase tracking-widest text-[11px] sweep-hover relative overflow-hidden">
-            <Link href="/contact"><span className="relative z-10">Demander un devis</span></Link>
+          <Button
+            asChild
+            className="bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black hover:brightness-110 font-medium uppercase tracking-widest text-[11px] sweep-hover relative overflow-hidden"
+          >
+            <Link href="/contact">
+              <span className="relative z-10">Demander un devis</span>
+            </Link>
           </Button>
         </div>
 
+        {/* Tablet: show phone + CTA but not full nav */}
+        <div className="hidden md:flex lg:hidden items-center gap-3">
+          <a href={PHONE_HREF} className="flex items-center gap-2 text-sm text-siyajj-ivory/75 hover:text-siyajj-luxury-gold transition-colors">
+            <Phone className="h-4 w-4 text-siyajj-luxury-gold" />
+            <span className="hidden sm:inline">{PHONE_DISPLAY}</span>
+          </a>
+          <Button
+            asChild
+            size="sm"
+            className="bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black hover:brightness-110 font-medium uppercase tracking-widest text-[10px] sweep-hover relative overflow-hidden"
+          >
+            <Link href="/contact">
+              <span className="relative z-10">Devis</span>
+            </Link>
+          </Button>
+          <button
+            className="text-siyajj-ivory p-2"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={open}
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+
+        {/* Mobile: burger only */}
         <button
           className="md:hidden text-siyajj-ivory p-2"
           onClick={() => setOpen((v) => !v)}
@@ -73,45 +122,75 @@ export function Header() {
         </button>
       </div>
 
+      {/* Full-screen mobile/tablet menu */}
       <AnimatePresence>
         {open && (
           <motion.nav
             initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:hidden fixed inset-x-0 top-28 bottom-0 bg-siyajj-deep-black/98 backdrop-blur-xl border-t border-siyajj-luxury-gold/10 overflow-y-auto"
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] as const }}
+            className="lg:hidden fixed inset-x-0 top-[4.5rem] bottom-0 bg-siyajj-deep-black/98 backdrop-blur-xl border-t border-siyajj-luxury-gold/20 overflow-y-auto z-50"
           >
             <div className="container mx-auto px-6 py-10 flex flex-col gap-1">
+              {/* Home link */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.03 }}
+              >
+                <Link
+                  href="/"
+                  onClick={scrollToTop}
+                  className="block py-4 border-b border-siyajj-luxury-gold/20 font-serif text-2xl text-siyajj-luxury-gold hover:text-siyajj-champagne transition-colors"
+                >
+                  Accueil
+                </Link>
+              </motion.div>
+
               {NAV_LINKS.map((l, i) => (
                 <motion.div
                   key={l.href}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.06 * i + 0.05 }}
+                  transition={{ delay: 0.06 * (i + 1) + 0.03 }}
                 >
                   <Link
                     href={l.href}
-                    className="block py-4 border-b border-white/5 font-serif text-2xl text-siyajj-ivory hover:text-siyajj-luxury-gold transition-colors"
+                    className={`block py-4 border-b border-white/5 font-serif text-2xl transition-colors ${location === l.href ? "text-siyajj-luxury-gold" : "text-siyajj-ivory hover:text-siyajj-luxury-gold"}`}
                   >
                     {l.label}
                   </Link>
                 </motion.div>
               ))}
+
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.06 * NAV_LINKS.length + 0.1 }}
+                transition={{ delay: 0.06 * NAV_LINKS.length + 0.15 }}
                 className="mt-8 space-y-3"
               >
-                <Button asChild className="w-full h-14 bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black hover:brightness-110 uppercase tracking-widest text-xs font-semibold sweep-hover relative overflow-hidden">
-                  <Link href="/contact"><span className="relative z-10">Demander un devis</span></Link>
+                <Button
+                  asChild
+                  className="w-full h-14 bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black hover:brightness-110 uppercase tracking-widest text-xs font-semibold sweep-hover relative overflow-hidden"
+                >
+                  <Link href="/contact">
+                    <span className="relative z-10">Demander un devis</span>
+                  </Link>
                 </Button>
                 <div className="grid grid-cols-2 gap-3">
-                  <a href={PHONE_HREF} className="flex items-center justify-center gap-2 h-12 rounded-lg border border-siyajj-luxury-gold/30 text-siyajj-ivory/85 text-sm hover:bg-siyajj-luxury-gold/10 transition-colors">
+                  <a
+                    href={PHONE_HREF}
+                    className="flex items-center justify-center gap-2 h-12 rounded-lg border border-siyajj-luxury-gold/30 text-siyajj-ivory/85 text-sm hover:bg-siyajj-luxury-gold/10 transition-colors"
+                  >
                     <Phone className="h-4 w-4 text-siyajj-luxury-gold" /> Appeler
                   </a>
-                  <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 h-12 rounded-lg border border-siyajj-luxury-gold/30 text-siyajj-ivory/85 text-sm hover:bg-siyajj-luxury-gold/10 transition-colors">
+                  <a
+                    href={WHATSAPP_HREF}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 h-12 rounded-lg border border-siyajj-luxury-gold/30 text-siyajj-ivory/85 text-sm hover:bg-siyajj-luxury-gold/10 transition-colors"
+                  >
                     <MessageCircle className="h-4 w-4 text-siyajj-luxury-gold" /> WhatsApp
                   </a>
                 </div>
@@ -130,19 +209,21 @@ export function Footer() {
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
-            <img 
-              src={`${import.meta.env.BASE_URL}assets/logo-siyajj-transparent.png`} 
-              alt="SIYAJJ Renaissance" 
-              className="h-14 w-auto mb-6 drop-shadow-[0_2px_8px_rgba(212,175,55,0.25)]"
-            />
+            <Link href="/" onClick={scrollToTop}>
+              <img
+                src={`${import.meta.env.BASE_URL}assets/logo-siyajj-transparent.png`}
+                alt="SIYAJJ Renaissance"
+                className="h-14 w-auto mb-6 drop-shadow-[0_2px_8px_rgba(212,175,55,0.25)]"
+              />
+            </Link>
             <p className="text-siyajj-muted-text text-sm leading-relaxed mb-6">
               Agence premium d'organisation Omra et Hajj depuis la France. L'excellence au service de votre spiritualité.
             </p>
             <div className="text-xs text-siyajj-luxury-gold uppercase tracking-widest font-display">
-              En partenariat opérationnel avec<br/>Omra Factory
+              En partenariat opérationnel avec<br />Omra Factory
             </div>
           </div>
-          
+
           <div>
             <h4 className="font-serif text-lg mb-6 text-siyajj-ivory">Expériences</h4>
             <ul className="space-y-3 text-sm text-siyajj-muted-text">
@@ -152,7 +233,7 @@ export function Footer() {
               <li><Link href="/signature-vip" className="hover:text-siyajj-luxury-gold transition-colors">Signature VIP</Link></li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="font-serif text-lg mb-6 text-siyajj-ivory">Découvrir</h4>
             <ul className="space-y-3 text-sm text-siyajj-muted-text">
@@ -168,17 +249,26 @@ export function Footer() {
             <h4 className="font-serif text-lg mb-6 text-siyajj-ivory">Contact</h4>
             <ul className="space-y-3 text-sm text-siyajj-muted-text">
               <li><Link href="/contact" className="hover:text-siyajj-luxury-gold transition-colors">Nous contacter</Link></li>
-              <li><a href="https://wa.me/33100000000" target="_blank" rel="noopener noreferrer" className="hover:text-siyajj-luxury-gold transition-colors">WhatsApp</a></li>
+              <li>
+                <a
+                  href={WHATSAPP_HREF}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-siyajj-luxury-gold transition-colors"
+                >
+                  WhatsApp
+                </a>
+              </li>
             </ul>
           </div>
         </div>
-        
+
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-siyajj-muted-text">
           <p>© 2026 SIYAJJ Renaissance. Tous droits réservés.</p>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-siyajj-ivory transition-colors">Mentions légales</a>
-            <a href="#" className="hover:text-siyajj-ivory transition-colors">CGV</a>
-            <a href="#" className="hover:text-siyajj-ivory transition-colors">Confidentialité</a>
+            <Link href="/contact" className="hover:text-siyajj-ivory transition-colors">Mentions légales</Link>
+            <Link href="/contact" className="hover:text-siyajj-ivory transition-colors">CGV</Link>
+            <Link href="/contact" className="hover:text-siyajj-ivory transition-colors">Confidentialité</Link>
           </div>
         </div>
       </div>
@@ -189,7 +279,13 @@ export function Footer() {
 function FloatingWhatsApp() {
   return (
     <div className="hidden md:block fixed bottom-6 right-6 z-50">
-      <a href="https://wa.me/33100000000" target="_blank" rel="noopener noreferrer" aria-label="Contacter un conseiller sur WhatsApp" className="w-14 h-14 bg-siyajj-luxury-gold rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(200,154,70,0.3)] hover:scale-110 transition-transform group">
+      <a
+        href={WHATSAPP_HREF}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contacter un conseiller sur WhatsApp"
+        className="w-14 h-14 bg-siyajj-luxury-gold rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(200,154,70,0.3)] hover:scale-110 transition-transform group"
+      >
         <MessageCircle className="w-6 h-6 text-siyajj-deep-black group-hover:animate-pulse" />
       </a>
     </div>
@@ -202,14 +298,19 @@ function MobileActionBar() {
       className="md:hidden fixed bottom-0 inset-x-0 z-50 flex items-center gap-3 px-4 pt-3 bg-siyajj-deep-black/95 backdrop-blur-md border-t border-siyajj-luxury-gold/20"
       style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
     >
-      <Button asChild className="flex-1 h-12 bg-siyajj-luxury-gold text-siyajj-deep-black hover:bg-siyajj-champagne uppercase tracking-widest text-xs font-bold rounded-lg sweep-hover relative overflow-hidden">
-        <Link href="/contact"><span className="relative z-10">Demander un devis</span></Link>
+      <Button
+        asChild
+        className="flex-1 h-12 bg-siyajj-luxury-gold text-siyajj-deep-black hover:bg-siyajj-champagne uppercase tracking-widest text-xs font-bold rounded-lg sweep-hover relative overflow-hidden"
+      >
+        <Link href="/contact">
+          <span className="relative z-10">Demander un devis</span>
+        </Link>
       </Button>
       <a
-        href="https://wa.me/33100000000"
+        href={WHATSAPP_HREF}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Contacter un conseiller sur WhatsApp"
+        aria-label="WhatsApp"
         className="h-12 w-12 shrink-0 flex items-center justify-center rounded-lg border border-siyajj-luxury-gold/40 text-siyajj-luxury-gold hover:bg-siyajj-luxury-gold/10 transition-colors"
       >
         <MessageCircle className="w-5 h-5" />
@@ -225,7 +326,7 @@ export function PageShell({ children }: { children: ReactNode }) {
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
-    restDelta: 0.001
+    restDelta: 0.001,
   });
 
   return (
@@ -246,23 +347,24 @@ export function PageShell({ children }: { children: ReactNode }) {
           style={{ scaleX }}
         />
       )}
-      
+
       <Header />
-      
-      <main className="flex-grow pt-32 relative z-10">
+
+      {/* Main: padding matches header height per breakpoint */}
+      <main className="flex-grow pt-[4.5rem] lg:pt-32 relative z-10">
         <AnimatePresence mode="wait">
           <motion.div
             key={location}
             initial={prefersReducedMotion ? false : { opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             exit={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: -15 }}
-            transition={{ duration: prefersReducedMotion ? 0 : 0.5, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: prefersReducedMotion ? 0 : 0.5, ease: [0.22, 1, 0.36, 1] as const }}
           >
             {children}
           </motion.div>
         </AnimatePresence>
       </main>
-      
+
       <div className="pb-20 md:pb-0">
         <Footer />
       </div>

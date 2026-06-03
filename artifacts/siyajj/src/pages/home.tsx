@@ -38,7 +38,7 @@ export default function Home() {
   return (
     <div className="w-full overflow-x-hidden bg-siyajj-deep-black text-siyajj-ivory font-sans">
       {/* 1. Hero — one cinematic screen */}
-      <section className="relative flex flex-col overflow-hidden lg:min-h-[calc(100vh-8rem)]">
+      <section className="relative flex flex-col overflow-hidden min-h-[calc(100dvh-4.5rem)] lg:min-h-[calc(100dvh-8rem)]">
         <div className="absolute inset-0 z-0">
           <MediaFrame slot="heroPortal" priority className="absolute inset-0 w-full h-full" />
           <div className="absolute inset-0 bg-gradient-to-r from-siyajj-deep-black via-siyajj-deep-black/80 to-siyajj-deep-black/10 md:to-transparent" />
@@ -93,7 +93,7 @@ export default function Home() {
           </div>
 
           {/* Trip builder — integrated into the hero */}
-          <motion.div {...stagger(0.5)} id="trip-builder" className="mt-8 lg:mt-6 scroll-mt-28">
+          <motion.div {...stagger(0.5)} id="trip-builder" className="mt-8 lg:mt-6 scroll-mt-[4.5rem] lg:scroll-mt-32">
             <div className="glass-card rounded-[26px] border border-siyajj-luxury-gold/30 shadow-2xl backdrop-blur-2xl bg-siyajj-warm-black/85 p-3 md:p-4 gold-glow">
               <div className="flex flex-col lg:flex-row items-stretch gap-3">
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 flex-1">

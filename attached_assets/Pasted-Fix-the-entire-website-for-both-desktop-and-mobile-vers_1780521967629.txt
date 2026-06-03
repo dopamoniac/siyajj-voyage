@@ -1,0 +1,269 @@
+Fix the entire website for both desktop and mobile versions.
+
+There are two main problems:
+1. Navigation behavior is broken.
+2. Layout/responsive behavior is not polished on desktop and mobile.
+
+Do not only fix desktop.
+Do not only fix mobile.
+Fix both versions properly.
+
+PART 1 — NAVIGATION FIXES
+
+Every clickable element must have a correct action.
+
+Logo:
+- On desktop and mobile, clicking the SIYAJJ logo must always go to homepage "/" and scroll to the top hero section.
+- If already on homepage, smoothly scroll to top.
+- If on another page, navigate to "/" then scroll to top.
+- Do not preserve old scroll position.
+
+Accueil:
+- Same behavior as logo.
+- Go to "/" and scroll to hero top.
+
+Route links:
+- Nos Omras -> /nos-omras
+- Collections -> /collections
+- Sur-Mesure -> /sur-mesure
+- Signature VIP -> /signature-vip
+- Activités -> /activites
+- Formations -> /formations
+- Hajj -> /hajj
+- Guides -> /guides
+- À propos -> /a-propos
+- Contact -> /contact
+
+When navigating to any route:
+- Always scroll to top.
+- Do not keep previous scroll position.
+
+Add a ScrollToTop component inside BrowserRouter:
+- Detect pathname change.
+- Run window.scrollTo(0, 0).
+- Set browser scrollRestoration to manual.
+
+Hero buttons:
+- “Construire mon voyage” must scroll to the trip builder section on homepage.
+- Add id="trip-builder" to the trip builder.
+- If user is on another route, navigate to "/" then scroll to #trip-builder.
+- “Découvrir l’expérience” must open the video modal or scroll to #experience.
+- “Demander un devis” and “Contactez-nous” must navigate to /contact and scroll top.
+- WhatsApp buttons must open external WhatsApp link in new tab.
+
+Audit all buttons:
+- Remove href="#"
+- Remove dead buttons
+- Remove empty anchors
+- Remove wrong links
+- Make every card CTA navigate or scroll correctly.
+
+Mobile menu:
+- Mobile menu links must use the same route logic.
+- After clicking a mobile menu item, close the menu.
+- Then navigate to route and scroll top.
+
+PART 2 — DESKTOP / PC LAYOUT FIXES
+
+Desktop must feel premium, wide, clean, and professional.
+
+Header desktop:
+- Height around 88px.
+- Logo left.
+- Navigation centered.
+- Phone + WhatsApp + CTA right.
+- Fixed or sticky.
+- Background dark emerald/black glass.
+- Thin antique gold border.
+- No overlap with hero content.
+
+Hero desktop:
+The current hero is split across two screens. Fix it.
+
+Hero must be one coherent first screen:
+- header
+- hero title
+- subtitle
+- CTA buttons
+- background visual
+- trip builder
+- stats strip
+
+All must feel connected.
+
+Set hero:
+- min-height: 900px desktop
+- padding-top accounts for header
+- no huge empty gaps
+- no clipped trip builder
+- no stats appearing like a separate page
+- no footer/next section too early
+
+Hero layout desktop:
+- left: text content
+- right: visual background/portal
+- bottom: trip builder + stats
+
+Hero title:
+- reduce enough to avoid overflow
+- use clamp(64px, 5.5vw, 92px)
+- line-height 0.95
+- max-width 760px
+
+Trip builder desktop:
+- inside the hero
+- visible without awkward scroll
+- width min(1280px, calc(100% - 120px))
+- height around 96px
+- dark emerald glass
+- antique gold border
+- 4 or 5 fields + CTA
+- no clipping
+
+Stats desktop:
+- directly below trip builder
+- compact, elegant, inside hero
+- no huge black block separating it
+
+Hero background:
+- use full hero background image/video if available
+- object-fit cover
+- background-position center right
+- left gradient for readability
+- right side must remain visible, not too dark
+
+Sections desktop:
+After hero, add full rich sections:
+- Collections
+- Nos Omras à venir
+- Formations & Préparation Spirituelle
+- Expérience SIYAJJ 360°
+- Activités & Expériences
+- Signature VIP
+- Pourquoi SIYAJJ
+- Processus clair
+- Hajj preview
+- Guides & Conseils
+- Trust Center
+- Video Experience
+- Testimonials
+- FAQ
+- Final CTA
+- Footer
+
+No footer should appear right after hero.
+The homepage must feel like a complete agency website.
+
+PART 3 — MOBILE LAYOUT FIXES
+
+Mobile must feel like a premium app, not a squeezed desktop.
+
+Mobile header:
+- sticky top
+- logo left
+- phone circle
+- menu circle
+- dark emerald/black glass
+- no overlap
+- height around 72px
+
+Mobile menu:
+- full-screen overlay
+- large readable menu links
+- gold separators
+- CTA at bottom
+- closes after link click
+
+Mobile hero:
+Do not squeeze desktop.
+
+Mobile structure:
+1. header
+2. badge
+3. title
+4. subtitle
+5. CTA buttons stacked
+6. hero visual card
+7. trip builder card
+8. mini stats
+9. collection carousel
+
+Mobile title:
+- font-size clamp(42px, 12vw, 56px)
+- line-height 0.95
+- no clipping
+- no overlap
+
+Mobile CTA:
+- full width or clean 2-stack
+- minimum height 48px
+- readable text
+
+Mobile trip builder:
+- card layout
+- fields stacked or 2-column depending width
+- CTA full width
+- no horizontal overflow
+- no clipping
+- easy tap targets
+
+Mobile stats:
+- compact
+- horizontal scroll or 2-column grid
+- not a huge block
+
+Mobile sections:
+- cards become stacked or horizontal carousel
+- filters become bottom sheet or stacked fields
+- offer cards readable
+- no text too small
+- no overflow
+- no desktop-only spacing
+
+Floating WhatsApp:
+- fixed bottom right
+- not covering important buttons
+- works on desktop and mobile
+
+PART 4 — RESPONSIVE BREAKPOINTS
+
+Use clear breakpoints:
+- mobile: < 768px
+- tablet: 768px to 1024px
+- desktop: > 1024px
+- large desktop: > 1440px
+
+Check all pages at:
+- 390px mobile
+- 768px tablet
+- 1440px desktop
+- 1920px wide desktop
+
+No horizontal scroll anywhere.
+
+PART 5 — FINAL QA
+
+Test these before finishing:
+
+Desktop:
+- logo click returns to hero top
+- Accueil returns to hero top
+- all nav links go to correct page top
+- hero fits as one premium screen
+- trip builder is visible and not clipped
+- stats are inside hero
+- homepage has many full sections
+- footer appears only after all sections
+
+Mobile:
+- logo click returns to hero top
+- burger menu opens/closes
+- menu links work and close menu
+- hero does not overlap
+- trip builder is usable
+- no horizontal overflow
+- WhatsApp button works
+- CTAs are easy to tap
+- all pages scroll from top when opened
+
+If any desktop or mobile screen feels broken, fix it before stopping.
