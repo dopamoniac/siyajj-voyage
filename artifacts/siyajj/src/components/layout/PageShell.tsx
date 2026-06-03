@@ -33,12 +33,12 @@ export function Header() {
 
   return (
     <header className="fixed top-0 w-full z-50 transition-all duration-300 bg-siyajj-deep-black/80 backdrop-blur-md border-b border-white/5">
-      <div className="container mx-auto px-4 md:px-8 h-24 flex items-center justify-between">
+      <div className="container mx-auto px-4 md:px-8 h-28 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <img 
             src={`${import.meta.env.BASE_URL}assets/logo-siyajj-transparent.png`} 
             alt="SIYAJJ Renaissance" 
-            className="h-16 w-auto"
+            className="h-20 w-auto"
           />
         </Link>
 
