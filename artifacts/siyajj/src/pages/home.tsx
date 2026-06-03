@@ -38,7 +38,7 @@ export default function Home() {
   return (
     <div className="w-full overflow-x-hidden bg-siyajj-deep-black text-siyajj-ivory font-sans">
       {/* 1. Hero — one cinematic screen */}
-      <section className="relative flex flex-col overflow-hidden lg:min-h-[calc(100vh-7rem)]">
+      <section className="relative flex flex-col overflow-hidden lg:min-h-[calc(100vh-8rem)]">
         <div className="absolute inset-0 z-0">
           <MediaFrame slot="heroPortal" priority className="absolute inset-0 w-full h-full" />
           <div className="absolute inset-0 bg-gradient-to-r from-siyajj-deep-black via-siyajj-deep-black/80 to-siyajj-deep-black/10 md:to-transparent" />
