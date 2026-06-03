@@ -1,0 +1,220 @@
+The hero section is not approved.
+
+Main problem:
+The hero is split across two screens. The title appears in one viewport, then the trip builder and stats appear after scrolling. This is not professional and destroys the premium experience.
+
+Fix the hero layout completely.
+
+GOAL:
+The full hero must feel like one complete cinematic screen.
+On desktop, the visitor must see in the first viewport:
+- header
+- hero title
+- subtitle
+- CTA buttons
+- hero background visual
+- trip builder
+- stats strip
+All must be visually connected inside one coherent hero section.
+
+HERO STRUCTURE REQUIREMENTS:
+
+1. Hero height
+Set the hero section to:
+min-height: calc(100vh - header height)
+or around 860px to 940px on desktop.
+Do not let hero content randomly overflow into a second page.
+
+2. Header
+Header must be fixed or sticky at top.
+Hero content must account for header height with padding-top.
+Do not let the hero title hide behind header.
+
+3. Hero layout desktop
+Use a clean 2-column grid:
+- left side: text content
+- right side: hero visual
+- bottom: trip builder and stats
+
+Suggested desktop layout:
+Hero wrapper:
+position: relative;
+min-height: 920px;
+padding-top: 120px;
+padding-left/right: 64px;
+display: flex;
+flex-direction: column;
+
+Hero main content:
+display: grid;
+grid-template-columns: 48% 52%;
+align-items: center;
+min-height: 560px;
+
+Left content:
+max-width: 720px;
+margin-top: 20px;
+
+Right visual:
+position absolute or grid item on right;
+height: 620px;
+object-fit: cover;
+must be visible and cinematic.
+
+4. Hero title
+Current title is too huge vertically and creates overflow.
+Keep it premium but reduce it slightly.
+
+Desktop:
+font-size: clamp(64px, 5.8vw, 92px);
+line-height: 0.95;
+max-width: 760px;
+
+Do not make the title so tall that it pushes the trip builder outside the viewport.
+
+5. Subtitle
+Max width: 640px.
+Line-height: 1.6.
+Keep readable.
+
+6. CTA buttons
+Place directly under subtitle.
+Spacing: 28px.
+Buttons must not push layout too far down.
+
+7. Trip Builder
+The trip builder must be integrated inside the hero, not after the hero.
+
+Place it near the bottom of the hero:
+position: relative;
+z-index: 5;
+margin-top: 40px;
+width: min(1280px, calc(100% - 120px));
+margin-left/right: auto;
+
+It must appear before the fold on desktop.
+
+Trip builder style:
+- dark emerald glass
+- antique gold border
+- height around 96px
+- rounded 26px
+- 4 fields + CTA button
+- no huge vertical padding
+
+8. Stats strip
+Stats must be directly below the trip builder inside the hero area.
+It should be compact and elegant.
+
+Stats strip:
+margin-top: 24px;
+height: auto;
+display: flex;
+justify-content: center;
+gap: 48px;
+flex-wrap: wrap;
+
+Do not make stats a separate huge black section.
+It should belong to the hero.
+
+9. Remove huge empty space
+There is too much empty space between CTA and trip builder.
+Reduce vertical spacing.
+No large black empty bands.
+
+10. Hero background image
+Use the generated 16:9 hero background as a real background asset.
+It must cover the entire hero.
+
+Rules:
+- background image covers full hero
+- left side must have dark gradient overlay for text readability
+- right side shows the arch / sacred destination visual
+- no image repetition
+- no oversized cropping that hides the main visual
+
+CSS idea:
+.hero {
+  position: relative;
+  min-height: 920px;
+  overflow: hidden;
+  background: #050403;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/hero-bg.png');
+  background-size: cover;
+  background-position: center right;
+  opacity: 1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(5,4,3,0.96) 0%, rgba(5,4,3,0.78) 36%, rgba(5,4,3,0.28) 68%, rgba(5,4,3,0.08) 100%),
+    linear-gradient(180deg, rgba(5,4,3,0.25) 0%, rgba(5,4,3,0.10) 55%, rgba(5,4,3,0.92) 100%);
+}
+
+11. The current hero visual is too hidden
+The arch/image is barely visible because of too much dark overlay.
+Reduce overlay opacity on the right side.
+Keep text readable on the left only.
+
+12. The trip builder is cut at the bottom
+Fix z-index and spacing.
+It must not be hidden by the next section.
+It must not be clipped.
+No negative margin that causes clipping.
+
+13. First section after hero
+The next section should start only after the complete hero.
+Do not let footer or sections appear too early.
+
+After hero:
+- Collections section
+- Offers section
+- Formations section
+- Activities section
+etc.
+
+14. Mobile layout
+Mobile must not copy desktop.
+
+Mobile hero:
+- min-height auto
+- padding-top 110px
+- title
+- subtitle
+- CTAs
+- visual card
+- trip builder card
+- stats mini row
+Everything stacked cleanly.
+
+Mobile title:
+font-size: clamp(42px, 12vw, 56px);
+line-height: 0.95;
+
+Trip builder mobile:
+- full-width card
+- fields stacked or 2-column
+- CTA full width
+- no horizontal overflow
+
+15. Final approval criteria
+Hero is approved only if:
+- It appears as one complete premium screen.
+- Trip builder is visible without awkward scrolling on desktop.
+- Stats belong to the hero, not a separated block.
+- The background image is visible and cinematic.
+- The title is large but does not break layout.
+- No element is cut.
+- No huge empty zones.
+- Mobile feels intentionally designed.
+- The whole hero feels premium, smooth, and professional.
+
+Fix only the hero first. Do not touch other sections until this hero is visually correct.

@@ -1,1 +1,6 @@
 - [Framer Motion + wouter gotchas](framer-wouter-gotchas.md) — `ease` in a typed `Variants` object needs a tuple (`as const`), and wouter `<Link href="#id">` won't scroll (it preventDefaults).
+- [SIYAJJ art-direction & conventions](siyajj-art-direction.md) — durable quality bar, media/base-path rule, reduced-motion and a11y conventions for the SIYAJJ Renaissance site.
+- [PageShell already pads for the fixed header](pageshell-header-padding.md) — `main` has `pt-28`; full-bleed hero must NOT add another `pt-28` and should size with `min-h-[calc(100vh-7rem)]`.
+- [Bottom-overlap needs overflow-x-clip](overflow-clip-overlap.md) — let an absolutely-positioned child overlap a section seam without being clipped.
+- [Screenshot timing vs entrance animations](screenshot-animation-timing.md) — delayed entrance animations can look "missing" in app_preview screenshots.
+- [Tailwind v4 remote @import](tailwind-v4-remote-import.md) — remote CSS @import (Google Fonts) fails with Tailwind v4; what to do instead.

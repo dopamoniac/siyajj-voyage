@@ -10,7 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { MediaFrame } from "@/components/ui/media-frame";
 import {
   HERO, CONTACT, collections, offers, formations, experience360, activities,
-  vipFeatures, whySiyajj, processSteps, guides, guideCategories, faqs, testimonials, trustStrip
+  vipFeatures, whySiyajj, processSteps, guides, guideCategories, faqs, testimonials
 } from "@/data/content";
 
 export default function Home() {
@@ -28,131 +28,138 @@ export default function Home() {
 
   const stagger = (delay: number) => prefersReducedMotion ? { initial: false as const } : { initial: { opacity: 0, y: 24 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] as const } };
 
+  const heroStats = [
+    { value: "+15 000", label: "Pèlerins accompagnés" },
+    { value: "+30", label: "Départs / mois" },
+    { value: "4.9/5", label: "Avis vérifiés" },
+    { value: "24/7", label: "Assistance" },
+  ];
+
   return (
     <div className="w-full overflow-x-hidden bg-siyajj-deep-black text-siyajj-ivory font-sans">
-      {/* 1. Hero */}
-      <section className="relative min-h-[90vh] flex items-center pt-28 pb-20 overflow-hidden">
+      {/* 1. Hero — one cinematic screen */}
+      <section className="relative flex flex-col overflow-hidden lg:min-h-[calc(100vh-7rem)]">
         <div className="absolute inset-0 z-0">
-          <MediaFrame slot="heroPortal" priority className="absolute inset-0 w-full h-full opacity-60" />
-          <div className="absolute inset-0 bg-gradient-to-r from-siyajj-deep-black via-siyajj-deep-black/80 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-b from-siyajj-deep-black/50 via-transparent to-siyajj-deep-black" />
+          <MediaFrame slot="heroPortal" priority className="absolute inset-0 w-full h-full" />
+          <div className="absolute inset-0 bg-gradient-to-r from-siyajj-deep-black via-siyajj-deep-black/80 to-siyajj-deep-black/10 md:to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-siyajj-deep-black/30 via-transparent to-siyajj-deep-black" />
           <div className="absolute inset-0 velvet-texture mix-blend-overlay" />
           <div className="absolute inset-0 bg-siyajj-luxury-gold/[0.03] animate-slow-pulse" />
         </div>
 
-        <div className="container mx-auto px-4 md:px-8 relative z-10">
-          <div className="max-w-3xl">
-            <motion.div {...stagger(0.1)} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-siyajj-luxury-gold/30 bg-siyajj-luxury-gold/10 text-siyajj-luxury-gold text-xs tracking-[0.2em] uppercase mb-8 backdrop-blur-md">
-              <span className="text-[10px]">✦</span> L'Excellence Omra & Hajj
-            </motion.div>
-            
-            <motion.h1 {...stagger(0.2)} className="text-5xl md:text-6xl lg:text-[5rem] font-serif leading-[1.05] mb-6 drop-shadow-lg">
-              {HERO.title[0]}<br />
-              {HERO.title[1]}<br />
-              <span className="text-gold-gradient relative inline-block">
-                {HERO.title[2]}
-                <span className="absolute inset-0 bg-siyajj-luxury-gold/20 blur-3xl -z-10 rounded-full opacity-50" />
-              </span>
-            </motion.h1>
+        <div className="container mx-auto px-4 md:px-8 relative z-10 flex flex-1 flex-col justify-center py-6 lg:py-8">
+          <div className="grid lg:grid-cols-[52%_48%] gap-8 items-center">
+            <div className="max-w-2xl">
+              <motion.div {...stagger(0.1)} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-siyajj-luxury-gold/30 bg-siyajj-luxury-gold/10 text-siyajj-luxury-gold text-xs tracking-[0.2em] uppercase mb-6 backdrop-blur-md">
+                <span className="text-[10px]">✦</span> L'Excellence Omra & Hajj
+              </motion.div>
 
-            <motion.p {...stagger(0.3)} className="text-lg md:text-xl text-siyajj-ivory/80 leading-relaxed mb-10 max-w-2xl font-light tracking-wide">
-              {HERO.subtitle}
-            </motion.p>
-
-            <motion.div {...stagger(0.4)} className="flex flex-col sm:flex-row gap-4">
-              <Button
-                onClick={() => document.getElementById("trip-builder")?.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "start" })}
-                className="h-14 px-8 bg-gradient-to-r from-siyajj-emerald via-siyajj-teal to-siyajj-emerald border border-siyajj-luxury-gold/50 text-siyajj-ivory hover:brightness-110 rounded-lg uppercase tracking-widest text-xs font-bold sweep-hover relative overflow-hidden group"
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  {HERO.ctaPrimary}
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              <motion.h1 {...stagger(0.2)} className="font-serif leading-[0.95] mb-5 drop-shadow-lg text-[clamp(2.75rem,5.4vw,5.25rem)]">
+                {HERO.title[0]}<br />
+                {HERO.title[1]}<br />
+                <span className="text-gold-gradient relative inline-block">
+                  {HERO.title[2]}
+                  <span className="absolute inset-0 bg-siyajj-luxury-gold/20 blur-3xl -z-10 rounded-full opacity-50" />
                 </span>
-              </Button>
-              <Button
-                onClick={() => setVideoOpen(true)}
-                variant="outline"
-                className="h-14 px-8 glass-card border-siyajj-luxury-gold/40 text-siyajj-ivory hover:text-siyajj-luxury-gold hover:bg-white/5 rounded-lg uppercase tracking-widest text-xs font-medium sweep-hover relative overflow-hidden"
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  <Play className="w-4 h-4 fill-current" />
-                  {HERO.ctaSecondary}
-                </span>
-              </Button>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+              </motion.h1>
 
-      {/* 2. Trip Builder */}
-      <section id="trip-builder" className="relative z-20 -mt-16 md:-mt-24 px-4 container mx-auto">
-        <div className="glass-card rounded-2xl border border-siyajj-luxury-gold/30 shadow-2xl backdrop-blur-2xl bg-siyajj-warm-black/90 p-4 md:p-6 max-w-5xl mx-auto gold-glow">
-          <div className="flex flex-col lg:flex-row items-stretch gap-4">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 flex-1">
-              {[
-                { key: "ville", label: "Ville de départ", value: ville, set: setVille, options: [["paris-cdg", "Paris CDG"], ["lyon", "Lyon"], ["marseille", "Marseille"], ["bruxelles", "Bruxelles"]] },
-                { key: "date", label: "Date souhaitée", value: date, set: setDate, options: [["nov-26", "Novembre 2026"], ["dec-26", "Décembre 2026"], ["ramadan-27", "Ramadan 2027"], ["sur-mesure", "Sur-mesure"]] },
-                { key: "voyageurs", label: "Voyageurs", value: voyageurs, set: setVoyageurs, options: [["1", "1 Voyageur"], ["2", "2 Voyageurs"], ["famille", "Famille"]] },
-                { key: "collection", label: "Collection", value: collection, set: setCollection, options: [["essentielle", "Essentielle"], ["confort", "Confort"], ["prestige", "Prestige"], ["signature", "Signature"], ["renaissance", "Renaissance"]] }
-              ].map(f => (
-                <div key={f.key} className="flex flex-col gap-1.5 p-3 rounded-xl bg-black/40 border border-white/5">
-                  <div className="text-[10px] uppercase tracking-widest text-siyajj-luxury-gold/80 font-medium">{f.label}</div>
-                  <Select value={f.value} onValueChange={f.set}>
-                    <SelectTrigger className="border-0 bg-transparent p-0 h-auto text-siyajj-ivory font-serif text-lg focus:ring-0 shadow-none">
-                      <SelectValue placeholder="Sélectionner" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-siyajj-charcoal border-siyajj-luxury-gold/30 text-siyajj-ivory">
-                      {f.options.map(([val, lab]) => <SelectItem key={val} value={val}>{lab}</SelectItem>)}
-                    </SelectContent>
-                  </Select>
-                </div>
-              ))}
-            </div>
-            
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button className="w-full lg:w-auto h-full min-h-[3.5rem] px-8 bg-gradient-to-r from-siyajj-champagne to-siyajj-luxury-gold text-siyajj-deep-black hover:brightness-110 rounded-xl uppercase tracking-widest text-xs font-bold sweep-hover relative overflow-hidden flex items-center justify-center gap-2">
-                  <span className="relative z-10">Trouver mon voyage</span>
-                  <ArrowRight className="w-4 h-4 relative z-10" />
+              <motion.p {...stagger(0.3)} className="text-base md:text-lg text-siyajj-ivory/80 leading-relaxed mb-7 max-w-xl font-light tracking-wide">
+                {HERO.subtitle}
+              </motion.p>
+
+              <motion.div {...stagger(0.4)} className="flex flex-col sm:flex-row gap-4">
+                <Button
+                  onClick={() => document.getElementById("trip-builder")?.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "center" })}
+                  className="h-14 px-8 bg-gradient-to-r from-siyajj-emerald via-siyajj-teal to-siyajj-emerald border border-siyajj-luxury-gold/50 text-siyajj-ivory hover:brightness-110 rounded-lg uppercase tracking-widest text-xs font-bold sweep-hover relative overflow-hidden group"
+                >
+                  <span className="relative z-10 flex items-center gap-2">
+                    {HERO.ctaPrimary}
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </span>
                 </Button>
-              </DialogTrigger>
-              <DialogContent className="bg-siyajj-warm-black border-siyajj-luxury-gold/30 text-siyajj-ivory">
-                <DialogTitle className="sr-only">Votre projet SIYAJJ est prêt</DialogTitle>
-                <DialogDescription className="sr-only">Résumé de votre configuration de voyage et options pour procéder</DialogDescription>
-                <div className="p-4 text-center">
-                  <h3 className="text-2xl font-serif text-siyajj-ivory mb-2">Votre projet SIYAJJ est prêt</h3>
-                  <p className="text-siyajj-ivory/70 mb-6 text-sm">Un conseiller est disponible pour affiner les détails de votre voyage.</p>
-                  <div className="bg-black/40 border border-siyajj-luxury-gold/20 rounded-xl p-4 mb-6 text-left glass-card grid grid-cols-2 gap-4">
-                    <div><div className="text-[10px] text-siyajj-luxury-gold uppercase tracking-widest">Départ</div><div className="text-sm font-serif">{selectedVilleLabel}</div></div>
-                    <div><div className="text-[10px] text-siyajj-luxury-gold uppercase tracking-widest">Date</div><div className="text-sm font-serif">{selectedDateLabel}</div></div>
-                    <div><div className="text-[10px] text-siyajj-luxury-gold uppercase tracking-widest">Voyageurs</div><div className="text-sm font-serif">{selectedVoyageursLabel}</div></div>
-                    <div><div className="text-[10px] text-siyajj-luxury-gold uppercase tracking-widest">Collection</div><div className="text-sm font-serif text-siyajj-champagne">{selectedCollectionLabel}</div></div>
-                  </div>
-                  <div className="flex flex-col gap-3">
-                    <Button asChild className="w-full h-12 bg-siyajj-luxury-gold text-siyajj-deep-black hover:bg-siyajj-champagne uppercase tracking-widest font-bold text-xs">
-                      <Link href="/contact">Demander un devis</Link>
-                    </Button>
-                    <Button asChild variant="outline" className="w-full h-12 border-siyajj-luxury-gold/40 text-siyajj-luxury-gold hover:bg-white/5 uppercase tracking-widest text-xs">
-                      <a href={CONTACT.whatsappHref} target="_blank" rel="noreferrer">Continuer sur WhatsApp</a>
-                    </Button>
-                  </div>
-                </div>
-              </DialogContent>
-            </Dialog>
+                <Button
+                  onClick={() => setVideoOpen(true)}
+                  variant="outline"
+                  className="h-14 px-8 glass-card border-siyajj-luxury-gold/40 text-siyajj-ivory hover:text-siyajj-luxury-gold hover:bg-white/5 rounded-lg uppercase tracking-widest text-xs font-medium sweep-hover relative overflow-hidden"
+                >
+                  <span className="relative z-10 flex items-center gap-2">
+                    <Play className="w-4 h-4 fill-current" />
+                    {HERO.ctaSecondary}
+                  </span>
+                </Button>
+              </motion.div>
+            </div>
+            <div className="hidden lg:block" aria-hidden="true" />
           </div>
-        </div>
-      </section>
 
-      {/* 3. Trust Strip */}
-      <section className="py-12 border-b border-siyajj-luxury-gold/10 bg-siyajj-black-ink/50 relative z-10">
-        <div className="container mx-auto px-4 overflow-hidden">
-          <div className="flex flex-wrap justify-center gap-6 md:gap-12 items-center text-center">
-            {trustStrip.map((item, i) => (
-              <div key={i} className="flex items-center gap-2 text-siyajj-ivory/70 text-xs uppercase tracking-widest font-medium">
-                <span className="text-siyajj-luxury-gold">✦</span> {item}
+          {/* Trip builder — integrated into the hero */}
+          <motion.div {...stagger(0.5)} id="trip-builder" className="mt-8 lg:mt-6 scroll-mt-28">
+            <div className="glass-card rounded-[26px] border border-siyajj-luxury-gold/30 shadow-2xl backdrop-blur-2xl bg-siyajj-warm-black/85 p-3 md:p-4 gold-glow">
+              <div className="flex flex-col lg:flex-row items-stretch gap-3">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 flex-1">
+                  {[
+                    { key: "ville", label: "Ville de départ", value: ville, set: setVille, options: [["paris-cdg", "Paris CDG"], ["lyon", "Lyon"], ["marseille", "Marseille"], ["bruxelles", "Bruxelles"]] },
+                    { key: "date", label: "Date souhaitée", value: date, set: setDate, options: [["nov-26", "Novembre 2026"], ["dec-26", "Décembre 2026"], ["ramadan-27", "Ramadan 2027"], ["sur-mesure", "Sur-mesure"]] },
+                    { key: "voyageurs", label: "Voyageurs", value: voyageurs, set: setVoyageurs, options: [["1", "1 Voyageur"], ["2", "2 Voyageurs"], ["famille", "Famille"]] },
+                    { key: "collection", label: "Collection", value: collection, set: setCollection, options: [["essentielle", "Essentielle"], ["confort", "Confort"], ["prestige", "Prestige"], ["signature", "Signature"], ["renaissance", "Renaissance"]] }
+                  ].map(f => (
+                    <div key={f.key} className="flex flex-col gap-1 p-2.5 rounded-xl bg-black/40 border border-white/5">
+                      <div className="text-[10px] uppercase tracking-widest text-siyajj-luxury-gold/80 font-medium">{f.label}</div>
+                      <Select value={f.value} onValueChange={f.set}>
+                        <SelectTrigger className="border-0 bg-transparent p-0 h-auto text-siyajj-ivory font-serif text-base focus:ring-0 shadow-none">
+                          <SelectValue placeholder="Sélectionner" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-siyajj-charcoal border-siyajj-luxury-gold/30 text-siyajj-ivory">
+                          {f.options.map(([val, lab]) => <SelectItem key={val} value={val}>{lab}</SelectItem>)}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  ))}
+                </div>
+
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button className="w-full lg:w-auto h-full min-h-[3.25rem] px-8 bg-gradient-to-r from-siyajj-champagne to-siyajj-luxury-gold text-siyajj-deep-black hover:brightness-110 rounded-xl uppercase tracking-widest text-xs font-bold sweep-hover relative overflow-hidden flex items-center justify-center gap-2">
+                      <span className="relative z-10">Trouver mon voyage</span>
+                      <ArrowRight className="w-4 h-4 relative z-10" />
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="bg-siyajj-warm-black border-siyajj-luxury-gold/30 text-siyajj-ivory">
+                    <DialogTitle className="sr-only">Votre projet SIYAJJ est prêt</DialogTitle>
+                    <DialogDescription className="sr-only">Résumé de votre configuration de voyage et options pour procéder</DialogDescription>
+                    <div className="p-4 text-center">
+                      <h3 className="text-2xl font-serif text-siyajj-ivory mb-2">Votre projet SIYAJJ est prêt</h3>
+                      <p className="text-siyajj-ivory/70 mb-6 text-sm">Un conseiller est disponible pour affiner les détails de votre voyage.</p>
+                      <div className="bg-black/40 border border-siyajj-luxury-gold/20 rounded-xl p-4 mb-6 text-left glass-card grid grid-cols-2 gap-4">
+                        <div><div className="text-[10px] text-siyajj-luxury-gold uppercase tracking-widest">Départ</div><div className="text-sm font-serif">{selectedVilleLabel}</div></div>
+                        <div><div className="text-[10px] text-siyajj-luxury-gold uppercase tracking-widest">Date</div><div className="text-sm font-serif">{selectedDateLabel}</div></div>
+                        <div><div className="text-[10px] text-siyajj-luxury-gold uppercase tracking-widest">Voyageurs</div><div className="text-sm font-serif">{selectedVoyageursLabel}</div></div>
+                        <div><div className="text-[10px] text-siyajj-luxury-gold uppercase tracking-widest">Collection</div><div className="text-sm font-serif text-siyajj-champagne">{selectedCollectionLabel}</div></div>
+                      </div>
+                      <div className="flex flex-col gap-3">
+                        <Button asChild className="w-full h-12 bg-siyajj-luxury-gold text-siyajj-deep-black hover:bg-siyajj-champagne uppercase tracking-widest font-bold text-xs">
+                          <Link href="/contact">Demander un devis</Link>
+                        </Button>
+                        <Button asChild variant="outline" className="w-full h-12 border-siyajj-luxury-gold/40 text-siyajj-luxury-gold hover:bg-white/5 uppercase tracking-widest text-xs">
+                          <a href={CONTACT.whatsappHref} target="_blank" rel="noreferrer">Continuer sur WhatsApp</a>
+                        </Button>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Stats strip — part of the hero */}
+          <motion.div {...stagger(0.6)} className="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-x-10 gap-y-3">
+            {heroStats.map((s, i) => (
+              <div key={i} className="flex items-baseline gap-2">
+                <span className="font-serif text-xl md:text-2xl text-siyajj-champagne">{s.value}</span>
+                <span className="text-[11px] uppercase tracking-widest text-siyajj-ivory/60">{s.label}</span>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
