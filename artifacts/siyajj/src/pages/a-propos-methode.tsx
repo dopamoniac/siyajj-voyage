@@ -24,7 +24,7 @@ export default function AProposMethode() {
   return (
     <div className="w-full overflow-x-hidden">
       {/* Hero */}
-      <section className="relative py-20 lg:py-32 bg-siyajj-deep-black overflow-hidden">
+      <section className="relative py-10 md:py-20 lg:py-32 bg-siyajj-deep-black overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(15,76,76,0.35),transparent_55%)]" />
         <div className="container mx-auto px-4 md:px-8 relative z-10 max-w-4xl text-center">
           <motion.div {...stagger(0.1)}>
@@ -45,7 +45,7 @@ export default function AProposMethode() {
       </section>
 
       {/* Vision */}
-      <section className="py-20 bg-siyajj-black-ink border-y border-white/5">
+      <section className="py-10 md:py-20 bg-siyajj-black-ink border-y border-white/5">
         <div className="container mx-auto px-4 md:px-8 max-w-4xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div {...stagger(0.1)}>
@@ -80,7 +80,7 @@ export default function AProposMethode() {
       </section>
 
       {/* Les 6 piliers */}
-      <section className="py-20 bg-siyajj-deep-black">
+      <section className="py-10 md:py-20 bg-siyajj-deep-black">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl">
           <motion.h2 {...stagger(0.1)} className="text-3xl font-serif text-siyajj-ivory mb-12 text-center">Les piliers de notre méthode</motion.h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -96,7 +96,7 @@ export default function AProposMethode() {
       </section>
 
       {/* Notre processus */}
-      <section className="py-20 bg-siyajj-black-ink border-y border-white/5">
+      <section className="py-10 md:py-20 bg-siyajj-black-ink border-y border-white/5">
         <div className="container mx-auto px-4 md:px-8 max-w-4xl">
           <motion.h2 {...stagger(0.1)} className="text-3xl font-serif text-siyajj-ivory mb-12">Comment nous travaillons</motion.h2>
           <div className="space-y-6">
@@ -114,7 +114,7 @@ export default function AProposMethode() {
       </section>
 
       {/* Pourquoi SIYAJJ */}
-      <section className="py-20 bg-siyajj-deep-black">
+      <section className="py-10 md:py-20 bg-siyajj-deep-black">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl">
           <motion.h2 {...stagger(0.1)} className="text-3xl font-serif text-siyajj-ivory mb-12">Pourquoi choisir SIYAJJ</motion.h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -129,7 +129,7 @@ export default function AProposMethode() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-siyajj-black-ink relative overflow-hidden">
+      <section className="py-12 md:py-24 bg-siyajj-black-ink relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(200,154,70,0.07),transparent_60%)]" />
         <div className="container mx-auto px-4 text-center relative z-10 max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-serif text-siyajj-ivory mb-6">Vivez l'expérience SIYAJJ</h2>

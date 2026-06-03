@@ -18,21 +18,21 @@ export default function Hajj() {
   };
 
   return (
-    <div className="container mx-auto px-4 md:px-8 py-24 relative min-h-screen">
-      <div className="max-w-4xl mx-auto text-center mb-20 relative z-20">
+    <div className="container mx-auto px-4 md:px-8 py-12 md:py-24 relative min-h-screen">
+      <div className="max-w-4xl mx-auto text-center mb-10 md:mb-20 relative z-20">
         <div className="text-siyajj-luxury-gold text-xs uppercase tracking-widest mb-4 font-bold flex items-center justify-center gap-2">
           <span className="w-8 h-[1px] bg-siyajj-luxury-gold/50"></span>
           Le Grand Pèlerinage
           <span className="w-8 h-[1px] bg-siyajj-luxury-gold/50"></span>
         </div>
-        <h1 className="text-5xl md:text-6xl font-serif text-siyajj-ivory mb-6 drop-shadow-md">Le Hajj avec SIYAJJ</h1>
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-siyajj-ivory mb-6 drop-shadow-md">Le Hajj avec SIYAJJ</h1>
         <p className="text-siyajj-ivory/70 leading-relaxed text-lg font-light max-w-2xl mx-auto">
           Le voyage d'une vie mérite une transparence totale, une préparation rigoureuse et un accompagnement sans faille.
         </p>
       </div>
 
       {/* Info block */}
-      <div className="glass-card mb-20 max-w-5xl mx-auto rounded-3xl p-8 md:p-12 border-siyajj-luxury-gold/30">
+      <div className="glass-card mb-10 md:mb-20 max-w-5xl mx-auto rounded-3xl p-6 md:p-12 border-siyajj-luxury-gold/30">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
           <div className="w-full md:w-1/3 aspect-[4/3] rounded-2xl overflow-hidden relative border border-siyajj-luxury-gold/20">
             <MediaFrame slot="madinahImage" className="absolute inset-0" />

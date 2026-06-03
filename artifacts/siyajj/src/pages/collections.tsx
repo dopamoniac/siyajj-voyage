@@ -26,9 +26,9 @@ export default function Collections() {
       </section>
 
       {/* Collections Showcase */}
-      <section className="pb-24 relative z-10">
+      <section className="pb-12 md:pb-24 relative z-10">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 md:mb-32">
             {collections.map((item, i) => (
               <motion.div 
                 key={item.id} 
@@ -53,13 +53,13 @@ export default function Collections() {
                 {/* Gold framing */}
                 <div className="absolute inset-4 border border-siyajj-luxury-gold/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                <div className="relative z-20 p-8 glass-card m-4 rounded-xl translate-y-6 group-hover:translate-y-0 transition-transform duration-500 bg-black/40 border-white/10 backdrop-blur-md">
+                <div className="relative z-20 p-5 md:p-8 glass-card m-3 md:m-4 rounded-xl md:translate-y-6 md:group-hover:translate-y-0 transition-transform duration-500 bg-black/40 border-white/10 backdrop-blur-md">
                   <div className="flex flex-col gap-1 mb-3">
                     <span className="text-siyajj-champagne text-[10px] uppercase tracking-widest font-bold">Collection</span>
-                    <h3 className="text-3xl font-serif text-siyajj-ivory">{item.name.replace("Collection ", "")}</h3>
+                    <h3 className="text-2xl md:text-3xl font-serif text-siyajj-ivory">{item.name.replace("Collection ", "")}</h3>
                   </div>
                   
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 h-0 group-hover:h-auto overflow-hidden">
+                  <div className="md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 md:h-0 md:group-hover:h-auto overflow-hidden">
                     <p className="text-siyajj-ivory/80 text-sm mb-4 font-light leading-relaxed">{item.tagline}</p>
                     <div className="text-siyajj-muted-text text-xs mb-6 border-l-2 border-siyajj-luxury-gold/50 pl-3">
                       Pour : {item.forWhom}
@@ -166,7 +166,7 @@ export default function Collections() {
       </section>
       
       {/* Help Section */}
-      <section className="py-20 border-t border-siyajj-luxury-gold/10 bg-black/40 text-center px-4">
+      <section className="py-10 md:py-20 border-t border-siyajj-luxury-gold/10 bg-black/40 text-center px-4">
         <h3 className="text-2xl font-serif text-siyajj-ivory mb-4">Indécis sur le choix de votre collection ?</h3>
         <p className="text-siyajj-ivory/70 max-w-xl mx-auto mb-8 font-light">
           Nos conseillers sont à votre disposition pour vous guider vers la formule qui correspond le mieux à vos attentes, votre budget et la composition de votre groupe.

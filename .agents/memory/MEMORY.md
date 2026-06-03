@@ -1,7 +1,4 @@
-- [Framer Motion + wouter gotchas](framer-wouter-gotchas.md) — `ease` in a typed `Variants` object needs a tuple (`as const`), and wouter `<Link href="#id">` won't scroll (it preventDefaults).
-- [SIYAJJ art-direction & conventions](siyajj-art-direction.md) — durable quality bar, media/base-path rule, reduced-motion and a11y conventions for the SIYAJJ Renaissance site.
-- [PageShell already pads for the fixed header](pageshell-header-padding.md) — `main` has `pt-28`; full-bleed hero must NOT add another `pt-28` and should size with `min-h-[calc(100vh-7rem)]`.
-- [Bottom-overlap needs overflow-x-clip](overflow-clip-overlap.md) — let an absolutely-positioned child overlap a section seam without being clipped.
-- [Screenshot timing vs entrance animations](screenshot-animation-timing.md) — delayed entrance animations can look "missing" in app_preview screenshots.
-- [Tailwind v4 remote @import](tailwind-v4-remote-import.md) — remote CSS @import (Google Fonts) fails with Tailwind v4; what to do instead.
-- [Tailwind v4 runtime theming](tailwind-v4-runtime-theming.md) — `@theme inline` compiles utilities to static values; use `@theme` (no inline) so utilities reference `var()` and CSS variable overrides work at runtime.
+- [Tailwind v4 theme runtime](tailwind-v4-theme.md) — `@theme` not `@theme inline` required for dark/light mode toggling to work
+- [Mobile z-index stack](mobile-z-stack.md) — scroll-progress z-60, mobile menu z-52, header z-50, FloatingWA z-49, MobileActionBar z-48
+- [Collections card mobile hover](collections-hover-mobile.md) — use `md:opacity-0 md:group-hover:opacity-100` so card content shows by default on touch devices
+- [Batch padding reduction](batch-padding-python.md) — Python regex `(?<![a-zA-Z0-9:_-])py-24` to safely replace bare Tailwind py- classes without touching md:/lg: prefixed ones

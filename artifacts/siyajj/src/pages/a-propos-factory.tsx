@@ -30,7 +30,7 @@ export default function AProposFactory() {
   return (
     <div className="w-full overflow-x-hidden">
       {/* Hero */}
-      <section className="relative py-20 lg:py-32 bg-siyajj-deep-black overflow-hidden">
+      <section className="relative py-10 md:py-20 lg:py-32 bg-siyajj-deep-black overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(15,76,76,0.35),transparent_55%)]" />
         <div className="container mx-auto px-4 md:px-8 relative z-10 max-w-4xl">
           <motion.div {...stagger(0.1)}>
@@ -51,7 +51,7 @@ export default function AProposFactory() {
       </section>
 
       {/* Explication du partenariat */}
-      <section className="py-20 bg-siyajj-black-ink border-y border-white/5">
+      <section className="py-10 md:py-20 bg-siyajj-black-ink border-y border-white/5">
         <div className="container mx-auto px-4 md:px-8 max-w-4xl">
           <div className="grid md:grid-cols-2 gap-12">
             <motion.div {...stagger(0.1)}>
@@ -85,7 +85,7 @@ export default function AProposFactory() {
       </section>
 
       {/* Rôles */}
-      <section className="py-20 bg-siyajj-deep-black">
+      <section className="py-10 md:py-20 bg-siyajj-deep-black">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl">
           <motion.h2 {...stagger(0.1)} className="text-3xl font-serif text-siyajj-ivory mb-12">Le rôle d'Omra Factory dans votre séjour</motion.h2>
           <div className="grid sm:grid-cols-2 gap-6">
@@ -112,7 +112,7 @@ export default function AProposFactory() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-siyajj-deep-black relative overflow-hidden">
+      <section className="py-12 md:py-24 bg-siyajj-deep-black relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(15,76,76,0.25),transparent_60%)]" />
         <div className="container mx-auto px-4 text-center relative z-10 max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-serif text-siyajj-ivory mb-6">Partez avec confiance</h2>

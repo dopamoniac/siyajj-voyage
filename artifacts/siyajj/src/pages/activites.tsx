@@ -37,9 +37,9 @@ export default function Activites() {
       </section>
 
       {/* Activities Feed */}
-      <section className="pb-32 relative">
+      <section className="pb-16 md:pb-32 relative">
         <div className="container mx-auto px-4 md:px-8 max-w-6xl">
-          <div className="flex flex-col gap-24 md:gap-32">
+          <div className="flex flex-col gap-14 md:gap-24">
             {activities.map((activity, idx) => {
               const isEven = idx % 2 === 0;
               return (
@@ -50,7 +50,7 @@ export default function Activites() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                  className={`scroll-mt-28 flex flex-col ${isEven ? "md:flex-row" : "md:flex-row-reverse"} gap-8 md:gap-16 items-center`}
+                  className={`scroll-mt-[4.5rem] lg:scroll-mt-32 flex flex-col ${isEven ? "md:flex-row" : "md:flex-row-reverse"} gap-8 md:gap-16 items-center`}
                 >
                   <div className="w-full md:w-1/2">
                     <div className="aspect-[4/3] rounded-3xl overflow-hidden glass-card p-2 relative shadow-[0_20px_60px_-20px_rgba(0,0,0,0.8)]">
@@ -113,7 +113,7 @@ export default function Activites() {
       </section>
       
       {/* CTA Section */}
-      <section className="py-24 relative bg-siyajj-black-ink border-t border-siyajj-luxury-gold/20 overflow-hidden">
+      <section className="py-12 md:py-24 relative bg-siyajj-black-ink border-t border-siyajj-luxury-gold/20 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(200,154,70,0.1),transparent_50%)] pointer-events-none" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-serif text-siyajj-ivory mb-6">Prêt à vivre une expérience complète ?</h2>

@@ -47,7 +47,7 @@ export default function FormationDetail() {
   return (
     <div className="w-full overflow-x-hidden">
       {/* Hero */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-siyajj-deep-black via-siyajj-black-ink to-siyajj-emerald/10 overflow-hidden">
+      <section className="relative py-10 md:py-20 lg:py-32 bg-gradient-to-br from-siyajj-deep-black via-siyajj-black-ink to-siyajj-emerald/10 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(15,76,76,0.4),transparent_60%)] pointer-events-none" />
         <div className="container mx-auto px-4 md:px-8 relative z-10 max-w-4xl">
           <motion.div {...stagger(0.1)}>
@@ -77,7 +77,7 @@ export default function FormationDetail() {
       </section>
 
       {/* Ce que vous allez apprendre */}
-      <section className="py-20 bg-siyajj-deep-black">
+      <section className="py-10 md:py-20 bg-siyajj-deep-black">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl">
           <motion.h2 {...stagger(0.1)} className="text-3xl font-serif text-siyajj-ivory mb-10">Ce que vous allez apprendre</motion.h2>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -92,7 +92,7 @@ export default function FormationDetail() {
       </section>
 
       {/* Formats */}
-      <section className="py-20 bg-siyajj-black-ink border-y border-white/5">
+      <section className="py-10 md:py-20 bg-siyajj-black-ink border-y border-white/5">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl">
           <motion.h2 {...stagger(0.1)} className="text-3xl font-serif text-siyajj-ivory mb-10 text-center">Format de la formation</motion.h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -108,7 +108,7 @@ export default function FormationDetail() {
       </section>
 
       {/* Pour qui */}
-      <section className="py-20 bg-siyajj-deep-black">
+      <section className="py-10 md:py-20 bg-siyajj-deep-black">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl">
           <motion.div {...stagger(0.1)} className="flex items-center gap-3 mb-10">
             <Users className="w-6 h-6 text-siyajj-luxury-gold" />
@@ -126,7 +126,7 @@ export default function FormationDetail() {
       </section>
 
       {/* Modules */}
-      <section className="py-20 bg-siyajj-black-ink border-y border-white/5">
+      <section className="py-10 md:py-20 bg-siyajj-black-ink border-y border-white/5">
         <div className="container mx-auto px-4 md:px-8 max-w-4xl">
           <motion.h2 {...stagger(0.1)} className="text-3xl font-serif text-siyajj-ivory mb-10">Modules de la formation</motion.h2>
           <div className="space-y-4">
@@ -144,7 +144,7 @@ export default function FormationDetail() {
       </section>
 
       {/* Ressources incluses */}
-      <section className="py-20 bg-siyajj-deep-black">
+      <section className="py-10 md:py-20 bg-siyajj-deep-black">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl">
           <motion.h2 {...stagger(0.1)} className="text-3xl font-serif text-siyajj-ivory mb-8">Ressources incluses</motion.h2>
           <ul className="grid sm:grid-cols-2 gap-4">
@@ -160,7 +160,7 @@ export default function FormationDetail() {
 
       {/* Formations liées */}
       {related.length > 0 && (
-        <section className="py-20 bg-siyajj-black-ink border-t border-white/5">
+        <section className="py-10 md:py-20 bg-siyajj-black-ink border-t border-white/5">
           <div className="container mx-auto px-4 md:px-8 max-w-5xl">
             <motion.h2 {...stagger(0.1)} className="text-3xl font-serif text-siyajj-ivory mb-10">Formations complémentaires</motion.h2>
             <div className="grid sm:grid-cols-3 gap-6">
@@ -179,7 +179,7 @@ export default function FormationDetail() {
       )}
 
       {/* FAQ */}
-      <section className="py-20 bg-siyajj-deep-black border-t border-white/5">
+      <section className="py-10 md:py-20 bg-siyajj-deep-black border-t border-white/5">
         <div className="container mx-auto px-4 md:px-8 max-w-3xl">
           <motion.div {...stagger(0.1)} className="flex items-center gap-3 mb-10">
             <HelpCircle className="w-6 h-6 text-siyajj-luxury-gold" />
@@ -201,7 +201,7 @@ export default function FormationDetail() {
       </section>
 
       {/* CTA final */}
-      <section className="py-24 bg-siyajj-black-ink relative overflow-hidden">
+      <section className="py-12 md:py-24 bg-siyajj-black-ink relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(15,76,76,0.25),transparent_60%)]" />
         <div className="container mx-auto px-4 text-center relative z-10 max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-serif text-siyajj-ivory mb-6">Prêt à vous préparer ?</h2>

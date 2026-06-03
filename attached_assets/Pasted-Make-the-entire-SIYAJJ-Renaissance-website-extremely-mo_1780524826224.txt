@@ -1,0 +1,369 @@
+Make the entire SIYAJJ Renaissance website extremely mobile-friendly.
+
+The mobile version is now the priority.
+
+Do not just make the desktop shrink.
+Redesign the mobile experience like a premium mobile app.
+
+GLOBAL MOBILE RULES
+
+Target screens:
+- 360px
+- 375px
+- 390px
+- 414px
+- 430px
+- 768px tablet
+- desktop must remain clean too
+
+Hard rules:
+- No horizontal overflow anywhere.
+- No text clipping.
+- No overlapping sections.
+- No buttons hidden by sticky bars.
+- No elements behind the header.
+- No tiny tap targets.
+- No unreadable text.
+- No desktop layout squeezed into mobile.
+- All pages must start at the top when opened.
+- Every CTA must be tappable and clear.
+
+Set:
+html, body {
+  overflow-x: hidden;
+}
+
+Use box-sizing border-box globally.
+
+HEADER MOBILE
+
+The mobile header must feel premium and app-like.
+
+Requirements:
+- sticky top
+- height: 72px to 82px
+- logo left, visible and readable
+- logo width: 115px to 135px
+- phone icon circle
+- burger/menu circle
+- dark emerald / black glass background
+- backdrop blur
+- thin antique gold bottom border
+- z-index high
+- no content hidden behind it
+
+Mobile header layout:
+left: logo
+right: phone button + menu button
+gap: 12px
+padding: 18px to 22px
+
+MOBILE MENU
+
+Create a full-screen premium mobile menu.
+
+Requirements:
+- opens smoothly
+- closes smoothly
+- background: deep emerald black
+- gold geometry subtle background
+- large readable links
+- dropdown items become accordions
+- tap main category to expand
+- tap link to navigate and close menu
+- CTA button at bottom: Demander un devis
+- WhatsApp button visible
+- body scroll locked while menu is open
+
+Menu items:
+- Nos Omras
+- Collections
+- Sur-Mesure
+- Signature VIP
+- Activités
+- Formations
+- Hajj
+- Guides
+- À propos
+- Contact
+
+For dropdown categories, use accordion panels:
+- Nos Omras: Ramadan, Famille, Seniors, Prestige, Départ Paris, Départ Lyon, Départ Marseille, Départ Bruxelles
+- Activités: Manâsik Masterclass, Parcours Sîra à Médine, Ziyarat privées, Hira Immersion, Tawaf & Sa’i Guided Moment, Family Care, Seniors Sérénité, Carnet Renaissance, After-Omra Circle
+- Formations: Omra avant départ, Rites, Première Omra, Familles, Seniors, Ramadan, Guide PDF
+- Guides: Documents, Valise, Omra 2026, Enfants, Seniors, Rites, Prix Omra
+
+MOBILE HERO
+
+The mobile hero must be custom, not desktop squeezed.
+
+Structure:
+1. Header
+2. Badge
+3. Title
+4. Subtitle
+5. CTA buttons
+6. Hero visual card
+7. Trip builder card
+8. Mini stats
+9. Continue to sections
+
+Hero spacing:
+- padding-top: 105px
+- padding-left/right: 22px
+- padding-bottom: 40px
+- min-height: auto
+
+Title:
+font-size: clamp(42px, 11vw, 56px);
+line-height: 0.95;
+letter-spacing: -0.02em;
+max-width: 100%;
+
+Subtitle:
+font-size: 16px to 18px;
+line-height: 1.6;
+max-width: 100%;
+
+Badge:
+- must fit mobile width
+- no overflow
+- smaller font
+- padding 10px 14px
+- rounded pill
+
+CTA buttons:
+- stack vertically
+- full width
+- height: 54px
+- gap: 14px
+- text readable
+- icons aligned
+- no fixed positioning inside hero
+
+Hero visual:
+- show as a premium card after CTAs
+- width: 100%
+- height: 300px to 420px depending screen
+- border radius: 26px
+- overflow hidden
+- dark gradient overlay
+- background image/video object-fit cover
+- no text over complex image unless readable
+
+TRIP BUILDER MOBILE
+
+Trip builder must be usable on mobile.
+
+Place it after hero visual or after CTAs depending layout, but inside normal flow.
+Do not absolute-position it on mobile.
+
+Style:
+- width: 100%
+- margin-top: 24px
+- padding: 18px
+- border-radius: 24px
+- background: rgba(7, 34, 31, 0.9)
+- border: 1px solid rgba(199,154,59,0.28)
+- backdrop-filter: blur(18px)
+
+Fields:
+- stacked on 360-414px
+- 2-column only on tablets or > 480px
+- each field min-height: 58px
+- field label readable
+- selected value readable
+- dropdown opens cleanly
+- CTA full width, height 56px
+- no clipping
+
+STICKY MOBILE CTA
+
+If using sticky bottom action bar:
+- Do not show it while the hero CTA/trip builder is visible, or add enough padding-bottom.
+- It must not cover buttons or forms.
+- Height max 76px.
+- Add body/main padding-bottom: 96px on mobile when sticky bar exists.
+- WhatsApp button must not cover the CTA.
+
+Better behavior:
+- Show sticky CTA only after user scrolls past hero.
+- Buttons: Demander un devis + WhatsApp icon.
+
+FLOATING WHATSAPP
+
+Requirements:
+- bottom right
+- 56px circle
+- z-index high
+- not covering form submit buttons
+- on mobile, place above sticky bottom bar if present
+- open WhatsApp external link
+
+MOBILE SECTIONS
+
+Every section must be mobile-friendly.
+
+General:
+- padding: 64px 22px
+- section title max-width 100%
+- titles not too huge
+- cards stacked vertically
+- large touch targets
+- no 4-column desktop grids on mobile
+- carousels must have visible overflow-x and snap
+- no hidden content
+
+Cards:
+- width: 100%
+- border-radius: 22px
+- padding: 22px
+- readable body text
+- buttons full width or clearly tappable
+
+Offer cards:
+- stack content cleanly
+- price and CTA visible
+- “Voir le programme” tappable
+- no tiny icons
+- filters stacked or bottom sheet
+
+Activities:
+- cards stacked
+- each card has clear title, description, CTA
+- related activity cards horizontal scroll if needed
+
+Formations:
+- modules stacked
+- formats displayed as chips
+- CTA full width
+
+Guides:
+- article cards stacked or 2-column only on tablet
+
+FAQ:
+- accordion full width
+- touch target min 48px
+- no cramped text
+
+FORMS MOBILE
+
+All forms must be app-like.
+
+Requirements:
+- single column
+- labels visible
+- inputs height 52px to 58px
+- textarea readable
+- submit full width
+- error messages readable
+- confirmation modal centered and mobile safe
+- modal max-height 85vh with scroll if needed
+- no input hidden behind keyboard if possible
+
+PAGES MOBILE
+
+Audit every route:
+/
+/nos-omras
+/collections
+/sur-mesure
+/signature-vip
+/activites
+/formations
+/hajj
+/guides
+/a-propos
+/contact
+
+Every page must:
+- have a mobile-friendly hero/header
+- avoid desktop grids
+- have readable copy
+- have visible CTAs
+- scroll naturally
+- not jump to footer too early
+- not overlap with sticky elements
+
+NAVIGATION MOBILE
+
+Fix:
+- logo click goes to "/" and scrolls top
+- menu links navigate and close menu
+- all pages scroll top on route change
+- no href="#"
+- no dead buttons
+- no broken accordions
+
+RESPONSIVE CSS
+
+Use clear breakpoints:
+mobile: default
+sm: 480px
+md: 768px
+lg: 1024px
+xl: 1280px
+
+Mobile is default.
+Add desktop styles only with media queries or Tailwind breakpoints.
+
+Use:
+grid-template-columns: 1fr on mobile
+flex-direction: column on mobile
+max-width: 100%
+min-width: 0
+overflow-wrap: break-word
+
+TEXT SIZING
+
+Mobile typography:
+Hero title: 42-56px
+Section titles: 34-44px
+Card titles: 24-30px
+Body: 16-18px
+Small labels: 11-13px but readable
+
+Avoid huge desktop font sizes on mobile.
+
+QA CHECKLIST
+
+Test at 390px width.
+
+Homepage:
+- header clean
+- logo visible
+- menu opens
+- title readable
+- subtitle readable
+- CTA buttons visible
+- hero visual visible
+- trip builder usable
+- stats visible
+- no overlap
+- no horizontal scroll
+- next section starts cleanly
+
+All pages:
+- route opens at top
+- no clipped title
+- cards stack correctly
+- forms usable
+- dropdowns work
+- modals fit screen
+- footer clean
+
+Mobile menu:
+- opens full screen
+- accordions work
+- links navigate
+- menu closes after link
+- no body scroll behind menu
+
+Buttons:
+- all clickable
+- all have action
+- no href="#"
+- no dead CTAs
+
+If any mobile screen looks squeezed, rebuild that layout mobile-first.
+Do not stop until the mobile version feels premium, smooth, readable, and client-ready.

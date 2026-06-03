@@ -41,7 +41,7 @@ export default function FaqPage() {
   return (
     <div className="w-full overflow-x-hidden">
       {/* Hero */}
-      <section className="relative py-20 lg:py-32 bg-siyajj-deep-black">
+      <section className="relative py-10 md:py-20 lg:py-32 bg-siyajj-deep-black">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(15,76,76,0.35),transparent_60%)]" />
         <div className="container mx-auto px-4 md:px-8 text-center relative z-10 max-w-3xl">
           <motion.div {...stagger(0.1)}>
@@ -73,7 +73,7 @@ export default function FaqPage() {
       <section className="py-16 bg-siyajj-deep-black">
         <div className="container mx-auto px-4 md:px-8 max-w-3xl">
           {filtered.length === 0 ? (
-            <motion.div {...stagger(0.1)} className="text-center py-20">
+            <motion.div {...stagger(0.1)} className="text-center py-10 md:py-20">
               <p className="text-siyajj-ivory/60 text-lg mb-6">Aucun résultat pour "{search}"</p>
               <p className="text-siyajj-ivory/40 text-sm mb-8">Posez votre question directement à un conseiller SIYAJJ.</p>
               <Button asChild variant="outline" className="border-siyajj-luxury-gold/40 text-siyajj-luxury-gold">

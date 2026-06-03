@@ -321,11 +321,23 @@ export function Header() {
           </button>
         </div>
 
-        {/* Mobile — toggle + burger */}
-        <div className="md:hidden flex items-center gap-2">
+        {/* Mobile — phone + toggle + burger */}
+        <div className="md:hidden flex items-center gap-1.5">
+          <a
+            href={PHONE_HREF}
+            aria-label="Appeler SIYAJJ"
+            className="w-9 h-9 rounded-full flex items-center justify-center border border-siyajj-luxury-gold/30 text-siyajj-luxury-gold hover:bg-siyajj-luxury-gold/15 active:bg-siyajj-luxury-gold/20 transition-colors shrink-0"
+          >
+            <Phone className="w-3.5 h-3.5" />
+          </a>
           <ThemeToggle />
-          <button className="text-siyajj-ivory p-2" onClick={() => setOpen((v) => !v)} aria-label={open ? "Fermer" : "Menu"} aria-expanded={open}>
-            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          <button
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "Fermer" : "Menu"}
+            aria-expanded={open}
+            className="w-9 h-9 rounded-full flex items-center justify-center border border-siyajj-luxury-gold/20 text-siyajj-ivory hover:bg-white/10 active:bg-white/15 transition-colors shrink-0"
+          >
+            {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
         </div>
       </div>
@@ -338,7 +350,7 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] as const }}
-            className="lg:hidden fixed inset-x-0 top-[4.5rem] bottom-0 bg-siyajj-deep-black/98 backdrop-blur-xl border-t border-siyajj-luxury-gold/20 overflow-y-auto z-50"
+            className="lg:hidden fixed inset-x-0 top-[4.5rem] bottom-0 bg-siyajj-deep-black/98 backdrop-blur-xl border-t border-siyajj-luxury-gold/20 overflow-y-auto z-[52]"
           >
             <div className="container mx-auto px-6 py-6 flex flex-col gap-0">
               {/* Accueil */}
@@ -451,8 +463,14 @@ export function Footer() {
 
 function FloatingWhatsApp() {
   return (
-    <div className="hidden md:block fixed bottom-6 right-6 z-50">
-      <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer" aria-label="Contacter un conseiller sur WhatsApp" className="w-14 h-14 bg-siyajj-luxury-gold rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(200,154,70,0.3)] hover:scale-110 transition-transform group">
+    <div className="fixed bottom-[88px] md:bottom-6 right-4 md:right-6 z-[49]">
+      <a
+        href={WHATSAPP_HREF}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contacter un conseiller sur WhatsApp"
+        className="w-14 h-14 bg-siyajj-luxury-gold rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(200,154,70,0.3)] hover:scale-110 active:scale-95 transition-transform group"
+      >
         <MessageCircle className="w-6 h-6 text-siyajj-deep-black group-hover:animate-pulse" />
       </a>
     </div>
@@ -460,12 +478,30 @@ function FloatingWhatsApp() {
 }
 
 function MobileActionBar() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > window.innerHeight * 0.55);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <div className="md:hidden fixed bottom-0 inset-x-0 z-50 flex items-center gap-3 px-4 pt-3 bg-siyajj-deep-black/95 backdrop-blur-md border-t border-siyajj-luxury-gold/20" style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}>
-      <Button asChild className="flex-1 h-12 bg-siyajj-luxury-gold text-siyajj-deep-black hover:bg-siyajj-champagne uppercase tracking-widest text-xs font-bold rounded-lg sweep-hover relative overflow-hidden">
+    <div
+      className={`md:hidden fixed bottom-0 inset-x-0 z-[48] flex items-center gap-3 px-4 pt-3 bg-siyajj-deep-black/97 backdrop-blur-md border-t border-siyajj-luxury-gold/20 transition-transform duration-300 ease-out ${visible ? "translate-y-0" : "translate-y-full"}`}
+      style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
+    >
+      <Button asChild className="flex-1 h-12 bg-siyajj-luxury-gold text-siyajj-deep-black hover:bg-siyajj-champagne uppercase tracking-widest text-[11px] font-bold rounded-xl sweep-hover relative overflow-hidden">
         <Link href="/contact"><span className="relative z-10">Demander un devis</span></Link>
       </Button>
-      <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="h-12 w-12 shrink-0 flex items-center justify-center rounded-lg border border-siyajj-luxury-gold/40 text-siyajj-luxury-gold hover:bg-siyajj-luxury-gold/10 transition-colors">
+      <a
+        href={WHATSAPP_HREF}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="WhatsApp"
+        className="h-12 w-12 shrink-0 flex items-center justify-center rounded-xl border border-siyajj-luxury-gold/40 text-siyajj-luxury-gold hover:bg-siyajj-luxury-gold/10 active:bg-siyajj-luxury-gold/20 transition-colors"
+      >
         <MessageCircle className="w-5 h-5" />
       </a>
     </div>

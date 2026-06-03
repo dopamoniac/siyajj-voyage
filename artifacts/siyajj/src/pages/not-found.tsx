@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export default function NotFound() {
   return (
-    <div className="min-h-[70vh] w-full flex items-center justify-center px-6 py-24 text-center">
+    <div className="min-h-[70vh] w-full flex items-center justify-center px-6 py-12 md:py-24 text-center">
       <div className="max-w-md mx-auto">
         <div className="text-siyajj-luxury-gold/40 font-serif text-[7rem] leading-none mb-2 select-none">404</div>
         <div className="text-siyajj-luxury-gold text-xs uppercase tracking-[0.3em] mb-6">Page introuvable</div>

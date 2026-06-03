@@ -10,13 +10,13 @@ export default function SignatureVip() {
   const [formSent, setFormSent] = useState(false);
 
   return (
-    <div className="w-full min-h-screen bg-siyajj-deep-black pb-32">
-      <section className="pt-24 pb-16 relative overflow-hidden">
+    <div className="w-full min-h-screen bg-siyajj-deep-black pb-16 md:pb-32">
+      <section className="pt-10 pb-10 md:pt-24 md:pb-16 relative overflow-hidden">
         <div className="absolute inset-0 velvet-texture opacity-30 mix-blend-overlay pointer-events-none" />
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle,_rgba(15,76,76,0.15),_transparent_70%)] rounded-full blur-3xl pointer-events-none" />
         
-        <div className="container mx-auto px-4 md:px-8 relative z-10 pt-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="container mx-auto px-4 md:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
             
             <div className="order-2 lg:order-1 relative">
               <div className="absolute inset-0 bg-siyajj-luxury-gold/10 blur-3xl rounded-full translate-x-12 translate-y-12 opacity-50 z-0"></div>
@@ -30,15 +30,15 @@ export default function SignatureVip() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-siyajj-luxury-gold/30 bg-siyajj-luxury-gold/5 text-siyajj-luxury-gold text-[10px] tracking-[0.2em] uppercase mb-8">
                 <span className="text-[10px]">✦</span> Service Conciergerie Privée
               </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-siyajj-ivory mb-8 leading-[1.1] drop-shadow-md">
+              <h1 className="text-[2rem] md:text-5xl lg:text-7xl font-serif text-siyajj-ivory mb-6 md:mb-8 leading-[1.1] drop-shadow-md">
                 SIYAJJ Signature, <br/>
-                <span className="text-siyajj-champagne italic text-4xl md:text-5xl">l'Omra privée pensée dans chaque détail.</span>
+                <span className="text-siyajj-champagne italic text-[1.5rem] md:text-4xl">l'Omra privée pensée dans chaque détail.</span>
               </h1>
-              <p className="text-siyajj-ivory/70 leading-relaxed text-lg font-light mb-12 max-w-lg">
+              <p className="text-siyajj-ivory/70 leading-relaxed text-base md:text-lg font-light mb-8 md:mb-12 max-w-lg">
                 Une expérience absolue conçue pour les couples, familles et VIP. Un accompagnement privé, des transferts exclusifs et les hôtels les plus prestigieux face au Haram pour un voyage spirituel empreint de sérénité totale.
               </p>
 
-              <div className="glass-card border-siyajj-luxury-gold/20 p-8 rounded-2xl mb-12 backdrop-blur-md">
+              <div className="glass-card border-siyajj-luxury-gold/20 p-5 md:p-8 rounded-2xl mb-8 md:mb-12 backdrop-blur-md">
                 <ul className="space-y-4">
                   {vipFeatures.map((item, i) => (
                     <li key={i} className="flex items-center gap-4 group">
