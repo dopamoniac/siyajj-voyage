@@ -108,8 +108,11 @@ html.light {
   --input: 42 56% 50% / 0.22;
   --ring: 42 56% 50% / 0.3;
 
-  --app-font-sans: 'Inter', sans-serif;
+  --app-font-sans: 'Manrope', sans-serif;
   --app-font-serif: 'Cormorant Garamond', serif;
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Manrope', sans-serif;
+  --font-label: 'Cinzel', serif;
   
   --radius: 0.5rem;
 }
@@ -227,6 +230,99 @@ html.light .text-gold-gradient {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* ── Typography utilities ── */
+.display-xl {
+  font-family: var(--font-display);
+  font-size: clamp(2.625rem, 12vw, 3.625rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 0.93;
+}
+
+@media (min-width: 1024px) {
+  .display-xl {
+    font-size: clamp(4.25rem, 5.5vw, 6.75rem);
+    line-height: 0.92;
+  }
+}
+
+.display-lg {
+  font-family: var(--font-display);
+  font-size: clamp(2.625rem, 4vw, 4.5rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 0.96;
+}
+
+.display-md {
+  font-family: var(--font-display);
+  font-size: clamp(1.875rem, 3vw, 3rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.125rem, 3.5vw, 3.75rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.06;
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.125rem, 1.6vw, 1.4375rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.body-lg {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.72;
+  letter-spacing: 0.008em;
+}
+
+@media (min-width: 768px) {
+  .body-lg {
+    font-size: 1.125rem;
+  }
+}
+
+.body-md {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0.005em;
+}
+
+@media (min-width: 768px) {
+  .body-md {
+    font-size: 1rem;
+  }
+}
+
+.label-premium {
+  font-family: var(--font-label);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(1.375rem, 2vw, 1.875rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1;
 }
 
 /* ── Animations ── */

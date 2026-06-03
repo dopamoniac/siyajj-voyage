@@ -150,7 +150,7 @@ function DesktopDropdown({ group }: { group: NavGroup }) {
         className={`flex items-center gap-1 transition-colors ${isActive ? "text-siyajj-luxury-gold" : "text-siyajj-ivory/80 hover:text-siyajj-luxury-gold"}`}
       >
         {group.label}
-        <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
+        <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${open ? "rotate-180" : ""}`} strokeWidth={1.5} />
       </button>
 
       <AnimatePresence>
@@ -177,7 +177,7 @@ function DesktopDropdown({ group }: { group: NavGroup }) {
                       {item.label}
                     </div>
                     {item.desc && (
-                      <div className="text-siyajj-ivory/45 text-xs mt-0.5 leading-snug">{item.desc}</div>
+                      <div className="body-md text-siyajj-ivory/42 text-xs mt-0.5 leading-snug">{item.desc}</div>
                     )}
                   </Link>
                 );
@@ -214,7 +214,7 @@ function MobileAccordion({ group, onNavigate }: { group: NavGroup; onNavigate: (
         onClick={() => setExpanded((v) => !v)}
       >
         {group.label}
-        <ChevronDown className={`w-5 h-5 text-siyajj-luxury-gold transition-transform duration-300 ${expanded ? "rotate-180" : ""}`} />
+        <ChevronDown className={`w-5 h-5 text-siyajj-luxury-gold transition-transform duration-300 ${expanded ? "rotate-180" : ""}`} strokeWidth={1.5} />
       </button>
 
       <AnimatePresence initial={false}>
@@ -232,7 +232,7 @@ function MobileAccordion({ group, onNavigate }: { group: NavGroup; onNavigate: (
                   key={item.href}
                   href={item.href}
                   onClick={onNavigate}
-                  className="py-2 text-siyajj-ivory/70 hover:text-siyajj-luxury-gold transition-colors text-base font-light"
+                  className="py-2 body-md text-siyajj-ivory/68 hover:text-siyajj-luxury-gold transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -400,7 +400,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-serif text-lg mb-6 text-siyajj-ivory">Nos Omras</h4>
+            <h4 className="label-premium text-siyajj-ivory/85 mb-6">Nos Omras</h4>
             <ul className="space-y-3 text-sm text-siyajj-muted-text">
               <li><Link href="/nos-omras" className="hover:text-siyajj-luxury-gold transition-colors">Tous les départs</Link></li>
               <li><Link href="/nos-omras/ramadan" className="hover:text-siyajj-luxury-gold transition-colors">Omra Ramadan</Link></li>
@@ -413,7 +413,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-serif text-lg mb-6 text-siyajj-ivory">Préparer son voyage</h4>
+            <h4 className="label-premium text-siyajj-ivory/85 mb-6">Préparer son voyage</h4>
             <ul className="space-y-3 text-sm text-siyajj-muted-text">
               <li><Link href="/activites" className="hover:text-siyajj-luxury-gold transition-colors">Activités & Expériences</Link></li>
               <li><Link href="/formations" className="hover:text-siyajj-luxury-gold transition-colors">Formations</Link></li>
@@ -425,7 +425,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-serif text-lg mb-6 text-siyajj-ivory">Contact & Agence</h4>
+            <h4 className="label-premium text-siyajj-ivory/85 mb-6">Contact & Agence</h4>
             <ul className="space-y-3 text-sm text-siyajj-muted-text">
               <li><Link href="/contact" className="hover:text-siyajj-luxury-gold transition-colors">Nous contacter</Link></li>
               <li><a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer" className="hover:text-siyajj-luxury-gold transition-colors">WhatsApp</a></li>
@@ -453,7 +453,7 @@ function FloatingWhatsApp() {
   return (
     <div className="hidden md:block fixed bottom-6 right-6 z-50">
       <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer" aria-label="Contacter un conseiller sur WhatsApp" className="w-14 h-14 bg-siyajj-luxury-gold rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(200,154,70,0.3)] hover:scale-110 transition-transform group">
-        <MessageCircle className="w-6 h-6 text-siyajj-deep-black group-hover:animate-pulse" />
+        <MessageCircle className="w-6 h-6 text-siyajj-deep-black group-hover:animate-pulse" strokeWidth={1.4} />
       </a>
     </div>
   );
@@ -466,7 +466,7 @@ function MobileActionBar() {
         <Link href="/contact"><span className="relative z-10">Demander un devis</span></Link>
       </Button>
       <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="h-12 w-12 shrink-0 flex items-center justify-center rounded-lg border border-siyajj-luxury-gold/40 text-siyajj-luxury-gold hover:bg-siyajj-luxury-gold/10 transition-colors">
-        <MessageCircle className="w-5 h-5" />
+        <MessageCircle className="w-5 h-5" strokeWidth={1.4} />
       </a>
     </div>
   );
