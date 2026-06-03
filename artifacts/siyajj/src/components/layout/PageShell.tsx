@@ -1,7 +1,7 @@
 import { ReactNode, useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X, MessageCircle } from "lucide-react";
+import { AnimatePresence, motion, useScroll, useSpring, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 const NAV_LINKS = [
@@ -171,14 +171,54 @@ export function Footer() {
   );
 }
 
-export function PageShell({ children }: { children: ReactNode }) {
+function FloatingWhatsApp() {
   return (
-    <div className="min-h-screen flex flex-col bg-siyajj-deep-black text-siyajj-ivory font-sans selection:bg-siyajj-luxury-gold/30">
+    <div className="fixed bottom-6 right-6 z-50">
+      <a href="https://wa.me/33100000000" target="_blank" rel="noopener noreferrer" aria-label="Contacter un conseiller sur WhatsApp" className="w-14 h-14 bg-siyajj-luxury-gold rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(200,154,70,0.3)] hover:scale-110 transition-transform group">
+        <MessageCircle className="w-6 h-6 text-siyajj-deep-black group-hover:animate-pulse" />
+      </a>
+    </div>
+  );
+}
+
+export function PageShell({ children }: { children: ReactNode }) {
+  const [location] = useLocation();
+  const prefersReducedMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  return (
+    <div className="min-h-[100dvh] flex flex-col bg-siyajj-deep-black text-siyajj-ivory font-sans selection:bg-siyajj-luxury-gold/30">
+      {/* Scroll Progress Indicator */}
+      {!prefersReducedMotion && (
+        <motion.div
+          className="fixed top-0 left-0 right-0 h-1 bg-siyajj-luxury-gold z-[60] origin-left"
+          style={{ scaleX }}
+        />
+      )}
+      
       <Header />
+      
       <main className="flex-grow pt-20">
-        {children}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={location}
+            initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: -10 }}
+            transition={{ duration: prefersReducedMotion ? 0 : 0.3 }}
+          >
+            {children}
+          </motion.div>
+        </AnimatePresence>
       </main>
+      
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }

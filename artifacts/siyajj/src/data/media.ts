@@ -1,6 +1,6 @@
 export const mediaConfig = {
-  heroVideo: "", // Placeholder for luxury cinematic video
-  heroImage: "", // Placeholder for hero image
+  heroVideo: "",
+  heroImage: "",
   makkahImage: "",
   madinahImage: "",
   hotelImage: "",
@@ -9,5 +9,3 @@ export const mediaConfig = {
   guideVideo: "",
   testimonialVideo: ""
 };
-
-// Types and helper functions for media fallback could go here

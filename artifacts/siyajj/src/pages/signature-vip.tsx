@@ -1,3 +1,5 @@
+import { MediaFrame } from "@/components/ui/media-frame";
+
 export default function SignatureVip() {
   return (
     <div className="container mx-auto px-4 md:px-8 py-24">
@@ -10,9 +12,7 @@ export default function SignatureVip() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div className="glass-card aspect-square rounded-xl border border-siyajj-luxury-gold/20 flex items-center justify-center p-8 text-center bg-gradient-to-br from-siyajj-deep-black to-siyajj-warm-black">
-           <span className="text-4xl text-siyajj-luxury-gold opacity-50">✦</span>
-        </div>
+        <MediaFrame slot="vipImage" className="glass-card aspect-square rounded-xl border border-siyajj-luxury-gold/20" />
         <div>
           <h2 className="text-3xl font-serif text-siyajj-ivory mb-6">L'Excellence sans compromis</h2>
           <ul className="space-y-6">
