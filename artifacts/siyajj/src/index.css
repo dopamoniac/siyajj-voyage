@@ -1,0 +1,121 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --font-sans: var(--app-font-sans);
+  --font-serif: var(--app-font-serif);
+  --font-display: 'Cinzel', serif;
+
+  --color-siyajj-deep-black: #040302;
+  --color-siyajj-black-ink: #080604;
+  --color-siyajj-warm-black: #0E0A07;
+  --color-siyajj-charcoal: #17110C;
+  --color-siyajj-luxury-gold: #C89A46;
+  --color-siyajj-champagne: #E8BE73;
+  --color-siyajj-soft-gold: #F3D99A;
+  --color-siyajj-antique-bronze: #8D6730;
+  --color-siyajj-ivory: #F7EFE2;
+  --color-siyajj-muted-ivory: #CABCA4;
+  --color-siyajj-muted-text: #9D907C;
+}
+
+:root {
+  /* HSL Values for dark theme defaults since it's a luxury dark site */
+  --background: 26 33% 2%; /* #040302 roughly */
+  --foreground: 41 46% 93%; /* #F7EFE2 roughly */
+  
+  --card: 26 26% 4%; /* #080604 */
+  --card-foreground: 41 46% 93%;
+  --card-border: 41 53% 53% / 0.15;
+
+  --popover: 26 26% 4%;
+  --popover-foreground: 41 46% 93%;
+  --popover-border: 41 53% 53% / 0.15;
+
+  --primary: 41 53% 53%; /* #C89A46 */
+  --primary-foreground: 26 33% 2%;
+  
+  --secondary: 27 18% 7%; /* #17110C */
+  --secondary-foreground: 41 46% 93%;
+  
+  --muted: 27 18% 7%;
+  --muted-foreground: 36 14% 55%; /* #9D907C */
+  
+  --accent: 41 53% 53% / 0.1;
+  --accent-foreground: 41 53% 53%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 41 46% 93%;
+
+  --border: 41 53% 53% / 0.15;
+  --input: 41 53% 53% / 0.2;
+  --ring: 41 53% 53% / 0.3;
+
+  --app-font-sans: 'Inter', sans-serif;
+  --app-font-serif: 'Cormorant Garamond', serif;
+  
+  --radius: 0.5rem;
+}
+
+.dark {
+  /* Same as root since default is dark */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    background-color: var(--color-siyajj-deep-black);
+    color: var(--color-siyajj-ivory);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-medium;
+  }
+}
+
+.glass-card {
+  background: rgba(10, 7, 4, 0.62);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(200, 154, 70, 0.15);
+}
+
+.gold-glow {
+  box-shadow: 0 0 40px rgba(232, 190, 115, 0.12);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(to right, #CABCA4, #C89A46, #E8BE73);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

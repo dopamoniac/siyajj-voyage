@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "SIYAJJ Renaissance"
+version = "1.0.0"
+id = "artifacts/siyajj"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22899
+
+[services.development]
+run = "pnpm --filter @workspace/siyajj run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/siyajj", "run", "build" ]
+publicDir = "artifacts/siyajj/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22899"
+BASE_PATH = "/"
