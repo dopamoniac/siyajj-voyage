@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
-import { Filter, Calendar, MapPin, Star, ArrowRight, Check } from "lucide-react";
+import { Filter, Calendar, MapPin, Star, ArrowRight, Check, LayoutGrid, List } from "lucide-react";
 import { offers, CONTACT, collections } from "@/data/content";
 import { MediaFrame } from "@/components/ui/media-frame";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 export default function NosOmras() {
   const [filterMonth, setFilterMonth] = useState<string>("all");
   const [filterDeparture, setFilterDeparture] = useState<string>("all");
+  const [view, setView] = useState<"cards" | "list">("cards");
   
   const months = useMemo(() => Array.from(new Set(offers.map(o => o.month))), []);
   const departures = useMemo(() => Array.from(new Set(offers.map(o => o.departure))), []);
@@ -49,6 +50,24 @@ export default function NosOmras() {
               <Filter className="w-4 h-4" /> Filtres
             </div>
             <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
+              <div className="flex items-center rounded-lg border border-siyajj-luxury-gold/20 bg-black/50 p-0.5">
+                <button
+                  type="button"
+                  aria-label="Vue cartes"
+                  onClick={() => setView("cards")}
+                  className={`flex items-center justify-center w-9 h-9 rounded-md transition-colors ${view === "cards" ? "bg-siyajj-luxury-gold text-siyajj-deep-black" : "text-siyajj-ivory/50 hover:text-siyajj-ivory"}`}
+                >
+                  <LayoutGrid className="w-4 h-4" />
+                </button>
+                <button
+                  type="button"
+                  aria-label="Vue liste"
+                  onClick={() => setView("list")}
+                  className={`flex items-center justify-center w-9 h-9 rounded-md transition-colors ${view === "list" ? "bg-siyajj-luxury-gold text-siyajj-deep-black" : "text-siyajj-ivory/50 hover:text-siyajj-ivory"}`}
+                >
+                  <List className="w-4 h-4" />
+                </button>
+              </div>
               <select
                 value={filterMonth}
                 onChange={(e) => setFilterMonth(e.target.value)}
@@ -95,7 +114,7 @@ export default function NosOmras() {
               </Button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className={view === "cards" ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" : "flex flex-col gap-6 max-w-4xl mx-auto"}>
               <AnimatePresence>
                 {filteredOffers.map((offer, idx) => (
                   <motion.div
@@ -104,9 +123,9 @@ export default function NosOmras() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.4, delay: idx * 0.05 }}
-                    className="emerald-glass rounded-2xl overflow-hidden flex flex-col group hover:-translate-y-1 transition-all duration-300 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.8)]"
+                    className={`emerald-glass rounded-2xl overflow-hidden flex group hover:-translate-y-1 transition-all duration-300 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.8)] ${view === "list" ? "flex-col md:flex-row" : "flex-col"}`}
                   >
-                    <div className="relative aspect-[4/3] w-full overflow-hidden">
+                    <div className={`relative aspect-[4/3] overflow-hidden ${view === "list" ? "w-full md:w-80 md:shrink-0" : "w-full"}`}>
                       <MediaFrame slot={offer.slot} className="absolute inset-0 w-full h-full transition-transform duration-700 group-hover:scale-105" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                       {offer.tag && (

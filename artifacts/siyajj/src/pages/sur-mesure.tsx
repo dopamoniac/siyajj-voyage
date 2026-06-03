@@ -302,6 +302,25 @@ export default function SurMesure() {
                   {/* Step 6: Contact */}
                   {step === 6 && (
                     <div>
+                      {/* Récapitulatif du projet */}
+                      <div className="mb-8 rounded-xl border border-siyajj-luxury-gold/20 bg-black/40 p-5">
+                        <div className="text-[10px] uppercase tracking-widest text-siyajj-luxury-gold mb-4">Récapitulatif de votre projet</div>
+                        <dl className="grid grid-cols-2 gap-x-6 gap-y-3">
+                          {[
+                            { label: "Départ", value: selections.departure },
+                            { label: "Période", value: selections.dates },
+                            { label: "Voyageurs", value: selections.travelers },
+                            { label: "Collection", value: selections.collection },
+                            { label: "Services", value: selections.services.length ? selections.services.join(", ") : "", full: true },
+                            { label: "Budget", value: selections.budget, full: true },
+                          ].map((item) => (
+                            <div key={item.label} className={item.full ? "col-span-2" : ""}>
+                              <dt className="text-[10px] uppercase tracking-wider text-siyajj-ivory/40">{item.label}</dt>
+                              <dd className="text-sm text-siyajj-ivory mt-0.5">{item.value || "—"}</dd>
+                            </div>
+                          ))}
+                        </dl>
+                      </div>
                       <h2 className="text-3xl font-serif text-siyajj-ivory mb-8">Où pouvons-nous vous contacter ?</h2>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div className="space-y-2">

@@ -19,6 +19,7 @@ export default function Home() {
   const [date, setDate] = useState("");
   const [voyageurs, setVoyageurs] = useState("");
   const [collection, setCollection] = useState("");
+  const [videoOpen, setVideoOpen] = useState(false);
 
   const selectedVilleLabel = { "paris-cdg": "Paris CDG", "paris-ory": "Paris ORY", lyon: "Lyon", marseille: "Marseille", lille: "Lille", bruxelles: "Bruxelles", geneve: "Genève" }[ville] || "Sélectionner";
   const selectedDateLabel = { "nov-26": "Novembre 2026", "dec-26": "Décembre 2026", "ramadan-26": "Ramadan 2026", "ete-27": "Été 2027", "sur-mesure": "Sur-mesure" }[date] || "Sélectionner";
@@ -68,10 +69,15 @@ export default function Home() {
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </span>
               </Button>
-              <Button asChild variant="outline" className="h-14 px-8 glass-card border-siyajj-luxury-gold/40 text-siyajj-ivory hover:text-siyajj-luxury-gold hover:bg-white/5 rounded-lg uppercase tracking-widest text-xs font-medium sweep-hover relative overflow-hidden">
-                <Link href="/collections">
-                  <span className="relative z-10">{HERO.ctaSecondary}</span>
-                </Link>
+              <Button
+                onClick={() => setVideoOpen(true)}
+                variant="outline"
+                className="h-14 px-8 glass-card border-siyajj-luxury-gold/40 text-siyajj-ivory hover:text-siyajj-luxury-gold hover:bg-white/5 rounded-lg uppercase tracking-widest text-xs font-medium sweep-hover relative overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  <Play className="w-4 h-4 fill-current" />
+                  {HERO.ctaSecondary}
+                </span>
               </Button>
             </motion.div>
           </div>
@@ -478,7 +484,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-siyajj-deep-black/60" />
         <div className="relative z-10">
           <h2 className="text-4xl md:text-5xl font-serif text-siyajj-ivory mb-8">Découvrez l'expérience SIYAJJ</h2>
-          <Dialog>
+          <Dialog open={videoOpen} onOpenChange={setVideoOpen}>
             <DialogTrigger asChild>
               <button className="w-24 h-24 rounded-full bg-siyajj-luxury-gold text-siyajj-deep-black flex items-center justify-center mx-auto shadow-[0_0_40px_rgba(200,154,70,0.4)] hover:scale-110 transition-transform">
                 <Play className="w-8 h-8 fill-current ml-1" />
