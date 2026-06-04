@@ -56,7 +56,7 @@ export default function Home() {
                 <OrnamentBadge className="mb-7">L'Excellence Omra & Hajj</OrnamentBadge>
               </motion.div>
 
-              <motion.h1 {...stagger(0.2)} className="display-xl mb-5 drop-shadow-lg">
+              <motion.h1 {...stagger(0.2)} className="display-xl mb-4 drop-shadow-lg">
                 {HERO.title[0]}<br />
                 {HERO.title[1]}<br />
                 <span className="text-gold-gradient relative inline-block">
@@ -65,7 +65,11 @@ export default function Home() {
                 </span>
               </motion.h1>
 
-              <motion.p {...stagger(0.3)} className="body-lg text-siyajj-ivory/80 mb-8 max-w-xl">
+              <motion.p {...stagger(0.25)} className="tagline-script text-siyajj-luxury-gold/60 mb-6">
+                — La Renaissance du Voyage —
+              </motion.p>
+
+              <motion.p {...stagger(0.3)} className="body-lg text-siyajj-ivory/78 mb-8 max-w-xl">
                 {HERO.subtitle}
               </motion.p>
 
@@ -177,7 +181,7 @@ export default function Home() {
 
           <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {collections.map((col, i) => (
-              <motion.div key={col.id} {...stagger(i * 0.08)} className="emerald-glass rounded-2xl p-6 flex flex-col group hover:-translate-y-1 transition-transform duration-300">
+              <motion.div key={col.id} {...stagger(i * 0.08)} className="emerald-glass card-lift rounded-2xl p-6 flex flex-col group">
                 <div className="h-48 rounded-xl overflow-hidden mb-6 relative">
                   <MediaFrame slot={col.slot} className="absolute inset-0 group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
@@ -237,7 +241,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {offers.slice(0, 6).map(offer => (
-              <div key={offer.id} className="glass-card p-5 rounded-2xl hover:border-siyajj-luxury-gold/45 transition-colors">
+              <div key={offer.id} className="glass-card card-lift p-5 rounded-2xl">
                 <div className="flex justify-between items-start mb-4">
                   <div>
                     {offer.tag && <span className="inline-block px-2.5 py-1 rounded-md bg-siyajj-luxury-gold/15 text-siyajj-luxury-gold label-premium mb-2">{offer.tag}</span>}
@@ -340,7 +344,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {activities.slice(0, 3).map(act => (
-              <div key={act.id} className="emerald-glass rounded-2xl overflow-hidden group">
+              <div key={act.id} className="emerald-glass card-lift rounded-2xl overflow-hidden group">
                 <div className="h-56 relative">
                   <MediaFrame slot={act.slot} className="absolute inset-0 group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-siyajj-deep-black via-siyajj-deep-black/50 to-transparent" />
@@ -474,7 +478,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {guides.slice(0, 3).map(guide => (
-              <div key={guide.id} className="emerald-glass p-6 rounded-2xl hover:border-siyajj-luxury-gold/40 transition-colors group">
+              <div key={guide.id} className="emerald-glass card-lift p-6 rounded-2xl group">
                 <span className="label-premium text-siyajj-champagne mb-4 block">{guide.category}</span>
                 <h3 className="card-title text-siyajj-ivory mb-3">{guide.title}</h3>
                 <p className="body-md text-siyajj-ivory/55 mb-6">{guide.excerpt}</p>
@@ -555,7 +559,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.slice(0, 3).map((t, i) => (
-              <div key={i} className="glass-card p-8 rounded-2xl relative">
+              <div key={i} className="glass-card card-lift p-8 rounded-2xl relative">
                 <div className="text-5xl text-siyajj-luxury-gold/15 font-display absolute top-5 right-6 leading-none">"</div>
                 <div className="flex gap-0.5 mb-4 text-siyajj-luxury-gold">
                   {[...Array(t.rating)].map((_, idx) => (
@@ -597,7 +601,7 @@ export default function Home() {
 
       {/* ── 16. Final CTA ── */}
       <section className="py-32 bg-siyajj-deep-black relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(15,76,76,0.25),_transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(15,76,42,0.22),_transparent_60%)]" />
         <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">
           <SectionKicker>Commençons</SectionKicker>
           <h2 className="section-title text-siyajj-ivory mb-6">Votre voyage commence par une conversation.</h2>

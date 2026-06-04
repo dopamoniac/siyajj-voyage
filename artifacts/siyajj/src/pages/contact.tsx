@@ -30,7 +30,7 @@ export default function Contact() {
       {/* ── Hero ── */}
       <section className="relative pt-20 pb-20 overflow-hidden border-b border-white/5">
         <div className="absolute inset-0 velvet-texture opacity-20 mix-blend-overlay pointer-events-none" />
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(15,76,76,0.11),_transparent_70%)] rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(15,76,42,0.10),_transparent_70%)] rounded-full blur-3xl pointer-events-none" />
         <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 22 }}

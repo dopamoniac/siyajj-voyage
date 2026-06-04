@@ -147,7 +147,7 @@ function DesktopDropdown({ group }: { group: NavGroup }) {
   return (
     <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <button
-        className={`flex items-center gap-1 transition-colors ${isActive ? "text-siyajj-luxury-gold" : "text-siyajj-ivory/80 hover:text-siyajj-luxury-gold"}`}
+        className={`flex items-center gap-1 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-siyajj-luxury-gold/45 rounded focus-ring-managed ${isActive ? "text-siyajj-luxury-gold" : "text-siyajj-ivory/80 hover:text-siyajj-luxury-gold"}`}
       >
         {group.label}
         <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${open ? "rotate-180" : ""}`} strokeWidth={1.5} />
@@ -251,7 +251,7 @@ function ThemeToggle({ className = "" }: { className?: string }) {
     <button
       onClick={toggle}
       aria-label={theme === "dark" ? "Passer en mode clair" : "Passer en mode sombre"}
-      className={`w-8 h-8 rounded-full flex items-center justify-center border border-siyajj-luxury-gold/30 text-siyajj-luxury-gold hover:bg-siyajj-luxury-gold/15 transition-colors shrink-0 ${className}`}
+      className={`w-8 h-8 rounded-full flex items-center justify-center border border-siyajj-luxury-gold/30 text-siyajj-luxury-gold hover:bg-siyajj-luxury-gold/15 transition-colors shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-siyajj-luxury-gold/45 focus-ring-managed ${className}`}
     >
       {theme === "dark" ? (
         <Sun className="w-3.5 h-3.5" />
@@ -292,7 +292,7 @@ export function Header() {
         <Link href="/" onClick={scrollToTop} className="flex items-center gap-2 shrink-0">
           <img
             src={`${import.meta.env.BASE_URL}assets/logo-siyajj-transparent.png`}
-            alt="SIYAJJ Renaissance"
+            alt="SIYAJJ Voyages"
             className={`w-auto drop-shadow-[0_2px_16px_rgba(212,175,55,0.4)] transition-all duration-500 ${scrolled ? "h-10 md:h-11" : "h-11 md:h-16 lg:h-28"}`}
           />
         </Link>
@@ -324,7 +324,7 @@ export function Header() {
           <Button asChild size="sm" className="bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black hover:brightness-110 font-medium uppercase tracking-widest text-[10px] sweep-hover relative overflow-hidden">
             <Link href="/contact"><span className="relative z-10">Devis</span></Link>
           </Button>
-          <button className="text-siyajj-ivory p-2" onClick={() => setOpen((v) => !v)} aria-label={open ? "Fermer" : "Menu"} aria-expanded={open}>
+          <button className="text-siyajj-ivory/85 hover:text-siyajj-ivory p-2 rounded transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-siyajj-luxury-gold/45 focus-ring-managed" onClick={() => setOpen((v) => !v)} aria-label={open ? "Fermer" : "Menu"} aria-expanded={open}>
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
@@ -332,8 +332,8 @@ export function Header() {
         {/* Mobile — toggle + burger */}
         <div className="md:hidden flex items-center gap-2">
           <ThemeToggle />
-          <button className="text-siyajj-ivory p-2" onClick={() => setOpen((v) => !v)} aria-label={open ? "Fermer" : "Menu"} aria-expanded={open}>
-            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          <button className="text-siyajj-ivory/85 hover:text-siyajj-ivory p-2 rounded transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-siyajj-luxury-gold/45 focus-ring-managed" onClick={() => setOpen((v) => !v)} aria-label={open ? "Fermer" : "Menu"} aria-expanded={open}>
+            {open ? <X className="h-6 w-6" strokeWidth={1.5} /> : <Menu className="h-6 w-6" strokeWidth={1.5} />}
           </button>
         </div>
       </div>
@@ -375,13 +375,17 @@ export function Header() {
                 </Button>
                 <div className="grid grid-cols-2 gap-3">
                   <a href={PHONE_HREF} className="flex items-center justify-center gap-2 h-12 rounded-lg border border-siyajj-luxury-gold/30 text-siyajj-ivory/85 text-sm hover:bg-siyajj-luxury-gold/10 transition-colors">
-                    <Phone className="h-4 w-4 text-siyajj-luxury-gold" /> Appeler
+                    <Phone className="h-4 w-4 text-siyajj-luxury-gold" strokeWidth={1.4} /> Appeler
                   </a>
                   <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 h-12 rounded-lg border border-siyajj-luxury-gold/30 text-siyajj-ivory/85 text-sm hover:bg-siyajj-luxury-gold/10 transition-colors">
-                    <MessageCircle className="h-4 w-4 text-siyajj-luxury-gold" /> WhatsApp
+                    <MessageCircle className="h-4 w-4 text-siyajj-luxury-gold" strokeWidth={1.4} /> WhatsApp
                   </a>
                 </div>
               </motion.div>
+
+              <div className="mt-8 pt-6 border-t border-siyajj-luxury-gold/12 text-center">
+                <p className="tagline-script text-siyajj-luxury-gold/45 text-sm">La Renaissance du Voyage</p>
+              </div>
             </div>
           </motion.nav>
         )}
@@ -397,13 +401,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1">
             <Link href="/" onClick={scrollToTop}>
-              <img src={`${import.meta.env.BASE_URL}assets/logo-siyajj-transparent.png`} alt="SIYAJJ Renaissance" className="h-14 w-auto mb-6 drop-shadow-[0_2px_8px_rgba(212,175,55,0.25)]" />
+              <img src={`${import.meta.env.BASE_URL}assets/logo-siyajj-transparent.png`} alt="SIYAJJ Voyages" className="h-14 w-auto mb-3 drop-shadow-[0_2px_8px_rgba(212,175,55,0.25)]" />
             </Link>
+            <p className="tagline-script text-siyajj-luxury-gold/55 mb-5">La Renaissance du Voyage</p>
             <p className="text-siyajj-muted-text text-sm leading-relaxed mb-6">
               Agence premium d'organisation Omra et Hajj depuis la France. L'excellence au service de votre spiritualité.
             </p>
-            <div className="text-xs text-siyajj-luxury-gold uppercase tracking-widest font-display">
-              En partenariat opérationnel avec<br />Omra Factory
+            <div className="text-[10px] label-premium text-siyajj-luxury-gold/65">
+              En partenariat opérationnel avec Omra Factory
             </div>
           </div>
 
@@ -445,7 +450,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-siyajj-muted-text">
-          <p>© 2026 SIYAJJ Renaissance. Tous droits réservés.</p>
+          <p>© 2026 SIYAJJ Voyages. Tous droits réservés.</p>
           <div className="flex gap-4">
             <Link href="/contact" className="hover:text-siyajj-ivory transition-colors">Mentions légales</Link>
             <Link href="/contact" className="hover:text-siyajj-ivory transition-colors">CGV</Link>
@@ -460,8 +465,17 @@ export function Footer() {
 function FloatingWhatsApp() {
   return (
     <div className="hidden md:block fixed bottom-6 right-6 z-50">
-      <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer" aria-label="Contacter un conseiller sur WhatsApp" className="w-14 h-14 bg-siyajj-luxury-gold rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(200,154,70,0.3)] hover:scale-110 transition-transform group">
-        <MessageCircle className="w-6 h-6 text-siyajj-deep-black group-hover:animate-pulse" strokeWidth={1.4} />
+      <a
+        href={WHATSAPP_HREF}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contacter un conseiller sur WhatsApp"
+        className="group flex items-center gap-2.5 pr-4 pl-3.5 h-12 bg-siyajj-emerald/90 backdrop-blur-md border border-siyajj-luxury-gold/40 rounded-full shadow-[0_4px_24px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,154,59,0.1)] hover:bg-siyajj-emerald hover:border-siyajj-luxury-gold/65 hover:shadow-[0_6px_32px_rgba(0,0,0,0.5),0_0_18px_rgba(15,76,42,0.4)] transition-all duration-300"
+      >
+        <MessageCircle className="w-4 h-4 text-siyajj-ivory shrink-0" strokeWidth={1.4} />
+        <span className="label-premium text-siyajj-ivory/90 whitespace-nowrap overflow-hidden max-w-0 group-hover:max-w-[7rem] transition-all duration-500 ease-out">
+          Conseiller
+        </span>
       </a>
     </div>
   );
