@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { MediaFrame } from "@/components/ui/media-frame";
+import { mediaConfig } from "@/data/media";
 import { OrnamentBadge, GoldDivider, SectionKicker } from "@/components/ui/ornaments";
 import {
   HERO, CONTACT, collections, offers, formations, experience360, activities,
@@ -37,7 +38,7 @@ export default function Home() {
   ];
 
   const SERVICES = [
-    { icon: Plane,    label: "Billets Avion",      desc: "Vols depuis la France vers toutes destinations", href: "/contact?service=billets-avion" },
+    { icon: Plane,    label: "Billets Avion",      desc: "Vols depuis la France vers toutes destinations", href: "/billets-avion" },
     { icon: Ship,     label: "Billets Bateau",     desc: "Traversées et liaisons maritimes sur mesure",   href: "/contact?service=billets-bateau" },
     { icon: Landmark, label: "Omra & Hajj",        desc: "Pèlerinages premium accompagnés de A à Z",      href: "/nos-omras" },
     { icon: Luggage,  label: "Voyages Organisés",  desc: "Circuits guidés et packages clé en main",       href: "/contact?service=voyages-organises" },
@@ -185,10 +186,48 @@ export default function Home() {
             <p className="body-lg text-siyajj-ivory/65">Billets, pèlerinages, voyages organisés ou séjours sur mesure — SIYAJJ VOYAGES vous accompagne.</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {SERVICES.map((svc, i) => (
-              <motion.div key={svc.label} {...stagger(i * 0.07)}>
-                <Link href={svc.href} className="glass-card card-lift rounded-2xl p-6 flex flex-col items-center text-center gap-4 group block">
+          {/* ── Featured: Billets Avion ── */}
+          <motion.div {...stagger(0)} className="mb-4">
+            <Link href={SERVICES[0].href} className="group block glass-card card-lift rounded-2xl overflow-hidden relative min-h-[180px] md:min-h-[200px]">
+              {/* Image — right half on desktop, full bg on mobile */}
+              <div className="absolute inset-0 md:left-[45%] md:right-0 md:inset-y-0">
+                <img
+                  src={mediaConfig.billetsAvion}
+                  alt="Billets avion SIYAJJ"
+                  className="w-full h-full object-cover object-center"
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
+                />
+                {/* Mobile: strong bottom fade so text readable */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E0A] via-[#0B0E0A]/80 to-[#0B0E0A]/20 md:hidden" />
+                {/* Desktop: left-to-right fade */}
+                <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-[#0B0E0A] via-[#0B0E0A]/60 to-transparent" />
+              </div>
+
+              {/* Content */}
+              <div className="relative z-10 p-6 md:p-8 flex flex-col justify-end md:justify-center md:max-w-[52%] h-full min-h-[180px] md:min-h-[200px]">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center bg-gradient-to-br from-siyajj-emerald/30 to-siyajj-mosque-green/25 border border-siyajj-luxury-gold/25 group-hover:border-siyajj-luxury-gold/55 transition-all duration-300 mb-4 shadow-[0_0_18px_rgba(11,90,73,0.2)]">
+                  <Plane className="w-5 h-5 text-siyajj-luxury-gold" strokeWidth={1.4} />
+                </div>
+                <h3 className="card-title text-siyajj-ivory mb-1.5 group-hover:text-siyajj-luxury-gold transition-colors text-lg">
+                  {SERVICES[0].label}
+                </h3>
+                <p className="body-md text-siyajj-ivory/65 text-sm leading-snug mb-4">
+                  {SERVICES[0].desc}
+                </p>
+                <div className="label-premium text-siyajj-luxury-gold/60 group-hover:text-siyajj-luxury-gold transition-colors flex items-center gap-1">
+                  En savoir plus <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" strokeWidth={1.4} />
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* ── Other 4 services ── */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {SERVICES.slice(1).map((svc, i) => (
+              <motion.div key={svc.label} {...stagger((i + 1) * 0.07)}>
+                <Link href={svc.href} className="glass-card card-lift rounded-2xl p-6 flex flex-col items-center text-center gap-4 group block h-full">
                   <div className="w-14 h-14 rounded-full flex items-center justify-center bg-gradient-to-br from-siyajj-emerald/30 to-siyajj-mosque-green/25 border border-siyajj-luxury-gold/25 group-hover:border-siyajj-luxury-gold/55 transition-all duration-300 shadow-[0_0_18px_rgba(11,90,73,0.2)]">
                     <svc.icon className="w-6 h-6 text-siyajj-luxury-gold" strokeWidth={1.4} />
                   </div>
