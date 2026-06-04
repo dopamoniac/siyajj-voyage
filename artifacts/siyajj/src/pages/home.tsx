@@ -67,7 +67,7 @@ export default function Home() {
               <motion.h1 {...stagger(0.2)} className="hero-display mb-3 drop-shadow-lg">
                 {HERO.title[0]}<br />
                 {HERO.title[1]}{" "}
-                <span className="text-gold-gradient relative inline-block text-[1.18em]">
+                <span className="text-gold-gradient relative inline-block text-[1.18em] pb-[0.12em]">
                   {HERO.title[2]}
                   <span className="absolute inset-0 bg-siyajj-luxury-gold/15 blur-3xl -z-10 rounded-full opacity-40" />
                 </span>
