@@ -303,7 +303,8 @@ export function Header() {
           <img
             src={`${import.meta.env.BASE_URL}assets/logo-siyajj-v2-transparent.png`}
             alt="SIYAJJ Voyages"
-            className={`w-auto object-contain transition-all duration-500 ${scrolled ? "h-10 md:h-11" : "h-11 md:h-14 lg:h-[4.5rem] xl:h-20"}`}
+            className={`w-auto object-contain transition-all duration-500 ${scrolled ? "h-10 md:h-11" : "h-10 md:h-14 lg:h-[4.5rem] xl:h-20"}`}
+            style={{ filter: "drop-shadow(0 0 6px rgba(247,241,232,0.25)) brightness(1.85)" }}
           />
         </Link>
 
@@ -332,10 +333,20 @@ export function Header() {
           </button>
         </div>
 
-        {/* Mobile — toggle + burger */}
+        {/* Mobile — CTA + burger */}
         <div className="md:hidden flex items-center gap-2">
-          <ThemeToggle />
-          <button className="text-siyajj-ivory/85 hover:text-siyajj-ivory p-2 rounded transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-siyajj-luxury-gold/45 focus-ring-managed" onClick={() => setOpen((v) => !v)} aria-label={open ? "Fermer" : "Menu"} aria-expanded={open}>
+          <Link
+            href="/contact"
+            className="text-[10px] font-bold uppercase tracking-[0.1em] px-3 py-1.5 rounded-md bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black whitespace-nowrap"
+          >
+            Devis
+          </Link>
+          <button
+            className="text-siyajj-ivory/85 hover:text-siyajj-ivory p-2 rounded transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-siyajj-luxury-gold/45 focus-ring-managed"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "Fermer" : "Menu"}
+            aria-expanded={open}
+          >
             {open ? <X className="h-6 w-6" strokeWidth={1.5} /> : <Menu className="h-6 w-6" strokeWidth={1.5} />}
           </button>
         </div>
