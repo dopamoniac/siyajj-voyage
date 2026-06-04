@@ -28,6 +28,9 @@ const GuideDetail = lazy(() => import("@/pages/guide-detail"));
 const OmraSubpage = lazy(() => import("@/pages/omra-subpage"));
 const CollectionDetail = lazy(() => import("@/pages/collection-detail"));
 
+// Billets
+const BilletsAvion = lazy(() => import("@/pages/billets-avion"));
+
 // Standalone pages
 const Avis = lazy(() => import("@/pages/avis"));
 const FaqPage = lazy(() => import("@/pages/faq-page"));
@@ -100,6 +103,9 @@ function Router() {
 
             {/* Guides */}
             <Route path="/guides/:slug" component={GuideDetail} />
+
+            {/* Billets Avion */}
+            <Route path="/billets-avion" component={BilletsAvion} />
 
             {/* Standalone */}
             <Route path="/avis" component={Avis} />

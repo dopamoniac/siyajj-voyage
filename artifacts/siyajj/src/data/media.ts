@@ -39,4 +39,5 @@ export const mediaConfig = {
   activityZiyarat: v("activity-ziyarat.png"),
 
   surMesure: v("sur-mesure.png"),
+  billetsAvion: `${b}assets/billets-avion-hero.png`,
 };
