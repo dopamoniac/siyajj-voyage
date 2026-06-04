@@ -577,26 +577,6 @@ html.light .input-luxury:focus {
   box-shadow: 0 20px 52px rgba(0, 0, 0, 0.38), 0 0 0 1px rgba(199, 154, 59, 0.22);
   border-color: rgba(199, 154, 59, 0.32) !important;
 }
-
-/* ── Logo — dark mode enhancement ──
-   Dark mode: push dark-green #0B5A49 → vivid teal-emerald rgb(28,225,183)
-   so "SIYAJJ" reads clearly on the near-black header.
-   Light mode: restore natural colors (no filter needed).
-── */
-.logo-dark-enhance {
-  /* bright(4) pushes #0B5A49 → vivid cyan-emerald;
-     the tight white drop-shadow creates a legibility halo */
-  filter:
-    brightness(4)
-    contrast(1.15)
-    drop-shadow(0 0 3px rgba(210, 255, 240, 0.92))
-    drop-shadow(0 0 14px rgba(11, 90, 73, 0.75))
-    drop-shadow(0 2px 24px rgba(197, 154, 61, 0.22));
-  transition: filter 0.3s ease;
-}
-html.light .logo-dark-enhance {
-  filter: none;
-}
 html.light .card-lift:hover {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(184, 133, 42, 0.28);
 }
