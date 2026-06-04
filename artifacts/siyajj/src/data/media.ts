@@ -16,7 +16,7 @@ export const mediaConfig = {
   makkahImage: v("makkah-moment.png"),
   madinahImage: v("madinah.png"),
 
-  collectionEssentielle: v("collection-essentielle.png"),
+  collectionEssentielle: `${b}assets/collection-essentielle-kaaba.png`,
   collectionConfort: v("collection-confort.png"),
   collectionPrestige: v("collection-prestige.png"),
   collectionSignature: v("collection-signature.png"),

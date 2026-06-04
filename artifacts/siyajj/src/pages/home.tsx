@@ -295,7 +295,11 @@ export default function Home() {
             {collections.map((col, i) => (
               <motion.div key={col.id} {...stagger(i * 0.08)} className="emerald-glass card-lift rounded-2xl p-6 flex flex-col group">
                 <div className="h-48 rounded-xl overflow-hidden mb-6 relative">
-                  <MediaFrame slot={col.slot} className="absolute inset-0 group-hover:scale-105 transition-transform duration-700" />
+                  <MediaFrame
+                    slot={col.slot}
+                    alt={col.id === "essentielle" ? "Collection Essentielle Omra - vue premium de la Kaaba" : ""}
+                    className="absolute inset-0 group-hover:scale-105 transition-transform duration-700"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
                 </div>
                 <h3 className="card-title text-siyajj-champagne mb-2">{col.name}</h3>
@@ -321,7 +325,11 @@ export default function Home() {
                   <CarouselItem key={col.id} className="pl-4 basis-[85%]">
                     <div className="emerald-glass rounded-2xl p-5 flex flex-col h-full">
                       <div className="h-40 rounded-xl overflow-hidden mb-5 relative">
-                        <MediaFrame slot={col.slot} className="absolute inset-0" />
+                        <MediaFrame
+                          slot={col.slot}
+                          alt={col.id === "essentielle" ? "Collection Essentielle Omra - vue premium de la Kaaba" : ""}
+                          className="absolute inset-0"
+                        />
                       </div>
                       <h3 className="card-title text-siyajj-champagne mb-2">{col.name}</h3>
                       <p className="body-md text-siyajj-ivory/75 mb-4">{col.tagline}</p>
