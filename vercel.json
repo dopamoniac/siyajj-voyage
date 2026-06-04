@@ -1,6 +1,6 @@
 {
-  "buildCommand": "pnpm --filter @workspace/siyajj run build",
-  "outputDirectory": "artifacts/siyajj/dist/public",
+  "buildCommand": "pnpm --filter @workspace/siyajj exec -- vite build --config vite.config.ts --outDir dist",
+  "outputDirectory": "artifacts/siyajj/dist",
   "installCommand": "pnpm install --frozen-lockfile",
   "framework": null,
   "rewrites": [
