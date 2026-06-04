@@ -264,11 +264,19 @@ function ThemeToggle({ className = "" }: { className?: string }) {
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [location] = useLocation();
 
   useEffect(() => {
     setOpen(false);
   }, [location]);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 56);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -278,14 +286,14 @@ export function Header() {
   const closeMenu = () => setOpen(false);
 
   return (
-    <header className="fixed top-0 w-full z-50 transition-all duration-300 bg-siyajj-deep-black/80 backdrop-blur-md border-b border-siyajj-luxury-gold/15">
+    <header className={`fixed top-0 w-full z-50 transition-all duration-500 backdrop-blur-md ${scrolled ? "bg-siyajj-deep-black/96 border-b border-siyajj-luxury-gold/22 shadow-[0_4px_28px_rgba(0,0,0,0.5)]" : "bg-siyajj-deep-black/80 border-b border-siyajj-luxury-gold/14"}`}>
       {/* Desktop + tablet header */}
-      <div className="container mx-auto px-4 md:px-8 h-[4.5rem] lg:h-32 flex items-center justify-between">
+      <div className={`container mx-auto px-4 md:px-8 flex items-center justify-between transition-all duration-500 ${scrolled ? "h-[4.5rem]" : "h-[4.5rem] lg:h-32"}`}>
         <Link href="/" onClick={scrollToTop} className="flex items-center gap-2 shrink-0">
           <img
             src={`${import.meta.env.BASE_URL}assets/logo-siyajj-transparent.png`}
             alt="SIYAJJ Renaissance"
-            className="h-11 md:h-16 lg:h-28 w-auto drop-shadow-[0_2px_16px_rgba(212,175,55,0.4)]"
+            className={`w-auto drop-shadow-[0_2px_16px_rgba(212,175,55,0.4)] transition-all duration-500 ${scrolled ? "h-10 md:h-11" : "h-11 md:h-16 lg:h-28"}`}
           />
         </Link>
 

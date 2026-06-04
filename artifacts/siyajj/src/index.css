@@ -29,8 +29,6 @@
 
   --font-sans: var(--app-font-sans);
   --font-serif: var(--app-font-serif);
-  --font-display: 'Cinzel', serif;
-
   /* ── Dark-mode tokens (defaults) ── */
   --color-siyajj-deep-black: #050403;
   --color-siyajj-black-ink: #07100E;
@@ -323,6 +321,81 @@ html.light .text-gold-gradient {
   font-weight: 400;
   letter-spacing: -0.01em;
   line-height: 1;
+}
+
+/* ── Filter chips ── */
+.filter-chip {
+  flex-shrink: 0;
+  padding: 0.3125rem 0.8125rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(199, 154, 59, 0.2);
+  color: rgba(232, 220, 194, 0.56);
+  font-family: var(--font-label);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  white-space: nowrap;
+  background: rgba(8, 16, 14, 0.5);
+  transition: border-color 0.18s ease, color 0.18s ease, background 0.18s ease;
+  cursor: pointer;
+}
+.filter-chip:hover {
+  border-color: rgba(199, 154, 59, 0.42);
+  color: rgba(232, 220, 194, 0.86);
+  background: rgba(199, 154, 59, 0.06);
+}
+.filter-chip-active {
+  background: rgba(199, 154, 59, 0.13);
+  border-color: rgba(199, 154, 59, 0.5);
+  color: #D7AE58;
+}
+html.light .filter-chip {
+  background: rgba(242, 237, 227, 0.75);
+  border-color: rgba(184, 133, 42, 0.22);
+  color: rgba(22, 18, 14, 0.52);
+}
+html.light .filter-chip:hover {
+  border-color: rgba(184, 133, 42, 0.45);
+  color: rgba(22, 18, 14, 0.82);
+  background: rgba(184, 133, 42, 0.06);
+}
+html.light .filter-chip-active {
+  background: rgba(184, 133, 42, 0.11);
+  border-color: rgba(184, 133, 42, 0.5);
+  color: #B8852A;
+}
+
+/* ── Scrollbar hiding ── */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Skeleton loading ── */
+@keyframes shimmer {
+  from { background-position: -600px 0; }
+  to   { background-position:  600px 0; }
+}
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(199, 154, 59, 0.04) 25%,
+    rgba(199, 154, 59, 0.11) 37%,
+    rgba(199, 154, 59, 0.04) 63%
+  );
+  background-size: 1200px 100%;
+  animation: shimmer 2s ease-in-out infinite;
+  border-radius: 0.5rem;
+}
+
+html.light .skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(184, 133, 42, 0.04) 25%,
+    rgba(184, 133, 42, 0.10) 37%,
+    rgba(184, 133, 42, 0.04) 63%
+  );
+  background-size: 1200px 100%;
 }
 
 /* ── Animations ── */

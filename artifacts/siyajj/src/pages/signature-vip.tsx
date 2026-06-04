@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { MediaFrame } from "@/components/ui/media-frame";
+import { OrnamentBadge } from "@/components/ui/ornaments";
 import { vipFeatures } from "@/data/content";
 
 export default function SignatureVip() {
@@ -27,14 +28,12 @@ export default function SignatureVip() {
             </div>
             
             <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-siyajj-luxury-gold/30 bg-siyajj-luxury-gold/5 text-siyajj-luxury-gold text-[10px] tracking-[0.2em] uppercase mb-8">
-                <span className="text-[10px]">✦</span> Service Conciergerie Privée
-              </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-siyajj-ivory mb-8 leading-[1.1] drop-shadow-md">
-                SIYAJJ Signature, <br/>
-                <span className="text-siyajj-champagne italic text-4xl md:text-5xl">l'Omra privée pensée dans chaque détail.</span>
+              <OrnamentBadge className="mb-8">Service Conciergerie Privée</OrnamentBadge>
+              <h1 className="display-lg text-siyajj-ivory mb-6 leading-tight drop-shadow-md">
+                SIYAJJ Signature,<br/>
+                <span className="font-display text-3xl md:text-4xl text-siyajj-champagne italic font-normal">l'Omra privée pensée dans chaque détail.</span>
               </h1>
-              <p className="text-siyajj-ivory/70 leading-relaxed text-lg font-light mb-12 max-w-lg">
+              <p className="body-lg text-siyajj-ivory/65 mb-10 max-w-lg">
                 Une expérience absolue conçue pour les couples, familles et VIP. Un accompagnement privé, des transferts exclusifs et les hôtels les plus prestigieux face au Haram pour un voyage spirituel empreint de sérénité totale.
               </p>
 
@@ -45,7 +44,7 @@ export default function SignatureVip() {
                       <div className="w-8 h-8 rounded-full bg-siyajj-luxury-gold/10 border border-siyajj-luxury-gold/30 flex items-center justify-center shrink-0 group-hover:bg-siyajj-luxury-gold/20 transition-colors">
                         <span className="text-siyajj-luxury-gold text-[10px]">✦</span>
                       </div>
-                      <span className="text-siyajj-ivory/90 leading-relaxed font-light">{item}</span>
+                      <span className="body-md text-siyajj-ivory/85">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -62,24 +61,24 @@ export default function SignatureVip() {
                   <DialogDescription className="sr-only">Formulaire de demande pour la création d'un séjour Signature privé</DialogDescription>
                   {!formSent ? (
                     <div className="p-4">
-                      <h3 className="text-2xl font-serif text-siyajj-ivory mb-2">Demande Privée</h3>
-                      <p className="text-siyajj-ivory/60 text-sm font-light mb-6">Notre service conciergerie vous recontactera sous 24h.</p>
+                      <h3 className="card-title text-siyajj-ivory mb-2">Demande Privée</h3>
+                      <p className="body-md text-siyajj-ivory/55 mb-6">Notre service conciergerie vous recontactera sous 24h.</p>
                       
                       <form onSubmit={(e) => { e.preventDefault(); setFormSent(true); }} className="space-y-4">
                         <div className="space-y-2">
-                          <label className="text-[10px] uppercase tracking-widest text-siyajj-luxury-gold">Nom complet</label>
+                          <label className="label-premium text-siyajj-luxury-gold">Nom complet</label>
                           <Input required placeholder="Votre nom" className="bg-black/50 border-white/10 text-siyajj-ivory h-12 focus-visible:ring-siyajj-luxury-gold" />
                         </div>
                         <div className="space-y-2">
-                          <label className="text-[10px] uppercase tracking-widest text-siyajj-luxury-gold">Email</label>
+                          <label className="label-premium text-siyajj-luxury-gold">Email</label>
                           <Input required type="email" placeholder="Votre adresse email" className="bg-black/50 border-white/10 text-siyajj-ivory h-12 focus-visible:ring-siyajj-luxury-gold" />
                         </div>
                         <div className="space-y-2">
-                          <label className="text-[10px] uppercase tracking-widest text-siyajj-luxury-gold">Téléphone</label>
+                          <label className="label-premium text-siyajj-luxury-gold">Téléphone</label>
                           <Input required type="tel" placeholder="Votre numéro de téléphone" className="bg-black/50 border-white/10 text-siyajj-ivory h-12 focus-visible:ring-siyajj-luxury-gold" />
                         </div>
                         <div className="space-y-2">
-                          <label className="text-[10px] uppercase tracking-widest text-siyajj-luxury-gold">Votre projet (optionnel)</label>
+                          <label className="label-premium text-siyajj-luxury-gold">Votre projet (optionnel)</label>
                           <textarea className="flex w-full rounded-md bg-black/50 border border-white/10 px-3 py-2 text-sm text-siyajj-ivory shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-siyajj-luxury-gold disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px]" placeholder="Précisez la composition de votre groupe et vos attentes..." />
                         </div>
                         <Button type="submit" className="w-full h-12 mt-4 bg-siyajj-luxury-gold text-siyajj-deep-black uppercase tracking-widest font-bold text-xs sweep-hover relative overflow-hidden">
@@ -92,8 +91,8 @@ export default function SignatureVip() {
                       <div className="w-20 h-20 mx-auto bg-siyajj-luxury-gold/10 rounded-full flex items-center justify-center mb-6 border border-siyajj-luxury-gold/30">
                         <span className="text-3xl text-siyajj-luxury-gold">✦</span>
                       </div>
-                      <h3 className="text-2xl font-serif text-siyajj-champagne mb-3">Demande transmise</h3>
-                      <p className="text-siyajj-ivory/70 font-light mb-8">
+                      <h3 className="display-md text-siyajj-champagne mb-3">Demande transmise</h3>
+                      <p className="body-md text-siyajj-ivory/65 mb-8">
                         Notre service conciergerie a bien reçu votre demande et vous contactera dans les plus brefs délais pour concevoir votre séjour Signature.
                       </p>
                     </div>

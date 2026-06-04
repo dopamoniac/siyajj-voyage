@@ -4,6 +4,7 @@ import { ArrowRight, BookOpen, MonitorPlay, Users, Sparkles, Star, Heart } from 
 import { Button } from "@/components/ui/button";
 import { formations } from "@/data/content";
 import { MediaFrame } from "@/components/ui/media-frame";
+import { OrnamentBadge, SectionKicker, GoldDivider } from "@/components/ui/ornaments";
 
 export default function Formations() {
   const container = {
@@ -22,13 +23,12 @@ export default function Formations() {
       <section className="relative px-4 md:px-8 pb-20">
         <div className="container mx-auto max-w-5xl text-center relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-siyajj-luxury-gold/30 bg-siyajj-luxury-gold/5 text-siyajj-luxury-gold text-[11px] tracking-[0.2em] uppercase mb-8 backdrop-blur-md shadow-[0_0_20px_rgba(200,154,70,0.1)]">
-              <span className="text-[10px]">✦</span> Accompagnement Spirituel
-            </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-serif leading-[1.1] mb-8 text-siyajj-ivory drop-shadow-md">
+            <OrnamentBadge className="mb-8">Accompagnement Spirituel</OrnamentBadge>
+            <h1 className="display-lg mb-6 text-siyajj-ivory drop-shadow-md">
               Formations & <span className="text-gold-gradient">Préparation</span>
             </h1>
-            <p className="text-base md:text-xl text-siyajj-ivory/70 max-w-2xl mx-auto leading-relaxed mb-10 font-light tracking-wide">
+            <GoldDivider className="max-w-[200px] mx-auto mb-7" />
+            <p className="body-lg text-siyajj-ivory/65 max-w-2xl mx-auto mb-10">
               Abordez votre Omra avec confiance, compréhension et présence du cœur. Une préparation rigoureuse pour un voyage transformateur.
             </p>
           </motion.div>
@@ -40,9 +40,9 @@ export default function Formations() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={container} className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-serif text-siyajj-ivory mb-4">Pourquoi se former avant la Omra ?</h2>
-              <div className="w-16 h-[1px] bg-siyajj-luxury-gold/50 mb-8" />
-              <p className="text-siyajj-ivory/70 leading-relaxed text-lg font-light mb-8">
+              <h2 className="section-title text-siyajj-ivory mb-4">Pourquoi se former avant la Omra ?</h2>
+              <GoldDivider className="max-w-[140px] mb-8" />
+              <p className="body-lg text-siyajj-ivory/68 mb-8">
                 La Omra n'est pas un simple voyage, c'est une invocation exaucée, une invitation divine. Pour en tirer tous les bienfaits, il est essentiel d'en maîtriser les rites, d'en comprendre les sagesses et de s'y préparer spirituellement, mentalement et matériellement.
               </p>
               <div className="space-y-4">
@@ -53,8 +53,8 @@ export default function Formations() {
                   "Préparer son cœur à la Révélation et à la Sîra"
                 ].map((point, i) => (
                   <motion.div variants={item} key={i} className="flex items-start gap-3">
-                    <Star className="w-5 h-5 text-siyajj-luxury-gold mt-1 shrink-0" />
-                    <span className="text-siyajj-ivory/80 text-lg">{point}</span>
+                    <Star className="w-4 h-4 text-siyajj-luxury-gold mt-1 shrink-0" strokeWidth={1.4} />
+                    <span className="body-lg text-siyajj-ivory/75">{point}</span>
                   </motion.div>
                 ))}
               </div>
@@ -73,8 +73,10 @@ export default function Formations() {
       <section className="py-24 relative">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif text-siyajj-ivory mb-6">Nos Modules de Formation</h2>
-            <p className="text-siyajj-ivory/70 text-lg font-light">Des programmes complets, pensés pour tous les profils de pèlerins, dispensés par des accompagnateurs qualifiés.</p>
+            <SectionKicker>Nos programmes</SectionKicker>
+            <h2 className="section-title text-siyajj-ivory mb-4">Nos Modules de Formation</h2>
+            <GoldDivider className="max-w-[140px] mx-auto mb-5" />
+            <p className="body-lg text-siyajj-ivory/62">Des programmes complets, pensés pour tous les profils de pèlerins, dispensés par des accompagnateurs qualifiés.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -89,13 +91,11 @@ export default function Formations() {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-siyajj-luxury-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="relative z-10 flex flex-col flex-1">
-                  <div className="inline-flex items-center self-start gap-2 px-3 py-1 rounded-full border border-siyajj-luxury-gold/20 text-siyajj-luxury-gold text-[10px] uppercase tracking-widest mb-6 bg-black/30">
-                    {formation.format}
-                  </div>
-                  <h3 className="text-2xl font-serif text-siyajj-ivory mb-3">{formation.title}</h3>
-                  <p className="text-siyajj-ivory/70 text-sm mb-6 leading-relaxed flex-1">{formation.purpose}</p>
-                  <div className="pt-4 border-t border-siyajj-luxury-gold/10 flex items-center justify-between text-xs text-siyajj-muted-text mt-auto">
-                    <span className="uppercase tracking-widest">Pour qui :</span>
+                  <div className="filter-chip self-start mb-6">{formation.format}</div>
+                  <h3 className="card-title text-siyajj-ivory mb-3">{formation.title}</h3>
+                  <p className="body-md text-siyajj-ivory/65 mb-6 leading-relaxed flex-1">{formation.purpose}</p>
+                  <div className="pt-4 border-t border-siyajj-luxury-gold/10 flex items-center justify-between mt-auto">
+                    <span className="label-premium text-siyajj-muted-text">Pour qui :</span>
                     <span className="text-siyajj-ivory/90">{formation.forWhom}</span>
                   </div>
                 </div>
@@ -110,8 +110,10 @@ export default function Formations() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(200,154,70,0.05),transparent_70%)] pointer-events-none" />
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif text-siyajj-ivory mb-6">Préparations Spécifiques</h2>
-            <p className="text-siyajj-ivory/70 text-lg font-light">Parce que chaque situation demande une approche particulière.</p>
+            <SectionKicker>Profils spécifiques</SectionKicker>
+            <h2 className="section-title text-siyajj-ivory mb-4">Préparations Spécifiques</h2>
+            <GoldDivider className="max-w-[140px] mx-auto mb-5" />
+            <p className="body-lg text-siyajj-ivory/62">Parce que chaque situation demande une approche particulière.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
@@ -132,8 +134,8 @@ export default function Formations() {
                 <div className="w-14 h-14 rounded-full bg-siyajj-luxury-gold/10 flex items-center justify-center mb-6 border border-siyajj-luxury-gold/30">
                   <item.icon className="w-6 h-6 text-siyajj-luxury-gold" />
                 </div>
-                <h3 className="text-xl font-serif text-siyajj-ivory mb-3">{item.title}</h3>
-                <p className="text-siyajj-ivory/70 text-sm leading-relaxed">{item.desc}</p>
+                <h3 className="card-title text-siyajj-ivory mb-3">{item.title}</h3>
+                <p className="body-md text-siyajj-ivory/62 leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -147,8 +149,8 @@ export default function Formations() {
              <div className="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxIiBmaWxsPSJyZ2JhKDIwMCwgMTU0LCA3MCwgMSkiLz48L3N2Zz4=')] bg-[length:24px_24px]" />
              <div className="relative z-10 flex flex-col lg:flex-row items-center gap-12">
                <div className="flex-1 text-center lg:text-left">
-                 <h2 className="text-3xl md:text-4xl font-serif text-siyajj-ivory mb-6">Un écosystème d'apprentissage complet</h2>
-                 <p className="text-siyajj-ivory/70 text-lg font-light mb-8">Tous nos séjours incluent l'accès à une suite de supports exclusifs pour vous accompagner avant, pendant et après votre Omra.</p>
+                 <h2 className="section-title text-siyajj-ivory mb-5">Un écosystème d'apprentissage complet</h2>
+                 <p className="body-lg text-siyajj-ivory/65 mb-8">Tous nos séjours incluent l'accès à une suite de supports exclusifs pour vous accompagner avant, pendant et après votre Omra.</p>
                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                    {[
                      { icon: MonitorPlay, label: "Vidéos de préparation" },
@@ -165,8 +167,8 @@ export default function Formations() {
                </div>
                <div className="w-full lg:w-1/3 flex flex-col items-center justify-center bg-black/30 p-8 rounded-2xl border border-white/5">
                  <div className="text-center mb-8">
-                   <h3 className="text-xl font-serif text-siyajj-luxury-gold mb-2">Prêt à entamer votre cheminement ?</h3>
-                   <p className="text-siyajj-ivory/60 text-sm">Discutez de votre projet avec un conseiller formation.</p>
+                   <h3 className="card-title text-siyajj-luxury-gold mb-2">Prêt à entamer votre cheminement ?</h3>
+                   <p className="body-md text-siyajj-ivory/55">Discutez de votre projet avec un conseiller formation.</p>
                  </div>
                  <Button asChild className="w-full h-14 bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black hover:brightness-110 uppercase tracking-widest text-xs font-bold rounded-xl sweep-hover relative overflow-hidden group">
                    <Link href="/contact">

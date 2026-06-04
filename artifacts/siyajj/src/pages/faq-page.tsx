@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { faqs } from "@/data/content";
 import { ArrowRight, MessageCircle, Search } from "lucide-react";
+import { OrnamentBadge, SectionKicker, GoldDivider } from "@/components/ui/ornaments";
 import { CONTACT } from "@/data/content";
 
 const stagger = (delay: number) => ({
@@ -45,13 +46,12 @@ export default function FaqPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(15,76,76,0.35),transparent_60%)]" />
         <div className="container mx-auto px-4 md:px-8 text-center relative z-10 max-w-3xl">
           <motion.div {...stagger(0.1)}>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-siyajj-luxury-gold/30 bg-siyajj-luxury-gold/10 text-siyajj-luxury-gold text-xs tracking-[0.2em] uppercase mb-8">
-              Aide & Réponses
-            </div>
-            <h1 className="text-4xl md:text-6xl font-serif text-siyajj-ivory mb-6 leading-tight">
+            <OrnamentBadge className="mb-8">Aide & Réponses</OrnamentBadge>
+            <h1 className="display-lg text-siyajj-ivory mb-5 leading-tight">
               Questions <span className="text-gold-gradient">fréquentes</span>
             </h1>
-            <p className="text-siyajj-ivory/70 text-lg mb-10">
+            <GoldDivider className="max-w-[200px] mx-auto mb-7" />
+            <p className="body-lg text-siyajj-ivory/62 mb-10">
               Vous avez une question sur votre Omra, les rites, la logistique ou SIYAJJ ? Retrouvez les réponses ci-dessous.
             </p>
             {/* Search */}
@@ -87,10 +87,10 @@ export default function FaqPage() {
               {filtered.map((faq, i) => (
                 <motion.div key={i} {...stagger(0.05 + i * 0.03)}>
                   <AccordionItem value={`faq-${i}`} className="border-b border-siyajj-luxury-gold/10">
-                    <AccordionTrigger className="text-left font-serif text-siyajj-ivory hover:text-siyajj-luxury-gold py-5 text-lg">
+                    <AccordionTrigger className="text-left font-display text-siyajj-ivory hover:text-siyajj-luxury-gold py-5 text-base hover:no-underline">
                       {faq.q}
                     </AccordionTrigger>
-                    <AccordionContent className="text-siyajj-ivory/70 leading-relaxed pb-5">
+                    <AccordionContent className="body-md text-siyajj-ivory/65 leading-relaxed pb-5">
                       {faq.a}
                     </AccordionContent>
                   </AccordionItem>
@@ -106,8 +106,8 @@ export default function FaqPage() {
         <div className="container mx-auto px-4 md:px-8 max-w-4xl">
           <div className="grid md:grid-cols-2 gap-8">
             <motion.div {...stagger(0.1)} className="glass-card p-8 rounded-2xl">
-              <h3 className="text-xl font-serif text-siyajj-ivory mb-3">Vous n'avez pas trouvé votre réponse ?</h3>
-              <p className="text-siyajj-ivory/65 text-sm mb-6 leading-relaxed">
+              <h3 className="card-title text-siyajj-ivory mb-3">Vous n'avez pas trouvé votre réponse ?</h3>
+              <p className="body-md text-siyajj-ivory/62 mb-6 leading-relaxed">
                 Un conseiller SIYAJJ répond à toutes vos questions — par téléphone, WhatsApp ou email.
               </p>
               <Button asChild className="bg-siyajj-luxury-gold text-siyajj-deep-black hover:bg-siyajj-champagne uppercase tracking-widest text-xs font-bold">
@@ -117,8 +117,8 @@ export default function FaqPage() {
               </Button>
             </motion.div>
             <motion.div {...stagger(0.2)} className="emerald-glass p-8 rounded-2xl">
-              <h3 className="text-xl font-serif text-siyajj-ivory mb-3">Construire votre Omra</h3>
-              <p className="text-siyajj-ivory/65 text-sm mb-6 leading-relaxed">
+              <h3 className="card-title text-siyajj-ivory mb-3">Construire votre Omra</h3>
+              <p className="body-md text-siyajj-ivory/62 mb-6 leading-relaxed">
                 Prêt à partir ? Utilisez notre constructeur de voyage pour définir votre projet et recevoir un devis personnalisé.
               </p>
               <Button asChild variant="outline" className="border-siyajj-luxury-gold/40 text-siyajj-luxury-gold hover:bg-white/5 uppercase tracking-widest text-xs">

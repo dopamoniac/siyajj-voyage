@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Check, ChevronRight, Users, Calendar, Star, Diamond, ShieldCheck } from "lucide-react";
 import { CONTACT } from "@/data/content";
 import { MediaFrame } from "@/components/ui/media-frame";
+import { OrnamentBadge, GoldDivider } from "@/components/ui/ornaments";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function SurMesure() {
@@ -77,11 +78,10 @@ export default function SurMesure() {
     <div className="container mx-auto px-4 md:px-8 py-24 relative min-h-[90vh] flex flex-col justify-center">
       <div className="absolute inset-0 velvet-texture opacity-30 mix-blend-overlay pointer-events-none" />
       <div className="max-w-3xl mx-auto text-center mb-12 relative z-20">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-siyajj-luxury-gold/30 bg-siyajj-luxury-gold/5 text-siyajj-luxury-gold text-[10px] tracking-[0.2em] uppercase mb-6">
-          <span className="text-[10px]">✦</span> À La Carte
-        </div>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-siyajj-ivory mb-6 drop-shadow-md">Créer mon voyage</h1>
-        <p className="text-siyajj-ivory/70 leading-relaxed font-light text-lg">
+        <OrnamentBadge className="mb-7">À La Carte</OrnamentBadge>
+        <h1 className="display-lg text-siyajj-ivory mb-5 drop-shadow-md">Créer mon voyage</h1>
+        <GoldDivider className="max-w-[180px] mx-auto mb-6" />
+        <p className="body-lg text-siyajj-ivory/62">
           Concevons ensemble un voyage unique qui correspond exactement à vos attentes spirituelles et à vos exigences d'excellence.
         </p>
       </div>
@@ -105,11 +105,11 @@ export default function SurMesure() {
                 <div className="absolute inset-0 bg-gradient-to-t from-siyajj-deep-black via-transparent to-transparent" />
                 
                 <div className="absolute bottom-12 left-12 right-12 z-20">
-                  <div className="w-12 h-[1px] bg-siyajj-luxury-gold mb-6"></div>
-                  <h3 className="text-3xl font-serif text-siyajj-champagne drop-shadow-md">
+                  <div className="w-12 h-[1px] bg-siyajj-luxury-gold mb-6" />
+                  <h3 className="card-title text-siyajj-champagne drop-shadow-md">
                     Étape 0{step}
                   </h3>
-                  <p className="text-siyajj-ivory/80 font-light mt-2 text-lg">
+                  <p className="body-lg text-siyajj-ivory/75 mt-2">
                     {steps[step-1].title}
                   </p>
                 </div>
@@ -154,7 +154,7 @@ export default function SurMesure() {
                   {/* Step 1: Départ */}
                   {step === 1 && (
                     <div>
-                      <h2 className="text-3xl font-serif text-siyajj-ivory mb-8">D'où souhaitez-vous partir ?</h2>
+                      <h2 className="card-title text-siyajj-ivory mb-8">D'où souhaitez-vous partir ?</h2>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {["Paris", "Lyon", "Marseille", "Genève", "Bruxelles", "Autre"].map((opt) => (
                           <button
@@ -176,7 +176,7 @@ export default function SurMesure() {
                   {/* Step 2: Dates */}
                   {step === 2 && (
                     <div>
-                      <h2 className="text-3xl font-serif text-siyajj-ivory mb-8">Quelle période vous convient ?</h2>
+                      <h2 className="card-title text-siyajj-ivory mb-8">Quelle période vous convient ?</h2>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {["Le plus tôt possible", "Ramadan", "Vacances scolaires", "Plus tard dans l'année"].map((opt) => (
                           <button
@@ -198,7 +198,7 @@ export default function SurMesure() {
                   {/* Step 3: Voyageurs */}
                   {step === 3 && (
                     <div>
-                      <h2 className="text-3xl font-serif text-siyajj-ivory mb-8">Qui participe à ce voyage ?</h2>
+                      <h2 className="card-title text-siyajj-ivory mb-8">Qui participe à ce voyage ?</h2>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {["Solo", "Couple", "Famille", "Seniors", "Groupe Privé", "Autre"].map((opt) => (
                           <button
@@ -220,7 +220,7 @@ export default function SurMesure() {
                   {/* Step 4: Collection */}
                   {step === 4 && (
                     <div>
-                      <h2 className="text-3xl font-serif text-siyajj-ivory mb-8">Quelle collection privilégier ?</h2>
+                      <h2 className="card-title text-siyajj-ivory mb-8">Quelle collection privilégier ?</h2>
                       <div className="grid grid-cols-1 gap-4">
                         {[
                           { title: "Collection Essentielle", desc: "Une Omra sereine au juste prix (3-4*)." },
@@ -238,8 +238,8 @@ export default function SurMesure() {
                                 : 'bg-black/40 hover:border-siyajj-luxury-gold/30 hover:bg-white/5'
                               }`}
                           >
-                            <span className={`font-serif text-xl mb-1 ${selections.collection === opt.title ? 'text-siyajj-champagne' : 'text-siyajj-ivory'}`}>{opt.title}</span>
-                            <span className="text-sm font-light text-siyajj-ivory/60">{opt.desc}</span>
+                            <span className={`font-display text-lg mb-1 ${selections.collection === opt.title ? 'text-siyajj-champagne' : 'text-siyajj-ivory'}`}>{opt.title}</span>
+                            <span className="body-md text-siyajj-ivory/55">{opt.desc}</span>
                           </button>
                         ))}
                       </div>
@@ -250,7 +250,7 @@ export default function SurMesure() {
                   {step === 5 && (
                     <div className="space-y-8">
                       <div>
-                        <h2 className="text-2xl font-serif text-siyajj-ivory mb-4">Services spécifiques</h2>
+                        <h2 className="card-title text-siyajj-ivory mb-4">Services spécifiques</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           {[
                             "Transferts privés VIP", 
@@ -279,7 +279,7 @@ export default function SurMesure() {
                       </div>
                       
                       <div>
-                        <h2 className="text-2xl font-serif text-siyajj-ivory mb-4">Budget global envisagé</h2>
+                        <h2 className="card-title text-siyajj-ivory mb-4">Budget global envisagé</h2>
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                           {["< 2 000€", "2000 - 3000€", "> 3 000€", "Pas de limite"].map((opt) => (
                             <button
@@ -304,7 +304,7 @@ export default function SurMesure() {
                     <div>
                       {/* Récapitulatif du projet */}
                       <div className="mb-8 rounded-xl border border-siyajj-luxury-gold/20 bg-black/40 p-5">
-                        <div className="text-[10px] uppercase tracking-widest text-siyajj-luxury-gold mb-4">Récapitulatif de votre projet</div>
+                        <div className="label-premium text-siyajj-luxury-gold mb-4">Récapitulatif de votre projet</div>
                         <dl className="grid grid-cols-2 gap-x-6 gap-y-3">
                           {[
                             { label: "Départ", value: selections.departure },
@@ -315,28 +315,28 @@ export default function SurMesure() {
                             { label: "Budget", value: selections.budget, full: true },
                           ].map((item) => (
                             <div key={item.label} className={item.full ? "col-span-2" : ""}>
-                              <dt className="text-[10px] uppercase tracking-wider text-siyajj-ivory/40">{item.label}</dt>
+                              <dt className="label-premium text-siyajj-ivory/35">{item.label}</dt>
                               <dd className="text-sm text-siyajj-ivory mt-0.5">{item.value || "—"}</dd>
                             </div>
                           ))}
                         </dl>
                       </div>
-                      <h2 className="text-3xl font-serif text-siyajj-ivory mb-8">Où pouvons-nous vous contacter ?</h2>
+                      <h2 className="card-title text-siyajj-ivory mb-8">Où pouvons-nous vous contacter ?</h2>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <label className="text-[10px] uppercase tracking-widest text-siyajj-luxury-gold">Nom complet</label>
+                          <label className="label-premium text-siyajj-luxury-gold">Nom complet</label>
                           <Input placeholder="Votre nom" className="bg-black/50 border-white/10 text-siyajj-ivory h-12 rounded-lg focus-visible:ring-siyajj-luxury-gold focus-visible:border-siyajj-luxury-gold" />
                         </div>
                         <div className="space-y-2">
-                          <label className="text-[10px] uppercase tracking-widest text-siyajj-luxury-gold">Téléphone</label>
+                          <label className="label-premium text-siyajj-luxury-gold">Téléphone</label>
                           <Input type="tel" placeholder="Votre numéro" className="bg-black/50 border-white/10 text-siyajj-ivory h-12 rounded-lg focus-visible:ring-siyajj-luxury-gold focus-visible:border-siyajj-luxury-gold" />
                         </div>
                         <div className="space-y-2">
-                          <label className="text-[10px] uppercase tracking-widest text-siyajj-luxury-gold">Email</label>
+                          <label className="label-premium text-siyajj-luxury-gold">Email</label>
                           <Input type="email" placeholder="Votre email" className="bg-black/50 border-white/10 text-siyajj-ivory h-12 rounded-lg focus-visible:ring-siyajj-luxury-gold focus-visible:border-siyajj-luxury-gold" />
                         </div>
                         <div className="space-y-2">
-                          <label className="text-[10px] uppercase tracking-widest text-siyajj-luxury-gold">Contact préféré</label>
+                          <label className="label-premium text-siyajj-luxury-gold">Contact préféré</label>
                           <Select>
                             <SelectTrigger className="bg-black/50 border-white/10 text-siyajj-ivory h-12 rounded-lg focus:ring-siyajj-luxury-gold focus:border-siyajj-luxury-gold">
                               <SelectValue placeholder="Sélectionnez" />
@@ -386,8 +386,8 @@ export default function SurMesure() {
                       <div className="w-20 h-20 mx-auto bg-siyajj-luxury-gold/10 rounded-full flex items-center justify-center mb-6 border border-siyajj-luxury-gold/30 shadow-[0_0_30px_rgba(200,154,70,0.3)]">
                         <span className="text-3xl text-siyajj-luxury-gold">✦</span>
                       </div>
-                      <h3 className="text-3xl font-serif text-siyajj-champagne mb-3">Une création SIYAJJ</h3>
-                      <p className="text-siyajj-ivory/70 mb-8 font-light leading-relaxed">
+                      <h3 className="display-md text-siyajj-champagne mb-3">Une création SIYAJJ</h3>
+                      <p className="body-md text-siyajj-ivory/65 mb-8 leading-relaxed">
                         Notre équipe a reçu vos préférences et vous contactera très rapidement pour affiner votre projet de voyage.
                       </p>
                       

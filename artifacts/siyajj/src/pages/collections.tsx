@@ -4,6 +4,7 @@ import { Check, Minus, ArrowRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { collections } from "@/data/content";
 import { MediaFrame } from "@/components/ui/media-frame";
+import { OrnamentBadge, SectionKicker, GoldDivider } from "@/components/ui/ornaments";
 
 export default function Collections() {
   return (
@@ -12,13 +13,12 @@ export default function Collections() {
       <section className="relative px-4 md:px-8 pb-20">
         <div className="container mx-auto max-w-5xl text-center relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-siyajj-luxury-gold/30 bg-siyajj-luxury-gold/5 text-siyajj-luxury-gold text-[11px] tracking-[0.2em] uppercase mb-8 backdrop-blur-md shadow-[0_0_20px_rgba(200,154,70,0.1)]">
-              <span className="text-[10px]">✦</span> Notre Gamme
-            </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-serif leading-[1.1] mb-8 text-siyajj-ivory drop-shadow-md">
+            <OrnamentBadge className="mb-8">Notre Gamme</OrnamentBadge>
+            <h1 className="display-lg mb-6 text-siyajj-ivory drop-shadow-md">
               Les Collections <span className="text-gold-gradient">SIYAJJ</span>
             </h1>
-            <p className="text-base md:text-xl text-siyajj-ivory/70 max-w-2xl mx-auto leading-relaxed font-light tracking-wide">
+            <GoldDivider className="max-w-[200px] mx-auto mb-7" />
+            <p className="body-lg text-siyajj-ivory/65 max-w-2xl mx-auto">
               Cinq niveaux de service conçus pour répondre à chaque attente de confort, d'accompagnement et de prestige. Trouvez l'expérience qui vous correspond.
             </p>
           </motion.div>
@@ -89,9 +89,9 @@ export default function Collections() {
             className="glass-card p-6 md:p-12 rounded-3xl border-siyajj-luxury-gold/20 shadow-2xl overflow-hidden bg-black/60"
           >
             <div className="text-center mb-12">
-              <span className="text-2xl text-siyajj-luxury-gold opacity-50 mb-4 block">✦</span>
-              <h2 className="text-4xl font-serif text-siyajj-ivory">Comparer en détail</h2>
-              <p className="text-siyajj-ivory/60 mt-4 font-light">Trouvez la collection adaptée à vos exigences</p>
+              <SectionKicker className="mb-5">Comparer en détail</SectionKicker>
+              <h2 className="section-title text-siyajj-ivory mb-3">Trouvez Votre Collection</h2>
+              <GoldDivider className="max-w-[140px] mx-auto" />
             </div>
             
             <div className="overflow-x-auto pb-8 -mx-6 px-6 md:mx-0 md:px-0">
@@ -102,7 +102,7 @@ export default function Collections() {
                   {collections.map((c) => (
                     <div key={c.id} className="col-span-1 text-center flex flex-col items-center justify-end">
                       {c.featured && <Star className="w-3 h-3 text-siyajj-luxury-gold mb-2" />}
-                      <span className="font-serif text-xl text-siyajj-champagne">{c.name.replace("Collection ", "")}</span>
+                      <span className="card-title text-siyajj-champagne">{c.name.replace("Collection ", "")}</span>
                     </div>
                   ))}
                 </div>
@@ -167,8 +167,8 @@ export default function Collections() {
       
       {/* Help Section */}
       <section className="py-20 border-t border-siyajj-luxury-gold/10 bg-black/40 text-center px-4">
-        <h3 className="text-2xl font-serif text-siyajj-ivory mb-4">Indécis sur le choix de votre collection ?</h3>
-        <p className="text-siyajj-ivory/70 max-w-xl mx-auto mb-8 font-light">
+        <h3 className="card-title text-siyajj-ivory mb-4">Indécis sur le choix de votre collection ?</h3>
+        <p className="body-lg text-siyajj-ivory/65 max-w-xl mx-auto mb-8">
           Nos conseillers sont à votre disposition pour vous guider vers la formule qui correspond le mieux à vos attentes, votre budget et la composition de votre groupe.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
