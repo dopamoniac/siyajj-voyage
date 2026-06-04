@@ -1,0 +1,70 @@
+Fix the mobile navbar. It is not behaving correctly on mobile.
+
+Current problem:
+- In mobile preview, the navbar shows the logo, a small "DEVIS" button, and an X icon.
+- The mobile menu seems to be in an opened/incorrect state or the hamburger/close behavior is broken.
+- The navbar does not feel clean, premium, or functional.
+- Desktop navbar must stay unchanged.
+
+What I want:
+1. On mobile default state:
+   - Show logo on the left.
+   - Show "DEVIS" button near the right.
+   - Show hamburger icon on the far right.
+   - Do NOT show the X icon unless the menu is opened.
+   - Navbar height must be clean and compact.
+
+2. When the hamburger is clicked:
+   - Open a smooth premium mobile menu.
+   - Replace hamburger with X icon.
+   - Menu should slide down or appear as a clean overlay.
+   - Menu items must be visible, clickable, and well spaced.
+   - Include:
+     - Billets
+     - Omra & Hajj
+     - Voyages organisés
+     - Sur mesure
+     - Services
+     - Destinations
+     - À propos
+     - Contact
+   - Keep the "Demander un devis" CTA visible and premium.
+
+3. When X is clicked:
+   - Close the menu.
+   - Return to hamburger icon.
+   - No layout glitch.
+
+4. Technical requirements:
+   - Find the navbar/header component.
+   - Check the mobile menu state logic.
+   - Make sure default state is closed.
+   - Fix any wrong conditional rendering between hamburger and X.
+   - Fix z-index issues so the menu appears above hero content.
+   - Prevent body scroll only while menu is open.
+   - Close mobile menu when clicking a nav link.
+   - Close mobile menu on route change if routing exists.
+   - Keep desktop navbar exactly as it is.
+
+5. Logo requirements:
+   - Keep using the inserted attached logo.
+   - Use object-fit: contain.
+   - Do not stretch or crop the logo.
+   - Logo should be sharp and readable on mobile.
+
+6. Mobile styling:
+   - Dark black/emerald premium background.
+   - Gold accents consistent with SIYAJJ branding.
+   - Smooth transitions.
+   - No duplicate X button.
+   - No broken alignment.
+   - No horizontal scroll.
+   - Safe spacing for iPhone width.
+
+Acceptance criteria:
+- Mobile navbar starts closed with hamburger visible.
+- X icon appears only after opening the menu.
+- Menu opens and closes correctly.
+- All links are clickable.
+- Desktop navbar is not impacted.
+- The result looks premium, clean, and professional.

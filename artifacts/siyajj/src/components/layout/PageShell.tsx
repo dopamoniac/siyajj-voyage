@@ -295,26 +295,38 @@ export function Header() {
 
   const closeMenu = () => setOpen(false);
 
+  const MOBILE_NAV_H = "3.75rem"; // 60px — compact mobile bar height
+
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-500 backdrop-blur-md ${scrolled ? "bg-siyajj-deep-black/96 border-b border-siyajj-luxury-gold/22 shadow-[0_4px_28px_rgba(0,0,0,0.5)]" : "bg-siyajj-deep-black/80 border-b border-siyajj-luxury-gold/14"}`}>
-      {/* Desktop + tablet header */}
-      <div className={`container mx-auto px-4 md:px-8 flex items-center justify-between transition-all duration-500 ${scrolled ? "h-[4.5rem]" : "h-[4.5rem] lg:h-32"}`}>
+    <header className={`fixed top-0 w-full z-[100] transition-all duration-500 backdrop-blur-md ${scrolled ? "bg-siyajj-deep-black/96 border-b border-siyajj-luxury-gold/22 shadow-[0_4px_28px_rgba(0,0,0,0.5)]" : "bg-siyajj-deep-black/80 border-b border-siyajj-luxury-gold/14"}`}>
+
+      {/* ── SHARED BAR (all breakpoints) ── */}
+      <div
+        className={`container mx-auto px-4 md:px-8 flex items-center justify-between transition-all duration-500`}
+        style={{ height: scrolled ? MOBILE_NAV_H : undefined }}
+      >
+        {/* Logo — always left */}
         <Link href="/" onClick={scrollToTop} className="flex items-center shrink-0">
           <img
             src={`${import.meta.env.BASE_URL}assets/logo-siyajj-v2-transparent.png`}
             alt="SIYAJJ Voyages"
-            className={`w-auto object-contain transition-all duration-500 ${scrolled ? "h-10 md:h-11" : "h-10 md:h-14 lg:h-[4.5rem] xl:h-20"}`}
-            style={{ filter: "drop-shadow(0 0 6px rgba(247,241,232,0.25)) brightness(1.85)" }}
+            className={`w-auto object-contain transition-all duration-500 ${
+              scrolled
+                ? "h-9 md:h-10"
+                : "h-9 md:h-14 lg:h-[4.5rem] xl:h-20"
+            }`}
+            style={{ filter: "drop-shadow(0 0 6px rgba(247,241,232,0.22)) brightness(1.85)" }}
           />
         </Link>
 
-        {/* Desktop nav with dropdowns */}
+        {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
           {NAV_STRUCTURE.map((group) => (
             <DesktopDropdown key={group.label} group={group} />
           ))}
         </nav>
 
+        {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-3 xl:gap-4">
           <ThemeToggle />
           <Button asChild className="bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black hover:brightness-110 font-semibold uppercase tracking-widest text-[11px] sweep-hover relative overflow-hidden">
@@ -322,86 +334,149 @@ export function Header() {
           </Button>
         </div>
 
-        {/* Tablet */}
+        {/* Tablet controls (md → lg) */}
         <div className="hidden md:flex lg:hidden items-center gap-3">
           <ThemeToggle />
           <Button asChild size="sm" className="bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black hover:brightness-110 font-semibold uppercase tracking-widest text-[10px] sweep-hover relative overflow-hidden">
             <Link href="/contact"><span className="relative z-10">Devis</span></Link>
           </Button>
-          <button className="text-siyajj-ivory/85 hover:text-siyajj-ivory p-2 rounded transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-siyajj-luxury-gold/45 focus-ring-managed" onClick={() => setOpen((v) => !v)} aria-label={open ? "Fermer" : "Menu"} aria-expanded={open}>
-            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          <button
+            className="text-siyajj-ivory/85 hover:text-siyajj-ivory p-2 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-siyajj-luxury-gold/45"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={open}
+          >
+            <AnimatePresence mode="wait" initial={false}>
+              {open
+                ? <motion.span key="x-tablet" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.18 }}><X className="h-6 w-6" strokeWidth={1.5} /></motion.span>
+                : <motion.span key="menu-tablet" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.18 }}><Menu className="h-6 w-6" strokeWidth={1.5} /></motion.span>
+              }
+            </AnimatePresence>
           </button>
         </div>
 
-        {/* Mobile — CTA + burger */}
-        <div className="md:hidden flex items-center gap-2">
-          <Link
-            href="/contact"
-            className="text-[10px] font-bold uppercase tracking-[0.1em] px-3 py-1.5 rounded-md bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black whitespace-nowrap"
-          >
-            Devis
-          </Link>
+        {/* Mobile controls (< md) — DEVIS pill + burger/X */}
+        <div className="md:hidden flex items-center gap-1.5">
+          {/* DEVIS — only show when menu is closed */}
+          <AnimatePresence initial={false}>
+            {!open && (
+              <motion.div
+                key="devis-btn"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.15 }}
+              >
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center text-[10px] font-bold uppercase tracking-[0.12em] px-3 h-8 rounded-lg bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black whitespace-nowrap"
+                >
+                  Devis
+                </Link>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Burger / X toggle */}
           <button
-            className="text-siyajj-ivory/85 hover:text-siyajj-ivory p-2 rounded transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-siyajj-luxury-gold/45 focus-ring-managed"
+            className="w-10 h-10 flex items-center justify-center text-siyajj-ivory/85 hover:text-siyajj-ivory rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-siyajj-luxury-gold/45"
             onClick={() => setOpen((v) => !v)}
-            aria-label={open ? "Fermer" : "Menu"}
+            aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
             aria-expanded={open}
           >
-            {open ? <X className="h-6 w-6" strokeWidth={1.5} /> : <Menu className="h-6 w-6" strokeWidth={1.5} />}
+            <AnimatePresence mode="wait" initial={false}>
+              {open
+                ? <motion.span key="x-mob" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}><X className="h-6 w-6" strokeWidth={1.5} /></motion.span>
+                : <motion.span key="menu-mob" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}><Menu className="h-6 w-6" strokeWidth={1.5} /></motion.span>
+              }
+            </AnimatePresence>
           </button>
         </div>
       </div>
 
-      {/* Mobile / tablet full-screen menu with accordions */}
+      {/* ── MOBILE / TABLET MENU OVERLAY ── */}
       <AnimatePresence>
         {open && (
-          <motion.nav
-            initial={{ opacity: 0, y: -16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -16 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] as const }}
-            className="lg:hidden fixed inset-x-0 top-[4.5rem] bottom-0 bg-siyajj-deep-black/98 backdrop-blur-xl border-t border-siyajj-luxury-gold/20 overflow-y-auto z-50"
-          >
-            <div className="container mx-auto px-6 py-6 flex flex-col gap-0">
-              {/* Accueil */}
-              <Link
-                href="/"
-                onClick={() => { scrollToTop(); closeMenu(); }}
-                className="block py-4 border-b border-siyajj-luxury-gold/20 text-[18px] font-bold tracking-[-0.01em] text-siyajj-luxury-gold hover:text-siyajj-champagne transition-colors"
-              >
-                Accueil
-              </Link>
+          <>
+            {/* Backdrop */}
+            <motion.div
+              key="backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="lg:hidden fixed inset-0 top-[3.75rem] bg-black/40 z-[149]"
+              onClick={closeMenu}
+            />
 
-              {NAV_STRUCTURE.map((group) => (
-                <MobileAccordion key={group.label} group={group} onNavigate={closeMenu} />
-              ))}
+            {/* Menu panel */}
+            <motion.nav
+              key="mobile-menu"
+              initial={{ opacity: 0, y: -12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:hidden fixed inset-x-0 top-[3.75rem] bottom-0 bg-[#060d0b] border-t border-siyajj-luxury-gold/20 overflow-y-auto z-[150]"
+              style={{ WebkitOverflowScrolling: "touch" }}
+            >
+              <div className="px-5 pt-5 pb-10 flex flex-col">
 
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.15 }}
-                className="mt-8 space-y-3"
-              >
-                <Button asChild className="w-full h-14 bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black hover:brightness-110 uppercase tracking-widest text-xs font-semibold sweep-hover relative overflow-hidden">
-                  <Link href="/contact" onClick={closeMenu}>
-                    <span className="relative z-10">Demander un devis</span>
-                  </Link>
-                </Button>
-                <div className="grid grid-cols-2 gap-3">
-                  <a href={PHONE_HREF} className="flex items-center justify-center gap-2 h-12 rounded-lg border border-siyajj-luxury-gold/30 text-siyajj-ivory/85 text-sm hover:bg-siyajj-luxury-gold/10 transition-colors">
-                    <Phone className="h-4 w-4 text-siyajj-luxury-gold" strokeWidth={1.4} /> Appeler
-                  </a>
-                  <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 h-12 rounded-lg border border-siyajj-luxury-gold/30 text-siyajj-ivory/85 text-sm hover:bg-siyajj-luxury-gold/10 transition-colors">
-                    <MessageCircle className="h-4 w-4 text-siyajj-luxury-gold" strokeWidth={1.4} /> WhatsApp
-                  </a>
+                {/* Accueil */}
+                <Link
+                  href="/"
+                  onClick={() => { scrollToTop(); closeMenu(); }}
+                  className="flex items-center py-4 border-b border-siyajj-luxury-gold/15 text-[17px] font-bold tracking-[-0.01em] text-siyajj-luxury-gold"
+                >
+                  Accueil
+                </Link>
+
+                {/* Nav groups */}
+                {NAV_STRUCTURE.map((group) => (
+                  <MobileAccordion key={group.label} group={group} onNavigate={closeMenu} />
+                ))}
+
+                {/* Contact shortcut */}
+                <Link
+                  href="/contact"
+                  onClick={closeMenu}
+                  className="flex items-center py-4 border-b border-siyajj-luxury-gold/15 text-[17px] font-bold tracking-[-0.01em] text-siyajj-ivory/80 hover:text-siyajj-luxury-gold transition-colors"
+                >
+                  Contact
+                </Link>
+
+                {/* Bottom CTA block */}
+                <div className="mt-8 flex flex-col gap-3">
+                  <Button asChild className="w-full h-14 bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black hover:brightness-110 uppercase tracking-widest text-[11px] font-bold sweep-hover relative overflow-hidden">
+                    <Link href="/contact" onClick={closeMenu}>
+                      <span className="relative z-10">Demander un devis</span>
+                    </Link>
+                  </Button>
+                  <div className="grid grid-cols-2 gap-3">
+                    <a
+                      href={PHONE_HREF}
+                      className="flex items-center justify-center gap-2 h-12 rounded-xl border border-siyajj-luxury-gold/25 text-siyajj-ivory/80 text-sm hover:bg-siyajj-luxury-gold/10 transition-colors"
+                    >
+                      <Phone className="h-4 w-4 text-siyajj-luxury-gold shrink-0" strokeWidth={1.4} />
+                      Appeler
+                    </a>
+                    <a
+                      href={WHATSAPP_HREF}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 h-12 rounded-xl border border-siyajj-luxury-gold/25 text-siyajj-ivory/80 text-sm hover:bg-siyajj-luxury-gold/10 transition-colors"
+                    >
+                      <MessageCircle className="h-4 w-4 text-siyajj-luxury-gold shrink-0" strokeWidth={1.4} />
+                      WhatsApp
+                    </a>
+                  </div>
                 </div>
-              </motion.div>
 
-              <div className="mt-8 pt-6 border-t border-siyajj-luxury-gold/12 text-center">
-                <p className="tagline-script text-siyajj-luxury-gold/45 text-sm">La Renaissance du Voyage</p>
+                <p className="mt-10 text-center tagline-script text-siyajj-luxury-gold/35 text-sm">
+                  La Renaissance du Voyage
+                </p>
               </div>
-            </div>
-          </motion.nav>
+            </motion.nav>
+          </>
         )}
       </AnimatePresence>
     </header>
