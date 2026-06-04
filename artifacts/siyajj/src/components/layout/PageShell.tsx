@@ -301,9 +301,9 @@ export function Header() {
       <div className={`container mx-auto px-4 md:px-8 flex items-center justify-between transition-all duration-500 ${scrolled ? "h-[4.5rem]" : "h-[4.5rem] lg:h-32"}`}>
         <Link href="/" onClick={scrollToTop} className="flex items-center shrink-0">
           <img
-            src={`${import.meta.env.BASE_URL}assets/logo-siyajj-voyages-horizontal-transparent.png`}
+            src={`${import.meta.env.BASE_URL}assets/logo-siyajj-v2-transparent.png`}
             alt="SIYAJJ Voyages"
-            className={`w-auto object-contain transition-all duration-500 drop-shadow-[0_2px_18px_rgba(197,154,61,0.28)] ${scrolled ? "h-10 md:h-11" : "h-11 md:h-14 lg:h-[4.5rem] xl:h-20"}`}
+            className={`w-auto object-contain transition-all duration-500 ${scrolled ? "h-10 md:h-11" : "h-11 md:h-14 lg:h-[4.5rem] xl:h-20"}`}
           />
         </Link>
 
@@ -404,7 +404,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1">
             <Link href="/" onClick={scrollToTop}>
-              <img src={`${import.meta.env.BASE_URL}assets/logo-siyajj-voyages-horizontal-transparent.png`} alt="SIYAJJ Voyages" className="h-14 w-auto object-contain mb-4 drop-shadow-[0_2px_14px_rgba(197,154,61,0.22)]" />
+              <img src={`${import.meta.env.BASE_URL}assets/logo-siyajj-v2-transparent.png`} alt="SIYAJJ Voyages" className="h-14 w-auto object-contain mb-4" />
             </Link>
             <p className="tagline-script text-siyajj-luxury-gold/55 mb-5">La Renaissance du Voyage</p>
             <p className="text-siyajj-muted-text text-sm leading-relaxed mb-6">

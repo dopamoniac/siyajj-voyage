@@ -58,9 +58,9 @@ export default function APropos() {
                 <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/80 z-10" />
                 <div className="relative z-20 flex flex-col items-center">
                   <img
-                    src={`${import.meta.env.BASE_URL}assets/logo-siyajj-transparent.png`}
-                    alt="SIYAJJ Renaissance"
-                    className="h-20 w-auto mb-8 opacity-90 drop-shadow-lg"
+                    src={`${import.meta.env.BASE_URL}assets/logo-siyajj-v2-transparent.png`}
+                    alt="SIYAJJ Voyages"
+                    className="h-20 w-auto object-contain mb-8"
                   />
                   <div className="w-12 h-px bg-siyajj-luxury-gold mb-6" />
                   <div className="label-premium text-siyajj-luxury-gold mb-4">Notre Promesse</div>
