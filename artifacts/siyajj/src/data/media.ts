@@ -6,7 +6,7 @@ export const mediaConfig = {
   testimonialVideo: "",
   guideVideo: "",
 
-  heroPortal: v("hero-sacred-destination.png"),
+  heroPortal: `${b}assets/hero-bg.png`,
   heroPortalLegacy: v("hero-portal.png"),
   heroSacredMadinah: v("hero-sacred-madinah.png"),
   heroHaramAtmosphere: v("hero-haram-atmosphere.png"),
