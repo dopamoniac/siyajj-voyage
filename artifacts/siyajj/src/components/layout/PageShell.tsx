@@ -315,10 +315,6 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-3 xl:gap-4">
-          <a href={PHONE_HREF} className="hidden xl:flex items-center gap-2 text-[13px] font-medium text-siyajj-ivory/80 light:text-[#173A33]/80 hover:text-siyajj-luxury-gold light:hover:text-[#0B5A49] transition-colors whitespace-nowrap">
-            <Phone className="h-3.5 w-3.5 text-siyajj-luxury-gold shrink-0" />
-            {PHONE_DISPLAY}
-          </a>
           <ThemeToggle />
           <Button asChild className="bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black hover:brightness-110 font-semibold uppercase tracking-widest text-[11px] sweep-hover relative overflow-hidden">
             <Link href="/contact"><span className="relative z-10">Demander un devis</span></Link>
@@ -327,9 +323,6 @@ export function Header() {
 
         {/* Tablet */}
         <div className="hidden md:flex lg:hidden items-center gap-3">
-          <a href={PHONE_HREF} className="flex items-center gap-2 text-sm text-siyajj-ivory/75 hover:text-siyajj-luxury-gold transition-colors">
-            <Phone className="h-4 w-4 text-siyajj-luxury-gold" />
-          </a>
           <ThemeToggle />
           <Button asChild size="sm" className="bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black hover:brightness-110 font-semibold uppercase tracking-widest text-[10px] sweep-hover relative overflow-hidden">
             <Link href="/contact"><span className="relative z-10">Devis</span></Link>
