@@ -40,4 +40,5 @@ export const mediaConfig = {
 
   surMesure: v("sur-mesure.png"),
   billetsAvion: `${b}assets/billets-avion-hero.png`,
+  billetsBateau: `${b}assets/billets-bateau-hero.png`,
 };

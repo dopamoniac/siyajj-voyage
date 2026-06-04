@@ -23,7 +23,7 @@ const NAV_STRUCTURE: NavGroup[] = [
     label: "Billets",
     items: [
       { href: "/billets-avion",                    label: "Billets avion",          desc: "Réservation et conseils pour vos vols." },
-      { href: "/contact?service=billets-bateau",  label: "Billets bateau",          desc: "Traversées et accompagnement réservation." },
+      { href: "/billets-bateau",                   label: "Billets bateau",          desc: "Traversées et accompagnement réservation." },
       { href: "/contact?service=assistance",      label: "Assistance réservation",  desc: "Nous vous aidons à choisir la bonne option." },
       { href: "/contact?service=conseils-depart", label: "Conseils départ",         desc: "Préparez votre trajet avec sérénité." },
     ],
@@ -426,7 +426,7 @@ export function Footer() {
             <h4 className="label-premium text-siyajj-ivory/85 mb-6">Nos Services</h4>
             <ul className="space-y-3 text-sm text-siyajj-muted-text">
               <li><Link href="/billets-avion" className="hover:text-siyajj-luxury-gold transition-colors">Billets Avion</Link></li>
-              <li><Link href="/contact?service=billets-bateau" className="hover:text-siyajj-luxury-gold transition-colors">Billets Bateau</Link></li>
+              <li><Link href="/billets-bateau" className="hover:text-siyajj-luxury-gold transition-colors">Billets Bateau</Link></li>
               <li><Link href="/nos-omras" className="hover:text-siyajj-luxury-gold transition-colors">Omra & Hajj</Link></li>
               <li><Link href="/contact?service=voyages-organises" className="hover:text-siyajj-luxury-gold transition-colors">Voyages Organisés</Link></li>
               <li><Link href="/sur-mesure" className="hover:text-siyajj-luxury-gold transition-colors">Séjours sur Mesure</Link></li>

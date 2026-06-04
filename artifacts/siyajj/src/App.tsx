@@ -30,6 +30,7 @@ const CollectionDetail = lazy(() => import("@/pages/collection-detail"));
 
 // Billets
 const BilletsAvion = lazy(() => import("@/pages/billets-avion"));
+const BilletsBateau = lazy(() => import("@/pages/billets-bateau"));
 
 // Standalone pages
 const Avis = lazy(() => import("@/pages/avis"));
@@ -104,8 +105,9 @@ function Router() {
             {/* Guides */}
             <Route path="/guides/:slug" component={GuideDetail} />
 
-            {/* Billets Avion */}
+            {/* Billets */}
             <Route path="/billets-avion" component={BilletsAvion} />
+            <Route path="/billets-bateau" component={BilletsBateau} />
 
             {/* Standalone */}
             <Route path="/avis" component={Avis} />

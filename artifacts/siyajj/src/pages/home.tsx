@@ -39,7 +39,7 @@ export default function Home() {
 
   const SERVICES = [
     { icon: Plane,    label: "Billets Avion",      desc: "Vols depuis la France vers toutes destinations", href: "/billets-avion" },
-    { icon: Ship,     label: "Billets Bateau",     desc: "Traversées et liaisons maritimes sur mesure",   href: "/contact?service=billets-bateau" },
+    { icon: Ship,     label: "Billets Bateau",     desc: "Traversées et liaisons maritimes sur mesure",   href: "/billets-bateau" },
     { icon: Landmark, label: "Omra & Hajj",        desc: "Pèlerinages premium accompagnés de A à Z",      href: "/nos-omras" },
     { icon: Luggage,  label: "Voyages Organisés",  desc: "Circuits guidés et packages clé en main",       href: "/contact?service=voyages-organises" },
     { icon: Compass,  label: "Séjours sur Mesure", desc: "Votre voyage unique, conçu pour vous",          href: "/sur-mesure" },
@@ -223,10 +223,46 @@ export default function Home() {
             </Link>
           </motion.div>
 
-          {/* ── Other 4 services ── */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {SERVICES.slice(1).map((svc, i) => (
-              <motion.div key={svc.label} {...stagger((i + 1) * 0.07)}>
+          {/* ── Featured: Billets Bateau ── */}
+          <motion.div {...stagger(0.07)} className="mb-4">
+            <Link href={SERVICES[1].href} className="group block glass-card card-lift rounded-2xl overflow-hidden relative min-h-[180px] md:min-h-[200px]">
+              {/* Image — left half on desktop (mirrored vs avion), full bg on mobile */}
+              <div className="absolute inset-0 md:left-0 md:right-[45%] md:inset-y-0">
+                <img
+                  src={mediaConfig.billetsBateau}
+                  alt="Billets bateau SIYAJJ"
+                  className="w-full h-full object-cover object-center"
+                  loading="lazy"
+                  decoding="async"
+                />
+                {/* Mobile: strong bottom fade */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E0A] via-[#0B0E0A]/80 to-[#0B0E0A]/20 md:hidden" />
+                {/* Desktop: right-to-left fade */}
+                <div className="absolute inset-0 hidden md:block bg-gradient-to-l from-[#0B0E0A] via-[#0B0E0A]/60 to-transparent" />
+              </div>
+
+              {/* Content — right side on desktop */}
+              <div className="relative z-10 p-6 md:p-8 flex flex-col justify-end md:justify-center md:ml-[48%] h-full min-h-[180px] md:min-h-[200px]">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center bg-gradient-to-br from-siyajj-emerald/30 to-siyajj-mosque-green/25 border border-siyajj-luxury-gold/25 group-hover:border-siyajj-luxury-gold/55 transition-all duration-300 mb-4 shadow-[0_0_18px_rgba(11,90,73,0.2)]">
+                  <Ship className="w-5 h-5 text-siyajj-luxury-gold" strokeWidth={1.4} />
+                </div>
+                <h3 className="card-title text-siyajj-ivory mb-1.5 group-hover:text-siyajj-luxury-gold transition-colors text-lg">
+                  {SERVICES[1].label}
+                </h3>
+                <p className="body-md text-siyajj-ivory/65 text-sm leading-snug mb-4">
+                  {SERVICES[1].desc}
+                </p>
+                <div className="label-premium text-siyajj-luxury-gold/60 group-hover:text-siyajj-luxury-gold transition-colors flex items-center gap-1">
+                  En savoir plus <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" strokeWidth={1.4} />
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* ── Remaining 3 services ── */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {SERVICES.slice(2).map((svc, i) => (
+              <motion.div key={svc.label} {...stagger((i + 2) * 0.07)}>
                 <Link href={svc.href} className="glass-card card-lift rounded-2xl p-6 flex flex-col items-center text-center gap-4 group block h-full">
                   <div className="w-14 h-14 rounded-full flex items-center justify-center bg-gradient-to-br from-siyajj-emerald/30 to-siyajj-mosque-green/25 border border-siyajj-luxury-gold/25 group-hover:border-siyajj-luxury-gold/55 transition-all duration-300 shadow-[0_0_18px_rgba(11,90,73,0.2)]">
                     <svc.icon className="w-6 h-6 text-siyajj-luxury-gold" strokeWidth={1.4} />
