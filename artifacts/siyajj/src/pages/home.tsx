@@ -56,15 +56,15 @@ export default function Home() {
           <div className="absolute inset-0 velvet-texture mix-blend-overlay" />
         </div>
 
-        <div className="container mx-auto px-4 md:px-8 relative z-10 flex flex-1 flex-col justify-center py-6 lg:py-8">
+        <div className="container mx-auto px-4 md:px-8 relative z-10 flex flex-1 flex-col justify-center py-4 lg:py-6">
           <div className="grid lg:grid-cols-[52%_48%] gap-8 items-center">
             <div className="max-w-2xl">
 
               <motion.div {...stagger(0.1)}>
-                <OrnamentBadge className="mb-7">Agence Premium de Voyage</OrnamentBadge>
+                <OrnamentBadge className="mb-5">Agence Premium de Voyage</OrnamentBadge>
               </motion.div>
 
-              <motion.h1 {...stagger(0.2)} className="display-xl mb-4 drop-shadow-lg">
+              <motion.h1 {...stagger(0.2)} className="hero-display mb-3 drop-shadow-lg">
                 {HERO.title[0]}<br />
                 {HERO.title[1]}<br />
                 <span className="text-gold-gradient relative inline-block">
@@ -73,11 +73,11 @@ export default function Home() {
                 </span>
               </motion.h1>
 
-              <motion.p {...stagger(0.25)} className="tagline-script text-siyajj-luxury-gold/60 mb-6">
+              <motion.p {...stagger(0.25)} className="tagline-script text-siyajj-luxury-gold/60 mb-4">
                 — La Renaissance du Voyage —
               </motion.p>
 
-              <motion.p {...stagger(0.3)} className="body-lg text-siyajj-ivory/78 mb-8 max-w-xl">
+              <motion.p {...stagger(0.3)} className="body-lg text-siyajj-ivory/78 mb-5 max-w-xl">
                 {HERO.subtitle}
               </motion.p>
 
