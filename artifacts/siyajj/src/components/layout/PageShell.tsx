@@ -91,7 +91,7 @@ function DesktopDropdown({ group }: { group: NavGroup }) {
     return (
       <Link
         href={group.href ?? "/"}
-        className={`transition-colors ${isActive ? "text-siyajj-luxury-gold" : "text-siyajj-ivory/80 hover:text-siyajj-luxury-gold"}`}
+        className={`whitespace-nowrap transition-colors ${isActive ? "text-siyajj-luxury-gold" : "text-siyajj-ivory/80 hover:text-siyajj-luxury-gold"}`}
       >
         {group.label}
       </Link>
@@ -103,7 +103,7 @@ function DesktopDropdown({ group }: { group: NavGroup }) {
   return (
     <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <button
-        className={`flex items-center gap-1 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-siyajj-luxury-gold/45 rounded focus-ring-managed ${isActive ? "text-siyajj-luxury-gold" : "text-siyajj-ivory/80 hover:text-siyajj-luxury-gold"}`}
+        className={`flex items-center gap-1 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-siyajj-luxury-gold/45 rounded focus-ring-managed ${isActive ? "text-siyajj-luxury-gold" : "text-siyajj-ivory/80 hover:text-siyajj-luxury-gold"}`}
       >
         {group.label}
         <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${open ? "rotate-180" : ""}`} strokeWidth={1.5} />
@@ -245,11 +245,11 @@ export function Header() {
     <header className={`fixed top-0 w-full z-50 transition-all duration-500 backdrop-blur-md ${scrolled ? "bg-siyajj-deep-black/96 border-b border-siyajj-luxury-gold/22 shadow-[0_4px_28px_rgba(0,0,0,0.5)]" : "bg-siyajj-deep-black/80 border-b border-siyajj-luxury-gold/14"}`}>
       {/* Desktop + tablet header */}
       <div className={`container mx-auto px-4 md:px-8 flex items-center justify-between transition-all duration-500 ${scrolled ? "h-[4.5rem]" : "h-[4.5rem] lg:h-32"}`}>
-        <Link href="/" onClick={scrollToTop} className="flex items-center gap-2 shrink-0">
+        <Link href="/" onClick={scrollToTop} className="flex items-center shrink-0">
           <img
             src={`${import.meta.env.BASE_URL}assets/logo-siyajj-voyages-horizontal-transparent.png`}
             alt="SIYAJJ Voyages"
-            className={`w-auto object-contain transition-all duration-500 ${scrolled ? "h-9 md:h-10" : "h-10 md:h-12 lg:h-14"}`}
+            className={`w-auto object-contain transition-all duration-500 drop-shadow-[0_2px_18px_rgba(197,154,61,0.28)] ${scrolled ? "h-10 md:h-11" : "h-11 md:h-14 lg:h-[4.5rem] xl:h-20"}`}
           />
         </Link>
 
@@ -261,8 +261,8 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-3 xl:gap-4">
-          <a href={PHONE_HREF} className="hidden xl:flex items-center gap-2 text-sm text-siyajj-ivory/75 hover:text-siyajj-luxury-gold transition-colors">
-            <Phone className="h-4 w-4 text-siyajj-luxury-gold" />
+          <a href={PHONE_HREF} className="hidden xl:flex items-center gap-2 text-sm text-siyajj-ivory/75 hover:text-siyajj-luxury-gold transition-colors whitespace-nowrap">
+            <Phone className="h-4 w-4 text-siyajj-luxury-gold shrink-0" />
             {PHONE_DISPLAY}
           </a>
           <ThemeToggle />
@@ -357,7 +357,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1">
             <Link href="/" onClick={scrollToTop}>
-              <img src={`${import.meta.env.BASE_URL}assets/logo-siyajj-voyages-horizontal-transparent.png`} alt="SIYAJJ Voyages" className="h-12 w-auto object-contain mb-3" />
+              <img src={`${import.meta.env.BASE_URL}assets/logo-siyajj-voyages-horizontal-transparent.png`} alt="SIYAJJ Voyages" className="h-14 w-auto object-contain mb-4 drop-shadow-[0_2px_14px_rgba(197,154,61,0.22)]" />
             </Link>
             <p className="tagline-script text-siyajj-luxury-gold/55 mb-5">La Renaissance du Voyage</p>
             <p className="text-siyajj-muted-text text-sm leading-relaxed mb-6">
