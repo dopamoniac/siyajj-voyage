@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { motion, useReducedMotion } from "framer-motion";
-import { Play, ArrowRight, Star, CheckCircle2, MessageCircle, Phone } from "lucide-react";
+import { Play, ArrowRight, Star, CheckCircle2, MessageCircle, Phone, Plane, Ship, Landmark, Luggage, Compass } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -30,10 +30,18 @@ export default function Home() {
   const stagger = (delay: number) => prefersReducedMotion ? { initial: false as const } : { initial: { opacity: 0, y: 24 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] as const } };
 
   const heroStats = [
-    { value: "+15 000", label: "Pèlerins accompagnés" },
-    { value: "+30", label: "Départs / mois" },
+    { value: "+15 000", label: "Voyageurs accompagnés" },
+    { value: "5", label: "Services de voyage" },
     { value: "4.9/5", label: "Avis vérifiés" },
     { value: "24/7", label: "Assistance" },
+  ];
+
+  const SERVICES = [
+    { icon: Plane,    label: "Billets Avion",      desc: "Vols depuis la France vers toutes destinations", href: "/contact?service=billets-avion" },
+    { icon: Ship,     label: "Billets Bateau",     desc: "Traversées et liaisons maritimes sur mesure",   href: "/contact?service=billets-bateau" },
+    { icon: Landmark, label: "Omra & Hajj",        desc: "Pèlerinages premium accompagnés de A à Z",      href: "/nos-omras" },
+    { icon: Luggage,  label: "Voyages Organisés",  desc: "Circuits guidés et packages clé en main",       href: "/contact?service=voyages-organises" },
+    { icon: Compass,  label: "Séjours sur Mesure", desc: "Votre voyage unique, conçu pour vous",          href: "/sur-mesure" },
   ];
 
   return (
@@ -53,7 +61,7 @@ export default function Home() {
             <div className="max-w-2xl">
 
               <motion.div {...stagger(0.1)}>
-                <OrnamentBadge className="mb-7">L'Excellence Omra & Hajj</OrnamentBadge>
+                <OrnamentBadge className="mb-7">Agence Premium de Voyage</OrnamentBadge>
               </motion.div>
 
               <motion.h1 {...stagger(0.2)} className="display-xl mb-4 drop-shadow-lg">
@@ -75,7 +83,7 @@ export default function Home() {
 
               <motion.div {...stagger(0.4)} className="flex flex-col sm:flex-row gap-4">
                 <Button
-                  onClick={() => document.getElementById("trip-builder")?.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "center" })}
+                  onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "start" })}
                   className="h-13 px-8 bg-gradient-to-r from-siyajj-emerald via-siyajj-teal to-siyajj-emerald border border-siyajj-luxury-gold/50 text-siyajj-ivory hover:brightness-110 rounded-lg uppercase tracking-[0.1em] text-[11px] font-bold sweep-hover relative overflow-hidden group"
                 >
                   <span className="relative z-10 flex items-center gap-2">
@@ -83,15 +91,12 @@ export default function Home() {
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" strokeWidth={1.4} />
                   </span>
                 </Button>
-                <Button
-                  onClick={() => setVideoOpen(true)}
-                  variant="outline"
-                  className="h-13 px-8 glass-card border-siyajj-luxury-gold/35 text-siyajj-ivory hover:text-siyajj-luxury-gold hover:bg-white/5 rounded-lg uppercase tracking-[0.1em] text-[11px] font-medium sweep-hover relative overflow-hidden"
-                >
-                  <span className="relative z-10 flex items-center gap-2.5">
-                    <Play className="w-3.5 h-3.5 fill-current" />
-                    {HERO.ctaSecondary}
-                  </span>
+                <Button asChild variant="outline" className="h-13 px-8 glass-card border-siyajj-luxury-gold/35 text-siyajj-ivory hover:text-siyajj-luxury-gold hover:bg-white/5 rounded-lg uppercase tracking-[0.1em] text-[11px] font-medium sweep-hover relative overflow-hidden">
+                  <Link href="/contact">
+                    <span className="relative z-10 flex items-center gap-2.5">
+                      {HERO.ctaSecondary}
+                    </span>
+                  </Link>
                 </Button>
               </motion.div>
             </div>
@@ -169,14 +174,46 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 2. Les Collections ── */}
+      {/* ── 2. Nos Services ── */}
+      <section id="services" className="py-20 bg-siyajj-black-ink relative border-b border-white/5 scroll-mt-[4.5rem] lg:scroll-mt-32">
+        <div className="absolute inset-0 velvet-texture opacity-15 pointer-events-none" />
+        <div className="container mx-auto px-4 md:px-8 relative z-10">
+          <motion.div {...stagger(0)} className="text-center max-w-3xl mx-auto mb-14">
+            <SectionKicker>Nos services</SectionKicker>
+            <h2 className="section-title text-siyajj-ivory mb-4">Une agence, toutes vos destinations</h2>
+            <GoldDivider className="max-w-xs mx-auto mb-5" />
+            <p className="body-lg text-siyajj-ivory/65">Billets, pèlerinages, voyages organisés ou séjours sur mesure — SIYAJJ VOYAGES vous accompagne.</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {SERVICES.map((svc, i) => (
+              <motion.div key={svc.label} {...stagger(i * 0.07)}>
+                <Link href={svc.href} className="glass-card card-lift rounded-2xl p-6 flex flex-col items-center text-center gap-4 group block">
+                  <div className="w-14 h-14 rounded-full flex items-center justify-center bg-gradient-to-br from-siyajj-emerald/30 to-siyajj-mosque-green/25 border border-siyajj-luxury-gold/25 group-hover:border-siyajj-luxury-gold/55 transition-all duration-300 shadow-[0_0_18px_rgba(11,90,73,0.2)]">
+                    <svc.icon className="w-6 h-6 text-siyajj-luxury-gold" strokeWidth={1.4} />
+                  </div>
+                  <div>
+                    <h3 className="card-title text-siyajj-ivory mb-1.5 group-hover:text-siyajj-luxury-gold transition-colors">{svc.label}</h3>
+                    <p className="body-md text-siyajj-ivory/52 text-sm leading-snug">{svc.desc}</p>
+                  </div>
+                  <div className="label-premium text-siyajj-luxury-gold/50 group-hover:text-siyajj-luxury-gold/85 transition-colors flex items-center gap-1 mt-auto">
+                    En savoir plus <ArrowRight className="w-3 h-3" strokeWidth={1.4} />
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3. Les Collections ── */}
       <section className="py-24 bg-siyajj-deep-black relative">
         <div className="container mx-auto px-4 md:px-8">
           <motion.div {...stagger(0)} className="text-center max-w-3xl mx-auto mb-16">
-            <SectionKicker>Notre gamme</SectionKicker>
+            <SectionKicker>Notre gamme Omra & Hajj</SectionKicker>
             <h2 className="section-title text-siyajj-ivory mb-4">Les Collections SIYAJJ</h2>
             <GoldDivider className="max-w-xs mx-auto mb-5" />
-            <p className="body-lg text-siyajj-ivory/65">Des expériences pensées pour chaque profil de pèlerin.</p>
+            <p className="body-lg text-siyajj-ivory/65">Des expériences Omra & Hajj pensées pour chaque profil de pèlerin.</p>
           </motion.div>
 
           <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

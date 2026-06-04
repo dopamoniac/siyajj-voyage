@@ -1,0 +1,390 @@
+Focus carefully.
+
+This is not a request to simply “change colors”.
+This is not a request to replicate an image blindly.
+This is not a request to make a lazy light/dark theme swap.
+
+The website already has light mode and dark mode.
+Currently, dark mode looks much better and is the default/main theme.
+That is not the problem.
+
+The real task is:
+
+1. Replace the old brand DNA with the new SIYAJJ VOYAGES identity based on the logo/reference image I uploaded.
+2. Preserve the official uploaded logo exactly.
+3. Build a much better premium travel-agency visual system for BOTH dark mode and light mode.
+4. Keep dark mode as the strong default if it is currently better, but redesign it using the new logo DNA.
+5. Improve light mode so it becomes professional too.
+6. Do not be lazy. Do not just recolor. Rebuild the visual language properly.
+
+PROJECT CONTEXT
+
+This is an existing Replit pnpm monorepo.
+
+The real app is here:
+
+`artifacts/siyajj`
+
+Installed:
+
+* framer-motion
+* lucide-react
+
+shadcn/ui already exists here:
+
+`artifacts/siyajj/src/components/ui`
+
+Rules:
+
+* Do not overwrite `src/components/ui`
+* Do not delete shadcn components
+* Do not break existing logic
+* Do not rewrite the whole project blindly
+* Inspect the project first
+* Explain what you will edit before editing
+* Preserve existing functionality
+* Use existing shadcn components
+* Use framer-motion for premium animations
+* Use lucide-react for icons
+
+OFFICIAL BRAND UPDATE
+
+The new brand is:
+
+SIYAJJ VOYAGES
+
+Tagline:
+La Renaissance du Voyage
+
+Core services:
+
+* Billets avion
+* Billets bateau
+* Omra & Hajj
+* Voyages organisés
+* Séjours sur mesure
+
+The brand is now a premium French travel agency / travel maison.
+Omra & Hajj remains important, but the website must no longer feel like only a dark Omra/Hajj concierge site.
+
+The new logo/reference image shows the direction:
+
+* elegant emerald green
+* antique gold
+* ivory / warm cream
+* premium travel identity
+* refined service icons
+* clean commercial travel agency feeling
+* professional and trustworthy
+
+LOGO RULES
+
+Use the clean uploaded logo as the official logo.
+
+Do:
+
+* use it as an image asset
+* preserve proportions
+* preserve colors
+* preserve typography
+* place it cleanly in header/footer/mobile menu
+
+Do NOT:
+
+* regenerate the logo
+* redraw the logo
+* recolor the logo
+* crop it badly
+* distort it
+* add heavy effects
+* create an AI-looking variation
+
+THEME STRATEGY
+
+The site already has light and dark modes.
+
+Do not remove dark mode.
+Do not remove light mode.
+
+Instead:
+
+* Make dark mode follow the new SIYAJJ VOYAGES DNA.
+* Make light mode follow the same DNA.
+* Dark mode can remain the default/main theme if that is already how the app works.
+* But dark mode must no longer feel like the old black/gold Omra-only theme.
+* Light mode must stop feeling weak and must become premium, clean, and usable.
+
+NEW DESIGN DNA
+
+The whole site must feel like:
+
+A premium French travel maison with:
+
+* emerald confidence
+* antique gold refinement
+* ivory warmth
+* elegant typography
+* clean travel-service presentation
+* professional commercial trust
+* not AI-generated
+* not a generic template
+* not lazy
+
+Use the uploaded reference as DNA, not as a screenshot to copy.
+
+COLOR SYSTEM
+
+Create or update theme tokens properly.
+
+Light mode:
+
+* Background: #F7F1E8
+* Surface: #FFFFFF
+* Surface warm: #EFE4D2
+* Sand: #E3D2B8
+* Primary emerald: #063F35
+* Secondary emerald: #0B5A49
+* Accent emerald: #14705B
+* Antique gold: #C59A3D
+* Warm gold: #D9B45F
+* Muted gold: #B8892E
+* Text: #173A33
+* Muted text: #6F6254
+* Border: rgba(23,58,51,0.12)
+
+Dark mode:
+
+* Background: #050403
+* Surface: #0B0907
+* Deep emerald surface: #062B25
+* Emerald panel: #073C33
+* Primary emerald: #0B5A49
+* Antique gold: #C59A3D
+* Warm gold: #D9B45F
+* Text ivory: #F7F1E8
+* Muted text: #BCA98B
+* Border: rgba(197,154,61,0.22)
+
+Use CSS variables / Tailwind theme tokens if the project uses them.
+Do not hardcode random colors everywhere.
+
+TYPOGRAPHY
+
+Upgrade typography so it feels handcrafted and premium.
+
+Use or configure:
+
+* Headings: Cormorant Garamond or Playfair Display
+* Body/UI: Manrope or Inter
+* Small labels: Manrope uppercase with letter spacing
+
+Rules:
+
+* headings elegant, readable, premium
+* body clean and modern
+* no cramped text
+* no random sizes
+* no inconsistent weights
+* no generic AI-template typography
+* hero title must feel like a premium travel brochure
+
+ICON SYSTEM
+
+Use lucide-react consistently.
+
+Icons must feel premium:
+
+* thin strokes
+* consistent sizes
+* emerald/gold color treatment
+* no chunky icons
+* no random icon styles
+
+Services:
+
+* Billets avion: Plane
+* Billets bateau: Ship
+* Omra & Hajj: Landmark / Map / tasteful sacred icon
+* Voyages organisés: Luggage / Route
+* Séjours sur mesure: MapPin / Sparkles / Compass
+* Trust: ShieldCheck
+* Support: Headphones
+* Documents: FileCheck
+* Contact: Phone / MessageCircle / Mail
+
+Create a small reusable icon wrapper if needed:
+
+* soft circle
+* emerald/gold border
+* subtle background
+* consistent spacing
+
+CONTENT / STRUCTURE UPDATE
+
+Update the visible website structure to match SIYAJJ VOYAGES.
+
+Navigation should become:
+
+* Accueil
+* Billets
+* Omra & Hajj
+* Voyages organisés
+* Séjours sur mesure
+* Services
+* Destinations
+* À propos
+* Contact
+
+The homepage should clearly show:
+
+1. Hero
+2. Services overview
+3. Billets avion & bateau
+4. Omra & Hajj
+5. Voyages organisés
+6. Séjours sur mesure
+7. Pourquoi choisir SIYAJJ VOYAGES
+8. Offres / Inspirations
+9. Process
+10. Testimonials
+11. FAQ
+12. Final CTA
+13. Footer
+
+Hero title:
+“La Renaissance du Voyage, pensée avec élégance.”
+
+Hero subtitle:
+“SIYAJJ VOYAGES vous accompagne dans vos projets de voyage : billets avion, billets bateau, Omra & Hajj, voyages organisés et séjours sur mesure.”
+
+Hero CTAs:
+
+* Découvrir nos services
+* Demander un devis
+
+The main services must be clearly visible:
+
+* Billets avion
+* Billets bateau
+* Omra & Hajj
+* Voyages organisés
+* Séjours sur mesure
+
+DO NOT BE LAZY
+
+Do not just:
+
+* replace a few colors
+* keep old layout unchanged
+* keep old messaging
+* keep old Omra-only homepage
+* keep old dark identity
+* add the logo and call it done
+
+You must:
+
+* inspect the existing structure
+* identify the components and pages that control the homepage, nav, theme, cards, buttons, footer
+* update the design tokens
+* update visual hierarchy
+* update typography
+* update icon language
+* update homepage content
+* update nav content
+* update card design
+* update button design
+* update dark mode and light mode
+* check mobile
+* run build/checks if available
+
+UI/UX QUALITY TARGET
+
+The site must feel:
+
+* premium
+* clean
+* modern
+* travel-oriented
+* commercial
+* trustworthy
+* polished
+* human-designed
+* not AI-generated
+* not generic
+
+Use:
+
+* good spacing
+* strong hierarchy
+* high-quality cards
+* subtle shadows
+* refined borders
+* smooth micro-interactions
+* clear CTAs
+* readable forms
+* good mobile layouts
+* professional empty/loading/error states if present
+
+MOBILE
+
+Mobile must be clean:
+
+* no horizontal overflow
+* logo visible
+* navigation sheet/menu works
+* service cards stack cleanly
+* CTAs are tappable
+* typography is readable
+* theme matches SIYAJJ VOYAGES
+* no old dark Omra-only look
+
+ANIMATIONS
+
+Use framer-motion subtly:
+
+* section reveals
+* card hover lift
+* button micro-interactions
+* nav/menu transitions
+* no childish bounce
+* no chaos
+* no overanimation
+
+WORKFLOW
+
+Before editing:
+
+1. Inspect `artifacts/siyajj`.
+2. Explain current structure.
+3. Explain exactly which files you will edit.
+4. Explain how you will apply the brand migration.
+5. Then edit files.
+
+After editing:
+
+1. Summarize files changed.
+2. Summarize brand DNA changes.
+3. Summarize light mode changes.
+4. Summarize dark mode changes.
+5. Summarize content/navigation changes.
+6. Summarize mobile improvements.
+7. Summarize tests/build result.
+
+FINAL ACCEPTANCE
+
+The task is complete only if:
+
+1. The website visibly changes.
+2. The uploaded logo is used and preserved exactly.
+3. SIYAJJ VOYAGES is the clear brand.
+4. The five services are visible.
+5. The design follows emerald / antique gold / ivory DNA.
+6. Dark mode is redesigned, not old black/gold.
+7. Light mode is upgraded, not weak.
+8. The site feels premium and human-designed.
+9. Mobile looks clean.
+10. Existing logic and shadcn/ui are not broken.
+11. The app builds successfully.
+
+If the result still looks the same, the task failed.
+Do the real brand migration and UI upgrade now.

@@ -29,50 +29,50 @@
 
   --font-sans: var(--app-font-sans);
   --font-serif: var(--app-font-serif);
-  /* ── Dark-mode tokens (defaults) ── */
+  /* ── Dark-mode tokens (SIYAJJ VOYAGES DNA) ── */
   --color-siyajj-deep-black: #050403;
-  --color-siyajj-black-ink: #07100E;
-  --color-siyajj-warm-black: #0B1614;
+  --color-siyajj-black-ink: #0B0907;
+  --color-siyajj-warm-black: #0D1612;
   --color-siyajj-charcoal: #0F3320;
-  --color-siyajj-luxury-gold: #C79A3B;
-  --color-siyajj-champagne: #D7AE58;
+  --color-siyajj-luxury-gold: #C59A3D;
+  --color-siyajj-champagne: #D9B45F;
   --color-siyajj-soft-gold: #E8C77D;
-  --color-siyajj-antique-bronze: #B9892E;
-  --color-siyajj-ivory: #E8DCC2;
-  --color-siyajj-muted-ivory: #D8C8AA;
+  --color-siyajj-antique-bronze: #B8892E;
+  --color-siyajj-ivory: #F7F1E8;
+  --color-siyajj-muted-ivory: #D8C8B0;
   --color-siyajj-muted-text: #BCA98B;
-  --color-siyajj-emerald: #0F4C2A;
-  --color-siyajj-mosque-green: #0A3B1E;
-  --color-siyajj-teal: #0D5B34;
+  --color-siyajj-emerald: #0B5A49;
+  --color-siyajj-mosque-green: #062B25;
+  --color-siyajj-teal: #073C33;
   --color-siyajj-soft-black: #0B0907;
 }
 
 /* ────────────────────────────────────────
-   LIGHT MODE — Premium editorial overrides
+   LIGHT MODE — SIYAJJ VOYAGES premium editorial
    ──────────────────────────────────────── */
 html.light {
-  /* Backgrounds */
-  --color-siyajj-deep-black: #FAF8F4;
-  --color-siyajj-black-ink: #F2EDE3;
-  --color-siyajj-warm-black: #EAE4D8;
-  --color-siyajj-charcoal: #DDD7C8;
-  --color-siyajj-soft-black: #F6F3EE;
+  /* Backgrounds: warm ivory / cream */
+  --color-siyajj-deep-black: #F7F1E8;
+  --color-siyajj-black-ink: #FFFFFF;
+  --color-siyajj-warm-black: #EFE4D2;
+  --color-siyajj-charcoal: #E3D2B8;
+  --color-siyajj-soft-black: #F7F1E8;
 
-  /* Text — inverted: ivory becomes deep ink */
-  --color-siyajj-ivory: #16120E;
-  --color-siyajj-muted-ivory: #2C261E;
-  --color-siyajj-muted-text: #796B5E;
+  /* Text — emerald-tinted dark for premium feel */
+  --color-siyajj-ivory: #173A33;
+  --color-siyajj-muted-ivory: #4A5E57;
+  --color-siyajj-muted-text: #6F6254;
 
-  /* Gold — slightly deepened for contrast on white */
+  /* Gold — kept close to dark mode for consistency */
   --color-siyajj-luxury-gold: #B8852A;
-  --color-siyajj-champagne: #C9952F;
-  --color-siyajj-soft-gold: #D4A640;
-  --color-siyajj-antique-bronze: #A87520;
+  --color-siyajj-champagne: #A87520;
+  --color-siyajj-soft-gold: #C59A3D;
+  --color-siyajj-antique-bronze: #A07018;
 
-  /* Teal / emerald used for card tinting */
-  --color-siyajj-emerald: #E8F0EB;
-  --color-siyajj-mosque-green: #DBE8E0;
-  --color-siyajj-teal: #E2EEEB;
+  /* Emerald — light tints for card surfaces */
+  --color-siyajj-emerald: #E3F2EC;
+  --color-siyajj-mosque-green: #D4EBE4;
+  --color-siyajj-teal: #DFF0EC;
 }
 
 :root {
@@ -126,9 +126,9 @@ html.light {
     @apply font-sans antialiased bg-background text-foreground;
     background-color: var(--color-siyajj-deep-black);
     background-image:
-      radial-gradient(ellipse 90% 60% at 80% -10%, rgba(15, 76, 42, 0.28), transparent 60%),
-      radial-gradient(ellipse 80% 50% at 0% 110%, rgba(13, 91, 52, 0.16), transparent 60%),
-      linear-gradient(180deg, #050403 0%, #071209 40%, #091610 100%);
+      radial-gradient(ellipse 90% 60% at 80% -10%, rgba(11, 90, 73, 0.22), transparent 60%),
+      radial-gradient(ellipse 80% 50% at 0% 110%, rgba(11, 90, 73, 0.10), transparent 60%),
+      linear-gradient(180deg, #050403 0%, #061008 40%, #080D0B 100%);
     background-attachment: fixed;
     color: var(--color-siyajj-ivory);
     transition: background-color 0.35s ease, color 0.35s ease;
@@ -141,38 +141,40 @@ html.light {
 
 /* Light mode body overrides */
 html.light body {
-  background-color: #FAF8F4;
+  background-color: #F7F1E8;
   background-image:
-    radial-gradient(ellipse 90% 60% at 80% -10%, rgba(199, 154, 59, 0.07), transparent 60%),
-    radial-gradient(ellipse 80% 50% at 0% 110%, rgba(15, 76, 42, 0.04), transparent 60%),
-    linear-gradient(180deg, #FAF8F4 0%, #F2EDE3 50%, #EAE4D8 100%);
+    radial-gradient(ellipse 90% 60% at 80% -10%, rgba(6, 63, 53, 0.055), transparent 60%),
+    radial-gradient(ellipse 80% 50% at 0% 110%, rgba(197, 154, 61, 0.04), transparent 60%),
+    linear-gradient(180deg, #F7F1E8 0%, #EFE4D2 55%, #E3D2B8 100%);
 }
 
 /* ── Glass cards ── */
 .glass-card {
-  background: linear-gradient(155deg, rgba(15, 51, 32, 0.42), rgba(8, 16, 14, 0.78));
+  background: linear-gradient(155deg, rgba(11, 90, 73, 0.18), rgba(6, 10, 9, 0.80));
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(199, 154, 59, 0.18);
+  border: 1px solid rgba(197, 154, 61, 0.18);
   transition: background 0.35s ease, border-color 0.35s ease;
 }
 
 .emerald-glass {
-  background: linear-gradient(155deg, rgba(15, 76, 42, 0.34), rgba(7, 16, 14, 0.82));
+  background: linear-gradient(155deg, rgba(11, 90, 73, 0.28), rgba(6, 43, 37, 0.82));
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(199, 154, 59, 0.16);
+  border: 1px solid rgba(197, 154, 61, 0.15);
   transition: background 0.35s ease, border-color 0.35s ease;
 }
 
 html.light .glass-card {
-  background: linear-gradient(155deg, rgba(255, 255, 255, 0.85), rgba(242, 237, 227, 0.94));
-  border: 1px solid rgba(184, 133, 42, 0.22);
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.96), rgba(239, 228, 210, 0.90));
+  border: 1px solid rgba(184, 133, 42, 0.16);
+  box-shadow: 0 1px 12px rgba(6, 63, 53, 0.05);
 }
 
 html.light .emerald-glass {
-  background: linear-gradient(155deg, rgba(220, 236, 226, 0.55), rgba(242, 237, 227, 0.90));
-  border: 1px solid rgba(184, 133, 42, 0.18);
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.90), rgba(212, 235, 228, 0.85));
+  border: 1px solid rgba(6, 63, 53, 0.09);
+  box-shadow: 0 1px 12px rgba(6, 63, 53, 0.04);
 }
 
 /* ── Atmosphere overlay ── */

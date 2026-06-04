@@ -20,77 +20,34 @@ interface NavGroup {
 
 const NAV_STRUCTURE: NavGroup[] = [
   {
-    label: "Nos Omras",
+    label: "Billets",
     items: [
-      { href: "/nos-omras", label: "Toutes les Omras", desc: "Tous nos départs disponibles" },
-      { href: "/nos-omras/ramadan", label: "Omra Ramadan", desc: "Vivez le mois sacré aux Lieux Saints" },
-      { href: "/nos-omras/famille", label: "Omra Famille", desc: "Un voyage spirituel en famille" },
-      { href: "/nos-omras/seniors", label: "Omra Seniors", desc: "Un accompagnement attentionné" },
+      { href: "/contact?service=billets-avion", label: "Billets Avion", desc: "Vols depuis la France vers toutes destinations" },
+      { href: "/contact?service=billets-bateau", label: "Billets Bateau", desc: "Traversées et liaisons maritimes" },
+    ],
+  },
+  {
+    label: "Omra & Hajj",
+    items: [
+      { href: "/nos-omras", label: "Toutes les Omras", desc: "Nos départs disponibles" },
+      { href: "/nos-omras/ramadan", label: "Omra Ramadan", desc: "Le mois sacré aux Lieux Saints" },
       { href: "/nos-omras/prestige", label: "Omra Prestige", desc: "L'excellence hôtelière" },
-      { href: "/nos-omras/depart-paris", label: "Départ Paris", desc: "Vols depuis Paris CDG / ORY" },
-      { href: "/nos-omras/depart-lyon", label: "Départ Lyon", desc: "Vols depuis Lyon Saint-Exupéry" },
-      { href: "/nos-omras/depart-marseille", label: "Départ Marseille", desc: "Vols depuis Marseille-Provence" },
-      { href: "/nos-omras/depart-bruxelles", label: "Départ Bruxelles", desc: "Vols depuis Bruxelles-Zaventem" },
+      { href: "/nos-omras/famille", label: "Omra Famille", desc: "Un voyage spirituel en famille" },
+      { href: "/collections", label: "Nos Collections", desc: "Essentielle, Confort, Prestige, Signature" },
+      { href: "/hajj", label: "Hajj", desc: "Le Grand Pèlerinage organisé" },
+      { href: "/formations", label: "Formations", desc: "Préparer votre pèlerinage" },
+      { href: "/activites", label: "Activités sur place", desc: "Enrichir votre séjour spirituel" },
     ],
   },
+  { label: "Voyages organisés", href: "/contact?service=voyages-organises" },
+  { label: "Séjours sur mesure", href: "/sur-mesure" },
   {
-    label: "Collections",
+    label: "Services",
     items: [
-      { href: "/collections/essentielle", label: "Collection Essentielle", desc: "L'Omra sereine au juste prix" },
-      { href: "/collections/confort", label: "Collection Confort", desc: "Équilibre confort et budget" },
-      { href: "/collections/prestige", label: "Collection Prestige", desc: "Hôtels 5★ aux Lieux Saints" },
-      { href: "/collections/signature", label: "Collection Signature", desc: "Service de conciergerie intégral" },
-      { href: "/collections/renaissance", label: "Collection Renaissance", desc: "L'expérience spirituelle complète" },
-    ],
-  },
-  {
-    label: "Activités",
-    items: [
-      { href: "/activites", label: "Toutes les activités", desc: "Explorer notre catalogue complet" },
-      { href: "/activites/manasik-masterclass", label: "Manâsik Masterclass", desc: "Maîtriser les rites avant le départ" },
-      { href: "/activites/parcours-sira-medine", label: "Parcours Sîra à Médine", desc: "Sur les traces du Prophète ﷺ" },
-      { href: "/activites/ziyarat-privees", label: "Ziyarat privées", desc: "Visites historiques à votre rythme" },
-      { href: "/activites/hira-immersion", label: "Hira Immersion", desc: "Méditation sur la Révélation" },
-      { href: "/activites/tawaf-sai-guide", label: "Tawaf & Sa'i Guidé", desc: "Les rites accompagnés" },
-      { href: "/activites/family-care", label: "Family Care", desc: "L'Omra pensée pour les familles" },
-      { href: "/activites/seniors-serenite", label: "Seniors Sérénité", desc: "Accomplir sa Omra en confiance" },
-      { href: "/activites/carnet-renaissance", label: "Carnet Renaissance", desc: "Journal spirituel de voyage" },
-      { href: "/activites/after-omra-circle", label: "After-Omra Circle", desc: "Suivi post-retour" },
-    ],
-  },
-  {
-    label: "Formations",
-    items: [
-      { href: "/formations", label: "Toutes les formations", desc: "Notre catalogue de préparation" },
-      { href: "/formations/omra-avant-depart", label: "Omra avant départ", desc: "La formation essentielle" },
-      { href: "/formations/rites-omra", label: "Comprendre les rites", desc: "Chaque étape en profondeur" },
-      { href: "/formations/premiere-omra", label: "Première Omra", desc: "Pour les primo-pèlerins" },
-      { href: "/formations/familles", label: "Formation Familles", desc: "Préparer ensemble" },
-      { href: "/formations/seniors", label: "Formation Seniors", desc: "À votre rythme et vos besoins" },
-      { href: "/formations/ramadan", label: "Formation Ramadan", desc: "Vivre l'Omra en Ramadan" },
-      { href: "/formations/guide-pdf-carnet", label: "Guide PDF & Carnet", desc: "Ressources et outils pratiques" },
-    ],
-  },
-  {
-    label: "Guides",
-    items: [
-      { href: "/guides", label: "Tous les guides", desc: "Notre bibliothèque pratique" },
-      { href: "/guides/documents-omra", label: "Documents nécessaires", desc: "Passeport, visa, papiers" },
-      { href: "/guides/preparer-valise", label: "Préparer sa valise", desc: "Voyager léger et bien équipé" },
-      { href: "/guides/omra-2026", label: "Guide Omra 2026", desc: "Tout ce qu'il faut savoir" },
-      { href: "/guides/omra-enfants", label: "Omra avec enfants", desc: "Partir en famille sereinement" },
-      { href: "/guides/omra-seniors", label: "Omra seniors", desc: "Conseils pour les pèlerins seniors" },
-      { href: "/guides/difference-hajj-omra", label: "Hajj vs Omra", desc: "Comprendre les différences" },
-      { href: "/guides/rites-omra", label: "Comprendre les rites", desc: "Étape par étape" },
-      { href: "/guides/prix-omra-france", label: "Prix depuis la France", desc: "Ce qui est vraiment inclus" },
-    ],
-  },
-  {
-    label: "Hajj",
-    items: [
-      { href: "/hajj", label: "Hajj avec SIYAJJ", desc: "Le Grand Pèlerinage organisé" },
-      { href: "/hajj/preparation", label: "Préparation Hajj", desc: "Se préparer au mieux" },
-      { href: "/hajj/demande-informations", label: "Demander des informations", desc: "Parler à un conseiller" },
+      { href: "/signature-vip", label: "Signature VIP", desc: "Conciergerie & accompagnement privé" },
+      { href: "/guides", label: "Guides pratiques", desc: "Conseils et ressources voyage" },
+      { href: "/avis", label: "Avis & témoignages", desc: "+15 000 voyageurs accompagnés" },
+      { href: "/faq", label: "FAQ", desc: "Questions fréquentes" },
     ],
   },
   {
@@ -99,8 +56,7 @@ const NAV_STRUCTURE: NavGroup[] = [
       { href: "/a-propos", label: "Qui sommes-nous", desc: "L'histoire et la vision de SIYAJJ" },
       { href: "/a-propos/methode", label: "Notre méthode", desc: "Comment nous travaillons" },
       { href: "/a-propos/omra-factory", label: "Partenariat Omra Factory", desc: "Notre partenaire opérationnel" },
-      { href: "/avis", label: "Avis & témoignages", desc: "+15 000 pèlerins accompagnés" },
-      { href: "/faq", label: "FAQ", desc: "Questions fréquentes" },
+      { href: "/contact", label: "Nous contacter", desc: "Parlons de votre projet" },
     ],
   },
 ];
@@ -290,11 +246,13 @@ export function Header() {
       {/* Desktop + tablet header */}
       <div className={`container mx-auto px-4 md:px-8 flex items-center justify-between transition-all duration-500 ${scrolled ? "h-[4.5rem]" : "h-[4.5rem] lg:h-32"}`}>
         <Link href="/" onClick={scrollToTop} className="flex items-center gap-2 shrink-0">
-          <img
-            src={`${import.meta.env.BASE_URL}assets/logo-siyajj-transparent.png`}
-            alt="SIYAJJ Voyages"
-            className={`w-auto drop-shadow-[0_2px_16px_rgba(212,175,55,0.4)] transition-all duration-500 ${scrolled ? "h-10 md:h-11" : "h-11 md:h-16 lg:h-28"}`}
-          />
+          <div className={`rounded-xl overflow-hidden transition-all duration-500 ${scrolled ? "bg-white/8" : "bg-white/6"}`}>
+            <img
+              src={`${import.meta.env.BASE_URL}assets/logo-siyajj-voyages-horizontal.png`}
+              alt="SIYAJJ Voyages"
+              className={`w-auto object-contain transition-all duration-500 ${scrolled ? "h-9 md:h-10" : "h-10 md:h-12 lg:h-14"}`}
+            />
+          </div>
         </Link>
 
         {/* Desktop nav with dropdowns */}
@@ -401,11 +359,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1">
             <Link href="/" onClick={scrollToTop}>
-              <img src={`${import.meta.env.BASE_URL}assets/logo-siyajj-transparent.png`} alt="SIYAJJ Voyages" className="h-14 w-auto mb-3 drop-shadow-[0_2px_8px_rgba(212,175,55,0.25)]" />
+              <div className="inline-block rounded-xl overflow-hidden bg-white/6 mb-3">
+                <img src={`${import.meta.env.BASE_URL}assets/logo-siyajj-voyages-horizontal.png`} alt="SIYAJJ Voyages" className="h-12 w-auto object-contain" />
+              </div>
             </Link>
             <p className="tagline-script text-siyajj-luxury-gold/55 mb-5">La Renaissance du Voyage</p>
             <p className="text-siyajj-muted-text text-sm leading-relaxed mb-6">
-              Agence premium d'organisation Omra et Hajj depuis la France. L'excellence au service de votre spiritualité.
+              Agence premium de voyage depuis la France. Billets avion & bateau, Omra & Hajj, voyages organisés et séjours sur mesure.
             </p>
             <div className="text-[10px] label-premium text-siyajj-luxury-gold/65">
               En partenariat opérationnel avec Omra Factory
@@ -413,27 +373,26 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="label-premium text-siyajj-ivory/85 mb-6">Nos Omras</h4>
+            <h4 className="label-premium text-siyajj-ivory/85 mb-6">Nos Services</h4>
             <ul className="space-y-3 text-sm text-siyajj-muted-text">
-              <li><Link href="/nos-omras" className="hover:text-siyajj-luxury-gold transition-colors">Tous les départs</Link></li>
-              <li><Link href="/nos-omras/ramadan" className="hover:text-siyajj-luxury-gold transition-colors">Omra Ramadan</Link></li>
-              <li><Link href="/nos-omras/famille" className="hover:text-siyajj-luxury-gold transition-colors">Omra Famille</Link></li>
-              <li><Link href="/nos-omras/seniors" className="hover:text-siyajj-luxury-gold transition-colors">Omra Seniors</Link></li>
-              <li><Link href="/collections" className="hover:text-siyajj-luxury-gold transition-colors">Nos Collections</Link></li>
-              <li><Link href="/sur-mesure" className="hover:text-siyajj-luxury-gold transition-colors">Sur-Mesure</Link></li>
+              <li><Link href="/contact?service=billets-avion" className="hover:text-siyajj-luxury-gold transition-colors">Billets Avion</Link></li>
+              <li><Link href="/contact?service=billets-bateau" className="hover:text-siyajj-luxury-gold transition-colors">Billets Bateau</Link></li>
+              <li><Link href="/nos-omras" className="hover:text-siyajj-luxury-gold transition-colors">Omra & Hajj</Link></li>
+              <li><Link href="/contact?service=voyages-organises" className="hover:text-siyajj-luxury-gold transition-colors">Voyages Organisés</Link></li>
+              <li><Link href="/sur-mesure" className="hover:text-siyajj-luxury-gold transition-colors">Séjours sur Mesure</Link></li>
               <li><Link href="/signature-vip" className="hover:text-siyajj-luxury-gold transition-colors">Signature VIP</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="label-premium text-siyajj-ivory/85 mb-6">Préparer son voyage</h4>
+            <h4 className="label-premium text-siyajj-ivory/85 mb-6">Omra & Ressources</h4>
             <ul className="space-y-3 text-sm text-siyajj-muted-text">
+              <li><Link href="/collections" className="hover:text-siyajj-luxury-gold transition-colors">Nos Collections</Link></li>
               <li><Link href="/activites" className="hover:text-siyajj-luxury-gold transition-colors">Activités & Expériences</Link></li>
               <li><Link href="/formations" className="hover:text-siyajj-luxury-gold transition-colors">Formations</Link></li>
               <li><Link href="/guides" className="hover:text-siyajj-luxury-gold transition-colors">Guides pratiques</Link></li>
               <li><Link href="/hajj" className="hover:text-siyajj-luxury-gold transition-colors">Le Hajj</Link></li>
               <li><Link href="/faq" className="hover:text-siyajj-luxury-gold transition-colors">FAQ</Link></li>
-              <li><Link href="/avis" className="hover:text-siyajj-luxury-gold transition-colors">Avis & témoignages</Link></li>
             </ul>
           </div>
 
@@ -443,7 +402,7 @@ export function Footer() {
               <li><Link href="/contact" className="hover:text-siyajj-luxury-gold transition-colors">Nous contacter</Link></li>
               <li><a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer" className="hover:text-siyajj-luxury-gold transition-colors">WhatsApp</a></li>
               <li><Link href="/a-propos" className="hover:text-siyajj-luxury-gold transition-colors">Qui sommes-nous</Link></li>
-              <li><Link href="/a-propos/methode" className="hover:text-siyajj-luxury-gold transition-colors">Notre méthode</Link></li>
+              <li><Link href="/avis" className="hover:text-siyajj-luxury-gold transition-colors">Avis & témoignages</Link></li>
               <li><Link href="/a-propos/omra-factory" className="hover:text-siyajj-luxury-gold transition-colors">Partenariat Omra Factory</Link></li>
             </ul>
           </div>

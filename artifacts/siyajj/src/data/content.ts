@@ -262,8 +262,8 @@ export const vipFeatures = [
 ];
 
 export const HERO = {
-  title: ["Votre voyage vers", "les Lieux Saints,", "réinventé avec excellence."],
-  subtitle: "SIYAJJ conçoit votre Omra et votre Hajj avec un accompagnement haut de gamme, des hôtels soigneusement sélectionnés et une expérience pensée dans chaque détail.",
-  ctaPrimary: "Construire mon voyage",
-  ctaSecondary: "Découvrir l'expérience",
+  title: ["La Renaissance du Voyage,", "pensée avec", "élégance."],
+  subtitle: "SIYAJJ VOYAGES vous accompagne dans tous vos projets : billets avion, billets bateau, Omra & Hajj, voyages organisés et séjours sur mesure.",
+  ctaPrimary: "Découvrir nos services",
+  ctaSecondary: "Demander un devis",
 };
