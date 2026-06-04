@@ -118,7 +118,7 @@ function DesktopDropdown({ group }: { group: NavGroup }) {
             transition={{ duration: 0.14, ease: "easeOut" }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className={`absolute top-full left-0 mt-3 z-[200] ${isWide ? "w-[440px]" : "w-60"} bg-siyajj-deep-black/97 backdrop-blur-2xl border border-siyajj-luxury-gold/30 rounded-2xl shadow-[0_24px_64px_rgba(0,0,0,0.75),0_0_0_1px_rgba(200,154,70,0.08)] overflow-hidden`}
+            className={`absolute top-full left-0 mt-3 z-[200] ${isWide ? "w-[440px]" : "w-60"} bg-siyajj-deep-black/97 light:bg-[#FFFFFF]/98 backdrop-blur-2xl border border-siyajj-luxury-gold/30 rounded-2xl shadow-[0_24px_64px_rgba(0,0,0,0.75),0_0_0_1px_rgba(200,154,70,0.08)] light:shadow-[0_12px_48px_rgba(23,58,51,0.14),0_0_0_1px_rgba(197,154,61,0.18)] overflow-hidden`}
           >
             <div className={`p-2 ${isWide ? "grid grid-cols-2 gap-0.5" : "flex flex-col gap-0.5"}`}>
               {group.items.map((item) => {
@@ -352,7 +352,7 @@ export function Header() {
 
 export function Footer() {
   return (
-    <footer className="bg-siyajj-black-ink border-t border-white/5 pt-20 pb-10 relative z-10">
+    <footer className="bg-siyajj-black-ink border-t border-siyajj-luxury-gold/10 pt-20 pb-10 relative z-10">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1">
@@ -404,7 +404,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-siyajj-muted-text">
+        <div className="pt-8 border-t border-siyajj-luxury-gold/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-siyajj-muted-text">
           <p>© 2026 SIYAJJ Voyages. Tous droits réservés.</p>
           <div className="flex gap-4">
             <Link href="/contact" className="hover:text-siyajj-ivory transition-colors">Mentions légales</Link>
@@ -425,7 +425,7 @@ function FloatingWhatsApp() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contacter un conseiller sur WhatsApp"
-        className="group flex items-center gap-2.5 pr-4 pl-3.5 h-12 bg-siyajj-emerald/90 backdrop-blur-md border border-siyajj-luxury-gold/40 rounded-full shadow-[0_4px_24px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,154,59,0.1)] hover:bg-siyajj-emerald hover:border-siyajj-luxury-gold/65 hover:shadow-[0_6px_32px_rgba(0,0,0,0.5),0_0_18px_rgba(15,76,42,0.4)] transition-all duration-300"
+        className="group flex items-center gap-2.5 pr-4 pl-3.5 h-12 bg-siyajj-emerald/90 backdrop-blur-md border border-siyajj-luxury-gold/40 rounded-full shadow-[0_4px_24px_rgba(0,0,0,0.4),0_0_0_1px_rgba(199,154,59,0.1)] hover:bg-siyajj-emerald hover:border-siyajj-luxury-gold/65 hover:shadow-[0_6px_32px_rgba(0,0,0,0.5),0_0_18px_rgba(15,76,42,0.4)] transition-all duration-300 light:[--color-siyajj-ivory:#F7F1E8]"
       >
         <MessageCircle className="w-4 h-4 text-siyajj-ivory shrink-0" strokeWidth={1.4} />
         <span className="label-premium text-siyajj-ivory/90 whitespace-nowrap overflow-hidden max-w-0 group-hover:max-w-[7rem] transition-all duration-500 ease-out">

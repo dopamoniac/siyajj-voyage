@@ -114,7 +114,7 @@ export default function Home() {
                     { key: "voyageurs", label: "Voyageurs", value: voyageurs, set: setVoyageurs, options: [["1", "1 Voyageur"], ["2", "2 Voyageurs"], ["famille", "Famille"]] },
                     { key: "collection", label: "Collection", value: collection, set: setCollection, options: [["essentielle", "Essentielle"], ["confort", "Confort"], ["prestige", "Prestige"], ["signature", "Signature"], ["renaissance", "Renaissance"]] }
                   ].map(f => (
-                    <div key={f.key} className="flex flex-col gap-1 p-2.5 rounded-xl bg-black/40 border border-white/5">
+                    <div key={f.key} className="flex flex-col gap-1 p-2.5 rounded-xl bg-black/40 light:bg-siyajj-charcoal/60 border border-white/5 light:border-siyajj-luxury-gold/20">
                       <div className="label-premium text-siyajj-luxury-gold/80">{f.label}</div>
                       <Select value={f.value} onValueChange={f.set}>
                         <SelectTrigger className="border-0 bg-transparent p-0 h-auto text-siyajj-ivory font-display text-base focus:ring-0 shadow-none">
@@ -175,7 +175,7 @@ export default function Home() {
       </section>
 
       {/* ── 2. Nos Services ── */}
-      <section id="services" className="py-20 bg-siyajj-black-ink relative border-b border-white/5 scroll-mt-[4.5rem] lg:scroll-mt-32">
+      <section id="services" className="py-20 bg-siyajj-black-ink relative border-b border-siyajj-luxury-gold/10 scroll-mt-[4.5rem] lg:scroll-mt-32">
         <div className="absolute inset-0 velvet-texture opacity-15 pointer-events-none" />
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <motion.div {...stagger(0)} className="text-center max-w-3xl mx-auto mb-14">
@@ -263,7 +263,7 @@ export default function Home() {
       </section>
 
       {/* ── 3. Nos départs à venir ── */}
-      <section className="py-24 bg-siyajj-black-ink relative velvet-texture border-y border-white/5">
+      <section className="py-24 bg-siyajj-black-ink relative velvet-texture border-y border-siyajj-luxury-gold/10">
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
             <div>
@@ -294,7 +294,7 @@ export default function Home() {
                   <div className="body-md text-siyajj-ivory/65 text-sm"><span className="text-siyajj-luxury-gold mr-1.5">◆</span>{offer.departure}</div>
                   <div className="body-md text-siyajj-ivory/65 text-sm"><span className="text-siyajj-luxury-gold mr-1.5">◆</span>{offer.hotelLevel}</div>
                 </div>
-                <Button asChild className="w-full bg-white/5 hover:bg-white/10 text-siyajj-ivory border border-white/10 text-xs uppercase tracking-[0.08em]">
+                <Button asChild className="w-full bg-siyajj-emerald/8 hover:bg-siyajj-emerald/14 light:bg-siyajj-emerald/0 light:border-siyajj-emerald light:text-siyajj-emerald light:hover:bg-siyajj-emerald light:hover:text-[#F7F1E8] text-siyajj-ivory border border-siyajj-emerald/25 text-xs uppercase tracking-[0.08em] transition-all">
                   <Link href={`/contact?subject=Devis ${offer.title}`}>Demander ce séjour</Link>
                 </Button>
               </div>
@@ -335,7 +335,7 @@ export default function Home() {
       </section>
 
       {/* ── 5. L'Expérience 360° ── */}
-      <section className="py-24 bg-siyajj-black-ink relative border-y border-white/5">
+      <section className="py-24 bg-siyajj-black-ink relative border-y border-siyajj-luxury-gold/10">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <SectionKicker>Accompagnement</SectionKicker>
@@ -351,7 +351,7 @@ export default function Home() {
                 {experience360.map((step) => (
                   <CarouselItem key={step.step} className="md:basis-1/3 lg:basis-1/4 pl-4">
                     <div className="glass-card p-6 rounded-2xl h-full relative text-center flex flex-col items-center">
-                      <div className="w-11 h-11 rounded-full bg-siyajj-deep-black border border-siyajj-luxury-gold text-siyajj-champagne flex items-center justify-center font-display text-xl mb-4 relative z-10 shadow-[0_0_15px_rgba(200,154,70,0.25)]">
+                      <div className="w-11 h-11 rounded-full bg-siyajj-deep-black light:bg-siyajj-emerald light:text-[#F7F1E8] border border-siyajj-luxury-gold text-siyajj-champagne flex items-center justify-center font-display text-xl mb-4 relative z-10 shadow-[0_0_15px_rgba(200,154,70,0.25)]">
                         {step.step}
                       </div>
                       <h3 className="card-title text-siyajj-ivory mb-2">{step.title}</h3>
@@ -406,7 +406,7 @@ export default function Home() {
       </section>
 
       {/* ── 7. Signature VIP ── */}
-      <section className="relative py-32 bg-black overflow-hidden">
+      <section className="relative py-32 bg-black overflow-hidden always-dark">
         <MediaFrame slot="signatureVip" className="absolute inset-0 opacity-35 mix-blend-luminosity" />
         <div className="absolute inset-0 bg-gradient-to-r from-siyajj-deep-black via-siyajj-deep-black/92 to-transparent" />
         <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -451,7 +451,7 @@ export default function Home() {
       </section>
 
       {/* ── 9. Processus ── */}
-      <section className="py-24 bg-siyajj-black-ink border-t border-white/5">
+      <section className="py-24 bg-siyajj-black-ink border-t border-siyajj-luxury-gold/10">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <SectionKicker>Comment ça marche</SectionKicker>
@@ -480,7 +480,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-siyajj-deep-black to-transparent" />
         </div>
         <div className="container mx-auto px-4 md:px-8 relative z-10">
-          <div className="max-w-2xl glass-card p-10 rounded-3xl border border-siyajj-luxury-gold/25 bg-black/60 backdrop-blur-xl">
+          <div className="max-w-2xl glass-card p-10 rounded-3xl border border-siyajj-luxury-gold/25 bg-black/60 backdrop-blur-xl always-dark">
             <div className="label-premium text-siyajj-luxury-gold mb-4">Le grand Pèlerinage</div>
             <h2 className="display-md text-siyajj-ivory mb-4">Hajj 2027</h2>
             <p className="body-lg text-siyajj-ivory/75 mb-6">
@@ -529,7 +529,7 @@ export default function Home() {
       </section>
 
       {/* ── 12. Trust Center ── */}
-      <section className="py-20 bg-siyajj-deep-black border-y border-white/5">
+      <section className="py-20 bg-siyajj-deep-black border-y border-siyajj-luxury-gold/10">
         <div className="container mx-auto px-4 md:px-8 text-center max-w-4xl">
           <SectionKicker>Garanties</SectionKicker>
           <h2 className="section-title text-siyajj-ivory mb-10">Votre confiance, notre engagement</h2>
@@ -564,7 +564,7 @@ export default function Home() {
       </section>
 
       {/* ── 13. Video Experience ── */}
-      <section className="py-32 bg-siyajj-black-ink relative overflow-hidden flex items-center justify-center text-center">
+      <section className="py-32 bg-siyajj-black-ink relative overflow-hidden flex items-center justify-center text-center always-dark">
         <MediaFrame slot="atmosphere" className="absolute inset-0 opacity-18" />
         <div className="absolute inset-0 bg-siyajj-deep-black/65" />
         <div className="relative z-10">
@@ -615,7 +615,7 @@ export default function Home() {
       </section>
 
       {/* ── 15. FAQ ── */}
-      <section className="py-24 bg-siyajj-black-ink border-t border-white/5">
+      <section className="py-24 bg-siyajj-black-ink border-t border-siyajj-luxury-gold/10">
         <div className="container mx-auto px-4 md:px-8 max-w-3xl">
           <div className="text-center mb-12">
             <SectionKicker>Support</SectionKicker>

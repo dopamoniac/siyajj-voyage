@@ -3,6 +3,7 @@
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant light (&:is(.light *));
 
 @theme {
   --color-background: hsl(var(--background));
@@ -51,28 +52,71 @@
    LIGHT MODE — SIYAJJ VOYAGES premium editorial
    ──────────────────────────────────────── */
 html.light {
-  /* Backgrounds: warm ivory / cream */
-  --color-siyajj-deep-black: #F7F1E8;
-  --color-siyajj-black-ink: #FFFFFF;
-  --color-siyajj-warm-black: #EFE4D2;
-  --color-siyajj-charcoal: #E3D2B8;
+  /* Backgrounds — real visual hierarchy: ivory / white / sage */
+  --color-siyajj-deep-black: #F7F1E8;   /* ivory — primary page bg */
+  --color-siyajj-black-ink: #FFFFFF;     /* pure white — secondary sections */
+  --color-siyajj-warm-black: #F7F1E8;   /* ivory — card surface fallback */
+  --color-siyajj-charcoal: #EBF4F0;     /* sage tint — subtle accent bg */
   --color-siyajj-soft-black: #F7F1E8;
 
-  /* Text — emerald-tinted dark for premium feel */
+  /* Text — emerald-tinted dark */
   --color-siyajj-ivory: #173A33;
   --color-siyajj-muted-ivory: #4A5E57;
   --color-siyajj-muted-text: #6F6254;
 
-  /* Gold — kept close to dark mode for consistency */
-  --color-siyajj-luxury-gold: #B8852A;
-  --color-siyajj-champagne: #A87520;
-  --color-siyajj-soft-gold: #C59A3D;
-  --color-siyajj-antique-bronze: #A07018;
+  /* Gold — brand-accurate, rich (not faded) */
+  --color-siyajj-luxury-gold: #C59A3D;
+  --color-siyajj-champagne: #B8852A;
+  --color-siyajj-soft-gold: #D9B45F;
+  --color-siyajj-antique-bronze: #9B6A12;
 
-  /* Emerald — light tints for card surfaces */
-  --color-siyajj-emerald: #E3F2EC;
-  --color-siyajj-mosque-green: #D4EBE4;
-  --color-siyajj-teal: #DFF0EC;
+  /* ── Emerald — FULL STRENGTH — was the #1 bug ── */
+  --color-siyajj-emerald: #0B5A49;
+  --color-siyajj-mosque-green: #062B25;
+  --color-siyajj-teal: #073C33;
+}
+
+/* ── Button text contrast: scope custom properties inside dark-bg elements ── */
+/* Emerald gradient buttons → ivory text must stay light */
+html.light .from-siyajj-emerald {
+  --color-siyajj-ivory: #F7F1E8;
+  --color-siyajj-muted-ivory: #D8C8B0;
+}
+/* Gold gradient buttons → deep-black text must stay truly dark */
+html.light .from-siyajj-antique-bronze,
+html.light .from-siyajj-champagne {
+  --color-siyajj-deep-black: #050403;
+}
+
+/* Solid colored bg elements → restore correct text tokens */
+html.light .bg-siyajj-luxury-gold,
+html.light .bg-siyajj-champagne {
+  --color-siyajj-deep-black: #050403;
+  --color-siyajj-ivory: #F7F1E8;
+}
+html.light .bg-siyajj-emerald {
+  --color-siyajj-ivory: #F7F1E8;
+  --color-siyajj-muted-ivory: #D8C8B0;
+}
+
+/* ── .always-dark — intentional dark islands in light mode ── */
+/* Restores ALL dark-mode custom property values within the container */
+html.light .always-dark {
+  --color-siyajj-deep-black: #050403;
+  --color-siyajj-black-ink: #0B0907;
+  --color-siyajj-warm-black: #0D1612;
+  --color-siyajj-charcoal: #0F3320;
+  --color-siyajj-soft-black: #0B0907;
+  --color-siyajj-ivory: #F7F1E8;
+  --color-siyajj-muted-ivory: #D8C8B0;
+  --color-siyajj-muted-text: #BCA98B;
+  --color-siyajj-luxury-gold: #C59A3D;
+  --color-siyajj-champagne: #D9B45F;
+  --color-siyajj-soft-gold: #E8C77D;
+  --color-siyajj-antique-bronze: #B8892E;
+  --color-siyajj-emerald: #0B5A49;
+  --color-siyajj-mosque-green: #062B25;
+  --color-siyajj-teal: #073C33;
 }
 
 :root {
@@ -143,9 +187,9 @@ html.light {
 html.light body {
   background-color: #F7F1E8;
   background-image:
-    radial-gradient(ellipse 90% 60% at 80% -10%, rgba(6, 63, 53, 0.055), transparent 60%),
-    radial-gradient(ellipse 80% 50% at 0% 110%, rgba(197, 154, 61, 0.04), transparent 60%),
-    linear-gradient(180deg, #F7F1E8 0%, #EFE4D2 55%, #E3D2B8 100%);
+    radial-gradient(ellipse 100% 55% at 85% -5%, rgba(11, 90, 73, 0.06), transparent 55%),
+    radial-gradient(ellipse 70% 45% at 0% 100%, rgba(197, 154, 61, 0.04), transparent 60%);
+  background-attachment: fixed;
 }
 
 /* ── Glass cards ── */
@@ -166,15 +210,29 @@ html.light body {
 }
 
 html.light .glass-card {
-  background: linear-gradient(155deg, rgba(255, 255, 255, 0.96), rgba(239, 228, 210, 0.90));
-  border: 1px solid rgba(184, 133, 42, 0.16);
-  box-shadow: 0 1px 12px rgba(6, 63, 53, 0.05);
+  background: #FFFFFF;
+  border: 1px solid rgba(197, 154, 61, 0.20);
+  box-shadow: 0 4px 24px rgba(23, 58, 51, 0.07), 0 1px 4px rgba(23, 58, 51, 0.04);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+html.light .glass-card:hover {
+  border-color: rgba(197, 154, 61, 0.36);
+  box-shadow: 0 8px 36px rgba(23, 58, 51, 0.10), 0 2px 6px rgba(23, 58, 51, 0.05);
 }
 
 html.light .emerald-glass {
-  background: linear-gradient(155deg, rgba(255, 255, 255, 0.90), rgba(212, 235, 228, 0.85));
-  border: 1px solid rgba(6, 63, 53, 0.09);
-  box-shadow: 0 1px 12px rgba(6, 63, 53, 0.04);
+  background: #FFFFFF;
+  border: 1px solid rgba(11, 90, 73, 0.12);
+  box-shadow: 0 4px 24px rgba(11, 90, 73, 0.06), 0 1px 4px rgba(11, 90, 73, 0.04);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+html.light .emerald-glass:hover {
+  border-color: rgba(11, 90, 73, 0.22);
+  box-shadow: 0 8px 36px rgba(11, 90, 73, 0.09), 0 2px 6px rgba(11, 90, 73, 0.05);
 }
 
 /* ── Atmosphere overlay ── */
@@ -204,6 +262,16 @@ html.light .gold-border {
     radial-gradient(circle at 20% 20%, rgba(15, 76, 42, 0.18), transparent 40%),
     radial-gradient(circle at 80% 0%, rgba(199, 154, 59, 0.06), transparent 45%),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+html.light .velvet-texture {
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(11, 90, 73, 0.04), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(197, 154, 61, 0.03), transparent 45%);
+}
+
+html.light .gold-glow {
+  box-shadow: 0 0 32px rgba(197, 154, 61, 0.16);
 }
 
 .gold-glow {
