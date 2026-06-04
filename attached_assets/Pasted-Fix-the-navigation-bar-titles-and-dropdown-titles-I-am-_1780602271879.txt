@@ -1,0 +1,250 @@
+Fix the navigation bar titles and dropdown titles.
+
+I am not talking about the hero title.
+I am talking about all titles in the navigation bar and dropdown menu.
+
+Current problem:
+
+* Navbar labels do not feel premium enough.
+* Dropdown titles are too pale and hard to read.
+* Some dropdown text has low contrast.
+* The navigation still feels focused on old Omra/Hajj structure.
+* The nav hierarchy does not clearly represent SIYAJJ VOYAGES as a complete travel agency.
+* The dropdown looks soft/washed out instead of crisp and professional.
+
+Keep the current SIYAJJ VOYAGES visual direction:
+
+* ivory background
+* emerald text
+* antique gold accents
+* premium travel maison style
+* official logo preserved
+
+But redesign the navigation typography and wording.
+
+NAVBAR LABELS
+
+Replace the main navigation titles with these exact labels:
+
+* Accueil
+* Billets
+* Omra & Hajj
+* Voyages organisés
+* Sur mesure
+* Services
+* Destinations
+* À propos
+
+Right side:
+
+* phone number
+* WhatsApp icon if available
+* CTA: Demander un devis
+
+Make these labels:
+
+* clear
+* readable
+* premium
+* not too small
+* not too light
+* aligned vertically
+* consistent
+
+Navbar typography:
+
+* Font: Manrope
+* Size: 15px or 16px
+* Weight: 650 or 700
+* Color: #173A33
+* Letter spacing: -0.01em or normal
+* Active color: #B8892E or #C59A3D
+* Hover color: #0B5A49
+
+Do not use thin serif for navbar labels.
+Do not use pale grey/green for navbar labels.
+Do not make navbar titles look faded.
+
+DROPDOWN MENU TITLES
+
+The dropdown items must be much clearer.
+
+Dropdown item structure:
+
+* Title: strong, readable
+* Description: shorter, muted but still readable
+
+Dropdown title typography:
+
+* Font: Manrope
+* Size: 14px or 15px
+* Weight: 700
+* Color: #173A33
+
+Dropdown description typography:
+
+* Font: Manrope
+* Size: 13px or 14px
+* Weight: 500
+* Color: #6F6254
+* Line height: 1.35
+
+Do not use opacity below 0.75 on descriptions.
+Current text is too pale.
+
+DROPDOWN DESIGN
+
+Dropdown background:
+
+* #FFFFFF or rgba(255,255,255,0.96)
+* border: 1px solid rgba(197,154,61,0.22)
+* shadow: soft premium shadow
+* border-radius: 20px or 24px
+* backdrop blur if used, but do not reduce readability
+
+Dropdown hover state:
+
+* background: rgba(6,63,53,0.05)
+* title color: #063F35
+* small gold accent appears or strengthens
+* no washed-out text
+
+DROPDOWN CONTENT
+
+Update the dropdown content to better match SIYAJJ VOYAGES.
+
+Billets dropdown:
+
+* Billets avion
+  Réservation et conseils pour vos vols.
+* Billets bateau
+  Traversées et accompagnement réservation.
+* Assistance réservation
+  Nous vous aidons à choisir la bonne option.
+* Conseils départ
+  Préparez votre trajet avec sérénité.
+
+Omra & Hajj dropdown:
+
+* Offres Omra
+  Départs, formules et accompagnement.
+* Hajj
+  Informations et demande d’accompagnement.
+* Accompagnement
+  Avant, pendant et après votre voyage.
+* Documents nécessaires
+  Les pièces à préparer avant le départ.
+
+Voyages organisés dropdown:
+
+* Circuits sélectionnés
+  Des voyages préparés avec soin.
+* Départs en groupe
+  Voyagez avec un cadre clair.
+* Voyages famille
+  Des séjours adaptés au rythme familial.
+* Inspirations
+  Idées de destinations et expériences.
+
+Sur mesure dropdown:
+
+* Séjours famille
+  Des voyages pensés pour chacun.
+* Séjours couple
+  Des escapades élégantes et personnalisées.
+* Séjours premium
+  Hôtels, confort et détails soignés.
+* Demande personnalisée
+  Construisons votre séjour ensemble.
+
+Services dropdown:
+
+* Assistance voyage
+  Un accompagnement humain et réactif.
+* Organisation
+  Itinéraires, réservations et coordination.
+* Conseils
+  Des recommandations adaptées à votre projet.
+* Support client
+  Contact simple par téléphone ou WhatsApp.
+
+Destinations dropdown:
+
+* Inspirations voyage
+  Découvrez des idées de séjours.
+* Europe
+  City breaks et séjours organisés.
+* Moyen-Orient
+  Voyages culturels et spirituels.
+* Afrique du Nord
+  Séjours famille et découvertes.
+
+MAIN NAV HOVER / ACTIVE STATE
+
+Each nav item with dropdown:
+
+* show small chevron
+* chevron size 14px
+* stroke width 1.7
+* color follows text
+* rotate smoothly when dropdown open
+
+Active/hover:
+
+* small antique gold underline
+* or subtle gold dot
+* keep it elegant
+
+HEADER LAYOUT
+
+Make nav spacing cleaner:
+
+* gap between items: 28px to 34px desktop
+* align all nav titles center vertically
+* keep dropdown under the correct nav item
+* avoid overlapping hero content
+
+If there is not enough space on desktop:
+
+* reduce gap slightly
+* shorten “Séjours sur mesure” to “Sur mesure”
+* keep “Voyages organisés” as is
+* do not squeeze text too much
+
+MOBILE MENU TITLES
+
+Mobile menu must use the same labels:
+
+* Accueil
+* Billets
+* Omra & Hajj
+* Voyages organisés
+* Sur mesure
+* Services
+* Destinations
+* À propos
+* Contact
+
+Mobile accordion titles:
+
+* Manrope
+* font-size 18px
+* font-weight 700
+* color #173A33 or ivory if dark mobile sheet
+* dropdown descriptions readable
+* no pale text
+
+FINAL ACCEPTANCE
+
+Navigation update is accepted only if:
+
+1. Navbar titles are clear and readable.
+2. Dropdown item titles are strong and not pale.
+3. Descriptions are readable.
+4. Labels match SIYAJJ VOYAGES services.
+5. Typography is consistent and not AI-looking.
+6. Dropdown design feels premium.
+7. Mobile menu titles are clean.
+8. Nothing feels washed out or weak.
+
+Implement only the navbar/dropdown title and readability upgrade now.

@@ -22,41 +22,64 @@ const NAV_STRUCTURE: NavGroup[] = [
   {
     label: "Billets",
     items: [
-      { href: "/contact?service=billets-avion", label: "Billets Avion", desc: "Vols depuis la France vers toutes destinations" },
-      { href: "/contact?service=billets-bateau", label: "Billets Bateau", desc: "Traversées et liaisons maritimes" },
+      { href: "/contact?service=billets-avion",   label: "Billets avion",          desc: "Réservation et conseils pour vos vols." },
+      { href: "/contact?service=billets-bateau",  label: "Billets bateau",          desc: "Traversées et accompagnement réservation." },
+      { href: "/contact?service=assistance",      label: "Assistance réservation",  desc: "Nous vous aidons à choisir la bonne option." },
+      { href: "/contact?service=conseils-depart", label: "Conseils départ",         desc: "Préparez votre trajet avec sérénité." },
     ],
   },
   {
     label: "Omra & Hajj",
     items: [
-      { href: "/nos-omras", label: "Toutes les Omras", desc: "Nos départs disponibles" },
-      { href: "/nos-omras/ramadan", label: "Omra Ramadan", desc: "Le mois sacré aux Lieux Saints" },
-      { href: "/nos-omras/prestige", label: "Omra Prestige", desc: "L'excellence hôtelière" },
-      { href: "/nos-omras/famille", label: "Omra Famille", desc: "Un voyage spirituel en famille" },
-      { href: "/collections", label: "Nos Collections", desc: "Essentielle, Confort, Prestige, Signature" },
-      { href: "/hajj", label: "Hajj", desc: "Le Grand Pèlerinage organisé" },
-      { href: "/formations", label: "Formations", desc: "Préparer votre pèlerinage" },
-      { href: "/activites", label: "Activités sur place", desc: "Enrichir votre séjour spirituel" },
+      { href: "/nos-omras",    label: "Offres Omra",         desc: "Départs, formules et accompagnement." },
+      { href: "/hajj",         label: "Hajj",                desc: "Informations et demande d'accompagnement." },
+      { href: "/formations",   label: "Accompagnement",      desc: "Avant, pendant et après votre voyage." },
+      { href: "/guides",       label: "Documents nécessaires", desc: "Les pièces à préparer avant le départ." },
     ],
   },
-  { label: "Voyages organisés", href: "/contact?service=voyages-organises" },
-  { label: "Séjours sur mesure", href: "/sur-mesure" },
+  {
+    label: "Voyages organisés",
+    items: [
+      { href: "/contact?service=circuits",      label: "Circuits sélectionnés", desc: "Des voyages préparés avec soin." },
+      { href: "/contact?service=groupe",        label: "Départs en groupe",     desc: "Voyagez avec un cadre clair." },
+      { href: "/contact?service=famille",       label: "Voyages famille",       desc: "Des séjours adaptés au rythme familial." },
+      { href: "/contact?service=inspirations",  label: "Inspirations",          desc: "Idées de destinations et expériences." },
+    ],
+  },
+  {
+    label: "Sur mesure",
+    items: [
+      { href: "/sur-mesure",                        label: "Séjours famille",        desc: "Des voyages pensés pour chacun." },
+      { href: "/sur-mesure#couple",                 label: "Séjours couple",         desc: "Des escapades élégantes et personnalisées." },
+      { href: "/signature-vip",                     label: "Séjours premium",        desc: "Hôtels, confort et détails soignés." },
+      { href: "/contact?service=sur-mesure-custom", label: "Demande personnalisée",  desc: "Construisons votre séjour ensemble." },
+    ],
+  },
   {
     label: "Services",
     items: [
-      { href: "/signature-vip", label: "Signature VIP", desc: "Conciergerie & accompagnement privé" },
-      { href: "/guides", label: "Guides pratiques", desc: "Conseils et ressources voyage" },
-      { href: "/avis", label: "Avis & témoignages", desc: "+15 000 voyageurs accompagnés" },
-      { href: "/faq", label: "FAQ", desc: "Questions fréquentes" },
+      { href: "/contact",           label: "Assistance voyage", desc: "Un accompagnement humain et réactif." },
+      { href: "/contact?service=organisation", label: "Organisation",      desc: "Itinéraires, réservations et coordination." },
+      { href: "/guides",            label: "Conseils",          desc: "Des recommandations adaptées à votre projet." },
+      { href: "/faq",               label: "Support client",    desc: "Contact simple par téléphone ou WhatsApp." },
+    ],
+  },
+  {
+    label: "Destinations",
+    items: [
+      { href: "/contact?dest=inspirations",  label: "Inspirations voyage", desc: "Découvrez des idées de séjours." },
+      { href: "/contact?dest=europe",        label: "Europe",              desc: "City breaks et séjours organisés." },
+      { href: "/contact?dest=moyen-orient",  label: "Moyen-Orient",        desc: "Voyages culturels et spirituels." },
+      { href: "/contact?dest=afrique-nord",  label: "Afrique du Nord",     desc: "Séjours famille et découvertes." },
     ],
   },
   {
     label: "À propos",
     items: [
-      { href: "/a-propos", label: "Qui sommes-nous", desc: "L'histoire et la vision de SIYAJJ" },
-      { href: "/a-propos/methode", label: "Notre méthode", desc: "Comment nous travaillons" },
-      { href: "/a-propos/omra-factory", label: "Partenariat Omra Factory", desc: "Notre partenaire opérationnel" },
-      { href: "/contact", label: "Nous contacter", desc: "Parlons de votre projet" },
+      { href: "/a-propos",                label: "Qui sommes-nous",          desc: "L'histoire et la vision de SIYAJJ." },
+      { href: "/a-propos/methode",        label: "Notre méthode",            desc: "Comment nous travaillons." },
+      { href: "/a-propos/omra-factory",   label: "Partenariat Omra Factory", desc: "Notre partenaire opérationnel." },
+      { href: "/contact",                 label: "Nous contacter",           desc: "Parlons de votre projet." },
     ],
   },
 ];
@@ -87,26 +110,30 @@ function DesktopDropdown({ group }: { group: NavGroup }) {
 
   useEffect(() => () => clearTimeout(timerRef.current), []);
 
+  const navLabelBase =
+    "whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-siyajj-luxury-gold/45 rounded focus-ring-managed " +
+    "text-[14px] xl:text-[15px] font-semibold tracking-[-0.01em] ";
+
+  const navColor = isActive
+    ? "text-siyajj-luxury-gold light:text-[#C59A3D]"
+    : "text-siyajj-ivory light:text-[#173A33] hover:text-siyajj-luxury-gold light:hover:text-[#0B5A49]";
+
   if (!group.items) {
     return (
-      <Link
-        href={group.href ?? "/"}
-        className={`whitespace-nowrap transition-colors ${isActive ? "text-siyajj-luxury-gold" : "text-siyajj-ivory/80 hover:text-siyajj-luxury-gold"}`}
-      >
+      <Link href={group.href ?? "/"} className={`${navLabelBase} ${navColor}`}>
         {group.label}
       </Link>
     );
   }
 
-  const isWide = group.items.length > 5;
-
   return (
     <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <button
-        className={`flex items-center gap-1 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-siyajj-luxury-gold/45 rounded focus-ring-managed ${isActive ? "text-siyajj-luxury-gold" : "text-siyajj-ivory/80 hover:text-siyajj-luxury-gold"}`}
-      >
+      <button className={`flex items-center gap-1.5 ${navLabelBase} ${navColor}`}>
         {group.label}
-        <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${open ? "rotate-180" : ""}`} strokeWidth={1.5} />
+        <ChevronDown
+          className={`w-3.5 h-3.5 shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          strokeWidth={1.7}
+        />
       </button>
 
       <AnimatePresence>
@@ -118,22 +145,40 @@ function DesktopDropdown({ group }: { group: NavGroup }) {
             transition={{ duration: 0.14, ease: "easeOut" }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className={`absolute top-full left-0 mt-3 z-[200] ${isWide ? "w-[440px]" : "w-60"} bg-siyajj-deep-black/97 light:bg-[#FFFFFF]/98 backdrop-blur-2xl border border-siyajj-luxury-gold/30 rounded-2xl shadow-[0_24px_64px_rgba(0,0,0,0.75),0_0_0_1px_rgba(200,154,70,0.08)] light:shadow-[0_12px_48px_rgba(23,58,51,0.14),0_0_0_1px_rgba(197,154,61,0.18)] overflow-hidden`}
+            className="absolute top-full left-0 mt-3 z-[200] w-64
+              bg-siyajj-deep-black/97 light:bg-white
+              backdrop-blur-2xl
+              border border-siyajj-luxury-gold/30 light:border-[rgba(197,154,61,0.22)]
+              rounded-3xl
+              shadow-[0_24px_64px_rgba(0,0,0,0.75),0_0_0_1px_rgba(200,154,70,0.08)]
+              light:shadow-[0_16px_48px_rgba(23,58,51,0.14),0_0_0_1px_rgba(197,154,61,0.16)]
+              overflow-hidden"
           >
-            <div className={`p-2 ${isWide ? "grid grid-cols-2 gap-0.5" : "flex flex-col gap-0.5"}`}>
+            <div className="p-2 flex flex-col gap-0.5">
               {group.items.map((item) => {
                 const itemActive = location === item.href;
                 return (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`block px-3 py-2.5 rounded-xl transition-colors group ${itemActive ? "bg-siyajj-luxury-gold/15" : "hover:bg-siyajj-luxury-gold/10"}`}
+                    className={`block px-3.5 py-2.5 rounded-2xl transition-colors group
+                      ${itemActive
+                        ? "bg-siyajj-luxury-gold/15 light:bg-[rgba(6,63,53,0.07)]"
+                        : "hover:bg-siyajj-luxury-gold/10 light:hover:bg-[rgba(6,63,53,0.05)]"
+                      }`}
                   >
-                    <div className={`text-sm font-serif leading-snug transition-colors ${itemActive ? "text-siyajj-luxury-gold" : "text-siyajj-ivory group-hover:text-siyajj-luxury-gold"}`}>
+                    <div className={`text-[14px] font-bold leading-snug transition-colors
+                      ${itemActive
+                        ? "text-siyajj-luxury-gold light:text-[#063F35]"
+                        : "text-siyajj-ivory light:text-[#173A33] group-hover:text-siyajj-luxury-gold light:group-hover:text-[#063F35]"
+                      }`}>
                       {item.label}
                     </div>
                     {item.desc && (
-                      <div className="body-md text-siyajj-ivory/42 text-xs mt-0.5 leading-snug">{item.desc}</div>
+                      <div className="text-[12.5px] font-medium mt-0.5 leading-[1.35]
+                        text-siyajj-ivory/72 light:text-[#6F6254]">
+                        {item.desc}
+                      </div>
                     )}
                   </Link>
                 );
@@ -151,12 +196,14 @@ function MobileAccordion({ group, onNavigate }: { group: NavGroup; onNavigate: (
   const [location] = useLocation();
   const isActive = group.items?.some(item => location.startsWith(item.href)) || location === group.href;
 
+  const mobileLabelClass = "text-[18px] font-bold tracking-[-0.01em]";
+
   if (!group.items) {
     return (
       <Link
         href={group.href ?? "/"}
         onClick={onNavigate}
-        className={`block py-4 border-b border-white/5 font-serif text-2xl transition-colors ${isActive ? "text-siyajj-luxury-gold" : "text-siyajj-ivory hover:text-siyajj-luxury-gold"}`}
+        className={`block py-4 border-b border-siyajj-luxury-gold/15 ${mobileLabelClass} transition-colors ${isActive ? "text-siyajj-luxury-gold" : "text-siyajj-ivory hover:text-siyajj-luxury-gold"}`}
       >
         {group.label}
       </Link>
@@ -166,11 +213,11 @@ function MobileAccordion({ group, onNavigate }: { group: NavGroup; onNavigate: (
   return (
     <div className="border-b border-siyajj-luxury-gold/15">
       <button
-        className={`flex items-center justify-between w-full py-4 font-serif text-2xl text-left transition-colors ${isActive ? "text-siyajj-luxury-gold" : "text-siyajj-ivory"}`}
+        className={`flex items-center justify-between w-full py-4 text-left transition-colors ${mobileLabelClass} ${isActive ? "text-siyajj-luxury-gold" : "text-siyajj-ivory"}`}
         onClick={() => setExpanded((v) => !v)}
       >
         {group.label}
-        <ChevronDown className={`w-5 h-5 text-siyajj-luxury-gold transition-transform duration-300 ${expanded ? "rotate-180" : ""}`} strokeWidth={1.5} />
+        <ChevronDown className={`w-5 h-5 text-siyajj-luxury-gold shrink-0 transition-transform duration-300 ${expanded ? "rotate-180" : ""}`} strokeWidth={1.7} />
       </button>
 
       <AnimatePresence initial={false}>
@@ -182,15 +229,22 @@ function MobileAccordion({ group, onNavigate }: { group: NavGroup; onNavigate: (
             transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden"
           >
-            <div className="pb-3 pl-4 flex flex-col">
+            <div className="pb-3 pl-3 flex flex-col gap-1">
               {group.items.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   onClick={onNavigate}
-                  className="py-2 body-md text-siyajj-ivory/68 hover:text-siyajj-luxury-gold transition-colors"
+                  className="py-2 px-3 rounded-xl hover:bg-siyajj-luxury-gold/10 transition-colors group"
                 >
-                  {item.label}
+                  <div className="text-[15px] font-semibold text-siyajj-ivory group-hover:text-siyajj-luxury-gold transition-colors">
+                    {item.label}
+                  </div>
+                  {item.desc && (
+                    <div className="text-[13px] font-medium text-siyajj-ivory/68 mt-0.5 leading-snug">
+                      {item.desc}
+                    </div>
+                  )}
                 </Link>
               ))}
             </div>
@@ -254,19 +308,19 @@ export function Header() {
         </Link>
 
         {/* Desktop nav with dropdowns */}
-        <nav className="hidden lg:flex items-center gap-5 xl:gap-6 text-[12.5px] xl:text-[13px] font-medium tracking-wide">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
           {NAV_STRUCTURE.map((group) => (
             <DesktopDropdown key={group.label} group={group} />
           ))}
         </nav>
 
         <div className="hidden lg:flex items-center gap-3 xl:gap-4">
-          <a href={PHONE_HREF} className="hidden xl:flex items-center gap-2 text-sm text-siyajj-ivory/75 hover:text-siyajj-luxury-gold transition-colors whitespace-nowrap">
-            <Phone className="h-4 w-4 text-siyajj-luxury-gold shrink-0" />
+          <a href={PHONE_HREF} className="hidden xl:flex items-center gap-2 text-[13px] font-medium text-siyajj-ivory/80 light:text-[#173A33]/80 hover:text-siyajj-luxury-gold light:hover:text-[#0B5A49] transition-colors whitespace-nowrap">
+            <Phone className="h-3.5 w-3.5 text-siyajj-luxury-gold shrink-0" />
             {PHONE_DISPLAY}
           </a>
           <ThemeToggle />
-          <Button asChild className="bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black hover:brightness-110 font-medium uppercase tracking-widest text-[11px] sweep-hover relative overflow-hidden">
+          <Button asChild className="bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black hover:brightness-110 font-semibold uppercase tracking-widest text-[11px] sweep-hover relative overflow-hidden">
             <Link href="/contact"><span className="relative z-10">Demander un devis</span></Link>
           </Button>
         </div>
@@ -277,7 +331,7 @@ export function Header() {
             <Phone className="h-4 w-4 text-siyajj-luxury-gold" />
           </a>
           <ThemeToggle />
-          <Button asChild size="sm" className="bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black hover:brightness-110 font-medium uppercase tracking-widest text-[10px] sweep-hover relative overflow-hidden">
+          <Button asChild size="sm" className="bg-gradient-to-r from-siyajj-antique-bronze via-siyajj-luxury-gold to-siyajj-champagne text-siyajj-deep-black hover:brightness-110 font-semibold uppercase tracking-widest text-[10px] sweep-hover relative overflow-hidden">
             <Link href="/contact"><span className="relative z-10">Devis</span></Link>
           </Button>
           <button className="text-siyajj-ivory/85 hover:text-siyajj-ivory p-2 rounded transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-siyajj-luxury-gold/45 focus-ring-managed" onClick={() => setOpen((v) => !v)} aria-label={open ? "Fermer" : "Menu"} aria-expanded={open}>
@@ -309,7 +363,7 @@ export function Header() {
               <Link
                 href="/"
                 onClick={() => { scrollToTop(); closeMenu(); }}
-                className="block py-4 border-b border-siyajj-luxury-gold/20 font-serif text-2xl text-siyajj-luxury-gold hover:text-siyajj-champagne transition-colors"
+                className="block py-4 border-b border-siyajj-luxury-gold/20 text-[18px] font-bold tracking-[-0.01em] text-siyajj-luxury-gold hover:text-siyajj-champagne transition-colors"
               >
                 Accueil
               </Link>
