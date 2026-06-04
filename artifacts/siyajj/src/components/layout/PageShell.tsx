@@ -246,13 +246,11 @@ export function Header() {
       {/* Desktop + tablet header */}
       <div className={`container mx-auto px-4 md:px-8 flex items-center justify-between transition-all duration-500 ${scrolled ? "h-[4.5rem]" : "h-[4.5rem] lg:h-32"}`}>
         <Link href="/" onClick={scrollToTop} className="flex items-center gap-2 shrink-0">
-          <div className={`rounded-xl overflow-hidden transition-all duration-500 ${scrolled ? "bg-white/8" : "bg-white/6"}`}>
-            <img
-              src={`${import.meta.env.BASE_URL}assets/logo-siyajj-voyages-horizontal.png`}
-              alt="SIYAJJ Voyages"
-              className={`w-auto object-contain transition-all duration-500 ${scrolled ? "h-9 md:h-10" : "h-10 md:h-12 lg:h-14"}`}
-            />
-          </div>
+          <img
+            src={`${import.meta.env.BASE_URL}assets/logo-siyajj-voyages-horizontal-transparent.png`}
+            alt="SIYAJJ Voyages"
+            className={`w-auto object-contain transition-all duration-500 ${scrolled ? "h-9 md:h-10" : "h-10 md:h-12 lg:h-14"}`}
+          />
         </Link>
 
         {/* Desktop nav with dropdowns */}
@@ -359,9 +357,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1">
             <Link href="/" onClick={scrollToTop}>
-              <div className="inline-block rounded-xl overflow-hidden bg-white/6 mb-3">
-                <img src={`${import.meta.env.BASE_URL}assets/logo-siyajj-voyages-horizontal.png`} alt="SIYAJJ Voyages" className="h-12 w-auto object-contain" />
-              </div>
+              <img src={`${import.meta.env.BASE_URL}assets/logo-siyajj-voyages-horizontal-transparent.png`} alt="SIYAJJ Voyages" className="h-12 w-auto object-contain mb-3" />
             </Link>
             <p className="tagline-script text-siyajj-luxury-gold/55 mb-5">La Renaissance du Voyage</p>
             <p className="text-siyajj-muted-text text-sm leading-relaxed mb-6">
